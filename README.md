@@ -33,11 +33,10 @@
         Then run the DeployManager java file  with either options
         * deploy      (which will deploy this war file to camunda tomcat )
         * undeploy      (which will un deploy this war file to camunda tomcat )
-
-#### 5.Start  the bpmn by sending a post request below
-
-        {"messageName" : "instantiationMessageOpenHab","businessKey" : "aBusinessKey","processVariables" : {"deviceId" : {"value" : "123","type": "String"} } }
-
-
+        * start       (it will send the start message to the deployed war)   
+#### 5.   Remark
+         * For test purposes you can change the deviceId in the post file to any value beside 123  so that it can behave undesired
+          and the other way is true  . Therefore by default it is 123
+        * I am using intellij  run -> edit configurations  to provide the options of DeployManager class  future i will be able to create a jar     
 
 ![alt text](bpmn.png)
