@@ -39,10 +39,10 @@
 
         Then the deployer will be started and the following request can be made to it :
 
-        * deploy      (which will deploy this war file to camunda tomcat and also it will take in your initial
+        * deploy  (which will deploy this war file to camunda tomcat and also it will take in your initial
           mist request values which are in the mist file )
-         Post : localhost:8098/deploy
 
+         Post : localhost:8098/deploy
          Request Body  
          Required "war"="file path to war"
          Required "mist"="file path mist file with bpmn start request "
@@ -52,10 +52,10 @@
 
         You can also use the post_data.txt in the root directory as mist file incase you don't have any
 
-        * start  (it will send the start message to the deployed war)  
+        * start (it will send the start message to the deployed war)  
           Get  : localhost:8098/start
 
-        * undeploy (which will un deploy this war file to camunda tomcat )
+        * undeploy  (which will un deploy this war file to camunda tomcat )
           Get  : localhost:8098/stop
 
 #### 5.   Remark
