@@ -66,6 +66,7 @@ public class MistController {
         Gson gson          = new Gson();
         HttpClient httpClient    = HttpClientBuilder.create().build();
         HttpPost post          = new HttpPost(postUrl);
+        System.out.println(postText);
         StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
         post.setEntity(postingString);
         post.setHeader("Content-type", "application/json");
