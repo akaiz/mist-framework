@@ -21,6 +21,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,7 +42,8 @@ public class MistController {
     File currentDirectory = new File(new File(".").getAbsolutePath()+"/wars/");
     Boolean mistStarted = false;
     String startRequest="";
-
+    @Autowired
+    private HttpServletRequest request;
     @RequestMapping("/stop")
     public String stop() throws IOException {
         if(mistStarted){
@@ -82,8 +84,16 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         try {
 
+
+            String uploadsDir = "/uploads/";
+            String realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
+            if(! new File(realPathtoUploads).exists())
+            {
+                new File(realPathtoUploads).mkdir();
+            }
+
             String filename = uploadfile.getOriginalFilename();
-            String directory = currentDirectory.getCanonicalPath();
+            String directory = realPathtoUploads;
             String filepath = Paths.get(directory, filename).toString();
 
             // Save the file locally
