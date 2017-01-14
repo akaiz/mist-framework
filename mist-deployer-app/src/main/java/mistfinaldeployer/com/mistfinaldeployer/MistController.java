@@ -153,7 +153,7 @@ public class MistController {
 
     private  String deploy() throws ClientProtocolException, IOException {
         if(mistpath!=null){
-            String url = "http://${dockerhost}:8080/manager/text/deploy?path=/mistBpmn&update=true";
+            String url = "http://"+host+":8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
 
 
@@ -183,7 +183,7 @@ public class MistController {
 
     public  String undeploy() throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
-        String url = "http://${dockerhost}:8080/manager/text/undeploy?path=/mistBpmn";
+        String url = "http://"+host+":8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
