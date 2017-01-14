@@ -44,8 +44,8 @@ public class MistController {
 
     Boolean mistStarted = false;
     String startRequest="";
-    @Value("${dockerhost}")
-    String host;
+
+    String host="localhost";
     @Autowired
     private HttpServletRequest request;
     @RequestMapping("/stop")
