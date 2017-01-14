@@ -1,0 +1,4 @@
+127.0.0.1 - - [14/Jan/2017:15:40:05 +0200] "PUT /manager/text/deploy?path=/mistBpmn&update=true HTTP/1.1" 401 2474
+127.0.0.1 - tomcat [14/Jan/2017:15:40:05 +0200] "PUT /manager/text/deploy?path=/mistBpmn&update=true HTTP/1.1" 200 63
+127.0.0.1 - - [14/Jan/2017:15:41:21 +0200] "POST /engine-rest/message HTTP/1.1" 204 -
+127.0.0.1 - - [14/Jan/2017:21:19:50 +0200] "POST /engine-rest/message HTTP/1.1" 500 3629
