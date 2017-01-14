@@ -3,4 +3,4 @@ mist-docker:
   ports:
     - "8098:8098"
   extra_hosts:
-    - "dockerhost:$DOCKERHOST"
+    - "dockerhost:${DOCKERHOST}"
