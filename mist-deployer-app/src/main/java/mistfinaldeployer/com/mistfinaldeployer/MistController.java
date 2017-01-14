@@ -39,7 +39,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RestController
 public class MistController {
     static CredentialsProvider credsProvider = new BasicCredentialsProvider();
-    File currentDirectory = new File(new File(".").getAbsolutePath()+"/wars/");
+    String realPathtoUploads,mistpath;
+
     Boolean mistStarted = false;
     String startRequest="";
     @Autowired
@@ -52,12 +53,7 @@ public class MistController {
 
         return "Bpmn not started";
     }
-    @RequestMapping(method = GET, path = "/xml/{town}")
-    public String xml(@PathVariable String town) {
-        final String uri = "http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php";
 
-        return null;
-    }
     @RequestMapping(method = GET,path = "/start")
     private  void sendRequest() throws IOException {
 
@@ -78,58 +74,68 @@ public class MistController {
 
         System.out.println(response2+" request execution finished   ");
     }
+
+
+
     @RequestMapping(value = "/deploy", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> uploadFile(@RequestParam("war") MultipartFile uploadfile   ,  @RequestParam("mist") MultipartFile mistfile) throws IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         try {
 
+            if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
 
-            String uploadsDir = "/uploads/";
-            String realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
-            if(! new File(realPathtoUploads).exists())
-            {
-                new File(realPathtoUploads).mkdir();
-            }
 
-            String filename = uploadfile.getOriginalFilename();
-            String directory = realPathtoUploads;
-            String filepath = Paths.get(directory, filename).toString();
+                String uploadsDir = "/uploads/";
+                realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
+                if(! new File(realPathtoUploads).exists())
+                {
+                    new File(realPathtoUploads).mkdir();
+                }
 
-            // Save the file locally
-            BufferedOutputStream stream =
-                    new BufferedOutputStream(new FileOutputStream(new File(filepath)));
-            stream.write(uploadfile.getBytes());
-            stream.close();
+                String filename = uploadfile.getOriginalFilename();
+                String directory = realPathtoUploads;
+                mistpath = Paths.get(directory, filename).toString();
+
+                // Save the file locally
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(mistpath)));
+                stream.write(uploadfile.getBytes());
+                stream.close();
 
 //        Getting data from the mist file
 
-            String mistFilename = mistfile.getOriginalFilename();
+                String mistFilename = mistfile.getOriginalFilename();
 
-            String filepath2 = Paths.get(directory, mistFilename).toString();
+                String filepath2 = Paths.get(directory, mistFilename).toString();
 
-            stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
-            stream.write(mistfile.getBytes());
-            stream.close();
+                stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
+                stream.write(mistfile.getBytes());
+                stream.close();
 
 
 
-            BufferedReader br = new BufferedReader(new FileReader(filepath2));
-            try {
-                StringBuilder sb = new StringBuilder();
-                String line = br.readLine();
+                BufferedReader br = new BufferedReader(new FileReader(filepath2));
+                try {
+                    StringBuilder sb = new StringBuilder();
+                    String line = br.readLine();
 
-                while (line != null) {
-                    sb.append(line);
-                    sb.append("\n");
-                    line = br.readLine();
+                    while (line != null) {
+                        sb.append(line);
+                        sb.append("\n");
+                        line = br.readLine();
+                    }
+                    startRequest=sb.toString();
+                } finally {
+                    br.close();
                 }
-              startRequest=sb.toString();
-            } finally {
-                br.close();
+                // deploying to tomcat and  returning response out
+                return new ResponseEntity<>(deploy(),HttpStatus.OK);
             }
 
-            return new ResponseEntity<>(deploy(filename),HttpStatus.OK);
+            return new ResponseEntity<>("PLEASE PROVIDE CORRECT INPUT",HttpStatus.OK);
+
+
 
         }
         catch (Exception e) {
@@ -141,27 +147,30 @@ public class MistController {
     }
     // deploy file to camunda
 
-    private  String deploy(String filename) throws ClientProtocolException, IOException {
-        String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
-        // get this war generated from the maveen install of the mist-bpmn war
+    private  String deploy() throws ClientProtocolException, IOException {
+        if(mistpath!=null){
+            String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
+            // get this war generated from the maveen install of the mist-bpmn war
 
-        File currentDirectory = new File(new File(".").getAbsolutePath());
 
-        File file = new File (currentDirectory.getCanonicalPath()+ "/wars/"+filename) ;
+            File file = new File (mistpath) ;
 
-        HttpPut req = new HttpPut(url) ;
-        MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-        meb.addTextBody("fileDescription", "war file to deploy");
-        //"application/octect-stream"
-        meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
+            HttpPut req = new HttpPut(url) ;
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("fileDescription", "war file to deploy");
+            //"application/octect-stream"
+            meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
 
-        req.setEntity(meb.build()) ;
-        String response = executeRequest (req, credsProvider);
+            req.setEntity(meb.build()) ;
+            String response = executeRequest (req, credsProvider);
 
-        System.out.println("Response : "+response);
-        mistStarted=true;
-        return  response;
-
+            System.out.println("Response : "+response);
+            mistStarted=true;
+            return  response;
+        }
+         else {
+            return "Are you sure you uplload the mist war";
+        }
 
 
     }
