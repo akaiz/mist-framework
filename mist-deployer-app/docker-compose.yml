@@ -1,12 +1,6 @@
-version: '2'
-
-services:
-  mist-client:
-    image: akaiz/mist-deployer
-    ports:
-      - "8098:8098"
-    networks:
-      - my_network
-
-networks:
-  my_network:
+mist-docker:
+  build: .
+  ports:
+    - "8098:8098"
+  extra_hosts:
+    - "dockerhost:$DOCKERHOST"
