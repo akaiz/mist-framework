@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="docker host update">
+    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="host update">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/camunda-h2-dbs/process-engine.h2.db" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/camunda-h2-dbs/process-engine.h2.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/catalina.2017-01-14.log" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/catalina.2017-01-14.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/catalina.out" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/catalina.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/localhost.2017-01-14.log" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/localhost.2017-01-14.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/localhost_access_log.2017-01-14.txt" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/localhost_access_log.2017-01-14.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/manager.2017-01-14.log" afterPath="$PROJECT_DIR$/mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/manager.2017-01-14.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -676,7 +682,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1484387224086</updated>
-      <workItem from="1484387225750" duration="10090000" />
+      <workItem from="1484387225750" duration="10717000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -755,15 +761,22 @@
       <option name="project" value="LOCAL" />
       <updated>1484421640201</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="host update">
+      <created>1484422843304</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1484422843304</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10090000" />
+    <option name="totallyTimeSpent" value="10717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="63" width="1633" height="917" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -813,7 +826,8 @@
     <MESSAGE value="Ignorine tomcat files" />
     <MESSAGE value="added docker host to the deployer compose file" />
     <MESSAGE value="docker host update" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker host update" />
+    <MESSAGE value="host update" />
+    <option name="LAST_COMMIT_MESSAGE" value="host update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

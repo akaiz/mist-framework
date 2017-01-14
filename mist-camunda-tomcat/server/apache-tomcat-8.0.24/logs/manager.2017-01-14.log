@@ -2,3 +2,5 @@
 14-Jan-2017 15:40:05.916 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
 14-Jan-2017 15:40:05.918 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: deploy: Deploying web application '/mistBpmn'
 14-Jan-2017 15:40:05.918 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: Uploading WAR file to /Users/agabaisaac/iot/mist-framework/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war.tmp
+14-Jan-2017 21:46:28.526 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: deploy: Deploying web application '/mistBpmn'
+14-Jan-2017 21:46:28.526 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: Uploading WAR file to /Users/agabaisaac/iot/mist-framework/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war.tmp

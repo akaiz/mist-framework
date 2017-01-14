@@ -25248,3 +25248,62 @@ Deployment does not provide any case definitions.
 
 14-Jan-2017 15:41:21.249 INFO [http-nio-8080-exec-3] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-14 15:41:15.221 Result from stopping containers finishede54e6717168a 
 
+14-Jan-2017 21:46:31.732 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+14-Jan-2017 21:46:32.020 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+14-Jan-2017 21:46:32.039 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/mist-framework/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+14-Jan-2017 21:46:33.105 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+14-Jan-2017 21:46:33.120 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/mist-framework/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+14-Jan-2017 21:46:33.124 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+14-Jan-2017 21:46:33.161 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+14-Jan-2017 21:46:33.164 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+14-Jan-2017 21:46:33.166 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+14-Jan-2017 21:46:33.168 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+14-Jan-2017 21:46:33.169 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+14-Jan-2017 21:46:33.169 INFO [localhost-startStop-3] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+14-Jan-2017 21:46:33.172 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/mist-framework/mist-camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,133 ms
+14-Jan-2017 21:46:48.084 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-14 21:46:48.083 Here  in the  final task  to remove and kill containers started
+14-Jan-2017 21:46:50.096 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute Here is Acess to open Hab '123'...
+14-Jan-2017 21:46:50.101 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-14 21:46:48.083 Camunda made Mist-docker Intialization 
+
+14-Jan-2017 21:46:59.251 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-14 21:46:48.083 Mist-docker  started 
+
+14-Jan-2017 21:46:59.252 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-14 21:46:48.083  Request made to Mist-docker from Camunda 
+
+14-Jan-2017 21:47:04.731 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-14 21:46:48.083 Camunda received results from Mist-docker 
+
+14-Jan-2017 21:47:04.731 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute {"precipitations":0,"airpressure":1000.3,"windspeedmax":2.8,"relativehumidity":85,"visibility":20,"airtemperature":-0.1,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.4,"phenomenon":"Cloudy with clear spells","winddirection":254}
+
+14-Jan-2017 21:47:04.733 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-14 21:47:04.733 Here in Desired Task.
+14-Jan-2017 21:47:04.733 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-14 21:47:04.733 Here is deviceId '123'...
+14-Jan-2017 21:47:04.733 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-14 21:47:04.733 Here is the response  that was returned from previous task '{"precipitations":0,"airpressure":1000.3,"windspeedmax":2.8,"relativehumidity":85,"visibility":20,"airtemperature":-0.1,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.4,"phenomenon":"Cloudy with clear spells","winddirection":254}
+
+14-Jan-2017 21:47:04.734 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-14 21:47:04.733 Here  Desired Task ended 
+14-Jan-2017 21:47:04.735 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-14 21:47:04.735 Here  in the  final task  to remove and kill containers started
+14-Jan-2017 21:47:06.742 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-14 21:47:04.735 Result from stopping container started 63bf8d24ffea 
+
+14-Jan-2017 21:47:10.756 INFO [http-nio-8080-exec-10] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-14 21:47:04.735 Result from stopping containers finished63bf8d24ffea 
+
