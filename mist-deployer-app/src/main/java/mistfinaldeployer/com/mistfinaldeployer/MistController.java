@@ -22,7 +22,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,8 +43,6 @@ public class MistController {
 
     Boolean mistStarted = false;
     String startRequest="";
-
-    String host="localhost";
     @Autowired
     private HttpServletRequest request;
     @RequestMapping("/stop")
@@ -61,10 +58,9 @@ public class MistController {
     private  void sendRequest() throws IOException {
 
         String postText = startRequest;
-        System.out.println(host);
         System.out.println("Post request sent with this data "+postText);
 
-        String       postUrl       = "http://"+host+":8080/engine-rest/message";// put in your url
+        String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
         Gson gson          = new Gson();
         HttpClient httpClient    = HttpClientBuilder.create().build();
         HttpPost post          = new HttpPost(postUrl);
@@ -153,7 +149,7 @@ public class MistController {
 
     private  String deploy() throws ClientProtocolException, IOException {
         if(mistpath!=null){
-            String url = "http://"+host+":8080/manager/text/deploy?path=/mistBpmn&update=true";
+            String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
 
 
@@ -183,7 +179,7 @@ public class MistController {
 
     public  String undeploy() throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
-        String url = "http://"+host+":8080/manager/text/undeploy?path=/mistBpmn";
+        String url = "http://localhost:8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
