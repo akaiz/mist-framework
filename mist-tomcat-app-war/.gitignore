@@ -1,10 +1,6 @@
 
 .idea/
 openhabsystem.iml
-src/main/java/ee/ut/mobilelab/mistbpmn/DesiredTask.java
-src/main/java/ee/ut/mobilelab/mistbpmn/FinalTask.java
-src/main/java/ee/ut/mobilelab/mistbpmn/Main.java
-src/main/java/ee/ut/mobilelab/mistbpmn/UnDesiredTask.java
-src/main/resources/message_start_process.bpmn
+
 target/classes/ee/ut/mobilelab/mistbpmn/
 target/mist-2.1/
