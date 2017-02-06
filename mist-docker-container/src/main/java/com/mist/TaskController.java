@@ -30,9 +30,7 @@ public class TaskController {
 
         String result= HttpRequest.get(uri).body();
 
-//        System.out.println(result);
-
-        JSONObject xmlJSONObj = null;
+          JSONObject xmlJSONObj = null;
         try {
             xmlJSONObj = XML.toJSONObject(result);
             String jsonPrettyPrintString = xmlJSONObj.toString(11);
@@ -43,7 +41,8 @@ public class TaskController {
            for (int i=0;i<jsonArray.length();i++){
                JSONObject jsonObject = jsonArray.getJSONObject(i);
                if(jsonObject.get("name").equals(town)){
-                   return jsonObject.toString();
+                   return jsonObject.get("airtemperature").toString();
+
                }
            }
 

@@ -17,7 +17,6 @@ public class UnDesiredTask implements JavaDelegate {
 
     public void execute(DelegateExecution execution) throws Exception {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        LOGGER.info(timestamp+" Here is result \'" + execution.getVariable("result") + "\n");
         LOGGER.info(timestamp+" Here  in the  un desired task ");
 
     }

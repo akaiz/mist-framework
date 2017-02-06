@@ -19,7 +19,7 @@ public class DesiredTask implements JavaDelegate {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         LOGGER.info(timestamp+" Here in Desired Task.");
-        LOGGER.info(timestamp+" Here is deviceId \'" + execution.getVariable("deviceId") + "\'...");
+
         LOGGER.info(timestamp+" Here is the response  that was returned from previous task \'" + execution.getVariable("response") + "\n");
         LOGGER.info(timestamp+" Here  Desired Task ended ");
 
