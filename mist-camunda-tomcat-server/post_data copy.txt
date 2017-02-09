@@ -1,0 +1,1 @@
+{"messageName" : "instantiationMessageOpenHab","businessKey" : "aBusinessKey","processVariables" : {"deviceId" : {"value" : "123","type": "String"} } }

@@ -1,0 +1,213 @@
+04-Jan-2017 02:03:13.362 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.24
+04-Jan-2017 02:03:13.363 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jul 1 2015 20:19:55 UTC
+04-Jan-2017 02:03:13.363 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.24.0
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.12.2
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_111-b14
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24
+04-Jan-2017 02:03:13.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24
+04-Jan-2017 02:03:13.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=./server/apache-tomcat-8.0.24/conf/logging.properties
+04-Jan-2017 02:03:13.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Jan-2017 02:03:13.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx512m
+04-Jan-2017 02:03:13.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxPermSize=256m
+04-Jan-2017 02:03:13.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:PermSize=256m
+04-Jan-2017 02:03:13.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=./server/apache-tomcat-8.0.24/endorsed
+04-Jan-2017 02:03:13.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=./server/apache-tomcat-8.0.24
+04-Jan-2017 02:03:13.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=./server/apache-tomcat-8.0.24
+04-Jan-2017 02:03:13.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=./server/apache-tomcat-8.0.24/temp
+04-Jan-2017 02:03:13.366 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/agabaisaac/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+04-Jan-2017 02:03:13.562 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-Jan-2017 02:03:13.601 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+04-Jan-2017 02:03:13.604 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+04-Jan-2017 02:03:13.605 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+04-Jan-2017 02:03:13.605 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 742 ms
+04-Jan-2017 02:03:13.633 WARNING [main] org.apache.tomcat.jdbc.pool.ConnectionPool.init maxIdle is larger than maxActive, setting maxIdle to: 20
+04-Jan-2017 02:03:16.249 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08046 Found camunda bpm platform configuration in CATALINA_BASE/CATALINA_HOME conf directory [/Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/conf/bpm-platform.xml] at 'file:/Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/conf/bpm-platform.xml'
+04-Jan-2017 02:03:16.469 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'ProcessApplicationEventListenerPlugin' activated on process engine 'default'
+04-Jan-2017 02:03:16.479 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'SpinProcessEnginePlugin' activated on process engine 'default'
+04-Jan-2017 02:03:16.487 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+04-Jan-2017 02:03:16.689 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+04-Jan-2017 02:03:16.712 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+04-Jan-2017 02:03:16.712 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+04-Jan-2017 02:03:16.712 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'ConnectProcessEnginePlugin' activated on process engine 'default'
+04-Jan-2017 02:03:16.917 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo CNCT-01004 Discovered provider for connector id 'http-connector' and class 'org.camunda.connect.httpclient.impl.HttpConnectorImpl': 'org.camunda.connect.httpclient.impl.HttpConnectorProviderImpl'
+04-Jan-2017 02:03:16.919 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo CNCT-01004 Discovered provider for connector id 'soap-http-connector' and class 'org.camunda.connect.httpclient.soap.impl.SoapHttpConnectorImpl': 'org.camunda.connect.httpclient.soap.impl.SoapHttpConnectorProviderImpl'
+04-Jan-2017 02:03:18.450 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-00001 Process Engine default created.
+04-Jan-2017 02:03:18.451 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14014 Starting up the JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor].
+04-Jan-2017 02:03:18.453 INFO [Thread-6] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14018 JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] starting to acquire jobs
+04-Jan-2017 02:03:23.467 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08048 Camunda BPM platform sucessfully started at 'Apache Tomcat/8.0.24'.
+04-Jan-2017 02:03:23.479 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+04-Jan-2017 02:03:23.479 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.24
+04-Jan-2017 02:03:23.508 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+04-Jan-2017 02:03:24.886 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+04-Jan-2017 02:03:24.913 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:24.940 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+04-Jan-2017 02:03:24.952 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+04-Jan-2017 02:03:25.392 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+04-Jan-2017 02:03:25.396 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+04-Jan-2017 02:03:25.397 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+04-Jan-2017 02:03:25.399 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+04-Jan-2017 02:03:25.399 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+04-Jan-2017 02:03:25.400 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+04-Jan-2017 02:03:25.441 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,934 ms
+04-Jan-2017 02:03:25.444 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/camunda
+04-Jan-2017 02:03:26.663 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:26.887 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/camunda has finished in 1,443 ms
+04-Jan-2017 02:03:26.887 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/camunda-welcome
+04-Jan-2017 02:03:27.756 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:27.758 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/camunda-welcome has finished in 871 ms
+04-Jan-2017 02:03:27.759 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/engine-rest
+04-Jan-2017 02:03:28.823 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:28.912 INFO [localhost-startStop-1] org.jboss.resteasy.logging.impl.Slf4jLogger.info Deploying javax.ws.rs.core.Application: class org.camunda.bpm.engine.rest.impl.application.DefaultApplication
+04-Jan-2017 02:03:28.989 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/engine-rest has finished in 1,231 ms
+04-Jan-2017 02:03:28.997 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/h2
+04-Jan-2017 02:03:29.856 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:34.864 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/h2 has finished in 5,875 ms
+04-Jan-2017 02:03:34.864 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/host-manager
+04-Jan-2017 02:03:35.825 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:35.830 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/host-manager has finished in 966 ms
+04-Jan-2017 02:03:35.830 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/manager
+04-Jan-2017 02:03:36.795 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:36.797 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/manager has finished in 967 ms
+04-Jan-2017 02:03:36.797 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/ROOT
+04-Jan-2017 02:03:37.801 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jan-2017 02:03:37.802 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/ROOT has finished in 1,005 ms
+04-Jan-2017 02:03:37.811 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-Jan-2017 02:03:37.817 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+04-Jan-2017 02:03:37.818 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 24212 ms
+04-Jan-2017 02:03:53.275 INFO [http-nio-8080-exec-3] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+04-Jan-2017 02:03:53.793 INFO [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+04-Jan-2017 02:05:59.023 INFO [http-nio-8080-exec-12] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+04-Jan-2017 02:06:00.250 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+04-Jan-2017 02:06:00.261 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+04-Jan-2017 02:06:00.264 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+04-Jan-2017 02:06:00.294 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+04-Jan-2017 02:06:00.296 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+04-Jan-2017 02:06:00.296 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+04-Jan-2017 02:06:00.298 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+04-Jan-2017 02:06:00.298 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+04-Jan-2017 02:06:00.300 INFO [http-nio-8080-exec-12] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+04-Jan-2017 02:06:00.303 INFO [http-nio-8080-exec-12] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,280 ms
+04-Jan-2017 02:06:11.609 INFO [http-nio-8080-exec-2] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+04-Jan-2017 02:06:12.118 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+04-Jan-2017 02:07:01.119 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+04-Jan-2017 02:07:02.254 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+04-Jan-2017 02:07:02.270 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+04-Jan-2017 02:07:02.276 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+04-Jan-2017 02:07:02.308 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+04-Jan-2017 02:07:02.309 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+04-Jan-2017 02:07:02.310 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+04-Jan-2017 02:07:02.312 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+04-Jan-2017 02:07:02.312 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+04-Jan-2017 02:07:02.312 INFO [http-nio-8080-exec-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+04-Jan-2017 02:07:02.314 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/mist-framework/camunda-tomcat/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,195 ms
+04-Jan-2017 02:08:11.391 INFO [http-nio-8080-exec-18] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute Here is Acess to open Hab '123'...
+04-Jan-2017 02:08:11.439 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:11.391 Camunda made Mist-docker Intialization 
+
+04-Jan-2017 02:08:20.460 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:11.391 Mist-docker  started 
+
+04-Jan-2017 02:08:20.460 INFO [http-nio-8080-exec-18] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-04 02:08:11.391  Request made to Mist-docker from Camunda 
+
+04-Jan-2017 02:08:25.887 INFO [http-nio-8080-exec-18] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-04 02:08:11.391 Camunda received results from Mist-docker 
+
+04-Jan-2017 02:08:25.887 INFO [http-nio-8080-exec-18] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute {"precipitations":0,"airpressure":994.3,"windspeedmax":8,"relativehumidity":93,"visibility":20,"airtemperature":-7.4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":4.5,"phenomenon":"Overcast","winddirection":111}
+
+04-Jan-2017 02:08:25.897 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:25.897 Here in Desired Task.
+04-Jan-2017 02:08:25.897 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:25.897 Here is deviceId '123'...
+04-Jan-2017 02:08:25.897 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:25.897 Here is the response  that was returned from previous task '{"precipitations":0,"airpressure":994.3,"windspeedmax":8,"relativehumidity":93,"visibility":20,"airtemperature":-7.4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":4.5,"phenomenon":"Overcast","winddirection":111}
+
+04-Jan-2017 02:08:25.897 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:25.897 Here  Desired Task ended 
+04-Jan-2017 02:08:25.899 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:25.899 Here  in the  final task  to remove and kill containers started
+04-Jan-2017 02:08:27.912 INFO [http-nio-8080-exec-18] null.null 2017-01-04 02:08:25.899 Result from stopping container started 262687f9c13c 
+
+04-Jan-2017 02:08:31.935 INFO [http-nio-8080-exec-18] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-04 02:08:25.899 Result from stopping containers finished262687f9c13c 
+
+04-Jan-2017 11:32:28.386 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-Jan-2017 11:32:28.400 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14015 Shutting down the JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor]
+04-Jan-2017 11:32:28.400 INFO [Thread-6] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14020 JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] stopped job acquisition
+04-Jan-2017 11:32:28.712 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+04-Jan-2017 11:32:28.718 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-00007 Process Engine default closed
+04-Jan-2017 11:32:28.719 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08049 Camunda BPM platform stopped at 'Apache Tomcat/8.0.24'
+04-Jan-2017 11:32:28.719 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-Jan-2017 11:32:28.776 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+04-Jan-2017 11:32:28.827 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+04-Jan-2017 11:32:28.851 WARNING [localhost-startStop-2] org.camunda.commons.logging.BaseLogger.logWarn ENGINE-07017 Calling undeploy() on process application that is not deployed.
+04-Jan-2017 11:32:28.902 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-Jan-2017 11:32:28.913 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+04-Jan-2017 11:32:29.025 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-Jan-2017 11:32:29.028 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
