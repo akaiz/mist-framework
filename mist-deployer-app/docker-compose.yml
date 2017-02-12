@@ -1,6 +1,0 @@
-mist-docker:
-  build: .
-  ports:
-    - "8098:8098"
-  extra_hosts:
-    - "dockerhost:${DOCKERHOST}"

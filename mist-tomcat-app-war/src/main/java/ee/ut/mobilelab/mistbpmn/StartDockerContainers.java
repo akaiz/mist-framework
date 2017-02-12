@@ -40,8 +40,8 @@ public class StartDockerContainers extends DockerCommands implements JavaDelegat
         String allResourcesAvailable = (String)execution.getVariable("all_resources_available");
 
         if(!mistNodeUrl.equals("none")){
-            File war_file= new File ( System.getProperty("user.dir")+"/war/mist-0.war") ;
-            File mist_file = new File ( System.getProperty("user.dir")+"/war/mist_file.txt") ;
+            File war_file= new File ( System.getProperty("user.dir")+"/mist_data/mist-0.war") ;
+            File mist_file = new File ( System.getProperty("user.dir")+"/mist_data/mist_file.txt") ;
             HttpPost req = new HttpPost(mistNodeUrl) ;
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("fileDescription", "war file to deploy");
