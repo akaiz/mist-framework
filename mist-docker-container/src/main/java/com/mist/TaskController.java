@@ -1,6 +1,7 @@
 package com.mist;
 
 import com.github.kevinsawicki.http.HttpRequest;
+
 import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.json.JSONArray;
 import org.leibnizcenter.xml.TerseJson;
@@ -16,12 +17,17 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -37,8 +43,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class TaskController {
     private static final TerseJson.WhitespaceBehaviour COMPACT_WHITE_SPACE = TerseJson.WhitespaceBehaviour.Compact;
     List<String> fileList;
-    private static final String OUTPUT_ZIP_FILE = "/Users/agabaisaac/Desktop/Desktop.zip";
-    private static final String SOURCE_FOLDER = "/Users/agabaisaac/work";
+    private  String choosenCityWeatherPath;
+
     @Autowired
     private HttpServletRequest request;
     @Autowired
@@ -79,10 +85,7 @@ public class TaskController {
 
     @RequestMapping(method = POST,path = "/download")
     @ResponseBody
-    public String x(@RequestParam("pathUrl") String pathUrl) throws InterruptedException {
-       // fileList = new ArrayList<String>();
-//        generateFileList(new File(SOURCE_FOLDER));
-  //      zipIt(OUTPUT_ZIP_FILE);
+    public String x(@RequestParam("pathUrl") String pathUrl) throws InterruptedException, IOException, JSONException {
 
         String workingDir = System.getProperty("user.dir")+"/uploads";
         System.out.println("Current working directory : " + workingDir);
@@ -99,186 +102,152 @@ public class TaskController {
             System.out.println("Directory is empty");
         }
 
-        for (int i=0;i<3;i++){
-         downloadTask(pathUrl, workingDir);
+        for (int x=0;x<3;x++){
+
+            Random ran = new Random();
+            int top = 3;
+            char data = ' ';
+            String dat = "";
+
+            for (int i=0; i<=top; i++) {
+                data = (char)(ran.nextInt(25)+97);
+                dat = data + dat;
+            }
+            String uploadLocation = workingDir+ "/"+dat;
+            File folder = new File(uploadLocation);
+            if(!folder.exists()){
+                folder.mkdirs();
+            }
+
+            String downloadedZip =workingDir+ "/"+dat+"/city.zip";
+            downloadUsingNIO(pathUrl,downloadedZip);
+            unzipFunction(uploadLocation,downloadedZip);
+
+            if(x==2){
+                choosenCityWeatherPath=uploadLocation+"/city_weather.xml";
+            }
+
+
         }
+
+        String result= choosenCityWeatherPath;
+        String line="",str="";
+        BufferedReader br = new BufferedReader(new FileReader(result));
+        while ((line = br.readLine()) != null)
+        {
+            str+=line;
+        }
+        JSONObject xmlJSONObj = XML.toJSONObject(str);
+
+        try {
+
+            String jsonPrettyPrintString = xmlJSONObj.toString(11);
+
+            JSONObject observations=xmlJSONObj.getJSONObject("observations");
+            JSONArray jsonArray = observations.getJSONArray("station");
+
+            for (int i=0;i<jsonArray.length();i++){
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if(jsonObject.get("name").equals("Tallinn-Harku")){
+                    return jsonObject.get("airtemperature").toString();
+
+                }
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
 
 
      return  null;
     }
 
-    private void downloadTask(String pathUrl, String workingDir) {
-        Random ran = new Random();
-        int top = 3;
-        char data = ' ';
-        String dat = "";
+    private static void unzipFunction(String destinationFolder, String zipFile) {
+        File directory = new File(destinationFolder);
 
-        for (int i=0; i<=top; i++) {
-            data = (char)(ran.nextInt(25)+97);
-            dat = data + dat;
-        }
-        String realPathtoUploads =workingDir+ "/"+dat;
+        // if the output directory doesn't exist, create it
+        if(!directory.exists())
+            directory.mkdirs();
 
-
-        if(! new File(realPathtoUploads).exists())
-        {
-            new File(realPathtoUploads).mkdirs();
-        }
+        // buffer for read and write data to file
+        byte[] buffer = new byte[2048];
 
         try {
-            String url = HttpDownloadUtility.downloadFile(pathUrl, realPathtoUploads);
-            System.out.println(url);
-         unZipIt(url,realPathtoUploads);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
+            FileInputStream fInput = new FileInputStream(zipFile);
+            ZipInputStream zipInput = new ZipInputStream(fInput);
 
+            ZipEntry entry = zipInput.getNextEntry();
 
-    public void unZipIt(String zipFile, String outputFolder){
+            while(entry != null){
+                String entryName = entry.getName();
+                File file = new File(destinationFolder + File.separator + entryName);
 
-        byte[] buffer = new byte[1024];
+                System.out.println("Unzip file " + entryName + " to " + file.getAbsolutePath());
 
-        try{
-
-            //create output directory is not exists
-            File folder = new File(outputFolder);
-            if(!folder.exists()){
-                folder.mkdir();
-            }
-
-            //get the zip file content
-            ZipInputStream zis =
-                    new ZipInputStream(new FileInputStream(zipFile));
-            //get the zipped file list entry
-            ZipEntry ze = zis.getNextEntry();
-
-            while(ze!=null){
-
-                String fileName = ze.getName();
-                File newFile = new File(outputFolder + File.separator + fileName);
-
-                System.out.println("file unzip : "+ newFile.getAbsoluteFile());
-
-                //create all non exists folders
-                //else you will hit FileNotFoundException for compressed folder
-                new File(newFile.getParent()).mkdirs();
-
-                FileOutputStream fos = new FileOutputStream(newFile);
-
-                int len;
-                while ((len = zis.read(buffer)) > 0) {
-                    fos.write(buffer, 0, len);
+                // create the directories of the zip directory
+                if(entry.isDirectory()) {
+                    File newDir = new File(file.getAbsolutePath());
+                    if(!newDir.exists()) {
+                        boolean success = newDir.mkdirs();
+                        if(success == false) {
+                            System.out.println("Problem creating Folder");
+                        }
+                    }
                 }
-
-                fos.close();
-                ze = zis.getNextEntry();
-            }
-
-            zis.closeEntry();
-            zis.close();
-
-            System.out.println("Done folder "+outputFolder);
-
-        }catch(IOException ex){
-            ex.printStackTrace();
-        }
-    }
-
-
-
-
-
-
-
-
-    public void zipIt(String zipFile){
-
-        byte[] buffer = new byte[1024];
-
-        try{
-
-            FileOutputStream fos = new FileOutputStream(zipFile);
-            ZipOutputStream zos = new ZipOutputStream(fos);
-
-            System.out.println("Output to Zip : " + zipFile);
-
-            for(String file : this.fileList){
-
-                System.out.println("File Added : " + file);
-                ZipEntry ze= new ZipEntry(file);
-                zos.putNextEntry(ze);
-
-                FileInputStream in =
-                        new FileInputStream(SOURCE_FOLDER + File.separator + file);
-
-                int len;
-                while ((len = in.read(buffer)) > 0) {
-                    zos.write(buffer, 0, len);
+                else {
+                    FileOutputStream fOutput = new FileOutputStream(file);
+                    int count = 0;
+                    while ((count = zipInput.read(buffer)) > 0) {
+                        // write 'count' bytes to the file output stream
+                        fOutput.write(buffer, 0, count);
+                    }
+                    fOutput.close();
                 }
-
-                in.close();
+                // close ZipEntry and take the next one
+                zipInput.closeEntry();
+                entry = zipInput.getNextEntry();
             }
 
-            zos.closeEntry();
-            //remember close it
-            zos.close();
+            // close the last ZipEntry
+            zipInput.closeEntry();
 
-            System.out.println("Done");
-        }catch(IOException ex){
-            ex.printStackTrace();
+            zipInput.close();
+            fInput.close();
+
+            File zip = new File(zipFile);
+            if(zip.exists()){
+                zip.delete();
+            }
+
+            File temp = new File(destinationFolder+"/__MACOSX");
+            if(temp.exists()){
+                temp.delete();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    /**
-     * Traverse a directory and get all files,
-     * and add the file into fileList
-     * @param node file or directory
-     */
-    public void generateFileList(File node){
 
-        //add file only
-        if(node.isFile()){
-            fileList.add(generateZipEntry(node.getAbsoluteFile().toString()));
-        }
+    private  Path download(String sourceURL, String targetDirectory) throws IOException
+    {
+        URL url = new URL(sourceURL);
+        String fileName = sourceURL.substring(sourceURL.lastIndexOf('/') + 1, sourceURL.length());
+        Path targetPath = new File(targetDirectory + File.separator + fileName).toPath();
+        Files.copy(url.openStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
 
-        if(node.isDirectory()){
-            String[] subNote = node.list();
-            for(String filename : subNote){
-                generateFileList(new File(node, filename));
-            }
-        }
-
+        return targetPath;
     }
-
-    /**
-     * Format the file path for zip
-     * @param file file path
-     * @return Formatted file path
-     */
-    private String generateZipEntry(String file){
-        return file.substring(SOURCE_FOLDER.length()+1, file.length());
-    }
-
-    public static void saveFileFromUrlWithJavaIO(String fileName, String fileUrl)
-            throws MalformedURLException, IOException {
-        BufferedInputStream in = null;
-        FileOutputStream fout = null;
-        try {
-            in = new BufferedInputStream(new URL(fileUrl).openStream());
-            fout = new FileOutputStream(fileName);
-
-            byte data[] = new byte[1024];
-            int count;
-            while ((count = in.read(data, 0, 1024)) != -1) {
-                fout.write(data, 0, count);
-            }
-        } finally {
-            if (in != null)
-                in.close();
-            if (fout != null)
-                fout.close();
-        }
+    private  void downloadUsingNIO(String urlStr, String file) throws IOException {
+        URL url = new URL(urlStr);
+        ReadableByteChannel rbc = Channels.newChannel(url.openStream());
+        FileOutputStream fos = new FileOutputStream(file);
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+        fos.close();
+        rbc.close();
     }
 
 }

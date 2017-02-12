@@ -1,1 +1,6 @@
-{"messageName" : "instantiationMessageOpenHab","businessKey" : "aBusinessKey","processVariables" : {"deviceId" : {"value" : "123","type": "String"} } }
+{"messageName" : "instantiationMessageOpenHab",
+"businessKey" : "aBusinessKey",
+"processVariables" : {"deviceId" : {"value" : "123","type": "String"},
+"all_resources_available" : {"value" : "false","type": "String"}
+},
+ }

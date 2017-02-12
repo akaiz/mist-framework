@@ -15,5 +15,12 @@ public class FinalTask extends DockerCommands implements JavaDelegate {
     public void execute(DelegateExecution execution) throws Exception {
         super.stopContainers();
 
+        String callBackUrl = (String)execution.getVariable("call_back_url");
+        if(!callBackUrl.equals("call_back_url")){
+            LOGGER.info("Sending response to "+callBackUrl);
+        }
+
+
+
     }
 }

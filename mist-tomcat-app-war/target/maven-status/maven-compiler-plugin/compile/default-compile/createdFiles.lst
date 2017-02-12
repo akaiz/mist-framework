@@ -1,6 +1,7 @@
 ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.class
 ee/ut/mobilelab/mistbpmn/DesiredTask.class
+ee/ut/mobilelab/mistbpmn/StartDockerContainers.class
 ee/ut/mobilelab/mistbpmn/UnDesiredTask.class
+ee/ut/mobilelab/mistbpmn/DockerCommands.class
 ee/ut/mobilelab/mistbpmn/Main.class
-ee/ut/mobilelab/mistbpmn/StartMistContainers.class
 ee/ut/mobilelab/mistbpmn/FinalTask.class

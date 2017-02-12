@@ -130,6 +130,8 @@ public class MistController {
                     br.close();
                 }
                 // deploying to tomcat and  returning response out
+
+
                 return new ResponseEntity<>(deploy(),HttpStatus.OK);
             }
 
@@ -152,21 +154,35 @@ public class MistController {
             String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
 
-
             File file = new File (mistpath) ;
-
             HttpPut req = new HttpPut(url) ;
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("fileDescription", "war file to deploy");
             //"application/octect-stream"
             meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
-
             req.setEntity(meb.build()) ;
             String response = executeRequest (req, credsProvider);
 
-            System.out.println("Response : "+response);
+            System.out.println("Response after depoly  : "+response);
             mistStarted=true;
-            return  response;
+
+            // Starting the  depoloyed machine
+
+            String postText = startRequest;
+            System.out.println("Post request sent with this data "+postText);
+
+            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+            Gson gson          = new Gson();
+            HttpClient httpClient    = HttpClientBuilder.create().build();
+            HttpPost post          = new HttpPost(postUrl);
+            System.out.println(postText);
+            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+            post.setEntity(postingString);
+            post.setHeader("Content-type", "application/json");
+
+            System.out.println("Request being processed .......................");
+            HttpResponse  response2 = httpClient.execute(post);
+            return  response2.toString();
         }
          else {
             return "Are you sure you uplload the mist war";

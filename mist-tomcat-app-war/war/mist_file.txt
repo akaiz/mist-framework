@@ -1,0 +1,7 @@
+{"messageName" : "instantiationMessageOpenHab",
+"businessKey" : "aBusinessKey",
+"processVariables" : {"call_back_url" : {"value" : "call_back_url","type": "String"},
+"all_resources_available" : {"value" : "false","type": "String"} ,
+"mist_node_url" : {"value" : "none","type": "String"}
+},
+ }
