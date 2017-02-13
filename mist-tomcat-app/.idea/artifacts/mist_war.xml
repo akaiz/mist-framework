@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="mist:war">
-    <output-path>$PROJECT_DIR$/../mist-tomcat-app-war/target</output-path>
-    <root id="archive" name="mist-0.war">
-      <element id="artifact" artifact-name="mist:war exploded" />
-    </root>
-  </artifact>
-</component>
