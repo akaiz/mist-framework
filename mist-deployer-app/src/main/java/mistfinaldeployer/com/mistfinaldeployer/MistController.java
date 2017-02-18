@@ -164,25 +164,29 @@ public class MistController {
             String response = executeRequest (req, credsProvider);
 
             System.out.println("Response after depoly  : "+response);
-            mistStarted=true;
 
-            // Starting the  depoloyed machine
+            return response;
 
-            String postText = startRequest;
-            System.out.println("Post request sent with this data "+postText);
-
-            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
-            Gson gson          = new Gson();
-            HttpClient httpClient    = HttpClientBuilder.create().build();
-            HttpPost post          = new HttpPost(postUrl);
-            System.out.println(postText);
-            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
-            post.setEntity(postingString);
-            post.setHeader("Content-type", "application/json");
-
-            System.out.println("Request being processed .......................");
-            HttpResponse  response2 = httpClient.execute(post);
-            return  response2.toString();
+            // Auto starting Commented out
+//            mistStarted=true;
+//
+//            // Starting the  depoloyed machine
+//
+//            String postText = startRequest;
+//            System.out.println("Post request sent with this data "+postText);
+//
+//            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+//            Gson gson          = new Gson();
+//            HttpClient httpClient    = HttpClientBuilder.create().build();
+//            HttpPost post          = new HttpPost(postUrl);
+//            System.out.println(postText);
+//            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+//            post.setEntity(postingString);
+//            post.setHeader("Content-type", "application/json");
+//
+//            System.out.println("Request being processed .......................");
+//            HttpResponse  response2 = httpClient.execute(post);
+//            return  response2.toString();
         }
          else {
             return "Are you sure you uplload the mist war";

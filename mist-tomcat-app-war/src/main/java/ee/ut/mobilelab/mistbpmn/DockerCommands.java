@@ -12,11 +12,11 @@ import java.util.logging.Logger;
 public class DockerCommands {
     Logger LOGGER = Logger.getLogger("Mist tomcat app");
     Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-    public String stopContainers() throws IOException, InterruptedException {
+    public String stopContainers(String imageName) throws IOException, InterruptedException {
 
 
-        LOGGER.info(timestamp+" Here  in the  final task  to remove and kill containers started");
-        String command = "docker ps -a -q --filter=ancestor=akaiz/mist-docker";
+        LOGGER.info(timestamp+" remove and kill containers that are already  started");
+        String command = "docker ps -a -q --filter=ancestor="+imageName;
         Process proc = Runtime.getRuntime().exec(command);
         // Delay to enable the above command to be finished
         TimeUnit.SECONDS.sleep(2);
@@ -38,7 +38,7 @@ public class DockerCommands {
         return "success";
 
     }
-    public  BufferedReader startContainer(String containerCommand){
+    public  Process startContainer(String containerCommand){
         LOGGER.info(timestamp+" Container Intialization \n");
 
         Process proc = null;
@@ -48,10 +48,8 @@ public class DockerCommands {
             e.printStackTrace();
         }
 
-        BufferedReader reader =
-                new BufferedReader(new InputStreamReader(proc.getInputStream()));
 
-        return reader;
+        return proc;
 
     }
 }

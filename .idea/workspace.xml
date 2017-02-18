@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="Docker container update and war app update">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/city_weather.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/mist_data/mist-0.war" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/mist-0.war" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/mist_data/mist_file.txt" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/mist_file.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0.war" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/ee/ut/mobilelab/mistbpmn/DockerCommands.class" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/ee/ut/mobilelab/mistbpmn/DockerCommands.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/ee/ut/mobilelab/mistbpmn/FinalTask.class" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/ee/ut/mobilelab/mistbpmn/FinalTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/ee/ut/mobilelab/mistbpmn/StartDockerContainers.class" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/ee/ut/mobilelab/mistbpmn/StartDockerContainers.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-tomcat-app/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-docker-container/Dockerfile" afterPath="$PROJECT_DIR$/mist-docker-container/Dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-docker-container/src/main/java/com/mist/TaskController.java" afterPath="$PROJECT_DIR$/mist-docker-container/src/main/java/com/mist/TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/DockerCommands.java" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/DockerCommands.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/FinalTask.java" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/FinalTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/StartDockerContainers.java" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/StartDockerContainers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/message_start_process.bpmn" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/message_start_process.bpmn" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/classes/message_start_process.bpmn" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/classes/message_start_process.bpmn" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/message_start_process.bpmn" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/target/mist-0/WEB-INF/classes/message_start_process.bpmn" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -138,6 +157,7 @@
         <option value="$PROJECT_DIR$/mist-deployer-app/docker-compose.yml" />
         <option value="$PROJECT_DIR$/mist-deployer-app/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/mist-tomcat-app-war/.gitignore" />
+        <option value="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
       </list>
     </option>
   </component>
@@ -169,6 +189,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,8 +345,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -742,6 +762,9 @@
       <workItem from="1486660153828" duration="599000" />
       <workItem from="1486713945819" duration="23000" />
       <workItem from="1486806632185" duration="17000" />
+      <workItem from="1486993461279" duration="636000" />
+      <workItem from="1487056009501" duration="599000" />
+      <workItem from="1487270355815" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -838,7 +861,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18992000" />
+    <option name="totallyTimeSpent" value="20230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="210" y="141" width="1260" height="720" extended-state="0" />
@@ -855,12 +878,11 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2764977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2764977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24920635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24920635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -873,6 +895,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -980,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,7 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1228,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,6 +1253,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="40" column="49" lean-forward="false" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1300,14 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="40" column="49" lean-forward="false" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
           <folding />
         </state>
       </provider>

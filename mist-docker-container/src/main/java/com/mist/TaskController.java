@@ -11,11 +11,17 @@ import org.springframework.web.client.RestTemplate;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.XML;
+import org.springframework.web.context.request.WebRequest;
 
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
@@ -24,10 +30,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -49,120 +52,139 @@ public class TaskController {
     private HttpServletRequest request;
     @Autowired
     ServletContext context;
-    @RequestMapping("/")
-    public String home() {
-        return "Client is Ready ";
-    }
-    @RequestMapping(method = GET, path = "/xml/{town}")
-    public String xml(@PathVariable String town) {
-        final String uri = "http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php";
+    @RequestMapping(method = GET, path = "/image",params = {"task","imagePath"})
+    public String imageProcess(@RequestParam(value = "imagePath") String imagePath) throws IOException, URISyntaxException {
 
-        String result= HttpRequest.get(uri).body();
+        File file = new File(imagePath );
 
-          JSONObject xmlJSONObj = null;
-        try {
-            xmlJSONObj = XML.toJSONObject(result);
-            String jsonPrettyPrintString = xmlJSONObj.toString(11);
+        ImageInputStream is = ImageIO.createImageInputStream(file);
+        Iterator iter = ImageIO.getImageReaders(is);
 
-            JSONObject observations=xmlJSONObj.getJSONObject("observations");
-            JSONArray jsonArray = observations.getJSONArray("station");
-
-           for (int i=0;i<jsonArray.length();i++){
-               JSONObject jsonObject = jsonArray.getJSONObject(i);
-               if(jsonObject.get("name").equals(town)){
-                   return jsonObject.get("airtemperature").toString();
-
-               }
-           }
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if (!iter.hasNext())
+        {
+            System.out.println("Cannot load the specified file "+ file);
+            System.exit(1);
         }
+        ImageReader imageReader = (ImageReader)iter.next();
+        imageReader.setInput(is);
 
-        return null;
+        BufferedImage image = imageReader.read(0);
+
+
+
+        int height = image.getHeight();
+        int width = image.getWidth();
+
+        Map m = new HashMap();
+        for(int i=0; i < width ; i++)
+        {
+            for(int j=0; j < height ; j++)
+            {
+                int rgb = image.getRGB(i, j);
+                int[] rgbArr = getRGBArr(rgb);
+                // Filter out grays....
+                if (!isGray(rgbArr)) {
+                    Integer counter = (Integer) m.get(rgb);
+                    if (counter == null)
+                        counter = 0;
+                    counter++;
+                    m.put(rgb, counter);
+                }
+            }
+        }
+        String colourHex = getMostCommonColour(m);
+
+
+
+        return  colourHex;
     }
-
-    @RequestMapping(method = POST,path = "/download")
+    @RequestMapping(method = GET,path = "/download",params = {"pathUrl"})
     @ResponseBody
-    public String x(@RequestParam("pathUrl") String pathUrl) throws InterruptedException, IOException, JSONException {
+    public String downloadImage(@RequestParam(value = "pathUrl") String pathUrl) throws InterruptedException, IOException, JSONException {
 
-        String workingDir = System.getProperty("user.dir")+"/uploads";
+        ClassLoader loader = TaskController.class.getClassLoader();
+
+        String workingDir =loader.getResource("").getPath()+"/uploads";
         System.out.println("Current working directory : " + workingDir);
-
         File f = new File(workingDir);
         if(f.isDirectory() && f.exists()){
             try {
+                //delete and create
                 FileUtils.deleteDirectory(new File(workingDir));
+                f.mkdirs();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-			else{
-            System.out.println("Directory is empty");
+        else{
+            f.mkdirs();
         }
 
-        for (int x=0;x<3;x++){
+        Random ran = new Random();
+        int top = 3;
+        char data = ' ';
+        String dat = "";
 
-            Random ran = new Random();
-            int top = 3;
-            char data = ' ';
-            String dat = "";
-
-            for (int i=0; i<=top; i++) {
-                data = (char)(ran.nextInt(25)+97);
-                dat = data + dat;
-            }
-            String uploadLocation = workingDir+ "/"+dat;
-            File folder = new File(uploadLocation);
-            if(!folder.exists()){
-                folder.mkdirs();
-            }
-
-            String downloadedZip =workingDir+ "/"+dat+"/city.zip";
-            downloadUsingNIO(pathUrl,downloadedZip);
-            unzipFunction(uploadLocation,downloadedZip);
-
-            if(x==2){
-                choosenCityWeatherPath=uploadLocation+"/city_weather.xml";
-            }
-
-
+        for (int i=0; i<=top; i++) {
+            data = (char)(ran.nextInt(25)+97);
+            dat = data + dat;
         }
 
-        String result= choosenCityWeatherPath;
-        String line="",str="";
-        BufferedReader br = new BufferedReader(new FileReader(result));
-        while ((line = br.readLine()) != null)
+        String downloadedImage =loader.getResource("uploads").getPath()+"/image_"+dat+".png";
+        downloadUsingNIO(pathUrl,downloadedImage);
+
+        File file = new File(downloadedImage);
+        ImageInputStream is = ImageIO.createImageInputStream(file);
+        Iterator iter = ImageIO.getImageReaders(is);
+
+        if (!iter.hasNext())
         {
-            str+=line;
+            System.out.println("Cannot load the specified file "+ file);
+            System.exit(1);
         }
-        JSONObject xmlJSONObj = XML.toJSONObject(str);
+        ImageReader imageReader = (ImageReader)iter.next();
+        imageReader.setInput(is);
 
-        try {
+        BufferedImage image = imageReader.read(0);
 
-            String jsonPrettyPrintString = xmlJSONObj.toString(11);
 
-            JSONObject observations=xmlJSONObj.getJSONObject("observations");
-            JSONArray jsonArray = observations.getJSONArray("station");
 
-            for (int i=0;i<jsonArray.length();i++){
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                if(jsonObject.get("name").equals("Tallinn-Harku")){
-                    return jsonObject.get("airtemperature").toString();
+        int height = image.getHeight();
+        int width = image.getWidth();
 
+        Map m = new HashMap();
+        for(int i=0; i < width ; i++)
+        {
+            for(int j=0; j < height ; j++)
+            {
+                int rgb = image.getRGB(i, j);
+                int[] rgbArr = getRGBArr(rgb);
+                // Filter out grays....
+                if (!isGray(rgbArr)) {
+                    Integer counter = (Integer) m.get(rgb);
+                    if (counter == null)
+                        counter = 0;
+                    counter++;
+                    m.put(rgb, counter);
                 }
             }
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
+        String colourHex = getMostCommonColour(m);
+        System.out.println(colourHex);
 
 
 
 
-     return  null;
+
+        return  colourHex;
+    }
+
+    @RequestMapping(method = GET,path = "/test")
+    @ResponseBody
+    public String downloadZip() throws InterruptedException, IOException, JSONException {
+
+
+     return  System.getProperty("user.home");
     }
 
     private static void unzipFunction(String destinationFolder, String zipFile) {
@@ -250,6 +272,39 @@ public class TaskController {
         rbc.close();
     }
 
+
+    public static String getMostCommonColour(Map map) {
+        List list = new LinkedList(map.entrySet());
+        Collections.sort(list, new Comparator() {
+            public int compare(Object o1, Object o2) {
+                return ((Comparable) ((Map.Entry) (o1)).getValue())
+                        .compareTo(((Map.Entry) (o2)).getValue());
+            }
+        });
+        Map.Entry me = (Map.Entry )list.get(list.size()-1);
+        int[] rgb= getRGBArr((Integer)me.getKey());
+        return Integer.toHexString(rgb[0])+""+Integer.toHexString(rgb[1])+""+Integer.toHexString(rgb[2]);
+    }
+
+    public static int[] getRGBArr(int pixel) {
+        int alpha = (pixel >> 24) & 0xff;
+        int red = (pixel >> 16) & 0xff;
+        int green = (pixel >> 8) & 0xff;
+        int blue = (pixel) & 0xff;
+        return new int[]{red,green,blue};
+
+    }
+    public static boolean isGray(int[] rgbArr) {
+        int rgDiff = rgbArr[0] - rgbArr[1];
+        int rbDiff = rgbArr[0] - rgbArr[2];
+        // Filter out black, white and grays...... (tolerance within 10 pixels)
+        int tolerance = 10;
+        if (rgDiff > tolerance || rgDiff < -tolerance)
+            if (rbDiff > tolerance || rbDiff < -tolerance) {
+                return false;
+            }
+        return true;
+    }
 }
 
 
