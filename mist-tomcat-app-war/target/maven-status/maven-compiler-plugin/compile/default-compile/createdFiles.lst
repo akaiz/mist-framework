@@ -1,5 +1,5 @@
 ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.class
 ee/ut/mobilelab/mistbpmn/DockerImageProcessing.class
 ee/ut/mobilelab/mistbpmn/ImageFetcher.class
-ee/ut/mobilelab/mistbpmn/CallBack.class
 ee/ut/mobilelab/mistbpmn/DockerCommands.class
+ee/ut/mobilelab/mistbpmn/CallBack.class
