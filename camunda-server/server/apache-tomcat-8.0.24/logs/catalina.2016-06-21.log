@@ -1,0 +1,174 @@
+21-Jun-2016 11:01:26.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.24
+21-Jun-2016 11:01:26.358 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jul 1 2015 20:19:55 UTC
+21-Jun-2016 11:01:26.358 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.24.0
+21-Jun-2016 11:01:26.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+21-Jun-2016 11:01:26.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.11-v7+
+21-Jun-2016 11:01:26.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          arm
+21-Jun-2016 11:01:26.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/jre
+21-Jun-2016 11:01:26.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_65-b17
+21-Jun-2016 11:01:26.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+21-Jun-2016 11:01:26.362 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24
+21-Jun-2016 11:01:26.362 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24
+21-Jun-2016 11:01:26.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=./server/apache-tomcat-8.0.24/conf/logging.properties
+21-Jun-2016 11:01:26.364 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Jun-2016 11:01:26.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx512m
+21-Jun-2016 11:01:26.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxPermSize=256m
+21-Jun-2016 11:01:26.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:PermSize=256m
+21-Jun-2016 11:01:26.367 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=./server/apache-tomcat-8.0.24/endorsed
+21-Jun-2016 11:01:26.367 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=./server/apache-tomcat-8.0.24
+21-Jun-2016 11:01:26.368 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=./server/apache-tomcat-8.0.24
+21-Jun-2016 11:01:26.368 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=./server/apache-tomcat-8.0.24/temp
+21-Jun-2016 11:01:26.369 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/arm:/lib:/usr/lib
+21-Jun-2016 11:01:27.214 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+21-Jun-2016 11:01:27.316 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+21-Jun-2016 11:01:27.326 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+21-Jun-2016 11:01:27.332 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+21-Jun-2016 11:01:27.334 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 3214 ms
+21-Jun-2016 11:01:27.453 WARNING [main] org.apache.tomcat.jdbc.pool.ConnectionPool.init maxIdle is larger than maxActive, setting maxIdle to: 20
+21-Jun-2016 11:01:37.442 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08046 Found camunda bpm platform configuration in CATALINA_BASE/CATALINA_HOME conf directory [/home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/conf/bpm-platform.xml] at 'file:/home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/conf/bpm-platform.xml'
+21-Jun-2016 11:01:38.847 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'ProcessApplicationEventListenerPlugin' activated on process engine 'default'
+21-Jun-2016 11:01:38.924 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'SpinProcessEnginePlugin' activated on process engine 'default'
+21-Jun-2016 11:01:38.959 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+21-Jun-2016 11:01:40.395 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+21-Jun-2016 11:01:40.502 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+21-Jun-2016 11:01:40.504 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+21-Jun-2016 11:01:40.506 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-12003 Plugin 'ConnectProcessEnginePlugin' activated on process engine 'default'
+21-Jun-2016 11:01:41.606 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo CNCT-01004 Discovered provider for connector id 'http-connector' and class 'org.camunda.connect.httpclient.impl.HttpConnectorImpl': 'org.camunda.connect.httpclient.impl.HttpConnectorProviderImpl'
+21-Jun-2016 11:01:41.616 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo CNCT-01004 Discovered provider for connector id 'soap-http-connector' and class 'org.camunda.connect.httpclient.soap.impl.SoapHttpConnectorImpl': 'org.camunda.connect.httpclient.soap.impl.SoapHttpConnectorProviderImpl'
+21-Jun-2016 11:01:53.734 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-00001 Process Engine default created.
+21-Jun-2016 11:01:53.740 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14014 Starting up the JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor].
+21-Jun-2016 11:01:53.747 INFO [Thread-6] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14018 JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] starting to acquire jobs
+21-Jun-2016 11:01:53.753 INFO [main] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08048 Camunda BPM platform sucessfully started at 'Apache Tomcat/8.0.24'.
+21-Jun-2016 11:01:53.849 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+21-Jun-2016 11:01:53.849 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.24
+21-Jun-2016 11:01:54.060 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/open-hab-camunda-system-0.0.1.war
+21-Jun-2016 11:02:06.847 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:06.855 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'org.camunda.bpm.example.event.message.InstantiateProcessByMessageDelegate'
+21-Jun-2016 11:02:06.891 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/open-hab-camunda-system-0.0.1/WEB-INF/classes/META-INF/processes.xml
+21-Jun-2016 11:02:06.953 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'openhab-camunda-message': 
+
+        message_start_process.png
+        instantiating_process.png
+        message_start_process.bpmn
+        instantiating_process.bpmn
+
+21-Jun-2016 11:02:08.674 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'Openhab Camunda Message App' registered for DB deployments [27c43c73-33c3-11e6-b73e-b827eb5fc0fd, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, e1f18845-33d2-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+21-Jun-2016 11:02:08.696 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+21-Jun-2016 11:02:08.698 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+21-Jun-2016 11:02:08.702 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+21-Jun-2016 11:02:08.703 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+21-Jun-2016 11:02:08.709 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application Openhab Camunda Message App successfully deployed
+21-Jun-2016 11:02:08.834 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/open-hab-camunda-system-0.0.1.war has finished in 14,769 ms
+21-Jun-2016 11:02:08.841 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/openhabcamunda-0.0.2.war
+21-Jun-2016 11:02:13.750 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:13.751 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'LoanApprovalApplication'
+21-Jun-2016 11:02:13.756 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/openhabcamunda-0.0.2/WEB-INF/classes/META-INF/processes.xml
+21-Jun-2016 11:02:13.774 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'openhab-camunda': 
+
+        loan-approval.bpmn
+
+21-Jun-2016 11:02:13.913 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'OpenHab Camunda App' registered for DB deployments [99869933-3231-11e6-a50e-b827eb5fc0fd, 5f0657e0-3173-11e6-9306-b827eb5fc0fd, 38ecd112-322d-11e6-9c79-b827eb5fc0fd, 6d71fd51-322e-11e6-a50e-b827eb5fc0fd]. Will execute process definitions 
+
+        approve-loan[version: 4, id: approve-loan:4:99a96375-3231-11e6-a50e-b827eb5fc0fd]
+        approve-loan[version: 1, id: approve-loan:1:5f191c92-3173-11e6-9306-b827eb5fc0fd]
+        approve-loan[version: 2, id: approve-loan:2:38fa3e94-322d-11e6-9c79-b827eb5fc0fd]
+        approve-loan[version: 3, id: approve-loan:3:6d81b4c3-322e-11e6-a50e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+21-Jun-2016 11:02:13.918 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+21-Jun-2016 11:02:13.920 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+21-Jun-2016 11:02:13.924 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+21-Jun-2016 11:02:13.925 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+21-Jun-2016 11:02:13.926 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application OpenHab Camunda App successfully deployed
+21-Jun-2016 11:02:13.934 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/openhabcamunda-0.0.2.war has finished in 5,094 ms
+21-Jun-2016 11:02:13.937 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/h2
+21-Jun-2016 11:02:18.747 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:18.768 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/h2 has finished in 4,830 ms
+21-Jun-2016 11:02:18.768 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/host-manager
+21-Jun-2016 11:02:24.268 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:24.289 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/host-manager has finished in 5,520 ms
+21-Jun-2016 11:02:24.290 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/docs
+21-Jun-2016 11:02:30.780 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:30.793 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/docs has finished in 6,502 ms
+21-Jun-2016 11:02:30.794 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda-invoice
+21-Jun-2016 11:02:36.192 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:36.193 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'org.camunda.bpm.example.invoice.InvoiceProcessApplication'
+21-Jun-2016 11:02:36.208 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda-invoice/WEB-INF/classes/META-INF/processes.xml
+21-Jun-2016 11:02:36.290 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'camunda-invoice': 
+
+        assign-approver-groups.dmn
+        invoice.v2.bpmn
+
+21-Jun-2016 11:02:36.463 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'camunda-invoice' registered for DB deployments [a434be7e-2e50-11e6-bd6a-0013ef70219b, a88c7ee4-2e50-11e6-bd6a-0013ef70219b]. Will execute process definitions 
+
+        invoice[version: 1, id: invoice:1:a5e02391-2e50-11e6-bd6a-0013ef70219b]
+        invoice[version: 2, id: invoice:2:a967c3b7-2e50-11e6-bd6a-0013ef70219b]
+Deployment does not provide any case definitions.
+21-Jun-2016 11:02:36.468 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+21-Jun-2016 11:02:36.470 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+21-Jun-2016 11:02:36.475 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+21-Jun-2016 11:02:36.475 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+21-Jun-2016 11:02:36.991 WARNING [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logWarn ENGINE-09004 Warnings during parsing: 
+* Exclusive Gateway 'reviewSuccessful_gw' has outgoing sequence flow 'reviewSuccessful' without condition which is not the default flow. We assume it to be the default flow, but it is bad modeling practice, better set the default flow in your gateway. | invoice.v1.bpmn | line 0 | column 0
+21-Jun-2016 11:02:44.082 INFO [localhost-startStop-1] null.null 
+
+  ... Now notfying creditor Bobby's Office Supplies
+
+
+21-Jun-2016 11:02:45.570 INFO [localhost-startStop-1] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application camunda-invoice successfully deployed
+21-Jun-2016 11:02:45.578 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda-invoice has finished in 14,783 ms
+21-Jun-2016 11:02:45.578 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda-welcome
+21-Jun-2016 11:02:50.360 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:50.369 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda-welcome has finished in 4,790 ms
+21-Jun-2016 11:02:50.369 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/ROOT
+21-Jun-2016 11:02:56.732 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:02:56.739 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/ROOT has finished in 6,369 ms
+21-Jun-2016 11:02:56.740 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda
+21-Jun-2016 11:03:07.077 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:03:08.737 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/camunda has finished in 11,997 ms
+21-Jun-2016 11:03:08.738 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/engine-rest
+21-Jun-2016 11:03:17.688 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:03:18.043 INFO [localhost-startStop-1] org.jboss.resteasy.logging.impl.Slf4jLogger.info Deploying javax.ws.rs.core.Application: class org.camunda.bpm.engine.rest.impl.application.DefaultApplication
+21-Jun-2016 11:03:18.362 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/engine-rest has finished in 9,624 ms
+21-Jun-2016 11:03:18.363 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/examples
+21-Jun-2016 11:03:24.686 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:03:24.728 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/examples has finished in 6,365 ms
+21-Jun-2016 11:03:24.729 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/manager
+21-Jun-2016 11:03:29.455 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Jun-2016 11:03:29.502 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/pi/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/manager has finished in 4,772 ms
+21-Jun-2016 11:03:29.517 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+21-Jun-2016 11:03:29.540 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+21-Jun-2016 11:03:29.543 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 122208 ms
+21-Jun-2016 11:12:39.959 INFO [http-nio-8080-exec-3] org.jboss.resteasy.logging.impl.Slf4jLogger.info Deploying javax.ws.rs.core.Application: class org.camunda.bpm.tasklist.impl.web.TasklistApplication
+21-Jun-2016 11:12:40.652 INFO [http-nio-8080-exec-5] org.jboss.resteasy.logging.impl.Slf4jLogger.info Deploying javax.ws.rs.core.Application: class org.camunda.bpm.webapp.impl.engine.EngineRestApplication
+21-Jun-2016 11:12:40.678 INFO [http-nio-8080-exec-6] org.jboss.resteasy.logging.impl.Slf4jLogger.info Deploying javax.ws.rs.core.Application: class org.camunda.bpm.admin.impl.web.AdminApplication
+21-Jun-2016 12:30:31.782 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14015 Shutting down the JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor]
+21-Jun-2016 12:30:31.792 INFO [17] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14020 JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] stopped job acquisition
+21-Jun-2016 12:30:33.360 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application OpenHab Camunda App undeployed
+21-Jun-2016 12:30:33.387 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application camunda-invoice undeployed
+21-Jun-2016 12:30:35.219 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application Openhab Camunda Message App undeployed
+21-Jun-2016 12:30:35.242 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-00007 Process Engine default closed
+21-Jun-2016 12:30:35.243 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08049 Camunda BPM platform stopped at 'Apache Tomcat/8.0.24'
+21-Jun-2016 12:30:35.247 INFO [Thread-8] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+21-Jun-2016 12:30:35.303 INFO [Thread-8] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+21-Jun-2016 12:30:35.355 INFO [Thread-8] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+21-Jun-2016 12:30:35.478 WARNING [localhost-startStop-2] org.camunda.commons.logging.BaseLogger.logWarn ENGINE-07017 Calling undeploy() on process application that is not deployed.
+21-Jun-2016 12:30:35.494 WARNING [localhost-startStop-2] org.camunda.commons.logging.BaseLogger.logWarn ENGINE-07017 Calling undeploy() on process application that is not deployed.
+21-Jun-2016 12:30:35.614 WARNING [localhost-startStop-2] org.camunda.commons.logging.BaseLogger.logWarn ENGINE-07017 Calling undeploy() on process application that is not deployed.
+21-Jun-2016 12:30:35.633 INFO [Thread-8] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+21-Jun-2016 12:30:35.637 INFO [Thread-8] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+21-Jun-2016 12:30:35.640 INFO [Thread-8] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+21-Jun-2016 12:30:35.643 INFO [Thread-8] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

@@ -1,0 +1,1 @@
+define([],function(){return function(a,b,c){for(var d=0;d<b.length;d++)!function(a){define(b[a],function(){return c[b[a]]})}(d)}});

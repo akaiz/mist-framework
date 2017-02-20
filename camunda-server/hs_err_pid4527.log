@@ -1,0 +1,245 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 268435456 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2718), pid=4527, tid=3057665136
+#
+# JRE version:  (7.0_40-b43) (build )
+# Java VM: Java HotSpot(TM) Client VM (24.0-b56 mixed mode linux-arm )
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00b46e50):  JavaThread "Unknown thread" [_thread_in_vm, id=4528, stack(0xb63b5000,0xb6405000)]
+
+Stack: [0xb63b5000,0xb6405000]
+[error occurred during error reporting (printing stack bounds), id 0xb]
+
+
+[error occurred during error reporting (printing native stack), id 0xb]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00b46e50 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4528, stack(0xb63b5000,0xb6405000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00008000-00009000 r-xp 00000000 b3:06 9407       /usr/lib/jvm/jdk-7-oracle-armhf/jre/bin/java
+00010000-00011000 rw-p 00000000 b3:06 9407       /usr/lib/jvm/jdk-7-oracle-armhf/jre/bin/java
+00b40000-00b61000 rw-p 00000000 00:00 0          [heap]
+84014000-84017000 rw-p 00000000 00:00 0 
+84017000-840bf000 rw-p 00000000 00:00 0 
+840bf000-840c1000 rw-p 00000000 00:00 0 
+840c1000-84114000 rw-p 00000000 00:00 0 
+84114000-84117000 rw-p 00000000 00:00 0 
+84117000-8423f000 rw-p 00000000 00:00 0 
+8423f000-84480000 rw-p 00000000 00:00 0 
+84480000-8ece0000 rw-p 00000000 00:00 0 
+8ece0000-8f180000 rw-p 00000000 00:00 0 
+8f180000-a4240000 rw-p 00000000 00:00 0 
+b4254000-b4255000 rw-p 00000000 00:00 0 
+b4255000-b42d4000 rw-p 00000000 00:00 0 
+b42d4000-b42fc000 rwxp 00000000 00:00 0 
+b42fc000-b62d4000 rw-p 00000000 00:00 0 
+b62d4000-b62e9000 r-xp 00000000 b3:06 9996       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libzip.so
+b62e9000-b62f0000 ---p 00015000 b3:06 9996       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libzip.so
+b62f0000-b62f1000 rw-p 00014000 b3:06 9996       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libzip.so
+b62f1000-b62fb000 r-xp 00000000 b3:06 12121      /lib/arm-linux-gnueabihf/libnss_files-2.13.so
+b62fb000-b6302000 ---p 0000a000 b3:06 12121      /lib/arm-linux-gnueabihf/libnss_files-2.13.so
+b6302000-b6303000 r--p 00009000 b3:06 12121      /lib/arm-linux-gnueabihf/libnss_files-2.13.so
+b6303000-b6304000 rw-p 0000a000 b3:06 12121      /lib/arm-linux-gnueabihf/libnss_files-2.13.so
+b6304000-b630d000 r-xp 00000000 b3:06 12107      /lib/arm-linux-gnueabihf/libnss_nis-2.13.so
+b630d000-b6314000 ---p 00009000 b3:06 12107      /lib/arm-linux-gnueabihf/libnss_nis-2.13.so
+b6314000-b6315000 r--p 00008000 b3:06 12107      /lib/arm-linux-gnueabihf/libnss_nis-2.13.so
+b6315000-b6316000 rw-p 00009000 b3:06 12107      /lib/arm-linux-gnueabihf/libnss_nis-2.13.so
+b6316000-b6327000 r-xp 00000000 b3:06 12157      /lib/arm-linux-gnueabihf/libnsl-2.13.so
+b6327000-b632e000 ---p 00011000 b3:06 12157      /lib/arm-linux-gnueabihf/libnsl-2.13.so
+b632e000-b632f000 r--p 00010000 b3:06 12157      /lib/arm-linux-gnueabihf/libnsl-2.13.so
+b632f000-b6330000 rw-p 00011000 b3:06 12157      /lib/arm-linux-gnueabihf/libnsl-2.13.so
+b6330000-b6332000 rw-p 00000000 00:00 0 
+b6332000-b6338000 r-xp 00000000 b3:06 12137      /lib/arm-linux-gnueabihf/libnss_compat-2.13.so
+b6338000-b633f000 ---p 00006000 b3:06 12137      /lib/arm-linux-gnueabihf/libnss_compat-2.13.so
+b633f000-b6340000 r--p 00005000 b3:06 12137      /lib/arm-linux-gnueabihf/libnss_compat-2.13.so
+b6340000-b6341000 rw-p 00006000 b3:06 12137      /lib/arm-linux-gnueabihf/libnss_compat-2.13.so
+b6341000-b6361000 r-xp 00000000 b3:06 12196      /lib/arm-linux-gnueabihf/libgcc_s.so.1
+b6361000-b6368000 ---p 00020000 b3:06 12196      /lib/arm-linux-gnueabihf/libgcc_s.so.1
+b6368000-b6369000 rw-p 0001f000 b3:06 12196      /lib/arm-linux-gnueabihf/libgcc_s.so.1
+b6369000-b638b000 r-xp 00000000 b3:06 9970       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libjava.so
+b638b000-b6393000 ---p 00022000 b3:06 9970       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libjava.so
+b6393000-b6394000 rw-p 00022000 b3:06 9970       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libjava.so
+b6394000-b639d000 r-xp 00000000 b3:06 9985       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libverify.so
+b639d000-b63a5000 ---p 00009000 b3:06 9985       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libverify.so
+b63a5000-b63a6000 rw-p 00009000 b3:06 9985       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/libverify.so
+b63a6000-b63ac000 r-xp 00000000 b3:06 12297      /lib/arm-linux-gnueabihf/librt-2.13.so
+b63ac000-b63b3000 ---p 00006000 b3:06 12297      /lib/arm-linux-gnueabihf/librt-2.13.so
+b63b3000-b63b4000 r--p 00005000 b3:06 12297      /lib/arm-linux-gnueabihf/librt-2.13.so
+b63b4000-b63b5000 rw-p 00006000 b3:06 12297      /lib/arm-linux-gnueabihf/librt-2.13.so
+b63b5000-b63b8000 ---p 00000000 00:00 0 
+b63b8000-b6405000 rw-p 00000000 00:00 0          [stack:4528]
+b6405000-b646d000 r-xp 00000000 b3:06 12151      /lib/arm-linux-gnueabihf/libm-2.13.so
+b646d000-b6474000 ---p 00068000 b3:06 12151      /lib/arm-linux-gnueabihf/libm-2.13.so
+b6474000-b6475000 r--p 00067000 b3:06 12151      /lib/arm-linux-gnueabihf/libm-2.13.so
+b6475000-b6476000 rw-p 00068000 b3:06 12151      /lib/arm-linux-gnueabihf/libm-2.13.so
+b6476000-b692f000 r-xp 00000000 b3:06 9999       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/client/libjvm.so
+b692f000-b6936000 ---p 004b9000 b3:06 9999       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/client/libjvm.so
+b6936000-b695c000 rw-p 004b8000 b3:06 9999       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/client/libjvm.so
+b695c000-b6d79000 rw-p 00000000 00:00 0 
+b6d79000-b6e9c000 r-xp 00000000 b3:06 12301      /lib/arm-linux-gnueabihf/libc-2.13.so
+b6e9c000-b6ea3000 ---p 00123000 b3:06 12301      /lib/arm-linux-gnueabihf/libc-2.13.so
+b6ea3000-b6ea5000 r--p 00122000 b3:06 12301      /lib/arm-linux-gnueabihf/libc-2.13.so
+b6ea5000-b6ea6000 rw-p 00124000 b3:06 12301      /lib/arm-linux-gnueabihf/libc-2.13.so
+b6ea6000-b6ea9000 rw-p 00000000 00:00 0 
+b6ea9000-b6eab000 r-xp 00000000 b3:06 12171      /lib/arm-linux-gnueabihf/libdl-2.13.so
+b6eab000-b6eb2000 ---p 00002000 b3:06 12171      /lib/arm-linux-gnueabihf/libdl-2.13.so
+b6eb2000-b6eb3000 r--p 00001000 b3:06 12171      /lib/arm-linux-gnueabihf/libdl-2.13.so
+b6eb3000-b6eb4000 rw-p 00002000 b3:06 12171      /lib/arm-linux-gnueabihf/libdl-2.13.so
+b6eb4000-b6ec7000 r-xp 00000000 b3:06 9979       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/jli/libjli.so
+b6ec7000-b6ece000 ---p 00013000 b3:06 9979       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/jli/libjli.so
+b6ece000-b6ecf000 rw-p 00012000 b3:06 9979       /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/arm/jli/libjli.so
+b6ecf000-b6ee3000 r-xp 00000000 b3:06 12168      /lib/arm-linux-gnueabihf/libpthread-2.13.so
+b6ee3000-b6eea000 ---p 00014000 b3:06 12168      /lib/arm-linux-gnueabihf/libpthread-2.13.so
+b6eea000-b6eeb000 r--p 00013000 b3:06 12168      /lib/arm-linux-gnueabihf/libpthread-2.13.so
+b6eeb000-b6eec000 rw-p 00014000 b3:06 12168      /lib/arm-linux-gnueabihf/libpthread-2.13.so
+b6eec000-b6eee000 rw-p 00000000 00:00 0 
+b6ef1000-b6ef9000 rw-s 00000000 b3:06 14075      /tmp/hsperfdata_pi/4527
+b6ef9000-b6efb000 r-xp 00000000 b3:06 162589     /usr/lib/arm-linux-gnueabihf/libcofi_rpi.so
+b6efb000-b6f02000 ---p 00002000 b3:06 162589     /usr/lib/arm-linux-gnueabihf/libcofi_rpi.so
+b6f02000-b6f03000 rw-p 00001000 b3:06 162589     /usr/lib/arm-linux-gnueabihf/libcofi_rpi.so
+b6f03000-b6f20000 r-xp 00000000 b3:06 12217      /lib/arm-linux-gnueabihf/ld-2.13.so
+b6f22000-b6f23000 r--p 00000000 00:00 0 
+b6f23000-b6f27000 rw-p 00000000 00:00 0 
+b6f27000-b6f28000 r-xp 00000000 00:00 0          [sigpage]
+b6f28000-b6f29000 r--p 0001d000 b3:06 12217      /lib/arm-linux-gnueabihf/ld-2.13.so
+b6f29000-b6f2a000 rw-p 0001e000 b3:06 12217      /lib/arm-linux-gnueabihf/ld-2.13.so
+be907000-be928000 rw-p 00000000 00:00 0          [stack]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+
+VM Arguments:
+jvm_args: -Djava.util.logging.config.file=./server/apache-tomcat-8.0.24/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xmx512m -XX:MaxPermSize=256m -XX:PermSize=256m -Djava.endorsed.dirs=./server/apache-tomcat-8.0.24/endorsed -Dcatalina.base=./server/apache-tomcat-8.0.24 -Dcatalina.home=./server/apache-tomcat-8.0.24 -Djava.io.tmpdir=./server/apache-tomcat-8.0.24/temp 
+java_command: org.apache.catalina.startup.Bootstrap start
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x455d80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x455d80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x357bac], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x357bac], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x357bac], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x357bac], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x357ef0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:7.5
+
+uname:Linux 3.12.22+ #691 PREEMPT Wed Jun 18 18:29:58 BST 2014 armv6l
+libc:glibc 2.13 NPTL 2.13 
+rlimit: STACK 8192k, CORE 0k, NPROC 3434, NOFILE 4096, AS infinity
+load average:0.17 0.43 0.87
+
+/proc/meminfo:
+MemTotal:         447996 kB
+MemFree:           14528 kB
+Buffers:            7940 kB
+Cached:           105496 kB
+SwapCached:        10296 kB
+Active:           205300 kB
+Inactive:         204684 kB
+Active(anon):     150276 kB
+Inactive(anon):   148800 kB
+Active(file):      55024 kB
+Inactive(file):    55884 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:        102396 kB
+SwapFree:          48328 kB
+Dirty:               136 kB
+Writeback:             0 kB
+AnonPages:        286288 kB
+Mapped:            31720 kB
+Shmem:              2496 kB
+Slab:              10312 kB
+SReclaimable:       5288 kB
+SUnreclaim:         5024 kB
+KernelStack:        1904 kB
+PageTables:         3112 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      326392 kB
+Committed_AS:     648432 kB
+VmallocTotal:     565248 kB
+VmallocUsed:        4076 kB
+VmallocChunk:     327980 kB
+
+
+CPU:total 1 (ARMv6), vfp
+
+/proc/cpuinfo:
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+Features	: swp half thumb fastmult vfp edsp java tls 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2708
+Revision	: 0010
+Serial		: 000000009dc14d6d
+
+
+Memory: 4k page, physical 447996k(14528k free), swap 102396k(48328k free)
+
+vm_info: Java HotSpot(TM) Client VM (24.0-b56) for linux-arm-vfp-hflt JRE (1.7.0_40-b43), built on Aug 26 2013 21:44:37 by "java_re" with gcc 4.7.2 20120910 (prerelease)
+
+time: Tue Jun  7 13:40:21 2016
+elapsed time: 0 seconds
+
