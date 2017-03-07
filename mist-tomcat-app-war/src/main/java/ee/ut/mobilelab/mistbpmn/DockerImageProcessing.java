@@ -4,6 +4,8 @@ import com.github.kevinsawicki.http.HttpRequest;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.Expression;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.camunda.bpm.model.bpmn.instance.Extension;
+import org.camunda.bpm.model.bpmn.instance.ExtensionElements;
 
 import java.io.BufferedReader;
 import java.io.File;
