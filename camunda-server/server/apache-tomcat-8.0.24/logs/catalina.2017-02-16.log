@@ -1,8 +1,0 @@
-16-Feb-2017 09:10:46.221 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14015 Shutting down the JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor]
-16-Feb-2017 09:10:46.231 INFO [20] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-14020 JobExecutor[org.camunda.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] stopped job acquisition
-16-Feb-2017 09:10:46.467 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
-16-Feb-2017 09:10:46.474 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-00007 Process Engine default closed
-16-Feb-2017 09:10:46.481 INFO [Thread-8] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08049 Camunda BPM platform stopped at 'Apache Tomcat/8.0.24'
-16-Feb-2017 09:10:46.484 INFO [Thread-8] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
-16-Feb-2017 09:10:49.567 INFO [Thread-8] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
-16-Feb-2017 09:10:49.622 INFO [Thread-8] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
