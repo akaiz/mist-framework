@@ -1,1 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea/inspectionProfiles/
+mist-deployer-app/src/main/resources/static/
+mist-deployer-app/src/main/resources/templates/
+mist-docker-container/src/main/resources/static/
+mist-docker-container/src/main/resources/templates/

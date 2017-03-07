@@ -7,6 +7,9 @@
       <bpmn:extensionElements>
         <camunda:field name="imageUrl">        <camunda:string>/Users/agabaisaac/mist/mist_img.jpg</camunda:string>
 </camunda:field>
+        <camunda:properties>
+          <camunda:property name="mist_url" value="agaba" />
+        </camunda:properties>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0ythlkj</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_10jb2np</bpmn:outgoing>
@@ -19,6 +22,9 @@
 </camunda:field>
         <camunda:field name="imagePath">        <camunda:string>/Users/agabaisaac/mist/mist_img.jpg</camunda:string>
 </camunda:field>
+        <camunda:properties>
+          <camunda:property name="mist_url" value="agaba" />
+        </camunda:properties>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_1nsh3ry</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0vs02xb</bpmn:outgoing>
