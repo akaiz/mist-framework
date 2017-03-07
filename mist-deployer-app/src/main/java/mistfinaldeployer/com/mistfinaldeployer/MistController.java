@@ -51,8 +51,16 @@ class Node{
         this.mist_files_path = mist_files_path;
     }
 
+    public String getMist_file() {
+        return mist_file;
+    }
+
+    public void setMist_file(String mist_file) {
+        this.mist_file = mist_file;
+    }
     String url;
     String mist_files_path;
+    String mist_file;
 }
 
 @RestController
@@ -217,7 +225,7 @@ public class MistController {
             }
 
             File war = new File(mistFilesPath+"mist-0.war");
-            File mist_file = new File(mistFilesPath+"mist_file.txt");
+            File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req = new HttpPost(node.url);
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("node", "node name ");
