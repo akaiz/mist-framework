@@ -31,6 +31,7 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
     public void execute(DelegateExecution execution) throws Exception {
         LOGGER.info("Here in the image fetcher started");
         String imageUrlValue = (String) imageUrl.getValue(execution);
+
         File file = new File(imageUrlValue);
         File folder = new File(file.getParent());
            if(!folder.exists()){

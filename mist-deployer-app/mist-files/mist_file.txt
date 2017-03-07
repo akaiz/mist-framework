@@ -1,6 +1,7 @@
 {"messageName" : "instantiationMessageOpenHab",
 "businessKey" : "aBusinessKey",
 "processVariables" : {"callbackUrl" : {"value" : "http://192.168.0.100","type": "String"},
-                      "image_already_exists" : {"value" : "no","type": "String"}
+                      "image_already_exists" : {"value" : "no","type": "String"},
+                      "remote_image_url": {"value" : "no","type": "String"}
 }
  }
