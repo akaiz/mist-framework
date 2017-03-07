@@ -17,20 +17,16 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
     private static final Logger LOGGER = Logger.getLogger("CallBack");
     Expression imageUrl;
 
-
-
-
     public ImageFetcher() {
 
         super();
-
-
 
     }
 
     public void execute(DelegateExecution execution) throws Exception {
         LOGGER.info("Here in the image fetcher started");
         String imageUrlValue = (String) imageUrl.getValue(execution);
+
         File file = new File(imageUrlValue);
         File folder = new File(file.getParent());
            if(!folder.exists()){
@@ -41,7 +37,6 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
            execution.setVariable("fetch","success");
 
           LOGGER.info("Here in the image fetcher download complete");
-
 
 
 

@@ -5,7 +5,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_1mnguoa" sourceRef="StartEvent_03g2xth" targetRef="ExclusiveGateway_0hrf2ol" />
     <bpmn:serviceTask id="Task_15xi7y8" name="Image Fetcher" camunda:class="ee.ut.mobilelab.mistbpmn.ImageFetcher">
       <bpmn:extensionElements>
-        <camunda:field name="imageUrl">        <camunda:string>/Users/agabaisaac/mist/mist_img.jpg</camunda:string>
+        <camunda:field name="imageUrl">        <camunda:string>/home/pi/mist/mist_img.jpg</camunda:string>
 </camunda:field>
         <camunda:properties>
           <camunda:property name="mist_url" value="agaba" />
@@ -20,7 +20,7 @@
 </camunda:field>
         <camunda:field name="command">        <camunda:string>findDorminantColour</camunda:string>
 </camunda:field>
-        <camunda:field name="imagePath">        <camunda:string>/Users/agabaisaac/mist/mist_img.jpg</camunda:string>
+        <camunda:field name="imagePath">        <camunda:string>/home/pi/mist/mist_img.jpg</camunda:string>
 </camunda:field>
         <camunda:properties>
           <camunda:property name="mist_url" value="agaba" />

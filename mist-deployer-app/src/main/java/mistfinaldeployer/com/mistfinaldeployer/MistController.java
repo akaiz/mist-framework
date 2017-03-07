@@ -32,6 +32,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import java.io.*;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 class Node{
@@ -51,13 +52,22 @@ class Node{
         this.mist_files_path = mist_files_path;
     }
 
+    public String getMist_file() {
+        return mist_file;
+    }
+
+    public void setMist_file(String mist_file) {
+        this.mist_file = mist_file;
+    }
     String url;
     String mist_files_path;
+    String mist_file;
 }
 
 @RestController
 public class MistController {
-    static CredentialsProvider credsProvider = new BasicCredentialsProvider();
+     CredentialsProvider credsProvider = new BasicCredentialsProvider();
+
     String realPathtoUploads,mistpath;
 
     Boolean mistStarted = false;
@@ -95,11 +105,132 @@ public class MistController {
         return response2.toString();
     }
 
-
-
     @RequestMapping(value = "/deploy", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> uploadFile(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile) throws IOException {
+    public ResponseEntity<?> uploadFile(@RequestParam("war") MultipartFile uploadfile   ,  @RequestParam("mist") MultipartFile mistfile) throws IOException {
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        try {
+
+            if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
+
+
+                String uploadsDir = "/uploads/";
+                realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
+                if(! new File(realPathtoUploads).exists())
+                {
+                    new File(realPathtoUploads).mkdirs();
+                }
+
+                String filename = uploadfile.getOriginalFilename();
+                String directory = realPathtoUploads;
+                mistpath = Paths.get(directory, filename).toString();
+
+                // Save the file locally
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(mistpath)));
+                stream.write(uploadfile.getBytes());
+                stream.close();
+
+//        Getting data from the mist file
+
+                String mistFilename = mistfile.getOriginalFilename();
+
+                String filepath2 = Paths.get(directory, mistFilename).toString();
+
+                stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
+                stream.write(mistfile.getBytes());
+                stream.close();
+
+
+
+                BufferedReader br = new BufferedReader(new FileReader(filepath2));
+                try {
+                    StringBuilder sb = new StringBuilder();
+                    String line = br.readLine();
+
+                    while (line != null) {
+                        sb.append(line);
+                        sb.append("\n");
+                        line = br.readLine();
+                    }
+                    startRequest=sb.toString();
+                } finally {
+                    br.close();
+                }
+                // deploying to tomcat and  start
+
+
+                return new ResponseEntity<>(deploy(),HttpStatus.OK);
+            }
+
+            return new ResponseEntity<>("PLEASE PROVIDE CORRECT INPUT",HttpStatus.OK);
+
+
+
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+
+    }
+    // deploy file to camunda
+
+    private  String deploy() throws ClientProtocolException, IOException {
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+         System.out.println("hefrerer"+mistpath);
+        if(mistpath!=null){
+            String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
+            // get this war generated from the maveen install of the mist-bpmn war
+            File file = new File (mistpath) ;
+            HttpPut req = new HttpPut(url) ;
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("fileDescription", "war file to deploy");
+            //"application/octect-stream"
+            meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
+            req.setEntity(meb.build()) ;
+            String response = executeRequest (req, credsProvider);
+
+            System.out.println("Response after depoly  : "+response);
+
+            return response;
+
+            // Auto starting Commented out
+//            mistStarted=true;
+//
+//            // Starting the  depoloyed machine
+//
+//            String postText = startRequest;
+//            System.out.println("Post request sent with this data "+postText);
+//
+//            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+//            Gson gson          = new Gson();
+//            HttpClient httpClient    = HttpClientBuilder.create().build();
+//            HttpPost post          = new HttpPost(postUrl);
+//            System.out.println(postText);
+//            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+//            post.setEntity(postingString);
+//            post.setHeader("Content-type", "application/json");
+//
+//            System.out.println("Request being processed .......................");
+//            HttpResponse  response2 = httpClient.execute(post);
+//            return  response2.toString();
+        }
+        else {
+            return "Are you sure you uplload the mist war";
+        }
+
+
+    }
+
+
+
+
+
+    @RequestMapping(value = "/deploynode",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile) throws IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         try {
 
@@ -119,7 +250,6 @@ public class MistController {
                     new File(realPathtoUploads).mkdirs();
 
                 }
-
                 String filename = uploadfile.getOriginalFilename();
                 String directory = realPathtoUploads;
                 mistpath = Paths.get(directory, filename).toString();
@@ -178,7 +308,12 @@ public class MistController {
 
     private  String deployToCamunda() throws ClientProtocolException, IOException {
         if(mistpath!=null){
-            undeploy();
+           undeploy();
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
 
@@ -193,7 +328,7 @@ public class MistController {
 
             System.out.println("Response after depoly  : "+response);
 
-            return sendRequest();
+            return response;
 
 
         }
@@ -217,7 +352,7 @@ public class MistController {
             }
 
             File war = new File(mistFilesPath+"mist-0.war");
-            File mist_file = new File(mistFilesPath+"mist_file.txt");
+            File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req = new HttpPost(node.url);
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("node", "node name ");

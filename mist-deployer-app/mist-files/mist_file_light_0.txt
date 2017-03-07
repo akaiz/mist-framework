@@ -1,0 +1,6 @@
+{"messageName" : "instantiationMessageOpenHab",
+"businessKey" : "aBusinessKey",
+"processVariables" : {"call_back_url" : {"value" : "call_back_url","type": "String"},
+ "image_already_exists":{"value" : "yes","type": "String"}
+}
+}
