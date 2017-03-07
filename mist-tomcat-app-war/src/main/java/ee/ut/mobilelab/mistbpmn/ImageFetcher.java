@@ -45,7 +45,6 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
 
 
 
-
     }
     private  void downloadUsingNIO(String urlStr, String file) throws IOException {
         URL url = new URL(urlStr);
