@@ -17,14 +17,9 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
     private static final Logger LOGGER = Logger.getLogger("CallBack");
     Expression imageUrl;
 
-
-
-
     public ImageFetcher() {
 
         super();
-
-
 
     }
 
