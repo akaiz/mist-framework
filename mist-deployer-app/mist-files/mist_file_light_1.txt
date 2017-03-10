@@ -1,7 +1,7 @@
 
  {"messageName" : "instantiationMessageOpenHab",
  "businessKey" : "aBusinessKey",
- "processVariables" : {"call_back_url" : {"value" : "http://192.168.0.100","type": "String"},
+ "processVariables" : {"call_back_url" : {"value" : "http://192.168.0.103/callback","type": "String"},
  "remote_image_url" : {"value" : "https://staticdelivery.nexusmods.com/mods/110/images/74627-0-1459502036.jpg","type": "String"} ,
   "image_already_exists":{"value" : "no","type": "String"}
  }
