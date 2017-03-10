@@ -26,13 +26,13 @@ public class CallBack extends DockerCommands implements JavaDelegate {
             LOGGER.info("Sending response to callback "+callBackUrl);
 
 
-            HttpClient httpClient    = HttpClientBuilder.create().build();
-            HttpPost post          = new HttpPost(callBackUrl);
-            StringEntity postingString = new StringEntity("task finshed","UTF-8");//gson.tojson() converts your pojo to json
-            post.setEntity(postingString);
-            post.setHeader("Content-type", "application/json");
-            HttpResponse response2 = httpClient.execute(post);
-            LOGGER.info("Response from the call back"+response2);
+//            HttpClient httpClient    = HttpClientBuilder.create().build();
+//            HttpPost post          = new HttpPost(callBackUrl);
+//            StringEntity postingString = new StringEntity("task finshed","UTF-8");//gson.tojson() converts your pojo to json
+//            post.setEntity(postingString);
+//            post.setHeader("Content-type", "application/json");
+//            HttpResponse response2 = httpClient.execute(post);
+//            LOGGER.info("Response from the call back"+response2);
 
 
     }
