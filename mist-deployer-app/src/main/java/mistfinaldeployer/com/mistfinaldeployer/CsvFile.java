@@ -13,7 +13,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class CsvFile {
-      static String fileName = "/home/pi/desktop/mist-framework/mistlog.csv";
+      static String fileName = "/home/pi/Desktop/mist-framework/mistlog.csv";
       public CsvFile(){
 
       }
