@@ -13,12 +13,12 @@ import java.util.Collection;
 import java.util.List;
 
 public class CsvFile {
-      static String fileName = "/Users/agabaisaac/iot/mist-framework/mistlog.csv";
+      static String fileName = "/home/pi/Desktop/mist-framework/mistlog.csv";
       public CsvFile(){
 
       }
 
-    public  static void write(String name,String start,String end) throws IOException {
+    public  static String write(String name,String start,String end) throws IOException {
         CsvWriter csvWriter = new CsvWriter();
         Collection<String[]> data = new ArrayList<>();
         if(! new File(fileName).exists())
@@ -30,6 +30,7 @@ public class CsvFile {
         data.add(new String[] { "value1", "value2" });
 
        csvWriter.write(Paths.get(fileName), StandardCharsets.UTF_8, data);
+       return  "done";
     }
 
 
