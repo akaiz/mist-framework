@@ -1,39 +1,42 @@
 package mistfinaldeployer.com.mistfinaldeployer;
 
-
-import com.opencsv.CSVWriter;
-import de.siegmar.fastcsv.writer.CsvWriter;
-
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 public class CsvFile {
-      static String fileName = "/home/pi/Desktop/mist-framework/mistlog.csv";
+      static String fileName = "/Users/agabaisaac/iot/mist-framework/mist-deployer-app/mistlog.csv";
+
       public CsvFile(){
 
       }
 
-    public  static String write(String name,String start,String end) throws IOException {
-        CsvWriter csvWriter = new CsvWriter();
-        Collection<String[]> data = new ArrayList<>();
-        if(! new File(fileName).exists())
-        {
-            new File(fileName).mkdirs();
-        }
+    public  static String write(String id,String name,String time) throws IOException {
+
+        String newLine = System.getProperty("line.separator");
+
+        PrintWriter printWriter = null;
         File file = new File(fileName);
+        try {
+            if(!file.exists()){
+                file.createNewFile();
+                printWriter = new PrintWriter(new FileOutputStream(fileName, true));
+                printWriter.write( "id,title,start,end");
+            }
 
-        data.add(new String[] { "value1", "value2" });
-
-       csvWriter.write(Paths.get(fileName), StandardCharsets.UTF_8, data);
-       return  "done";
+            printWriter = new PrintWriter(new FileOutputStream(fileName, true));
+            printWriter.write( newLine+id+","+name+","+time);
+        } catch (IOException ioex) {
+            ioex.printStackTrace();
+        } finally {
+            if (printWriter != null) {
+                printWriter.flush();
+                printWriter.close();
+            }
+        }
+        return  "xs";
     }
-
-
 }
+
+
+
 
 

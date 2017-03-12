@@ -31,7 +31,11 @@ import javax.servlet.http.HttpServletRequest;
 
 
 import java.io.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.nio.file.Paths;
+import java.sql.Timestamp;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -62,22 +66,69 @@ class Node{
     String url;
     String mist_files_path;
     String mist_file;
+
 }
+class Callback{
+    String name;
+    String start;
+    String end;
+    String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
+
+
+}
+
 
 @RestController
 public class MistController {
-     CredentialsProvider credsProvider = new BasicCredentialsProvider();
-
+    CredentialsProvider credsProvider = new BasicCredentialsProvider();
+    InetAddress myIP= InetAddress.getLocalHost();
     String realPathtoUploads,mistpath;
-
+    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+    long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
     @Autowired
     private HttpServletRequest request;
+
+    public MistController() throws UnknownHostException {
+    }
+
     @RequestMapping("/stop")
     public String stop() throws IOException {
         if(mistStarted){
-           return undeploy();
+           return undeploy("");
         }
 
         return "Bpmn not started";
@@ -196,24 +247,20 @@ public class MistController {
 
             return response;
 
-
         }
         else {
             return "Are you sure you uplload the mist war";
         }
 
-
     }
-
-
-
-
-
     @RequestMapping(value = "/deploynode",method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile) throws IOException {
+    public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile,
+                                           @RequestParam("callback") String callback,@RequestParam("processId") String processId) throws IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+
         try {
+            CsvFile.write(processId,"Recieved deployment ", timestamp.getTime()+"");
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
 
@@ -270,7 +317,7 @@ public class MistController {
                 // deploying to tomcat and  start
 
 
-                return new ResponseEntity<>(deployToCamunda(),HttpStatus.OK);
+                return new ResponseEntity<>(deployToCamunda(processId),HttpStatus.OK);
             }
 
             return new ResponseEntity<>("PLEASE PROVIDE CORRECT INPUT",HttpStatus.OK);
@@ -287,9 +334,9 @@ public class MistController {
     }
     // deploy file to camunda
 
-    private  String deployToCamunda() throws ClientProtocolException, IOException {
+    private  String deployToCamunda(String processId) throws ClientProtocolException, IOException {
         if(mistpath!=null){
-           undeploy();
+           undeploy(processId);
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
@@ -297,7 +344,7 @@ public class MistController {
             }
             String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
-
+            CsvFile.write(processId,"Started deployment to Camunda", timestamp.getTime()+"");
             File file = new File (mistpath) ;
             HttpPut req = new HttpPut(url) ;
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
@@ -308,6 +355,8 @@ public class MistController {
             String response = executeRequest (req, credsProvider);
 
             System.out.println("Response after depoly  : "+response);
+            CsvFile.write(processId,"Finished deployment to Camunda", timestamp.getTime()+"");
+
 
                         // Starting the  depoloyed machine
 
@@ -325,6 +374,7 @@ public class MistController {
 
             System.out.println("Request being processed .......................");
             HttpResponse  response2 = httpClient.execute(post);
+            CsvFile.write(processId,"Started tomcat app", timestamp.getTime()+"");
             return  response2.toString();
 
 
@@ -339,25 +389,73 @@ public class MistController {
     @RequestMapping(value = "deploy/node", method = RequestMethod.POST)
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         if (node.url != null) {
+            startTime =timestamp.getTime();
+            String processId = randomString(5);
 
             String mistFilesPath =node.mist_files_path;
-
             if(! new File(mistFilesPath).exists())
             {
 
                 return  "Missing mist files at "+mistFilesPath;
             }
+            // Dyanamically adding the device ip address wc we will use at the call back
+            String tempFile = mistFilesPath+"mis_temp.txt";
 
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
+            BufferedWriter bw = null;
+            FileWriter fw = null;
+            fw = new FileWriter(tempFile);
+            bw = new BufferedWriter(fw);
+
+
+            BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
+            try {
+                StringBuilder sb = new StringBuilder();
+                String line = br.readLine();
+                String newLine = System.getProperty("line.separator");
+
+                while (line != null) {
+                    if(line.contains("call_back_url")){
+                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+"\",\"type\": \"String\"},";
+                    }
+                    // Always write the line, whether you changed it or not.
+                    bw.write(line+newLine);
+
+                    line = br.readLine();
+                }
+                startRequest=sb.toString();
+
+            } finally {
+                br.close();
+            }
+            try {
+
+                if (bw != null)
+                    bw.close();
+
+                if (fw != null)
+                    fw.close();
+                File realName = new File(mistFilesPath+node.getMist_file());
+                realName.delete(); // remove the old file
+                new File(tempFile).renameTo(realName); // Rename temp file
+
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+
+            }
+            CsvFile.write(processId,"Started deployment", timestamp.getTime()+"");
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req = new HttpPost(node.url);
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            meb.addTextBody("node", "node name ");
+            meb.addTextBody("callback", "http://"+myIP.getHostAddress()+"/callback");
+            meb.addTextBody("processId",processId);
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
             req.setEntity(meb.build());
             String response = executeRequest(req, credsProvider);
-
             System.out.println("Response after depoly  : " + response);
 
             return response;
@@ -365,23 +463,28 @@ public class MistController {
         return "Sorry empty url supplied";
     }
 
-        public  String undeploy() throws ClientProtocolException, IOException{
+        public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+            CsvFile.write(processId,"Started un deployment to Camunda", timestamp.getTime()+"");
         String url = "http://localhost:8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
+        CsvFile.write(processId,"Finished un deployment to Camunda", timestamp.getTime()+"");
         return  response;
-
-
-
     }
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
-    public String callback(@RequestParam("response")  String response  ) throws IOException {
-        return CsvFile.write("audio","12:00","12:15");
+    public String callbackAllFinshed(@RequestParam("response")  String response  ) throws IOException {
+      return  "received";
 
+    }
+    @RequestMapping(value = "/callback/time", method = RequestMethod.POST)
+    @ResponseBody
 
+    public String callbackTime(@RequestBody  Callback callback  ) throws IOException {
+
+        return CsvFile.write(callback.getId(),callback.getName(),callback.getStart());
 
     }
 
@@ -443,7 +546,23 @@ public class MistController {
             file.delete();
             System.out.println("File is deleted : " + file.getAbsolutePath());
         }
+
     }
+
+    public static String randomString(int length){
+        String alphabet =
+                new String("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"); //9
+        int n = alphabet.length(); //10
+
+        String result = new String();
+        Random r = new Random(); //11
+
+        for (int i=0; i<length; i++) //12
+            result = result + alphabet.charAt(r.nextInt(n)); //13
+
+        return result;
+    }
+
 
 }
 
