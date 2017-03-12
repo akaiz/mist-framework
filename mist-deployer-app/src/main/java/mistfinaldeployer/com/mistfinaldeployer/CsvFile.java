@@ -3,7 +3,7 @@ package mistfinaldeployer.com.mistfinaldeployer;
 import java.io.*;
 
 public class CsvFile {
-      static String fileName = "/Users/agabaisaac/iot/mist-framework/mist-deployer-app/mistlog.csv";
+      static String fileName = "/home/pi/Desktop/mist-framework/mist-deployer-app/mistlog.csv";
 
       public CsvFile(){
 
