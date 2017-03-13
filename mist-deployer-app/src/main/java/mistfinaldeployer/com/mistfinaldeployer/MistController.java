@@ -493,8 +493,11 @@ public class MistController {
     @ResponseBody
 
     public String callbackTime(@RequestBody  Callback callback  ) throws IOException {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        String time= timestamp.getTime()+"";
 
-        return CsvFile.write(callback.getId(),callback.getName(),callback.getStart());
+    CsvFile.write(callback.getId(),callback.getName(),callback.getStart());
+        return time;
 
     }
 
