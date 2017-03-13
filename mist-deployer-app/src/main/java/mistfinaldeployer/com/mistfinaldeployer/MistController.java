@@ -115,7 +115,7 @@ public class MistController {
     CredentialsProvider credsProvider = new BasicCredentialsProvider();
     InetAddress myIP= InetAddress.getLocalHost();
     String realPathtoUploads,mistpath;
-    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
@@ -260,6 +260,7 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
 
         try {
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             CsvFile.write(processId,"Recieved deployment ", timestamp.getTime()+"");
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
@@ -338,7 +339,7 @@ public class MistController {
         if(mistpath!=null){
            String undeployresponse = undeploy(processId);
            if(undeployresponse.length()>0){
-
+               Timestamp timestamp = new Timestamp(System.currentTimeMillis());
                try {
                    TimeUnit.SECONDS.sleep(2);
                } catch (InterruptedException e) {
@@ -396,6 +397,7 @@ public class MistController {
     @RequestMapping(value = "deploy/node", method = RequestMethod.POST)
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         if (node.url != null) {
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             startTime =timestamp.getTime();
             String processId = randomString(5);
 
@@ -472,6 +474,7 @@ public class MistController {
 
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             CsvFile.write(processId,"Started un deployment to Camunda", timestamp.getTime()+"");
         String url = "http://localhost:8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
