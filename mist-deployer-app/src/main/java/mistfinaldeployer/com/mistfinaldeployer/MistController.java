@@ -67,6 +67,15 @@ class Node{
     String mist_files_path;
     String mist_file;
 
+    public String getCall_back_ip() {
+        return call_back_ip;
+    }
+
+    public void setCall_back_ip(String call_back_ip) {
+        this.call_back_ip = call_back_ip;
+    }
+
+    String call_back_ip;
 }
 class Callback{
     String name;
@@ -420,7 +429,7 @@ public class MistController {
 
                 while (line != null) {
                     if(line.contains("call_back_url")){
-                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+":8098\\callback\",\"type\": \"String\"},";
+                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+":8098/callback\",\"type\": \"String\"},";
                     }
                     if(line.contains("log_id")){
                         line =" \"log_id\":{\"value\" :"+processId+" \"log\",\"type\": \"String\"}";
@@ -457,7 +466,7 @@ public class MistController {
             File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req = new HttpPost(node.url);
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            meb.addTextBody("callback", "http://"+getIpAddress()+"/callback");
+            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
             meb.addTextBody("processId",processId);
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
