@@ -1,0 +1,11 @@
+09-Mar-2017 19:39:15.656 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Mar-2017 19:39:15.656 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log HTMLManager: init: Global resources are available
+09-Mar-2017 19:39:15.676 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+09-Mar-2017 19:39:24.287 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log HTMLManager: undeploy: Undeploying web application at '/mist-0'
+09-Mar-2017 19:39:25.442 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+09-Mar-2017 19:39:58.813 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Mar-2017 19:39:58.813 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+09-Mar-2017 19:39:58.814 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: deploy: Deploying web application '/mistBpmn'
+09-Mar-2017 19:39:58.814 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: Uploading WAR file to /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war.tmp
+09-Mar-2017 19:43:53.514 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/mistBpmn'
+09-Mar-2017 19:44:28.913 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
