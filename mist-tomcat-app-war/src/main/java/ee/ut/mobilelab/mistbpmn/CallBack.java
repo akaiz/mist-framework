@@ -1,6 +1,7 @@
 package ee.ut.mobilelab.mistbpmn;
 
 
+import com.github.kevinsawicki.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -25,20 +26,14 @@ public class CallBack extends DockerCommands implements JavaDelegate {
         String callBackUrl = (String)execution.getVariable("call_back_url");
         if(callBackUrl!=null){
             LOGGER.info("Sending response to callback "+callBackUrl);
+            CsvFile.write(execution.getVariable("log_id").toString(),"Sending response to callback");
 
-
-            HttpClient httpClient    = HttpClientBuilder.create().build();
-            HttpPost post          = new HttpPost("http://192.168.0.103:8098ß/callback/time");
-            String data ="{\"name\": \"name\",\n" +
-                    "\"id\":\"233\",\n" +
-                    "\"start\":"+timestamp.getTime()+"\"\"\n" +
-                    "}";
-            StringEntity postingString = new StringEntity("task finshed","UTF-8");
-            post.setEntity(postingString);
-            post.setHeader("Content-type", "application/json");
-            HttpResponse response2 = httpClient.execute(post);
-            LOGGER.info("Response from the call back"+response2);
+             String response = HttpRequest.post(callBackUrl).send("response="+execution.getVariable("log_id")).message();
+             LOGGER.info("Response from the call back"+response);
 
 
     }
-}}
+}
+
+
+}

@@ -39,7 +39,6 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
         String imageUrlValue = (String) imagePath.getValue(execution);
         super.stopContainers(dockerImageValue);
 
-
         File file = new File(imageUrlValue);
         File folder = new File(file.getParent());
         if(file.exists()){
@@ -56,8 +55,10 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
 
                 if(line.contains("Tomcat started on port(s)")){
                     LOGGER.info(timestamp+" Mist-docker  started \n");
+                    CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  started");
                     String processRequest ="http://localhost:8090/image?task="+commandValue+"&imagePath=/mist/"+file.getName();
                     String response = HttpRequest.get(processRequest).body();
+                    CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed");
                     execution.setVariable("response",response);
 
                     break;

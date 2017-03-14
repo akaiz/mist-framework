@@ -31,10 +31,10 @@ import javax.servlet.http.HttpServletRequest;
 
 
 import java.io.*;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.net.*;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
+import java.util.Enumeration;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -261,7 +261,7 @@ public class MistController {
 
         try {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            CsvFile.write(processId,"Recieved deployment ", timestamp.getTime()+"");
+            CsvFile.write(processId,"Recieved deployment ");
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
 
@@ -347,7 +347,7 @@ public class MistController {
                }
                String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
                // get this war generated from the maveen install of the mist-bpmn war
-               CsvFile.write(processId,"Started deployment to Camunda", timestamp.getTime()+"");
+               CsvFile.write(processId,"Started deployment to Camunda");
                File file = new File (mistpath) ;
                HttpPut req = new HttpPut(url) ;
                MultipartEntityBuilder meb = MultipartEntityBuilder.create();
@@ -358,7 +358,7 @@ public class MistController {
                String response = executeRequest (req, credsProvider);
 
                System.out.println("Response after depoly  : "+response);
-               CsvFile.write(processId,"Finished deployment to Camunda", timestamp.getTime()+"");
+               CsvFile.write(processId,"Finished deployment to Camunda");
 
 
                // Starting the  depoloyed machine
@@ -377,14 +377,9 @@ public class MistController {
 
                System.out.println("Request being processed .......................");
                HttpResponse  response2 = httpClient.execute(post);
-               CsvFile.write(processId,"Started tomcat app", timestamp.getTime()+"");
+               CsvFile.write(processId,"Started tomcat app");
                return  response2.toString();
            }
-
-
-
-
-
 
         }
          else {
@@ -398,7 +393,7 @@ public class MistController {
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         if (node.url != null) {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            startTime =timestamp.getTime();
+
             String processId = randomString(5);
 
             String mistFilesPath =node.mist_files_path;
@@ -425,7 +420,10 @@ public class MistController {
 
                 while (line != null) {
                     if(line.contains("call_back_url")){
-                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+"\",\"type\": \"String\"},";
+                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+":8098\\callback\",\"type\": \"String\"},";
+                    }
+                    if(line.contains("log_id")){
+                        line =" \"log_id\":{\"value\" :"+processId+" \"log\",\"type\": \"String\"}";
                     }
                     // Always write the line, whether you changed it or not.
                     bw.write(line+newLine);
@@ -454,12 +452,12 @@ public class MistController {
                 ex.printStackTrace();
 
             }
-            CsvFile.write(processId,"Started deployment", timestamp.getTime()+"");
+            CsvFile.write(processId,"Started deployment");
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req = new HttpPost(node.url);
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            meb.addTextBody("callback", "http://"+myIP.getHostAddress()+"/callback");
+            meb.addTextBody("callback", "http://"+getIpAddress()+"/callback");
             meb.addTextBody("processId",processId);
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
@@ -475,17 +473,18 @@ public class MistController {
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            CsvFile.write(processId,"Started un deployment to Camunda", timestamp.getTime()+"");
+            CsvFile.write(processId,"Started un deployment to Camunda");
         String url = "http://localhost:8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
-        CsvFile.write(processId,"Finished un deployment to Camunda", timestamp.getTime()+"");
+        CsvFile.write(processId,"Finished un deployment to Camunda");
         return  response;
     }
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
-    public String callbackAllFinshed(@RequestParam("response")  String response  ) throws IOException {
+    public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
+        CsvFile.write(response,"Call back recieved");
       return  "received";
 
     }
@@ -493,8 +492,11 @@ public class MistController {
     @ResponseBody
 
     public String callbackTime(@RequestBody  Callback callback  ) throws IOException {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        String time= timestamp.getTime()+"";
 
-        return CsvFile.write(callback.getId(),callback.getName(),callback.getStart());
+    CsvFile.write(callback.getId(),callback.getName());
+        return "recieved";
 
     }
 
@@ -572,7 +574,12 @@ public class MistController {
 
         return result;
     }
+    public static String getIpAddress() throws IOException {
 
+        URL url = new URL("http://checkip.amazonaws.com/");
+        BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+        return br.readLine();
+    }
 
 }
 

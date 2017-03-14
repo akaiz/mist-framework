@@ -2,6 +2,7 @@
 "businessKey" : "aBusinessKey",
 "processVariables" : {"call_back_url" : {"value" : "http://192.168.0.103/callback","type": "String"},
 "remote_image_url" : {"value" : "http://effigis.com/wp-content/uploads/2015/02/Airbus_Pleiades_50cm_8bit_RGB_Yogyakarta.jpg","type": "String"} ,
- "image_already_exists":{"value" : "no","type": "String"}
+ "image_already_exists":{"value" : "no","type": "String"},
+  "log_id":{"value" : "log","type": "String"}
 }
 }

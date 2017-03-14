@@ -1,6 +1,7 @@
 {"messageName" : "instantiationMessageOpenHab",
 "businessKey" : "aBusinessKey",
 "processVariables" : {"call_back_url" : {"value" : "http://172.31.150.101","type": "String"},
- "image_already_exists":{"value" : "yes","type": "String"}
+ "image_already_exists":{"value" : "yes","type": "String"},
+  "log_id":{"value" : "log","type": "String"}
 }
 }
