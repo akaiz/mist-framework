@@ -429,7 +429,7 @@ public class MistController {
                         line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+":8098/callback\",\"type\": \"String\"},";
                     }
                     if(line.contains("log_id")){
-                        line =" \"log_id\":{\"value\" :"+processId+" \"log\",\"type\": \"String\"}";
+                        line =" \"log_id\":{\"value\" :\""+processId+" \"\",\"type\": \"String\"}";
                     }
                     // Always write the line, whether you changed it or not.
                     bw.write(line+newLine);
