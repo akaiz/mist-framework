@@ -366,10 +366,7 @@ public class MistController {
 
             System.out.println("Response after depoly  : "+response);
             CsvFile.write(processId,"Finished deployment to Camunda");
-
-
             // Starting the  depoloyed machine
-
             String postText = startRequest;
             System.out.println("Post request sent with this data "+postText);
 
@@ -384,7 +381,7 @@ public class MistController {
 
             System.out.println("Request being processed .......................");
             HttpResponse  response2 = httpClient.execute(post);
-            CsvFile.write(processId,"Started tomcat app");
+            CsvFile.write(processId,"Process End");
             return  response2.toString();
 
         }
