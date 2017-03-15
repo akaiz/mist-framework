@@ -28,8 +28,14 @@ public class CallBack extends DockerCommands implements JavaDelegate {
             LOGGER.info("Sending response to callback "+callBackUrl);
             CsvFile.write(execution.getVariable("log_id").toString(),"Sending response to callback");
 
-             String response = HttpRequest.post(callBackUrl).send(execution.getVariable("log_id").toString()).message();
-             LOGGER.info("Response from the call back"+response);
+            HttpClient httpClient    = HttpClientBuilder.create().build();
+            HttpPost post          = new HttpPost(callBackUrl);
+
+            StringEntity postingString = new StringEntity(execution.getVariable("log_id").toString(),"UTF-8");//gson.tojson() converts your pojo to json
+            post.setEntity(postingString);
+            post.setHeader("Content-type", "application/json");
+            HttpResponse  response = httpClient.execute(post);
+            LOGGER.info("Response from the call back"+response);
 
 
     }
