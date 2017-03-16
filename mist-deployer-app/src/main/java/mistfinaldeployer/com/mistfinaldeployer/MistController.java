@@ -347,11 +347,7 @@ public class MistController {
     private  String deployToCamunda(String processId) throws ClientProtocolException, IOException {
         if(mistpath!=null){
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            try {
-                TimeUnit.SECONDS.sleep(2);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
             String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
             CsvFile.write(processId,"Started deployment to Camunda");
@@ -398,80 +394,84 @@ public class MistController {
             String processId = randomString(5);
             String responeUndeploy = undeploy(processId);
 
-            if(responeUndeploy.length()>3){
-                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
-                String mistFilesPath =node.mist_files_path;
-                if(! new File(mistFilesPath).exists())
-                {
-
-                    return  "Missing mist files at "+mistFilesPath;
-                }
-                // Dyanamically adding the device ip address wc we will use at the call back
-                String tempFile = mistFilesPath+"mis_temp.txt";
-
-                PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
-                BufferedWriter bw = null;
-                FileWriter fw = null;
-                fw = new FileWriter(tempFile);
-                bw = new BufferedWriter(fw);
-
-
-                BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
-                try {
-                    StringBuilder sb = new StringBuilder();
-                    String line = br.readLine();
-                    String newLine = System.getProperty("line.separator");
-
-                    while (line != null) {
-                        if(line.contains("call_back_url")){
-                            line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+myIP.getHostAddress()+":8098/callback\",\"type\": \"String\"},";
-                        }
-                        if(line.contains("log_id")){
-                            line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"}";
-                        }
-                        // Always write the line, whether you changed it or not.
-                        bw.write(line+newLine);
-
-                        line = br.readLine();
-                    }
-                    startRequest=sb.toString();
-
-                } finally {
-                    br.close();
-                }
-                try {
-
-                    if (bw != null)
-                        bw.close();
-
-                    if (fw != null)
-                        fw.close();
-                    File realName = new File(mistFilesPath+node.getMist_file());
-                    realName.delete(); // remove the old file
-                    new File(tempFile).renameTo(realName); // Rename temp file
-
-
-                } catch (IOException ex) {
-
-                    ex.printStackTrace();
-
-                }
-                CsvFile.write(processId,"Started deployment");
-                File war = new File(mistFilesPath+"mist-0.war");
-                File mist_file = new File(mistFilesPath+node.getMist_file());
-                HttpPost req = new HttpPost(node.url);
-                MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-                meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
-                meb.addTextBody("processId",processId);
-                meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-                meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-                req.setEntity(meb.build());
-                String response = executeRequest(req, credsProvider);
-                System.out.println("Response after depoly  : " + response);
-
-                return response;
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+            String mistFilesPath =node.mist_files_path;
+            if(! new File(mistFilesPath).exists())
+            {
+
+                return  "Missing mist files at "+mistFilesPath;
+            }
+            // Dyanamically adding the device ip address wc we will use at the call back
+            String tempFile = mistFilesPath+"mis_temp.txt";
+
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
+            BufferedWriter bw = null;
+            FileWriter fw = null;
+            fw = new FileWriter(tempFile);
+            bw = new BufferedWriter(fw);
+
+
+            BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
+            try {
+                StringBuilder sb = new StringBuilder();
+                String line = br.readLine();
+                String newLine = System.getProperty("line.separator");
+
+                while (line != null) {
+                    if(line.contains("call_back_url")){
+                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
+                    }
+                    if(line.contains("log_id")){
+                        line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"}";
+                    }
+                    // Always write the line, whether you changed it or not.
+                    bw.write(line+newLine);
+
+                    line = br.readLine();
+                }
+                startRequest=sb.toString();
+
+            } finally {
+                br.close();
+            }
+            try {
+
+                if (bw != null)
+                    bw.close();
+
+                if (fw != null)
+                    fw.close();
+                File realName = new File(mistFilesPath+node.getMist_file());
+                realName.delete(); // remove the old file
+                new File(tempFile).renameTo(realName); // Rename temp file
+
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+
+            }
+            CsvFile.write(processId,"Started deployment");
+            File war = new File(mistFilesPath+"mist-0.war");
+            File mist_file = new File(mistFilesPath+node.getMist_file());
+            HttpPost req = new HttpPost(node.url);
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
+            meb.addTextBody("processId",processId);
+            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+            req.setEntity(meb.build());
+            String response = executeRequest(req, credsProvider);
+            System.out.println("Response after depoly  : " + response);
+
+            return response;
 
         }
         return "Sorry empty url supplied";
