@@ -1,5 +1,4 @@
 package mistfinaldeployer.com.mistfinaldeployer;
-
 import com.google.gson.Gson;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -21,6 +20,9 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
+import org.asynchttpclient.*;
+import org.asynchttpclient.request.body.multipart.FilePart;
+import org.asynchttpclient.request.body.multipart.StringPart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,9 +37,12 @@ import java.net.*;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 class Node{
     public String getUrl() {
@@ -124,7 +129,7 @@ public class MistController {
     CredentialsProvider credsProvider = new BasicCredentialsProvider();
     InetAddress myIP= InetAddress.getLocalHost();
     String realPathtoUploads,mistpath;
-
+     String responseData = null;
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
@@ -461,21 +466,55 @@ public class MistController {
             CsvFile.write(processId,"Started deployment");
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+node.getMist_file());
-            HttpPost req = new HttpPost(node.url);
-            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
-            meb.addTextBody("processId",processId);
-            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-            req.setEntity(meb.build());
-            String response = executeRequest(req, credsProvider);
-            System.out.println("Response after depoly  : " + response);
+//            HttpPost req = new HttpPost(node.url);
+//            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+//            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
+//            meb.addTextBody("processId",processId);
+//            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+//            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+//            req.setEntity(meb.build());
+//            String response = executeRequest(req, credsProvider);
+//            System.out.println("Response after depoly  : " + response);
 
-            return response;
+            AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
+
+            Request request = new RequestBuilder("POST")
+                    .setUrl(node.getUrl())
+                    .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                    .addBodyPart(new FilePart("mist", mist_file, "text/plain", UTF_8))
+                    .addBodyPart(new FilePart("war", war, "application/octet-stream;", null))
+                    .addBodyPart(new StringPart("processId", processId))
+                    .addBodyPart(new StringPart("callback", "http://"+node.getCall_back_ip()+"/callback"))
+                    .build();
+
+
+            asyncHttpClient.prepareRequest(request).execute(new AsyncCompletionHandler<Response>(){
+
+
+                @Override
+                public void onThrowable(Throwable t){
+                    // Something wrong happened.
+                    responseData ="errror occoured";
+                }
+
+                @Override
+                public Response onCompleted(org.asynchttpclient.Response response) throws Exception {
+                    responseData=response.getResponseBody();
+                    return null;
+                }
+            });
+
+
+            return responseData;
+
+
 
         }
         return "Sorry empty url supplied";
     }
+
+
+
 
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
