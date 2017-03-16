@@ -494,6 +494,7 @@ public class MistController {
                 @Override
                 public void onThrowable(Throwable t){
                     // Something wrong happened.
+                    responseData ="errror occoured";
                 }
 
                 @Override
