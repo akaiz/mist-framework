@@ -2,7 +2,7 @@
  {"messageName" : "instantiationMessageOpenHab",
  "businessKey" : "aBusinessKey",
  "processVariables" : {"call_back_url" : {"value" : "http://192.168.0.103/callback","type": "String"},
- "remote_image_url" : {"value" : "https://static.pexels.com/photos/147465/pexels-photo-147465.jpeg","type": "String"} ,
+ "remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/sun.jpg,"type": "String"} ,
  "image_already_exists":{"value" : "no","type": "String"},
  "log_id":{"value" : "log","type": "String"}
  }
