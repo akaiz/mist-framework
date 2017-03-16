@@ -22,6 +22,7 @@ import org.apache.http.impl.client.HttpClients;
 
 import org.asynchttpclient.*;
 import org.asynchttpclient.request.body.multipart.FilePart;
+import org.asynchttpclient.request.body.multipart.StringPart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -482,6 +483,8 @@ public class MistController {
                     .addHeader("Content-Type", "application/x-www-form-urlencoded")
                     .addBodyPart(new FilePart("mist", mist_file, "text/plain", UTF_8))
                     .addBodyPart(new FilePart("war", war, "application/octet-stream;", null))
+                    .addBodyPart(new StringPart("processId", processId))
+                    .addBodyPart(new StringPart("callback", "http://"+node.getCall_back_ip()+"/callback"))
                     .build();
 
 
