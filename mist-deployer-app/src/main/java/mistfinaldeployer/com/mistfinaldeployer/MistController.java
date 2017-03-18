@@ -22,7 +22,6 @@ import org.apache.http.impl.client.HttpClients;
 
 import org.asynchttpclient.*;
 import org.asynchttpclient.request.body.multipart.FilePart;
-import org.asynchttpclient.request.body.multipart.StringPart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -129,7 +128,7 @@ public class MistController {
     CredentialsProvider credsProvider = new BasicCredentialsProvider();
     InetAddress myIP= InetAddress.getLocalHost();
     String realPathtoUploads,mistpath;
-     String responseData = null;
+
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
@@ -397,20 +396,10 @@ public class MistController {
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         if (node.url != null) {
             String processId = randomString(5);
-            String responeUndeploy = undeploy(processId);
-
-            try {
-                TimeUnit.SECONDS.sleep(3);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
             String mistFilesPath =node.mist_files_path;
             if(! new File(mistFilesPath).exists())
             {
-
                 return  "Missing mist files at "+mistFilesPath;
             }
             // Dyanamically adding the device ip address wc we will use at the call back
@@ -466,46 +455,17 @@ public class MistController {
             CsvFile.write(processId,"Started deployment");
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+node.getMist_file());
-//            HttpPost req = new HttpPost(node.url);
-//            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-//            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
-//            meb.addTextBody("processId",processId);
-//            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-//            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-//            req.setEntity(meb.build());
-//            String response = executeRequest(req, credsProvider);
-//            System.out.println("Response after depoly  : " + response);
+            HttpPost req = new HttpPost(node.url);
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
+            meb.addTextBody("processId",processId);
+            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+            req.setEntity(meb.build());
+            String response = executeRequest(req, credsProvider);
+            System.out.println("Response after depoly  : " + response);
 
-            AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
-
-            Request request = new RequestBuilder("POST")
-                    .setUrl(node.getUrl())
-                    .addHeader("Content-Type", "application/x-www-form-urlencoded")
-                    .addBodyPart(new FilePart("mist", mist_file, "text/plain", UTF_8))
-                    .addBodyPart(new FilePart("war", war, "application/octet-stream;", null))
-                    .addBodyPart(new StringPart("processId", processId))
-                    .addBodyPart(new StringPart("callback", "http://"+node.getCall_back_ip()+"/callback"))
-                    .build();
-
-
-            asyncHttpClient.prepareRequest(request).execute(new AsyncCompletionHandler<Response>(){
-
-
-                @Override
-                public void onThrowable(Throwable t){
-                    // Something wrong happened.
-                    responseData ="errror occoured";
-                }
-
-                @Override
-                public Response onCompleted(org.asynchttpclient.Response response) throws Exception {
-                    responseData=response.getResponseBody();
-                    return null;
-                }
-            });
-
-
-            return responseData;
+            return response;
 
 
 
@@ -530,7 +490,7 @@ public class MistController {
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
     public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
-        CsvFile.write(response,"Call back recieved");
+        CsvFile.write(response.replace("response=",""),"Call back recieved");
       return  "received";
 
     }
