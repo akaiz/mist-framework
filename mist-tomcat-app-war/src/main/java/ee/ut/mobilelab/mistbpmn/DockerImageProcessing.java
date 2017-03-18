@@ -38,34 +38,32 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
         String commandValue = (String) command.getValue(execution);
         String imageUrlValue = (String) imagePath.getValue(execution);
         super.stopContainers(dockerImageValue);
-
+        LOGGER.info("File path path"+imageUrlValue);
         File file = new File(imageUrlValue);
         File folder = new File(file.getParent());
-        if(file.exists()){
-            String command = "docker run -p 8090:8080 -v "+folder+":/mist"+" "+dockerImageValue;
-            LOGGER.info("Final docker command"+command);
-            String line = " ";
+        String command = "docker run -p 8090:8080 -v "+folder+":/mist"+" "+dockerImageValue;
+        LOGGER.info("Final docker command"+command);
+        String line = " ";
 
 
-            // starting container and getting its buffer response
-            CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  started");
-            BufferedReader reader =
-                    new BufferedReader(new InputStreamReader(super.startContainer(command).getInputStream()));
+        // starting container and getting its buffer response
+        CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  started");
+        BufferedReader reader =
+                new BufferedReader(new InputStreamReader(super.startContainer(command).getInputStream()));
 
-            while((line = reader.readLine()) != null) {
+        while((line = reader.readLine()) != null) {
 
-                if(line.contains("Tomcat started on port(s)")){
-                    LOGGER.info(timestamp+" Mist-docker  started \n");
+            if(line.contains("Tomcat started on port(s)")){
+                LOGGER.info(timestamp+" Mist-docker  started \n");
 
-                    String processRequest ="http://localhost:8090/image?task="+commandValue+"&imagePath=/mist/"+file.getName();
-                    String response = HttpRequest.get(processRequest).body();
-                    execution.setVariable("response",response);
+                String processRequest ="http://localhost:8090/image?task="+commandValue+"&imagePath=/mist/"+file.getName();
+                String response = HttpRequest.get(processRequest).body();
+                execution.setVariable("response",response);
 
-                    break;
-                }
+                break;
             }
-            CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed");
         }
+        CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed");
         super.stopContainers(dockerImageValue);
 
 
