@@ -463,9 +463,12 @@ public class MistController {
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
             req.setEntity(meb.build());
             String response = executeRequest(req, credsProvider);
-            System.out.println("Response after depoly  : " + response);
-
-            return response;
+            try {
+                undeploy(processId);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "Success Mist Tasks completed";
 
 
 
