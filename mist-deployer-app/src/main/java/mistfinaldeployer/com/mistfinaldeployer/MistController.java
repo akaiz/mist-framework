@@ -395,7 +395,7 @@ public class MistController {
     @RequestMapping(value = "deploy/node", method = RequestMethod.POST)
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         if (node.url != null) {
-            String processId = randomString(5);
+            String processId = randomString(5)+","+node.getMist_file();
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             String mistFilesPath =node.mist_files_path;
             if(! new File(mistFilesPath).exists())
