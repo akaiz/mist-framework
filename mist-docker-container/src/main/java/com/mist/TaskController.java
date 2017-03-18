@@ -75,6 +75,49 @@ public class TaskController {
         int height = image.getHeight();
         int width = image.getWidth();
 
+       String colourHex =null;
+       if(width<100){
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+       }
+       else if(width<200){
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+       }
+       else if(width<300){
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+           colourHex = getMostCommonColour(iterate(height,width,image));
+
+       }
+
+
+
+
+
+        return  colourHex;
+    }
+    public Map iterate(int height,int width,BufferedImage image){
         Map m = new HashMap();
         for(int i=0; i < width ; i++)
         {
@@ -92,11 +135,7 @@ public class TaskController {
                 }
             }
         }
-        String colourHex = getMostCommonColour(m);
-
-
-
-        return  colourHex;
+        return m;
     }
     @RequestMapping(method = GET,path = "/download",params = {"pathUrl"})
     @ResponseBody
