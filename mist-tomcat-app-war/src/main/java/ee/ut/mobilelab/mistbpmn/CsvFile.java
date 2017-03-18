@@ -24,11 +24,11 @@ public class CsvFile {
             if(!file.exists()){
                 file.createNewFile();
                 printWriter = new PrintWriter(new FileOutputStream(fileName, true));
-                printWriter.write( "id,title,start,end");
+                printWriter.write( "id,type,title,time");
             }
 
             printWriter = new PrintWriter(new FileOutputStream(fileName, true));
-            printWriter.write( newLine+id+","+name+","+timestamp.getTime());
+            printWriter.write( newLine+id+","+name+","+timestamp.getTime()+"");
         } catch (IOException ioex) {
             ioex.printStackTrace();
         } finally {
