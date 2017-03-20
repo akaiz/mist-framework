@@ -79,37 +79,20 @@ public class TaskController {
        if(width<100){
            colourHex = getMostCommonColour(iterate(height,width,image));
            colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
+
        }
        else if(width<200){
            colourHex = getMostCommonColour(iterate(height,width,image));
            colourHex = getMostCommonColour(iterate(height,width,image));
            colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
+
        }
        else if(width<300){
            colourHex = getMostCommonColour(iterate(height,width,image));
            colourHex = getMostCommonColour(iterate(height,width,image));
            colourHex = getMostCommonColour(iterate(height,width,image));
            colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-
-       }
+                 }
 
 
 

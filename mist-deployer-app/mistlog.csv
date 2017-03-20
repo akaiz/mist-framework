@@ -1,30 +1,5 @@
+sep=,
 id,type,title,time
-
-oTraP,mist_file_light_0.txt,Started deployment,1489840687472
-oTraP,mist_file_light_0.txt,Recieved deployment ,1489840689198
-oTraP,mist_file_light_0.txt,Started deployment to Camunda,1489840689286
-oTraP,mist_file_light_0.txt,Finished deployment to Camunda,1489840723805
-oTraP,mist_file_light_0.txt,Mist-docker  started,1489840727885
-oTraP,mist_file_light_0.txt,Mist-docker  completed,1489840795171
-oTraP,mist_file_light_0.txt,Sending response to callback,1489840801188
-oTraP%2Cmist_file_light_0.txt,Call back recieved,1489840801211
-oTraP,mist_file_light_0.txt,Process End,1489840801551
-oTraP,mist_file_light_0.txt,Started un deployment to Camunda,1489840801562
-oTraP,mist_file_light_0.txt,Finished un deployment to Camunda,1489840805226
-AVhvr,mist_file_light_1.txt,Started deployment,1489840849016
-AVhvr,mist_file_light_1.txt,Recieved deployment ,1489840849297
-AVhvr,mist_file_light_1.txt,Started deployment to Camunda,1489840849361
-AVhvr,mist_file_light_1.txt,Started un deployment to Camunda,1489840849450
-AVhvr,mist_file_light_1.txt,Finished un deployment to Camunda,1489840849480
-pcObU,mist_file_light_1.txt,Started deployment,1489840864917
-pcObU,mist_file_light_1.txt,Recieved deployment ,1489840865172
-pcObU,mist_file_light_1.txt,Started deployment to Camunda,1489840865228
-pcObU,mist_file_light_1.txt,Finished deployment to Camunda,1489840871658
-pcObU,mist_file_light_1.txt,Image Fetch Started,1489840871830
-pcObU,mist_file_light_1.txt,Image Fetch complete,1489840878818
-pcObU,mist_file_light_1.txt,Mist-docker  started,1489840880840
-pcObU,mist_file_light_1.txt,Mist-docker  completed,1489840950526
-pcObU,mist_file_light_1.txt,Sending response to callback,1489840957266
 pcObU%2Cmist_file_light_1.txt,Call back recieved,1489840957277
 pcObU,mist_file_light_1.txt,Process End,1489840958027
 pcObU,mist_file_light_1.txt,Started un deployment to Camunda,1489840958033

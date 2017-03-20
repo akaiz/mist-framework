@@ -40,6 +40,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -493,7 +495,12 @@ public class MistController {
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
     public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
-        CsvFile.write(response.replace("response=","").replace("=",""),"Call back recieved");
+        Pattern pattern = Pattern.compile("response=(.*?)=");
+        Matcher matcher = pattern.matcher(response);
+        if (matcher.find()) {
+           response= matcher.group(1);
+        }
+        CsvFile.write(response,"Call back recieved");
       return  "received";
 
     }
