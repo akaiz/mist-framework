@@ -1,56 +1,11 @@
 sep=,
 id,type,title,time
-UoC8r,mist_file_light_0.txt,Started deployment,1490032025060
-UoC8r,mist_file_light_0.txt,Recieved deployment ,1490032025289
-UoC8r,mist_file_light_0.txt,Started deployment to Camunda,1490032025338
-UoC8r,mist_file_light_0.txt,Finished deployment to Camunda,1490032031076
-UoC8r,mist_file_light_0.txt,Mist-docker  started,1490032033221
-UoC8r,mist_file_light_0.txt,Mist-docker  completed,1490032073775
-UoC8r,mist_file_light_0.txt,Sending response to callback,1490032086708
-UoC8r,mist_file_light_0.txt,Call back recieved,1490032086716
-UoC8r,mist_file_light_0.txt,Process End,1490032088803
-UoC8r,mist_file_light_0.txt,Started un deployment to Camunda,1490032088808
-UoC8r,mist_file_light_0.txt,Finished un deployment to Camunda,1490032094450
-oBUFM,mist_file_light_1.txt,Started deployment,1490032467378
-oBUFM,mist_file_light_1.txt,Recieved deployment ,1490032467619
-oBUFM,mist_file_light_1.txt,Started deployment to Camunda,1490032467669
-oBUFM,mist_file_light_1.txt,Finished deployment to Camunda,1490032473857
-oBUFM,mist_file_light_1.txt,Image Fetch Started,1490032473972
-oBUFM,mist_file_light_1.txt,Image Fetch complete,1490032474268
-oBUFM,mist_file_light_1.txt,Mist-docker  started,1490032476850
-oBUFM,mist_file_light_1.txt,Mist-docker  completed,1490032526404
-oBUFM,mist_file_light_1.txt,Sending response to callback,1490032532421
-oBUFM,mist_file_light_1.txt,Call back recieved,1490032532431
-oBUFM,mist_file_light_1.txt,Process End,1490032532576
-oBUFM,mist_file_light_1.txt,Started un deployment to Camunda,1490032532579
-oBUFM,mist_file_light_1.txt,Finished un deployment to Camunda,1490032535527
 
-zAc9s,mist_file_light_0.txt,Started deployment,1490033704781
-zAc9s,mist_file_light_0.txt,Recieved deployment ,1490033705004
-zAc9s,mist_file_light_0.txt,Started deployment to Camunda,1490033705251
-zAc9s,mist_file_light_0.txt,Finished deployment to Camunda,1490033710974
-zAc9s,mist_file_light_0.txt,Mist-docker  started,1490033713105
-zAc9s,mist_file_light_0.txt,Mist-docker  completed,1490033777820
-zAc9s,mist_file_light_0.txt,Sending response to callback,1490033784366
-zAc9s,mist_file_light_0.txt,Call back recieved,1490033784380
-zAc9s,mist_file_light_0.txt,Process End,1490033785628
-zAc9s,mist_file_light_0.txt,Started un deployment to Camunda,1490033785633
-zAc9s,mist_file_light_0.txt,Finished un deployment to Camunda,1490033788634
-G9wPk,mist_file_light_1.txt,Started deployment,1490033805283
-G9wPk,mist_file_light_1.txt,Recieved deployment ,1490033805492
-G9wPk,mist_file_light_1.txt,Started deployment to Camunda,1490033805542
-G9wPk,mist_file_light_1.txt,Started un deployment to Camunda,1490033805610
-G9wPk,mist_file_light_1.txt,Finished un deployment to Camunda,1490033805630
-hQHxz,mist_file_light_1.txt,Started deployment,1490033812278
-hQHxz,mist_file_light_1.txt,Recieved deployment ,1490033812478
-hQHxz,mist_file_light_1.txt,Started deployment to Camunda,1490033812527
-hQHxz,mist_file_light_1.txt,Finished deployment to Camunda,1490033818225
-hQHxz,mist_file_light_1.txt,Image Fetch Started,1490033818349
-hQHxz,mist_file_light_1.txt,Image Fetch complete,1490033818917
-hQHxz,mist_file_light_1.txt,Mist-docker  started,1490033820931
-hQHxz,mist_file_light_1.txt,Mist-docker  completed,1490033864193
-hQHxz,mist_file_light_1.txt,Sending response to callback,1490033871925
-hQHxz,mist_file_light_1.txt,Call back recieved,1490033876042
-hQHxz,mist_file_light_1.txt,Process End,1490033876887
-hQHxz,mist_file_light_1.txt,Started un deployment to Camunda,1490033876891
-hQHxz,mist_file_light_1.txt,Finished un deployment to Camunda,1490033879801
+1Publ,mist_file_light_1.txt,Image Fetch Started,1490036105790
+1Publ,mist_file_light_1.txt,Image Fetch complete,1490036106190
+1Publ,mist_file_light_1.txt,Mist-docker  started,1490036108963
+1Publ,mist_file_light_1.txt,Mist-docker  completed,1490036203958
+1Publ,mist_file_light_1.txt,Sending response to callback,1490036209984
+pSAf8,mist_file_light_0.txt,Mist-docker  started,1490036264215
+pSAf8,mist_file_light_0.txt,Mist-docker  completed,1490036311946
+pSAf8,mist_file_light_0.txt,Sending response to callback,1490036317965
