@@ -495,12 +495,9 @@ public class MistController {
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
     public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
-        Pattern pattern = Pattern.compile("response=(.*?)=");
-        Matcher matcher = pattern.matcher(response);
-        if (matcher.find()) {
-           response= matcher.group(1);
-        }
-        CsvFile.write(response,"Call back recieved");
+      String x = response.replace("response","");
+      x=x.replaceAll("=","");
+        CsvFile.write(x,"Call back recieved");
       return  "received";
 
     }
