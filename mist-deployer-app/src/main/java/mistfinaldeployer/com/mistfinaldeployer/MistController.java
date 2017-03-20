@@ -497,6 +497,7 @@ public class MistController {
     public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
       String x = response.replace("response","");
       x=x.replaceAll("=","");
+      x=x.replace("%2C",",");
         CsvFile.write(x,"Call back recieved");
       return  "received";
 
