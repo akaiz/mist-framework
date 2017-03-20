@@ -1,46 +1,16 @@
 sep=,
 id,type,title,time
-pcObU%2Cmist_file_light_1.txt,Call back recieved,1489840957277
-pcObU,mist_file_light_1.txt,Process End,1489840958027
-pcObU,mist_file_light_1.txt,Started un deployment to Camunda,1489840958033
-pcObU,mist_file_light_1.txt,Finished un deployment to Camunda,1489840961022
 
-K9icm,mist_file_light_1.txt,Started deployment,1489843459298
-K9icm,mist_file_light_1.txt,Recieved deployment ,1489843459534
-K9icm,mist_file_light_1.txt,Started deployment to Camunda,1489843459586
-K9icm,mist_file_light_1.txt,Finished deployment to Camunda,1489843466559
-K9icm,mist_file_light_1.txt,Image Fetch Started,1489843468234
-K9icm,mist_file_light_1.txt,Image Fetch complete,1489843494228
-K9icm,mist_file_light_1.txt,Mist-docker  started,1489843496248
-K9icm,mist_file_light_1.txt,Mist-docker  completed,1489843544170
-K9icm,mist_file_light_1.txt,Sending response to callback,1489843550184
-K9icm%2Cmist_file_light_1.txt,Call back recieved,1489843550202
-K9icm,mist_file_light_1.txt,Process End,1489843550487
-K9icm,mist_file_light_1.txt,Started un deployment to Camunda,1489843550492
-K9icm,mist_file_light_1.txt,Finished un deployment to Camunda,1489843553352
-NMDTr,mist_file_light_1.txt,Started deployment,1489843840346
-NMDTr,mist_file_light_1.txt,Recieved deployment ,1489843840574
-NMDTr,mist_file_light_1.txt,Started deployment to Camunda,1489843840627
-NMDTr,mist_file_light_1.txt,Finished deployment to Camunda,1489843846400
-NMDTr,mist_file_light_1.txt,Image Fetch Started,1489843846517
-NMDTr,mist_file_light_1.txt,Image Fetch complete,1489843854150
-NMDTr,mist_file_light_1.txt,Mist-docker  started,1489843856172
-NMDTr,mist_file_light_1.txt,Mist-docker  completed,1489843918400
-NMDTr,mist_file_light_1.txt,Sending response to callback,1489843924414
-NMDTr%2Cmist_file_light_1.txt,Call back recieved,1489843924424
-NMDTr,mist_file_light_1.txt,Process End,1489843924916
-NMDTr,mist_file_light_1.txt,Started un deployment to Camunda,1489843924921
-NMDTr,mist_file_light_1.txt,Finished un deployment to Camunda,1489843933664
-QY1nV,mist_file_light_1.txt,Started deployment,1489844278514
-QY1nV,mist_file_light_1.txt,Recieved deployment ,1489844278734
-QY1nV,mist_file_light_1.txt,Started deployment to Camunda,1489844278786
-QY1nV,mist_file_light_1.txt,Finished deployment to Camunda,1489844285274
-QY1nV,mist_file_light_1.txt,Image Fetch Started,1489844285392
-QY1nV,mist_file_light_1.txt,Image Fetch complete,1489844292209
-QY1nV,mist_file_light_1.txt,Mist-docker  started,1489844294235
-QY1nV,mist_file_light_1.txt,Mist-docker  completed,1489844342905
-QY1nV,mist_file_light_1.txt,Sending response to callback,1489844349339
-QY1nV%2Cmist_file_light_1.txt,Call back recieved,1489844349349
-QY1nV,mist_file_light_1.txt,Process End,1489844349466
-QY1nV,mist_file_light_1.txt,Started un deployment to Camunda,1489844349474
-QY1nV,mist_file_light_1.txt,Finished un deployment to Camunda,1489844352235
+wCfqZ,mist_file_light_1.txt,Started deployment,1490026033634
+wCfqZ,mist_file_light_1.txt,Recieved deployment ,1490026033827
+wCfqZ,mist_file_light_1.txt,Started deployment to Camunda,1490026033877
+wCfqZ,mist_file_light_1.txt,Finished deployment to Camunda,1490026039746
+wCfqZ,mist_file_light_1.txt,Image Fetch Started,1490026039864
+wCfqZ,mist_file_light_1.txt,Image Fetch complete,1490026040185
+wCfqZ,mist_file_light_1.txt,Mist-docker  started,1490026042199
+wCfqZ,mist_file_light_1.txt,Mist-docker  completed,1490026111343
+wCfqZ,mist_file_light_1.txt,Sending response to callback,1490026123141
+wCfqZ,mist_file_light_1.txt,Call back recieved,1490026123158
+wCfqZ,mist_file_light_1.txt,Process End,1490026123291
+wCfqZ,mist_file_light_1.txt,Started un deployment to Camunda,1490026123295
+wCfqZ,mist_file_light_1.txt,Finished un deployment to Camunda,1490026126114
