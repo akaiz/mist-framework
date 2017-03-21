@@ -345,8 +345,6 @@ public class MistController {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
-
     }
     // deploy file to camunda
 
@@ -383,8 +381,7 @@ public class MistController {
 
             System.out.println("Request being processed .......................");
             HttpResponse  response2 = httpClient.execute(post);
-            CsvFile.write(processId,"Process End");
-            return  response2.toString();
+                  return  response2.toString();
 
         }
          else {
@@ -404,7 +401,7 @@ public class MistController {
             {
                 return  "Missing mist files at "+mistFilesPath;
             }
-            // Dyanamically adding the device ip address wc we will use at the call back
+
             String tempFile = mistFilesPath+"mis_temp.txt";
 
             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
@@ -454,7 +451,7 @@ public class MistController {
                 ex.printStackTrace();
 
             }
-            CsvFile.write(processId,"Started deployment");
+            CsvFile.write(processId,"Process Start");
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req = new HttpPost(node.url);
@@ -470,6 +467,7 @@ public class MistController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            CsvFile.write(processId,"Process End");
             return "Success Mist Tasks completed";
 
 
@@ -478,18 +476,15 @@ public class MistController {
         return "Sorry empty url supplied";
     }
 
-
-
-
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            CsvFile.write(processId,"Started un deployment to Camunda");
+          //  CsvFile.write(processId,"Started un deployment to Camunda");
         String url = "http://localhost:8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
-        CsvFile.write(processId,"Finished un deployment to Camunda");
+       // CsvFile.write(processId,"Finished un deployment to Camunda");
         return  response;
     }
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
