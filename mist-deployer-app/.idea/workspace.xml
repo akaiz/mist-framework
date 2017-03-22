@@ -20,11 +20,9 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="403" column="0" lean-forward="true" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="431">
+              <caret line="386" column="13" lean-forward="false" selection-start-line="386" selection-start-column="13" selection-end-line="386" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -34,9 +32,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,9 +42,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
               <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,22 +62,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
               <caret line="83" column="54" lean-forward="false" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#15900#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#4663#4664#0" expanded="false" />
-                <element signature="e#4699#4700#0" expanded="false" />
-                <element signature="e#4734#4735#0" expanded="false" />
-                <element signature="e#4769#4770#0" expanded="false" />
-                <element signature="e#7053#7054#0" expanded="false" />
-                <element signature="e#7117#7118#0" expanded="false" />
-                <element signature="e#14039#14040#0" expanded="false" />
-                <element signature="e#14097#14098#0" expanded="false" />
-                <element signature="e#14523#14524#0" expanded="false" />
-                <element signature="e#14581#14582#0" expanded="false" />
-                <element signature="e#15048#15064#0" expanded="false" />
-                <element signature="e#15419#15434#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,8 +100,8 @@
       <file leaf-file-name="mistlog.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mistlog.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="29" selection-end-column="75" />
+            <state relative-caret-position="900">
+              <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -154,6 +133,7 @@
       <find>undeploy</find>
       <find>Started un</find>
       <find>Started tom</find>
+      <find>Process E</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -204,8 +184,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2096" />
-    <option name="y" value="-326" />
+    <option name="x" value="4016" />
+    <option name="y" value="-352" />
     <option name="width" value="1500" />
     <option name="height" value="962" />
   </component>
@@ -360,8 +340,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -811,14 +791,17 @@
       <workItem from="1489645858661" duration="16609000" />
       <workItem from="1489831674481" duration="6632000" />
       <workItem from="1490022789953" duration="1826000" />
+      <workItem from="1490115174816" duration="3269000" />
+      <workItem from="1490187831232" duration="36000" />
+      <workItem from="1490192359777" duration="129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165468000" />
+    <option name="totallyTimeSpent" value="171724000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2096" y="-326" width="1500" height="962" extended-state="0" />
+    <frame x="4016" y="-352" width="1500" height="962" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -837,8 +820,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016873" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016873" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23404256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -932,9 +915,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2235">
           <caret line="149" column="51" lean-forward="false" selection-start-line="149" selection-start-column="51" selection-end-line="149" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -992,9 +973,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2235">
           <caret line="149" column="51" lean-forward="true" selection-start-line="149" selection-start-column="51" selection-end-line="149" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="52" column="65" lean-forward="false" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1144,13 +1122,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-files/mist_jjtemp.txt" />
     <entry file="file://$PROJECT_DIR$/mist-files/mist_temp.txt">
+      <provider editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="LargeFileEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_0.txt">
@@ -1200,22 +1178,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="83" column="54" lean-forward="false" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#15900#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4663#4664#0" expanded="false" />
-            <element signature="e#4699#4700#0" expanded="false" />
-            <element signature="e#4734#4735#0" expanded="false" />
-            <element signature="e#4769#4770#0" expanded="false" />
-            <element signature="e#7053#7054#0" expanded="false" />
-            <element signature="e#7117#7118#0" expanded="false" />
-            <element signature="e#14039#14040#0" expanded="false" />
-            <element signature="e#14097#14098#0" expanded="false" />
-            <element signature="e#14523#14524#0" expanded="false" />
-            <element signature="e#14581#14582#0" expanded="false" />
-            <element signature="e#15048#15064#0" expanded="false" />
-            <element signature="e#15419#15434#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,9 +1210,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,9 +1218,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,21 +1230,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mistlog.csv">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="29" selection-end-column="75" />
+        <state relative-caret-position="431">
+          <caret line="386" column="13" lean-forward="false" selection-start-line="386" selection-start-column="13" selection-end-line="386" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
+    <entry file="file://$PROJECT_DIR$/mistlog.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="403" column="0" lean-forward="true" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="900">
+          <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>

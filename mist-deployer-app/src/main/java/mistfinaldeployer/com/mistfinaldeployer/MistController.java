@@ -332,7 +332,6 @@ public class MistController {
                 }
                 // deploying to tomcat and  start
 
-
                 return new ResponseEntity<>(deployToCamunda(processId),HttpStatus.OK);
             }
 
@@ -381,6 +380,11 @@ public class MistController {
 
             System.out.println("Request being processed .......................");
             HttpResponse  response2 = httpClient.execute(post);
+            try {
+                undeploy(processId);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
                   return  response2.toString();
 
         }
@@ -462,15 +466,8 @@ public class MistController {
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
             req.setEntity(meb.build());
             String response = executeRequest(req, credsProvider);
-            try {
-                undeploy(processId);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
             CsvFile.write(processId,"Process End");
             return "Success Mist Tasks completed";
-
-
 
         }
         return "Sorry empty url supplied";
