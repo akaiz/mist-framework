@@ -302,7 +302,7 @@ public class MistController {
                 }
                 // if payload was sent
                 if(payload!=null){
-
+                    System.out.println("Payload ---------------- sent");
                     String directory = "/home/pi/mist/";
                     delete(new File(directory));
                     // recreate it again

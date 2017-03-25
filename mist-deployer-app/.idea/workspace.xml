@@ -20,8 +20,8 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-422">
-              <caret line="302" column="38" lean-forward="false" selection-start-line="302" selection-start-column="38" selection-end-line="302" selection-end-column="38" />
+            <state relative-caret-position="210">
+              <caret line="304" column="69" lean-forward="false" selection-start-line="304" selection-start-column="69" selection-end-line="304" selection-end-column="69" />
               <folding>
                 <element signature="e#2255#2256#0" expanded="true" />
                 <element signature="e#2285#2286#0" expanded="true" />
@@ -790,12 +790,12 @@
       <workItem from="1490187831232" duration="36000" />
       <workItem from="1490192359777" duration="1381000" />
       <workItem from="1490275285490" duration="2666000" />
-      <workItem from="1490444072377" duration="3370000" />
+      <workItem from="1490444072377" duration="4995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179012000" />
+    <option name="totallyTimeSpent" value="180637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4016" y="-352" width="1500" height="962" extended-state="0" />
@@ -820,7 +820,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016873" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.075027995" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27771556" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1250,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
-          <caret line="302" column="38" lean-forward="false" selection-start-line="302" selection-start-column="38" selection-end-line="302" selection-end-column="38" />
+        <state relative-caret-position="210">
+          <caret line="304" column="69" lean-forward="false" selection-start-line="304" selection-start-column="69" selection-end-line="304" selection-end-column="69" />
           <folding>
             <element signature="e#2255#2256#0" expanded="true" />
             <element signature="e#2285#2286#0" expanded="true" />
