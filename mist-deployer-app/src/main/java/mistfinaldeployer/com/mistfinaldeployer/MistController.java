@@ -65,14 +65,13 @@ class Node{
     public String getMist_file() {
         return mist_file;
     }
-
-    public void setMist_file(String mist_file) {
-        this.mist_file = mist_file;
+    public String getPayload() {
+        return payload;
     }
-    String url;
-    String mist_files_path;
-    String mist_file;
 
+    public void setPayload(String payload) {
+        this.payload = payload;
+    }
     public String getCall_back_ip() {
         return call_back_ip;
     }
@@ -81,6 +80,13 @@ class Node{
         this.call_back_ip = call_back_ip;
     }
 
+    public void setMist_file(String mist_file) {
+        this.mist_file = mist_file;
+    }
+    String url;
+    String mist_files_path;
+    String mist_file;
+    String payload;
     String call_back_ip;
 }
 class Callback{
@@ -245,8 +251,7 @@ public class MistController {
 
     private  String deploy() throws ClientProtocolException, IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
-         System.out.println("hefrerer"+mistpath);
-        if(mistpath!=null){
+         if(mistpath!=null){
             String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
             File file = new File (mistpath) ;
@@ -271,6 +276,7 @@ public class MistController {
     @RequestMapping(value = "/deploynode",method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile,
+                                           @RequestParam(name = "payload", required=false) MultipartFile payload,
                                            @RequestParam("callback") String callback,@RequestParam("processId") String processId) throws IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
 
@@ -292,6 +298,22 @@ public class MistController {
                     delete(new File(realPathtoUploads));
                     // recreate it again
                     new File(realPathtoUploads).mkdirs();
+
+                }
+                // if payload was sent
+                if(payload!=null){
+
+                    String directory = "/home/pi/mist/";
+                    delete(new File(directory));
+                    // recreate it again
+                    new File(directory).mkdirs();
+                    String upload_path = Paths.get(directory, "mist_img.jpg").toString();
+
+                    // Save the PAYLOAD file locally
+                    BufferedOutputStream stream =
+                            new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
+                    stream.write(uploadfile.getBytes());
+                    stream.close();
 
                 }
                 String filename = uploadfile.getOriginalFilename();
@@ -462,8 +484,15 @@ public class MistController {
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
             meb.addTextBody("processId",processId);
+            if(node.getPayload()=="true"){
+
+                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
+                meb.addBinaryBody("payload", war, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+            }
+
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+
             req.setEntity(meb.build());
             String response = executeRequest(req, credsProvider);
             CsvFile.write(processId,"Process End");
