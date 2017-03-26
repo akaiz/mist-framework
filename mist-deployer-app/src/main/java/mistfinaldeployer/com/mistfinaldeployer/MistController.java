@@ -309,11 +309,12 @@ public class MistController {
                     // recreate it again
                     new File(directory).mkdirs();
                     String upload_path = Paths.get(directory, "mist_img.jpg").toString();
+                    System.out.println("Payload ---------------- upload_path"+upload_path);
 
                     // Save the PAYLOAD file locally
                     BufferedOutputStream stream =
                             new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
-                    stream.write(uploadfile.getBytes());
+                    stream.write(payload.getBytes());
                     stream.close();
 
                 }
@@ -368,6 +369,7 @@ public class MistController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
     // deploy file to camunda
 
     private  String deployToCamunda(String processId) throws ClientProtocolException, IOException {
