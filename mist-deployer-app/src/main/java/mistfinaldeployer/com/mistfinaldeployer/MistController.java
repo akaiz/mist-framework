@@ -489,8 +489,8 @@ public class MistController {
             meb.addTextBody("processId",processId);
             System.out.println("payload ------->"+node.getPayload());
             if(node.getPayload().equals("true")){
-                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
-                System.out.println("payload ii ------->"+mist_payload.getAbsolutePath());
+                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-light.jpg"));
+                System.out.println("payload ------->"+mist_payload.getAbsolutePath());
                 meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
             }
 
