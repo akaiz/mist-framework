@@ -485,6 +485,7 @@ public class MistController {
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
             meb.addTextBody("processId",processId);
+            System.out.println("payload ------->"+node.getPayload());
             if(node.getPayload()=="true"){
 
                 File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
