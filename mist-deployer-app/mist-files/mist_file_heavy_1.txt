@@ -1,7 +1,7 @@
 {"messageName" : "instantiationMessageOpenHab",
 "businessKey" : "aBusinessKey",
 "processVariables" : {"call_back_url" : {"value" : "http://192.168.17.162:8098/callback","type": "String"},
-"remote_image_url" : {"value" : "https://assets.nerdwallet.com/blog/wp-content/uploads/2015/08/shutterstock_57434485.jpg","type": "String"} ,
+"remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/imagebig.jpg","type": "String"} ,
  "image_already_exists":{"value" : "no","type": "String"},
  "log_id":{"value" :"QFQCd","type": "String"}
 }
