@@ -489,7 +489,8 @@ public class MistController {
             if(node.getPayload()=="true"){
 
                 File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
-                meb.addBinaryBody("payload", war, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+                System.out.println("payload ii ------->"+mist_payload.getName());
+                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
             }
 
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
