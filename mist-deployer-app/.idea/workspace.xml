@@ -20,8 +20,18 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="501" column="51" lean-forward="true" selection-start-line="501" selection-start-column="51" selection-end-line="501" selection-end-column="51" />
+            <state relative-caret-position="390">
+              <caret line="506" column="5" lean-forward="true" selection-start-line="506" selection-start-column="5" selection-end-line="506" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -148,7 +158,6 @@
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/script.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/mist-files/mist_file.txt" />
         <option value="$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/CSVUtils.java" />
         <option value="$PROJECT_DIR$/mist-files/mist_temp.txt" />
@@ -159,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/CsvFile.java" />
         <option value="$PROJECT_DIR$/mistlog.csv" />
         <option value="$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
       </list>
     </option>
@@ -244,6 +254,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -809,12 +823,12 @@
       <workItem from="1490275285490" duration="2666000" />
       <workItem from="1490444072377" duration="18807000" />
       <workItem from="1490633551945" duration="2000000" />
-      <workItem from="1490636100216" duration="1896000" />
+      <workItem from="1490636100216" duration="2326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198345000" />
+    <option name="totallyTimeSpent" value="198775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1930" y="-277" width="1500" height="958" extended-state="0" />
@@ -1036,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/de/siegmar/fastcsv/1.0.1/fastcsv-1.0.1.jar!/de/siegmar/fastcsv/writer/CsvWriter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1245,10 +1252,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="501" column="51" lean-forward="true" selection-start-line="501" selection-start-column="51" selection-end-line="501" selection-end-column="51" />
+        <state relative-caret-position="390">
+          <caret line="506" column="5" lean-forward="true" selection-start-line="506" selection-start-column="5" selection-end-line="506" selection-end-column="5" />
           <folding />
         </state>
       </provider>
