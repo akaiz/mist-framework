@@ -22,6 +22,7 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
     private Expression dockerImage;
     private Expression command;
     private Expression imagePath;
+    private String localhost="http://localhost";
 
 
     public DockerImageProcessing() {
@@ -56,7 +57,7 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
             if(line.contains("Tomcat started on port(s)")){
                 LOGGER.info(timestamp+" Mist-docker  started \n");
 
-                String processRequest ="http://localhost:8090/image?task="+commandValue+"&imagePath=/mist/"+file.getName();
+                String processRequest =localhost+":8090/image?task="+commandValue+"&imagePath=/mist/"+file.getName();
                 String response = HttpRequest.get(processRequest).body();
                 execution.setVariable("response",response);
 

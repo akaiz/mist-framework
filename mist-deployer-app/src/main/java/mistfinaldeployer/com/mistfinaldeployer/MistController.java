@@ -140,6 +140,7 @@ public class MistController {
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
+    String localhost="http://localhost";
     @Autowired
     private HttpServletRequest request;
 
@@ -161,7 +162,7 @@ public class MistController {
         String postText = startRequest;
         System.out.println("Post request sent with this data "+postText);
 
-        String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+        String       postUrl       = localhost+":8080/engine-rest/message";// put in your url
         Gson gson          = new Gson();
         HttpClient httpClient    = HttpClientBuilder.create().build();
         HttpPost post          = new HttpPost(postUrl);
@@ -252,7 +253,7 @@ public class MistController {
     private  String deploy() throws ClientProtocolException, IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
          if(mistpath!=null){
-            String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
+            String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
             File file = new File (mistpath) ;
             HttpPut req = new HttpPut(url) ;
@@ -376,7 +377,7 @@ public class MistController {
         if(mistpath!=null){
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-            String url = "http://localhost:8080/manager/text/deploy?path=/mistBpmn&update=true";
+            String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
             CsvFile.write(processId,"Started deployment to Camunda");
             File file = new File (mistpath) ;
@@ -510,7 +511,7 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
           //  CsvFile.write(processId,"Started un deployment to Camunda");
-        String url = "http://localhost:8080/manager/text/undeploy?path=/mistBpmn";
+        String url = localhost+":8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
