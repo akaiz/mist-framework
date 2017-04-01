@@ -1,7 +1,7 @@
 {"messageName" : "instantiationMessageOpenHab",
 "businessKey" : "aBusinessKey",
-"processVariables" : {"call_back_url" : {"value" : "http://192.168.17.168:8098/callback","type": "String"},
+"processVariables" : {"call_back_url" : {"value" : "http://172.31.156.186:8098/callback","type": "String"},
  "image_already_exists":{"value" : "yes","type": "String"},
- "log_id":{"value" :"MbHHf,mist_file_light_0.txt","type": "String"}
+ "log_id":{"value" :"WY4Bd,mist_file_light_0.txt","type": "String"}
 }
 }

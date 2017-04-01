@@ -1,9 +1,9 @@
 
  {"messageName" : "instantiationMessageOpenHab",
  "businessKey" : "aBusinessKey",
-"processVariables" : {"call_back_url" : {"value" : "http://192.168.17.168:8098/callback","type": "String"},
+"processVariables" : {"call_back_url" : {"value" : "http://138.68.176.11:8098/callback","type": "String"},
  "remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/sun.jpg","type": "String"} ,
  "image_already_exists":{"value" : "no","type": "String"},
- "log_id":{"value" :"YrPr2,mist_file_light_1.txt","type": "String"}
+ "log_id":{"value" :"7FTEx,mist_file_light_1.txt","type": "String"}
  }
  }
