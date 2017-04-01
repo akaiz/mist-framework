@@ -45,8 +45,6 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
         String command = "docker run -p 8090:8080 -v "+folder+":/mist"+" "+dockerImageValue;
         LOGGER.info("Final docker command"+command);
         String line = " ";
-
-
         // starting container and getting its buffer response
         CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  started");
         BufferedReader reader =
@@ -56,8 +54,10 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
 
             if(line.contains("Tomcat started on port(s)")){
                 LOGGER.info(timestamp+" Mist-docker  started \n");
-
                 String processRequest =localhost+":8090/image?task="+commandValue+"&imagePath=/mist/"+file.getName();
+                LOGGER.info(processRequest+" \n");
+
+
                 String response = HttpRequest.get(processRequest).body();
                 execution.setVariable("response",response);
 
