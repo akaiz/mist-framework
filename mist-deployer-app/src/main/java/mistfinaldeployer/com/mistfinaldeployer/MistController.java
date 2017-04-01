@@ -405,7 +405,10 @@ public class MistController {
             post.setHeader("Content-type", "application/json");
 
             System.out.println("Request being processed .......................");
+
             HttpResponse  response2 = httpClient.execute(post);
+            // hack for cloud
+            CsvFile.write(processId,"Call back recieved");
             try {
                 undeploy(processId);
             } catch (IOException e) {
