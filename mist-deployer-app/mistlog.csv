@@ -86,3 +86,11 @@ ZXJ3h,mist_file_heavy_1.txt,Mist-docker  completed,1490643842842
 ZXJ3h,mist_file_heavy_1.txt,Sending response to callback,1490643848872
 ZXJ3h,mist_file_heavy_1.txt,Call back recieved,1490643848936
 ZXJ3h,mist_file_heavy_1.txt,Process End,1490643851792
+RO7bI,mist_file_heavy_1.txt,Recieved deployment ,1491069468597
+RO7bI,mist_file_heavy_1.txt,Started deployment to Camunda,1491069468682
+RO7bI,mist_file_heavy_1.txt,Finished deployment to Camunda,1491069475195
+RO7bI,mist_file_heavy_1.txt,Image Fetch Started,1491069476529
+RO7bI,mist_file_heavy_1.txt,Image Fetch complete,1491069482378
+RO7bI,mist_file_heavy_1.txt,Mist-docker  started,1491069484514
+RO7bI,mist_file_heavy_1.txt,Mist-docker  completed,1491069518060
+RO7bI,mist_file_heavy_1.txt,Sending response to callback,1491069524095
