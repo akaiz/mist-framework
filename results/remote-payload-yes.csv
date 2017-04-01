@@ -1,49 +1,101 @@
-nuV9S,mist_file_heavy_0.txt,Process Start,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Call back recieved,1.49073E+12
-nuV9S,mist_file_heavy_0.txt,Process End,1.49073E+12
-,,,
-7B1tD,mist_file_heavy_0.txt,Process Start,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Call back recieved,1.49073E+12
-7B1tD,mist_file_heavy_0.txt,Process End,1.49073E+12
-,,,
-lXCSf,mist_file_heavy_0.txt,Process Start,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Call back recieved,1.49073E+12
-lXCSf,mist_file_heavy_0.txt,Process End,1.49073E+12
-,,,
-GjKHM,mist_file_heavy_0.txt,Process Start,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Call back recieved,1.49073E+12
-GjKHM,mist_file_heavy_0.txt,Process End,1.49073E+12
-,,,
-odAcU,mist_file_heavy_0.txt,Process Start,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Call back recieved,1.49073E+12
-odAcU,mist_file_heavy_0.txt,Process End,1.49073E+12
+nuV9S,mist_file_heavy_0.txt,Process Start,1.49073E+12,
+nuV9S,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12,25.24
+nuV9S,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12,
+nuV9S,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12,59.317
+nuV9S,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12,
+nuV9S,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12,113.245
+nuV9S,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12,
+nuV9S,mist_file_heavy_0.txt,Call back recieved,1.49073E+12,2.139
+nuV9S,mist_file_heavy_0.txt,Process End,1.49073E+12,
+,,,,
+7B1tD,mist_file_heavy_0.txt,Process Start,1.49073E+12,
+7B1tD,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12,5.771
+7B1tD,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12,
+7B1tD,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12,27.235
+7B1tD,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12,
+7B1tD,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12,97.414
+7B1tD,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12,
+7B1tD,mist_file_heavy_0.txt,Call back recieved,1.49073E+12,0.016
+7B1tD,mist_file_heavy_0.txt,Process End,1.49073E+12,
+,,,,
+lXCSf,mist_file_heavy_0.txt,Process Start,1.49073E+12,
+lXCSf,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12,24.014
+lXCSf,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12,
+lXCSf,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12,72.823
+lXCSf,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12,
+lXCSf,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12,56.16
+lXCSf,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12,
+lXCSf,mist_file_heavy_0.txt,Call back recieved,1.49073E+12,0.015
+lXCSf,mist_file_heavy_0.txt,Process End,1.49073E+12,
+,,,,
+GjKHM,mist_file_heavy_0.txt,Process Start,1.49073E+12,
+GjKHM,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12,5.552
+GjKHM,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12,
+GjKHM,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12,14.231
+GjKHM,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12,
+GjKHM,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12,132.208
+GjKHM,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12,
+GjKHM,mist_file_heavy_0.txt,Call back recieved,1.49073E+12,0.013
+GjKHM,mist_file_heavy_0.txt,Process End,1.49073E+12,
+,,,,
+odAcU,mist_file_heavy_0.txt,Process Start,1.49073E+12,
+odAcU,mist_file_heavy_0.txt,Recieved deployment ,1.49073E+12,8.143
+odAcU,mist_file_heavy_0.txt,Started deployment to Camunda,1.49073E+12,
+odAcU,mist_file_heavy_0.txt,Finished deployment to Camunda,1.49073E+12,38.591
+odAcU,mist_file_heavy_0.txt,Mist-docker  started,1.49073E+12,
+odAcU,mist_file_heavy_0.txt,Mist-docker  completed,1.49073E+12,105.754
+odAcU,mist_file_heavy_0.txt,Sending response to callback,1.49073E+12,
+odAcU,mist_file_heavy_0.txt,Call back recieved,1.49073E+12,0.038
+odAcU,mist_file_heavy_0.txt,Process End,1.49073E+12,
+,,,,
+,,,,
+
+N6X1f,mist_file_heavy_0.txt,Process Start,1491051571070
+N6X1f,mist_file_heavy_0.txt,Recieved deployment ,1491051575619
+N6X1f,mist_file_heavy_0.txt,Started deployment to Camunda,1491051580940
+N6X1f,mist_file_heavy_0.txt,Finished deployment to Camunda,1491051586619
+N6X1f,mist_file_heavy_0.txt,Mist-docker  started,1491051592751
+N6X1f,mist_file_heavy_0.txt,Mist-docker  completed,1491051733560
+N6X1f,mist_file_heavy_0.txt,Sending response to callback,1491051739580
+N6X1f,mist_file_heavy_0.txt,Call back recieved,1491051739603
+N6X1f,mist_file_heavy_0.txt,Process End,1491051742594
+,,,,
+bk8lM,mist_file_heavy_0.txt,Process Start,1491051780521
+bk8lM,mist_file_heavy_0.txt,Recieved deployment ,1491051784847
+bk8lM,mist_file_heavy_0.txt,Started deployment to Camunda,1491051786049
+bk8lM,mist_file_heavy_0.txt,Finished deployment to Camunda,1491051797124
+bk8lM,mist_file_heavy_0.txt,Mist-docker  started,1491051799251
+bk8lM,mist_file_heavy_0.txt,Mist-docker  completed,1491051959241
+bk8lM,mist_file_heavy_0.txt,Sending response to callback,1491051965589
+bk8lM,mist_file_heavy_0.txt,Call back recieved,1491051965611
+bk8lM,mist_file_heavy_0.txt,Process End,1491051968620
+,,,,
+DbBnr,mist_file_heavy_0.txt,Process Start,1491052004999
+DbBnr,mist_file_heavy_0.txt,Recieved deployment ,1491052009909
+DbBnr,mist_file_heavy_0.txt,Started deployment to Camunda,1491052018423
+DbBnr,mist_file_heavy_0.txt,Finished deployment to Camunda,1491052024039
+DbBnr,mist_file_heavy_0.txt,Mist-docker  started,1491052026199
+DbBnr,mist_file_heavy_0.txt,Mist-docker  completed,1491052171723
+DbBnr,mist_file_heavy_0.txt,Sending response to callback,1491052177747
+DbBnr,mist_file_heavy_0.txt,Call back recieved,1491052177771
+DbBnr,mist_file_heavy_0.txt,Process End,1491052182666
+,,,,
+76fJP,mist_file_heavy_0.txt,Process Start,1491052289521
+76fJP,mist_file_heavy_0.txt,Recieved deployment ,1491052296412
+76fJP,mist_file_heavy_0.txt,Started deployment to Camunda,1491052322687
+76fJP,mist_file_heavy_0.txt,Finished deployment to Camunda,1491052328509
+76fJP,mist_file_heavy_0.txt,Mist-docker  started,1491052366743
+76fJP,mist_file_heavy_0.txt,Mist-docker  completed,1491052464337
+76fJP,mist_file_heavy_0.txt,Sending response to callback,1491052472840
+76fJP,mist_file_heavy_0.txt,Call back recieved,1491052472863
+76fJP,mist_file_heavy_0.txt,Process End,1491052480607
+,,,,
+3u08T,mist_file_heavy_0.txt,Process Start,1491052543021
+3u08T,mist_file_heavy_0.txt,Recieved deployment ,1491052546986
+3u08T,mist_file_heavy_0.txt,Started deployment to Camunda,1491052574713
+3u08T,mist_file_heavy_0.txt,Finished deployment to Camunda,1491052580129
+3u08T,mist_file_heavy_0.txt,Mist-docker  started,1491052600878
+3u08T,mist_file_heavy_0.txt,Mist-docker  completed,1491052715222
+3u08T,mist_file_heavy_0.txt,Sending response to callback,1491052721236
+3u08T,mist_file_heavy_0.txt,Call back recieved,1491052721259
+3u08T,mist_file_heavy_0.txt,Process End,1491052724142
