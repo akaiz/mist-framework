@@ -20,8 +20,8 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3480">
-              <caret line="313" column="0" lean-forward="true" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="142" column="31" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="77" />
+              <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -812,16 +812,16 @@
       <workItem from="1490636100216" duration="5090000" />
       <workItem from="1490810212804" duration="596000" />
       <workItem from="1490892647117" duration="599000" />
-      <workItem from="1491043684625" duration="1222000" />
+      <workItem from="1491043684625" duration="2081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203956000" />
+    <option name="totallyTimeSpent" value="204815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="74" y="22" width="1500" height="958" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1220,7 +1220,7 @@
     <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="77" />
+          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1251,8 +1251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3480">
-          <caret line="313" column="0" lean-forward="true" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="142" column="31" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
           <folding />
         </state>
       </provider>

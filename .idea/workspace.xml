@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="Docker container update and war app update">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/xls/local-payload-no.xlsx" afterPath="$PROJECT_DIR$/results/xls/local-payload-no.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/xls/local-payload-yes.xlsx" afterPath="$PROJECT_DIR$/results/xls/local-payload-yes.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/xls/remote-payload-no.xlsx" afterPath="$PROJECT_DIR$/results/xls/remote-payload-no.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/xls/remote-payload-yes.xlsx" afterPath="$PROJECT_DIR$/results/xls/remote-payload-yes.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/remote-payload-no.csv" afterPath="$PROJECT_DIR$/results/remote-payload-no.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/remote-payload-yes.csv" afterPath="$PROJECT_DIR$/results/remote-payload-yes.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,45 +32,25 @@
       <file leaf-file-name="remote-payload-no.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/results/remote-payload-no.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="155" column="70" lean-forward="false" selection-start-line="155" selection-start-column="70" selection-end-line="155" selection-end-column="70" />
+            <state relative-caret-position="444">
+              <caret line="145" column="53" lean-forward="false" selection-start-line="145" selection-start-column="53" selection-end-line="145" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="remote-payload-yes.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="remote-payload-yes.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/results/remote-payload-yes.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
+            <state relative-caret-position="429">
               <caret line="98" column="70" lean-forward="false" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-deployer-app/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-deployer-app/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-docker-container/.gitignore">
+      <file leaf-file-name="mist_file_heavy_1.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -84,11 +59,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-docker-container/Dockerfile">
+      <file leaf-file-name="mist_file_light_1.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mist_file_light_0.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_0.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mist_file_heavy_0.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_0.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -204,7 +199,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="results" />
+              <option name="myItemId" value="mist-deployer-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -222,6 +217,147 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_1_1_local/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_1_1_local/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_1_1_local/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_1_1_local/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local_2/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local_2/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local_2/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log_2_1_local_2/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b2/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b2/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b2/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local-b2/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-no-local/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender-b/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender-b/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender-b/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender-b/network.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender/cpu.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender/log.file</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender/mem.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remote-payload-yes-sender/network.csv</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -637,7 +773,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="2575000" />
+      <workItem from="1491046636390" duration="4005000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -734,11 +870,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26230000" />
+    <option name="totallyTimeSpent" value="27660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="141" width="1625" height="826" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -749,9 +885,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25891677" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23778072" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23778072" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19323076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -800,38 +936,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mist-deployer-app/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-deployer-app/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-docker-container/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-docker-container/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mist-deployer-app/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1162,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-docker-container/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1204,18 +1308,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/remote-payload-no.csv">
+    <entry file="file://$PROJECT_DIR$/results/remote-payload-yes.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="155" column="70" lean-forward="false" selection-start-line="155" selection-start-column="70" selection-end-line="155" selection-end-column="70" />
+        <state relative-caret-position="429">
+          <caret line="98" column="70" lean-forward="false" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/remote-payload-yes.csv">
+    <entry file="file://$PROJECT_DIR$/results/remote-payload-no.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="98" column="70" lean-forward="false" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
+        <state relative-caret-position="444">
+          <caret line="145" column="53" lean-forward="false" selection-start-line="145" selection-start-column="53" selection-end-line="145" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
