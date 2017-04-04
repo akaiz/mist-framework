@@ -156,7 +156,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="36" />
+    <option name="y" value="119" />
     <option name="width" value="1625" />
     <option name="height" value="826" />
   </component>
@@ -741,7 +741,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="11247000" />
+      <workItem from="1491046636390" duration="11724000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -897,14 +897,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491310487869</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="mist update">
+      <created>1491311935464</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1491311935464</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34902000" />
+    <option name="totallyTimeSpent" value="35379000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="36" width="1625" height="826" extended-state="0" />
+    <frame x="0" y="119" width="1625" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
