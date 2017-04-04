@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="mist update">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/mist_data/mist-0.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/mist_data/mist_file_info.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/message_start_process.bpmn" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/message_start_process.bpmn" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/message_start_process.bpmn" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/META-INF/processes.xml" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/META-INF/processes.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -159,8 +158,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-54" />
-    <option name="y" value="169" />
+    <option name="x" value="79" />
+    <option name="y" value="71" />
     <option name="width" value="1625" />
     <option name="height" value="826" />
   </component>
@@ -745,7 +744,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="12423000" />
+      <workItem from="1491046636390" duration="12873000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -922,14 +921,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491312620876</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="mist update">
+      <created>1491315200367</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1491315200367</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36078000" />
+    <option name="totallyTimeSpent" value="36528000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-54" y="169" width="1625" height="826" extended-state="0" />
+    <frame x="79" y="71" width="1625" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
