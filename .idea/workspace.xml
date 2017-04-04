@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="mist update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequestOne.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.settings/org.eclipse.m2e.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/mist.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/CsvFile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/DockerCommands.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/ImageFetcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/META-INF/processes.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/message_start_process.bpmn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/mist-0.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/mist_file_info.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist-0.war" afterPath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist-0.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -252,7 +231,6 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/mist-deployer-app/mist-files/mist-0.war</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/mist-deployer-app/mistlog.csv</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -260,10 +238,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloud-remote-payload-sent-yes/cpu.csv</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloud-remote-payload-sent-yes/log.file</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloud-remote-payload-sent-yes/mem.csv</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloud-remote-payload-sent-yes/network.csv</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -766,7 +740,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="7190000" />
+      <workItem from="1491046636390" duration="7245000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -905,11 +879,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30845000" />
+    <option name="totallyTimeSpent" value="30900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="1625" height="826" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -920,7 +894,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25891677" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25759578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23778072" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
