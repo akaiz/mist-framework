@@ -140,7 +140,7 @@ public class MistController {
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
-    String localhost="127.0.0.1";
+    String localhost="localhost";
     @Autowired
     private HttpServletRequest request;
 
@@ -372,7 +372,7 @@ public class MistController {
     @RequestMapping(value = "/deployer",method = RequestMethod.GET)
     @ResponseBody
     public   String deployDepolyer() throws ClientProtocolException, IOException {
-        String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
+        String url = localhost+":8080/manager/text/deploy?path=/deployerApp&update=true";
 
         File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
         HttpPut req = new HttpPut(url) ;
@@ -390,7 +390,7 @@ public class MistController {
     public   String undeployDepolyer() throws ClientProtocolException, IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String url = localhost+":8080/manager/text/undeploy?path=/deployer";
+        String url = localhost+":8080/manager/text/undeploy?path=/deployerApp";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
