@@ -369,6 +369,34 @@ public class MistController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+    @RequestMapping(value = "/deployer",method = RequestMethod.GET)
+    @ResponseBody
+    public   String deployDepolyer() throws ClientProtocolException, IOException {
+        String url = localhost+":8080/manager/text/deploy?path=/deployer&update=true";
+
+        File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
+        HttpPut req = new HttpPut(url) ;
+        MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+        meb.addTextBody("fileDescription", "war file to deploy");
+        //"application/octect-stream"
+        meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
+        req.setEntity(meb.build()) ;
+        String response = executeRequest (req, credsProvider);
+
+      return  response;
+    }
+    @RequestMapping(value = "/undeployer",method = RequestMethod.GET)
+    @ResponseBody
+    public   String undeployDepolyer() throws ClientProtocolException, IOException {
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        String url = localhost+":8080/manager/text/undeploy?path=/deployer";
+        HttpGet req = new HttpGet(url) ;
+        String response = executeRequest (req, credsProvider);
+        System.out.println("Response : "+response);
+        return  response;
+    }
+
 
     // deploy file to camunda
 
