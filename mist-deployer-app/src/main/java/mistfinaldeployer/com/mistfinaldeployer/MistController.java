@@ -371,6 +371,7 @@ public class MistController {
     }
     @RequestMapping(value = "/deployer",method = RequestMethod.GET)
     public   String deployDepolyer() throws ClientProtocolException, IOException {
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         String url = localhost+":8080/manager/text/deploy?path=/deployerApp&update=true";
 
         File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
