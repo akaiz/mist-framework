@@ -1,0 +1,7 @@
+
+.idea/
+mist-tomcat-app.iml
+
+target/classes/ee/ut/mobilelab/mistbpmn/
+target/mist-2.1/
+/target/

@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="cloud url update">
+    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="mist update">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequestOne.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/.settings/org.eclipse.m2e.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/mist.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/CsvFile.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/DockerCommands.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/ImageFetcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/META-INF/processes.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/message_start_process.bpmn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/mist-0.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/resources/mist_data/mist_file_info.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist-0.war" afterPath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist-0.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" afterPath="$PROJECT_DIR$/mist-tomcat-app-war/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,8 +82,8 @@
       <file leaf-file-name="mist_file_light_1.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -185,84 +205,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-tomcat-app-war" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-tomcat-app-war" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist-tomcat-app-war" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobilelab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mistbpmn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -824,7 +766,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="6566000" />
+      <workItem from="1491046636390" duration="7190000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -952,11 +894,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491078234765</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="mist update">
+      <created>1491080937618</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1491080937618</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30221000" />
+    <option name="totallyTimeSpent" value="30845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="1625" height="826" extended-state="0" />
@@ -1015,7 +964,8 @@
     <MESSAGE value="Localhost url change" />
     <MESSAGE value="Mist tomcat removed sending call back sending" />
     <MESSAGE value="cloud url update" />
-    <option name="LAST_COMMIT_MESSAGE" value="cloud url update" />
+    <MESSAGE value="mist update" />
+    <option name="LAST_COMMIT_MESSAGE" value="mist update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1439,8 +1389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

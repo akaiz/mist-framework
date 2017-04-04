@@ -163,7 +163,6 @@ public class MistController {
         System.out.println("Post request sent with this data "+postText);
 
         String       postUrl       = localhost+":8080/engine-rest/message";// put in your url
-        Gson gson          = new Gson();
         HttpClient httpClient    = HttpClientBuilder.create().build();
         HttpPost post          = new HttpPost(postUrl);
         System.out.println(postText);
