@@ -62,8 +62,8 @@
       <file leaf-file-name="mist_file_light_1.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -741,7 +741,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="10583000" />
+      <workItem from="1491046636390" duration="11247000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -901,7 +901,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34238000" />
+    <option name="totallyTimeSpent" value="34902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="1625" height="826" extended-state="0" />
@@ -1385,8 +1385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding />
         </state>
       </provider>

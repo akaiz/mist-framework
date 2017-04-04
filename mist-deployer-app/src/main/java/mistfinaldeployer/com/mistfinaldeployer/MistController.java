@@ -140,7 +140,7 @@ public class MistController {
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
-    String localhost="localhost";
+    String localhost="http://localhost";
     @Autowired
     private HttpServletRequest request;
 
