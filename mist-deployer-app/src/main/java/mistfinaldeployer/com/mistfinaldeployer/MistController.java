@@ -372,7 +372,7 @@ public class MistController {
     @RequestMapping(value = "/deployer",method = RequestMethod.GET)
     @ResponseBody
     public   String deployDepolyer() throws ClientProtocolException, IOException {
-        String url = localhost+":8080/manager/text/deploy?path=/deployer&update=true";
+        String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
 
         File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
         HttpPut req = new HttpPut(url) ;
