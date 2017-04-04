@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="mist update">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/message_start_process.bpmn" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/META-INF/processes.xml" afterPath="$PROJECT_DIR$/mist-deployer-war/src/main/resources/META-INF/processes.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,8 +61,8 @@
       <file leaf-file-name="mist_file_light_1.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="90">
+              <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -158,8 +155,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="79" />
-    <option name="y" value="71" />
+    <option name="y" value="33" />
     <option name="width" value="1625" />
     <option name="height" value="826" />
   </component>
@@ -744,7 +740,7 @@
       <workItem from="1490810319033" duration="1031000" />
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
-      <workItem from="1491046636390" duration="12873000" />
+      <workItem from="1491046636390" duration="13776000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -928,14 +924,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491315200367</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="mist update">
+      <created>1491318120458</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1491318120458</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36528000" />
+    <option name="totallyTimeSpent" value="37431000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="79" y="71" width="1625" height="826" extended-state="0" />
+    <frame x="0" y="33" width="1625" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1416,8 +1419,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_light_1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        <state relative-caret-position="90">
+          <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
           <folding />
         </state>
       </provider>
