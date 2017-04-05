@@ -4,8 +4,6 @@
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="mist update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/mist-files/deployer.txt" afterPath="$PROJECT_DIR$/mist-deployer-app/mist-files/deployer.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -634,7 +632,7 @@
       <workItem from="1490892650552" duration="877000" />
       <workItem from="1491043689293" duration="5000" />
       <workItem from="1491046636390" duration="14565000" />
-      <workItem from="1491394560990" duration="1263000" />
+      <workItem from="1491394560990" duration="1614000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -843,7 +841,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39483000" />
+    <option name="totallyTimeSpent" value="39834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="22" width="1625" height="826" extended-state="0" />

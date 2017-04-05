@@ -1,6 +1,6 @@
 {"messageName" : "instantiationMessageMistDeployer",
  "businessKey" : "aBusinessKey",
- "processVariables" :
+ "processVariables" : {
  "mist_one_url":{"value" : "http://138.68.176.11:8098/callback","type": "String"},
   "mist_two_url":{"value" : "http://138.68.176.11:8098/callback","type": "String"},
  "mist_files_path":{"value" :"/home/pi/mist-framework/mist-deployer-app/mist-files/","type": "String"},
