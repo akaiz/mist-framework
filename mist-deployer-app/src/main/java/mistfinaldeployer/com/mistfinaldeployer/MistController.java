@@ -88,6 +88,25 @@ class Node{
     String mist_file;
     String payload;
     String call_back_ip;
+    String node_one;
+
+    public String getNode_one() {
+        return node_one;
+    }
+
+    public void setNode_one(String node_one) {
+        this.node_one = node_one;
+    }
+
+    public String getNode_two() {
+        return node_two;
+    }
+
+    public void setNode_two(String node_two) {
+        this.node_two = node_two;
+    }
+
+    String node_two;
 }
 class Callback{
     String name;
@@ -280,6 +299,9 @@ public class MistController {
                                            @RequestParam("callback") String callback,@RequestParam("processId") String processId) throws IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
 
+
+        // make a call to the deployer
+
         try {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             CsvFile.write(processId,"Recieved deployment ");
@@ -374,7 +396,7 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         String url = localhost+":8080/manager/text/deploy?path=/deployerApp&update=true";
 
-        File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
+        File file = new File ("/Users/agabaisaac/iot/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
         HttpPut req = new HttpPut(url) ;
         MultipartEntityBuilder meb = MultipartEntityBuilder.create();
         meb.addTextBody("fileDescription", "war file to deploy");
@@ -510,25 +532,83 @@ public class MistController {
                 ex.printStackTrace();
 
             }
-            CsvFile.write(processId,"Process Start");
-            File war = new File(mistFilesPath+"mist-0.war");
-            File mist_file = new File(mistFilesPath+node.getMist_file());
-            HttpPost req = new HttpPost(node.url);
-            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
-            meb.addTextBody("processId",processId);
-            System.out.println("payload ------->"+node.getPayload());
-            if(node.getPayload().equals("true")){
-                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("light_0")?"payload-light.jpg":"payload-heavy.jpeg"));
-                System.out.println("payload ------->"+mist_payload.getAbsolutePath());
-                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+
+            String tempFile2 = mistFilesPath+"mis_temp.txt";
+
+            PrintWriter writer2 = new PrintWriter(new BufferedWriter(new FileWriter(tempFile2)));
+            BufferedWriter bw2 = null;
+            FileWriter fw2 = null;
+            fw = new FileWriter(tempFile2);
+            bw = new BufferedWriter(fw2);
+
+            String deployerText =null;
+            BufferedReader br2 = new BufferedReader(new FileReader(mistFilesPath+"deployer.txt"));
+            try {
+                StringBuilder sb2 = new StringBuilder();
+                String line2 = br2.readLine();
+                String newLine2 = System.getProperty("line.separator");
+
+                while (line2 != null) {
+                    if(line2.contains("mist_one_url")){
+                        line2 =" \"mist_one_url\":{\"value\" : \""+node.getNode_one()+"\",\"type\": \"String\"},";
+                    }
+                    if(line2.contains("mist_two_url")){
+                        line2 =" \"mist_one_url\":{\"value\" : \""+node.getNode_two()+"\",\"type\": \"String\"},";
+                    }
+                    if(line2.contains("mist_file")){
+                        line2 =" \"mist_file\":{\"value\" : \""+node.getMist_file()+"\",\"type\": \"String\"},";
+                    }
+                    if(line2.contains("processId")){
+                        line2 =" \"processId\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
+                    }
+                    if(line2.contains("payload")){
+                        line2 =" \"payload\":{\"value\" :\""+node.getPayload()+"\",\"type\": \"String\"}";
+                    }
+                    // Always write the line, whether you changed it or not.
+                    bw2.write(line2+newLine2);
+
+                    line2 = br2.readLine();
+                }
+                 deployerText=sb2.toString();
+
+            } finally {
+                br2.close();
+            }
+            try {
+
+                if (bw2 != null)
+                    bw2.close();
+
+                if (fw2 != null)
+                    fw2.close();
+                File realName2 = new File(mistFilesPath+"deployer.txt");
+                realName2.delete(); // remove the old file
+                new File(tempFile2).renameTo(realName2); // Rename temp file
+
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+
             }
 
-            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
 
-            req.setEntity(meb.build());
-            String response = executeRequest(req, credsProvider);
+            CsvFile.write(processId,"Process Start");
+            String postText = deployerText;
+            System.out.println("Post request sent with this data "+postText);
+
+            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+            Gson gson          = new Gson();
+            HttpClient httpClient    = HttpClientBuilder.create().build();
+            HttpPost post          = new HttpPost(postUrl);
+            System.out.println(postText);
+            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+            post.setEntity(postingString);
+            post.setHeader("Content-type", "application/json");
+
+            System.out.println("Request being processed .......................");
+
+            HttpResponse  response2 = httpClient.execute(post);
             CsvFile.write(processId,"Process End");
             return "Success Mist Tasks completed";
 

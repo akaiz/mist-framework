@@ -33,26 +33,30 @@ public class MistRequestTwo implements JavaDelegate {
         String mistFile = (String)execution.getVariable("mist_file");
         String processId = (String)execution.getVariable("processId");
         String payload = (String)execution.getVariable("payload");
+        LOGGER.info("HERE IN THE MIST TWO");
+        if(mistTwo!=null){
+            File war = new File(mistFilesPath+"mist-0.war");
+            File mist_file = new File(mistFilesPath+mistFile);
+            HttpPost req = new HttpPost(mistTwo);
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("processId",processId);
 
+            if(payload.equals("true")){
+                File mist_payload = new File(mistFilesPath+(mistFile.contains("light_0")?"payload-light.jpg":"payload-heavy.jpeg"));
 
-        File war = new File(mistFilesPath+"mist-0.war");
-        File mist_file = new File(mistFilesPath+mistFile);
-        HttpPost req = new HttpPost(mistTwo);
-        MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-        meb.addTextBody("processId",processId);
+                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+            }
 
-        if(payload.equals("true")){
-            File mist_payload = new File(mistFilesPath+(mistFile.contains("light_0")?"payload-light.jpg":"payload-heavy.jpeg"));
+            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
 
-            meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+            req.setEntity(meb.build());
+            HttpClient httpClient    = HttpClientBuilder.create().build();
+            HttpResponse response = httpClient.execute(req);
+            LOGGER.info("Response from Mist TWO ");
         }
 
-        meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-        meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
 
-        req.setEntity(meb.build());
-        HttpClient httpClient    = HttpClientBuilder.create().build();
-        HttpResponse response = httpClient.execute(req);
 
 
     }
