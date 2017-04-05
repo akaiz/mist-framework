@@ -33,7 +33,7 @@ public class MistRequestTwo implements JavaDelegate {
         String mistFile = (String)execution.getVariable("mist_file");
         String processId = (String)execution.getVariable("processId");
         String payload = (String)execution.getVariable("payload");
-        LOGGER.info("HERE IN THE MIST TWO");
+        LOGGER.info("HERE IN THE MIST TWO"+mistTwo);
         if(mistTwo!=null){
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+mistFile);

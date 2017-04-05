@@ -37,7 +37,7 @@ public class MistRequestOne implements JavaDelegate {
         String mistFile = (String)execution.getVariable("mist_file");
         String processId = (String)execution.getVariable("processId");
         String payload = (String)execution.getVariable("payload");
-        LOGGER.info("HERE IN THE MIST ONE");
+        LOGGER.info("HERE IN THE MIST ONE"+mistOne);
         File war = new File(mistFilesPath+"mist-0.war");
         File mist_file = new File(mistFilesPath+mistFile);
         if(mistOne!=null){
