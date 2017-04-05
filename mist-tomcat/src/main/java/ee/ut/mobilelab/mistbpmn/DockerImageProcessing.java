@@ -22,7 +22,7 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
     private Expression dockerImage;
     private Expression command;
     private Expression imagePath;
-    private String localhost="http://138.68.176.11";
+    private String localhost="http://localhost";
 
 
     public DockerImageProcessing() {
