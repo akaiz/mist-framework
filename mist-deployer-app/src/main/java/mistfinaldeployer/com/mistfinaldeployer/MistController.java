@@ -396,7 +396,7 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         String url = localhost+":8080/manager/text/deploy?path=/deployer-0&update=true";
 
-        File file = new File ("/home/pi/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
+        File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
         HttpPut req = new HttpPut(url) ;
         MultipartEntityBuilder meb = MultipartEntityBuilder.create();
         meb.addTextBody("fileDescription", "war file to deploy");
