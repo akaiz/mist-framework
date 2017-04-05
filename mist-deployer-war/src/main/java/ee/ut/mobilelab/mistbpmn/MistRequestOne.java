@@ -57,7 +57,7 @@ public class MistRequestOne implements JavaDelegate {
             req.setEntity(meb.build());
             HttpClient httpClient    = HttpClientBuilder.create().build();
             HttpResponse response = httpClient.execute(req);
-            LOGGER.info("Response from Mist One ");
+            LOGGER.info("Response from Mist One "+response);
         }
 
 
