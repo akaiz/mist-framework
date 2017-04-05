@@ -32,6 +32,8 @@ public class MistRequestOne implements JavaDelegate {
 
     public void execute(DelegateExecution execution) throws Exception {
 
+
+
         String mistOne = (String)execution.getVariable("mist_one_url");
         String mistFilesPath = (String)execution.getVariable("mist_files_path");
         String mistFile = (String)execution.getVariable("mist_file");
@@ -50,10 +52,10 @@ public class MistRequestOne implements JavaDelegate {
 
                 meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
             }
-
+            meb.addTextBody("callback", "http://127.0.0.1/callback");
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-
+            LOGGER.info("Response from Mist One "+mist_file.getName());
             req.setEntity(meb.build());
             HttpClient httpClient    = HttpClientBuilder.create().build();
             HttpResponse response = httpClient.execute(req);
