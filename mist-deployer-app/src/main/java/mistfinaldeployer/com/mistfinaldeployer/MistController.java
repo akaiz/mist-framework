@@ -292,7 +292,7 @@ public class MistController {
         }
 
     }
-    @RequestMapping(value = "/deploynode",method = RequestMethod.POST)
+    @RequestMapping(value = "/deploy/final",method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile,
                                            @RequestParam(name = "payload", required=false) MultipartFile payload,
@@ -472,7 +472,7 @@ public class MistController {
 
     }
 
-    @RequestMapping(value = "deploy/node", method = RequestMethod.POST)
+    @RequestMapping(value = "deploy/start", method = RequestMethod.POST)
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         if (node.url != null) {
             String processId = randomString(5)+","+node.getMist_file();
