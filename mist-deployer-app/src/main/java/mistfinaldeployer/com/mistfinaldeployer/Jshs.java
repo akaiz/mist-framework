@@ -487,27 +487,6 @@ public class Jshs {
         // CsvFile.write(processId,"Finished un deployment to Camunda");
         return  response;
     }
-    @RequestMapping(value = "/callback", method = RequestMethod.POST)
-    @ResponseBody
-    public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
-        String x = response.replace("response","");
-        x=x.replaceAll("=","");
-        x=x.replace("%2C",",");
-        CsvFile.write(x,"Call back recieved");
-        return  "received";
-
-    }
-    @RequestMapping(value = "/callback/time", method = RequestMethod.POST)
-    @ResponseBody
-
-    public String callbackTime(@RequestBody  CallbackTwo callback  ) throws IOException {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String time= timestamp.getTime()+"";
-
-        CsvFile.write(callback.getId(),callback.getName());
-        return "recieved";
-
-    }
 
     private String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException, IOException {
         CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
