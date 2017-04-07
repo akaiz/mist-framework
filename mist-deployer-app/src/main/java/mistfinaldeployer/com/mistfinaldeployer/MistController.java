@@ -492,6 +492,61 @@ public class MistController {
     @RequestMapping(value = "deploy/start", method = RequestMethod.POST)
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        String mistFilesPath =node.mist_files_path;
+        if(! new File(mistFilesPath).exists())
+        {
+            System.out.println("Missing mist files at "+mistFilesPath);  ;
+        }
+
+        String tempFile = mistFilesPath+"mis_temp.txt";
+
+        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+        fw = new FileWriter(tempFile);
+        bw = new BufferedWriter(fw);
+
+
+        BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            String newLine = System.getProperty("line.separator");
+
+            while (line != null) {
+                if(line.contains("call_back_url")){
+                    line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http:"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
+                }
+                if(line.contains("log_id")){
+                    line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"}";
+                }
+                // Always write the line, whether you changed it or not.
+                bw.write(line+newLine);
+
+                line = br.readLine();
+            }
+            startRequest=sb.toString();
+
+        } finally {
+            br.close();
+        }
+        try {
+
+            if (bw != null)
+                bw.close();
+
+            if (fw != null)
+                fw.close();
+            File realName = new File(mistFilesPath+node.getMist_file());
+            realName.delete();
+            new File(tempFile).renameTo(realName);
+
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+
+        }
         ExecutorService executor = Executors.newFixedThreadPool(2);
         String processId = randomString(5)+","+node.getMist_file();
         node.setProcessId(processId);
@@ -648,13 +703,14 @@ public class MistController {
     public static class MyRunnable implements Runnable {
         private  Node node;
         CredentialsProvider credsProvider;
-        String startRequest=null;
         int i;
+
 
         MyRunnable(Node node,CredentialsProvider credsProvider,int i) {
             this.node = node;
             this.credsProvider=credsProvider;
             this.i=i;
+
 
         }
         public void deploy( Node node, CredentialsProvider credsProvider) throws ClientProtocolException, IOException{
@@ -663,60 +719,6 @@ public class MistController {
             HttpResponse response = httpClient.execute(req);
             if(response.getStatusLine().getStatusCode()==200){
                 String mistFilesPath =node.mist_files_path;
-                if(! new File(mistFilesPath).exists())
-                {
-                    System.out.println("Missing mist files at "+mistFilesPath);  ;
-                }
-
-                String tempFile = mistFilesPath+"mis_temp.txt";
-
-                PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
-                BufferedWriter bw = null;
-                FileWriter fw = null;
-                fw = new FileWriter(tempFile);
-                bw = new BufferedWriter(fw);
-
-
-                BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
-                try {
-                    StringBuilder sb = new StringBuilder();
-                    String line = br.readLine();
-                    String newLine = System.getProperty("line.separator");
-
-                    while (line != null) {
-                        if(line.contains("call_back_url")){
-                            line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http:"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
-                        }
-                        if(line.contains("log_id")){
-                            line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"}";
-                        }
-                        // Always write the line, whether you changed it or not.
-                        bw.write(line+newLine);
-
-                        line = br.readLine();
-                    }
-                    startRequest=sb.toString();
-
-                } finally {
-                    br.close();
-                }
-                try {
-
-                    if (bw != null)
-                        bw.close();
-
-                    if (fw != null)
-                        fw.close();
-                    File realName = new File(mistFilesPath+node.getMist_file());
-                    realName.delete();
-                    new File(tempFile).renameTo(realName);
-
-
-                } catch (IOException ex) {
-
-                    ex.printStackTrace();
-
-                }
                 System.out.println(node.getUrl());
                 CsvFile.write(node.processId,"Process Start");
                 File war = new File(mistFilesPath+"mist-0.war");
