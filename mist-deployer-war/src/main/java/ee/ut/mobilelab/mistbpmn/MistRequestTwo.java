@@ -46,7 +46,7 @@ public class MistRequestTwo implements JavaDelegate {
 
                 meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
             }
-
+            meb.addTextBody("callback", "http://127.0.0.1/callback");
             meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
             meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
 

@@ -32,8 +32,6 @@ public class MistRequestOne implements JavaDelegate {
 
     public void execute(DelegateExecution execution) throws Exception {
 
-
-
         String mistOne = (String)execution.getVariable("mist_one_url");
         String mistFilesPath = (String)execution.getVariable("mist_files_path");
         String mistFile = (String)execution.getVariable("mist_file");

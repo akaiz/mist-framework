@@ -39,6 +39,8 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -89,6 +91,16 @@ class Node{
     String payload;
     String call_back_ip;
     String node_one;
+    String processId;
+    public String getProcessId() {
+        return processId;
+    }
+
+    public void setProcessId(String processId) {
+        this.processId = processId;
+    }
+
+
 
     public String getNode_one() {
         return node_one;
@@ -173,6 +185,11 @@ public class MistController {
         }
 
         return "Bpmn not started";
+    }
+    @RequestMapping("/alive")
+    public String alive() throws IOException {
+
+        return "alive";
     }
 
 
@@ -474,143 +491,21 @@ public class MistController {
 
     @RequestMapping(value = "deploy/start", method = RequestMethod.POST)
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException{
-        if (node.url != null) {
-            String processId = randomString(5)+","+node.getMist_file();
-            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            String mistFilesPath =node.mist_files_path;
-            if(! new File(mistFilesPath).exists())
-            {
-                return  "Missing mist files at "+mistFilesPath;
-            }
-
-            String tempFile = mistFilesPath+"mis_temp.txt";
-
-            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
-            BufferedWriter bw = null;
-            FileWriter fw = null;
-            fw = new FileWriter(tempFile);
-            bw = new BufferedWriter(fw);
-
-
-            BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
-            try {
-                StringBuilder sb = new StringBuilder();
-                String line = br.readLine();
-                String newLine = System.getProperty("line.separator");
-
-                while (line != null) {
-                    if(line.contains("call_back_url")){
-                        line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
-                    }
-                    if(line.contains("log_id")){
-                        line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"}";
-                    }
-                    // Always write the line, whether you changed it or not.
-                    bw.write(line+newLine);
-
-                    line = br.readLine();
-                }
-                startRequest=sb.toString();
-
-            } finally {
-                br.close();
-            }
-            try {
-
-                if (bw != null)
-                    bw.close();
-
-                if (fw != null)
-                    fw.close();
-                File realName = new File(mistFilesPath+node.getMist_file());
-                realName.delete(); // remove the old file
-                new File(tempFile).renameTo(realName); // Rename temp file
-
-
-            } catch (IOException ex) {
-
-                ex.printStackTrace();
-
-            }
-
-            String tempFile2 = mistFilesPath+"mis_temp.txt";
-
-            PrintWriter writer2 = new PrintWriter(new BufferedWriter(new FileWriter(tempFile2)));
-            BufferedWriter bw2 = null;
-            FileWriter fw2 = null;
-            fw = new FileWriter(tempFile2);
-            bw = new BufferedWriter(fw2);
-
-            String deployerText =null;
-            BufferedReader br2 = new BufferedReader(new FileReader(mistFilesPath+"deployer.txt"));
-            try {
-                StringBuilder sb2 = new StringBuilder();
-                String line2 = br2.readLine();
-                String newLine2 = System.getProperty("line.separator");
-
-                while (line2 != null) {
-                    if(line2.contains("mist_one_url")){
-                        line2 =" \"mist_one_url\":{\"value\" : \""+node.getNode_one()+"\",\"type\": \"String\"},";
-                    }
-                    if(line2.contains("mist_two_url")){
-                        line2 =" \"mist_one_url\":{\"value\" : \""+node.getNode_two()+"\",\"type\": \"String\"},";
-                    }
-                    if(line2.contains("mist_file")){
-                        line2 =" \"mist_file\":{\"value\" : \""+node.getMist_file()+"\",\"type\": \"String\"},";
-                    }
-                    if(line2.contains("processId")){
-                        line2 =" \"processId\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
-                    }
-                    if(line2.contains("payload")){
-                        line2 =" \"payload\":{\"value\" :\""+node.getPayload()+"\",\"type\": \"String\"}";
-                    }
-                    // Always write the line, whether you changed it or not.
-                    bw2.write(line2+newLine2);
-
-                    line2 = br2.readLine();
-                }
-                 deployerText=sb2.toString();
-
-            } finally {
-                br2.close();
-            }
-            try {
-
-                if (bw2 != null)
-                    bw2.close();
-
-                if (fw2 != null)
-                    fw2.close();
-                File realName2 = new File(mistFilesPath+"deployer.txt");
-                realName2.delete(); // remove the old file
-                new File(tempFile2).renameTo(realName2); // Rename temp file
-
-
-            } catch (IOException ex) {
-
-                ex.printStackTrace();
-
-            }
-
-
-            CsvFile.write(processId,"Process Start");
-            String postText = deployerText;
-            System.out.println("Post request sent with this data "+postText);
-
-            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
-            Gson gson          = new Gson();
-            HttpClient httpClient    = HttpClientBuilder.create().build();
-            HttpPost post          = new HttpPost(postUrl);
-            System.out.println(postText);
-            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
-            post.setEntity(postingString);
-            post.setHeader("Content-type", "application/json");
-
-            System.out.println("Request being processed .......................");
-
-            HttpResponse  response2 = httpClient.execute(post);
-            CsvFile.write(processId,"Process End");
-            return "Success Mist Tasks completed";
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        String processId = randomString(5)+","+node.getMist_file();
+        node.setProcessId(processId);
+        Node node1 = node;
+        Node node2 = node;
+        node1.setUrl(node.getNode_one());
+        node2.setUrl(node.getNode_two());
+        Runnable worker = new MyRunnable(node1,credsProvider);
+        executor.execute(worker);
+        Runnable worker2 = new MyRunnable(node2,credsProvider);
+        executor.execute(worker2);
+        executor.shutdown();
+        // Wait until all threads are finish
+        while (!executor.isTerminated()) {
 
         }
         return "Sorry empty url supplied";
@@ -649,7 +544,7 @@ public class MistController {
 
     }
 
-    private String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException, IOException {
+    public String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException, IOException {
         CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
         InputStream responseStream = null;
         String res = null;
@@ -750,5 +645,131 @@ public class MistController {
         return ip;
     }
 
+    public static class MyRunnable implements Runnable {
+        private  Node node;
+        CredentialsProvider credsProvider;
+        String startRequest=null;
+
+        MyRunnable(Node node,CredentialsProvider credsProvider) {
+            this.node = node;
+            this.credsProvider=credsProvider;
+
+        }
+        public void deploy( Node node, CredentialsProvider credsProvider) throws ClientProtocolException, IOException{
+            HttpGet req = new HttpGet(node.getUrl().replace("final","status")) ;
+            HttpClient httpClient    = HttpClientBuilder.create().build();
+            HttpResponse response = httpClient.execute(req);
+            if(response.getStatusLine().getStatusCode()==200){
+                String mistFilesPath =node.mist_files_path;
+                if(! new File(mistFilesPath).exists())
+                {
+                    System.out.println("Missing mist files at "+mistFilesPath);  ;
+                }
+
+                String tempFile = mistFilesPath+"mis_temp.txt";
+
+                PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
+                BufferedWriter bw = null;
+                FileWriter fw = null;
+                fw = new FileWriter(tempFile);
+                bw = new BufferedWriter(fw);
+
+
+                BufferedReader br = new BufferedReader(new FileReader(mistFilesPath+node.getMist_file()));
+                try {
+                    StringBuilder sb = new StringBuilder();
+                    String line = br.readLine();
+                    String newLine = System.getProperty("line.separator");
+
+                    while (line != null) {
+                        if(line.contains("call_back_url")){
+                            line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http:"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
+                        }
+                        if(line.contains("log_id")){
+                            line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"}";
+                        }
+                        // Always write the line, whether you changed it or not.
+                        bw.write(line+newLine);
+
+                        line = br.readLine();
+                    }
+                    startRequest=sb.toString();
+
+                } finally {
+                    br.close();
+                }
+                try {
+
+                    if (bw != null)
+                        bw.close();
+
+                    if (fw != null)
+                        fw.close();
+                    File realName = new File(mistFilesPath+node.getMist_file());
+                    realName.delete();
+                    new File(tempFile).renameTo(realName);
+
+
+                } catch (IOException ex) {
+
+                    ex.printStackTrace();
+
+                }
+                System.out.println(node.getUrl());
+                CsvFile.write(node.processId,"Process Start");
+                File war = new File(mistFilesPath+"mist-0.war");
+                File mist_file = new File(mistFilesPath+node.getMist_file());
+                HttpPost req2 = new HttpPost(node.url);
+                MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+                meb.addTextBody("callback", "http:"+node.getCall_back_ip()+"/callback");
+                meb.addTextBody("processId",node.processId);
+                System.out.println("payload ------->"+node.getPayload());
+                if(node.getPayload().equals("true")){
+                    File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
+                    System.out.println("payload ii ------->"+mist_payload.getName());
+                    meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+                }
+
+                meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+                meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+
+                req2.setEntity(meb.build());
+                String response2 = executeRequest(req2, credsProvider);
+                CsvFile.write(node.processId,"Process End");
+            }
+
+        }
+
+        @Override
+        public void run() {
+
+            try {
+                deploy(node,credsProvider);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException, IOException {
+            CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
+            InputStream responseStream = null;
+            String res = null;
+            HttpResponse response = client.execute(requestBase) ;
+            HttpEntity responseEntity = response.getEntity() ;
+            responseStream = responseEntity.getContent() ;
+
+            BufferedReader br = new BufferedReader (new InputStreamReader (responseStream)) ;
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+                sb.append(System.getProperty("line.separator"));
+            }
+            br.close() ;
+            res = sb.toString();
+
+            return res;
+        }
+    }
 }
 
