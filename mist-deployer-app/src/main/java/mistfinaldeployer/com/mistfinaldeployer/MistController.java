@@ -558,11 +558,12 @@ public class MistController {
         executor.execute(worker);
         Runnable worker2 = new MyRunnable(node2,credsProvider,2);
         executor.execute(worker2);
-        executor.shutdown();
+
         // Wait until all threads are finish
         while (!executor.isTerminated()) {
 
         }
+        executor.shutdown();
         return "Sorry empty url supplied";
     }
 

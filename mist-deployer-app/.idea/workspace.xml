@@ -20,8 +20,8 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2055">
-              <caret line="385" column="0" lean-forward="true" selection-start-line="385" selection-start-column="0" selection-end-line="385" selection-end-column="0" />
+            <state relative-caret-position="600">
+              <caret line="565" column="8" lean-forward="false" selection-start-line="565" selection-start-column="8" selection-end-line="565" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -879,16 +879,16 @@
       <workItem from="1491043684625" duration="14867000" />
       <workItem from="1491394559752" duration="16208000" />
       <workItem from="1491574046889" duration="2757000" />
-      <workItem from="1491594404941" duration="4325000" />
+      <workItem from="1491594404941" duration="5555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240891000" />
+    <option name="totallyTimeSpent" value="242121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="74" y="-1130" width="1753" height="958" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1312,8 +1312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2055">
-          <caret line="385" column="0" lean-forward="true" selection-start-line="385" selection-start-column="0" selection-end-line="385" selection-end-column="0" />
+        <state relative-caret-position="600">
+          <caret line="565" column="8" lean-forward="false" selection-start-line="565" selection-start-column="8" selection-end-line="565" selection-end-column="8" />
           <folding />
         </state>
       </provider>
