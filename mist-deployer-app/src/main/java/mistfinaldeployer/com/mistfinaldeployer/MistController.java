@@ -499,9 +499,9 @@ public class MistController {
         Node node2 = node;
         node1.setUrl(node.getNode_one());
         node2.setUrl(node.getNode_two());
-        Runnable worker = new MyRunnable(node1,credsProvider);
+        Runnable worker = new MyRunnable(node1,credsProvider,1);
         executor.execute(worker);
-        Runnable worker2 = new MyRunnable(node2,credsProvider);
+        Runnable worker2 = new MyRunnable(node2,credsProvider,2);
         executor.execute(worker2);
         executor.shutdown();
         // Wait until all threads are finish
@@ -649,10 +649,12 @@ public class MistController {
         private  Node node;
         CredentialsProvider credsProvider;
         String startRequest=null;
+        int i;
 
-        MyRunnable(Node node,CredentialsProvider credsProvider) {
+        MyRunnable(Node node,CredentialsProvider credsProvider,int i) {
             this.node = node;
             this.credsProvider=credsProvider;
+            this.i=i;
 
         }
         public void deploy( Node node, CredentialsProvider credsProvider) throws ClientProtocolException, IOException{
@@ -719,7 +721,13 @@ public class MistController {
                 CsvFile.write(node.processId,"Process Start");
                 File war = new File(mistFilesPath+"mist-0.war");
                 File mist_file = new File(mistFilesPath+node.getMist_file());
-                HttpPost req2 = new HttpPost(node.url);
+                HttpPost req2;
+                if(i==1){
+                    req2 = new HttpPost(node.getNode_one());
+                }else{
+                    req2 = new HttpPost(node.getNode_two());
+                }
+
                 MultipartEntityBuilder meb = MultipartEntityBuilder.create();
                 meb.addTextBody("callback", "http:"+node.getCall_back_ip()+"/callback");
                 meb.addTextBody("processId",node.processId);
