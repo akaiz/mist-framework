@@ -33,6 +33,20 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
 
     public void execute(DelegateExecution execution) throws Exception {
 
+        String runTwice = (String)execution.getVariable("run_twice");
+        String runCount = (String)execution.getVariable("run_count");
+        if(runTwice==null){
+            execution.setVariable("run_twice","no");
+        }
+        else{
+            if(runCount==null){
+                execution.setVariable("run_count","0");
+                execution.setVariable("run_twice","yes");
+            }
+            else{
+                execution.setVariable("run_twice","no");
+            }
+        }
         String dockerImageValue = (String) dockerImage.getValue(execution);
         String commandValue = (String) command.getValue(execution);
         String imageUrlValue = (String) imagePath.getValue(execution);

@@ -87,6 +87,16 @@ class Node{
     String call_back_ip;
     String node_one;
     String processId;
+    String run_twice;
+    public String getRun_twice() {
+        return run_twice;
+    }
+
+    public void setRun_twice(String run_twice) {
+        this.run_twice = run_twice;
+    }
+
+
     public String getProcessId() {
         return processId;
     }
@@ -222,6 +232,10 @@ public class MistController {
                 if(line.contains("log_id")){
                     line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"}";
                 }
+                if(line.contains("run_twice")){
+                    line =" \"run_twice\":{\"value\" :\""+node.getRun_twice()+"\",\"type\": \"String\"}";
+                }
+
                 // Always write the line, whether you changed it or not.
                 bw.write(line+newLine);
 
@@ -250,31 +264,53 @@ public class MistController {
 
         }
         CsvFile.write(node.processId, "Process Start");
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-
         Node node1 = node;
         Node node2 = node;
         node1.setUrl(node.getNode_one());
         node2.setUrl(node.getNode_two());
-        Runnable worker = new MyRunnable(node1,credsProvider,1);
-        executor.execute(worker);
-        Runnable worker2 = new MyRunnable(node2,credsProvider,2);
-        executor.execute(worker2);
+        if(node.getRun_twice().equals("yes")){
+            ExecutorService executor = Executors.newFixedThreadPool(2);
+            Runnable worker = new MyRunnable(node1,credsProvider,1);
+            executor.execute(worker);
+            Runnable worker2 = new MyRunnable(node2,credsProvider,2);
+            executor.execute(worker2);
 
-        try {
-            System.out.println("attempt to shutdown executor");
-            executor.shutdown();
-            executor.awaitTermination(5, TimeUnit.SECONDS);
-        }
-        catch (InterruptedException e) {
-            System.err.println("tasks interrupted");
-        }
-        finally {
-            if (!executor.isTerminated()) {
-                System.err.println("cancel non-finished tasks");
+            try {
+                System.out.println("attempt to shutdown executor");
+                executor.shutdown();
+                executor.awaitTermination(5, TimeUnit.SECONDS);
             }
-            executor.shutdownNow();
-            System.out.println("shutdown finished");
+            catch (InterruptedException e) {
+                System.err.println("tasks interrupted");
+            }
+            finally {
+                if (!executor.isTerminated()) {
+                    System.err.println("cancel non-finished tasks");
+                }
+                executor.shutdownNow();
+                System.out.println("shutdown finished");
+            }
+
+        }else {
+            ExecutorService executor = Executors.newFixedThreadPool(1);
+            Runnable worker = new MyRunnable(node1,credsProvider,1);
+            executor.execute(worker);
+            try {
+                System.out.println("attempt to shutdown executor");
+                executor.shutdown();
+                executor.awaitTermination(5, TimeUnit.SECONDS);
+            }
+            catch (InterruptedException e) {
+                System.err.println("tasks interrupted");
+            }
+            finally {
+                if (!executor.isTerminated()) {
+                    System.err.println("cancel non-finished tasks");
+                }
+                executor.shutdownNow();
+                System.out.println("shutdown finished");
+            }
+
         }
 
 
