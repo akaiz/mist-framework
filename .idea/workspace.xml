@@ -42,8 +42,8 @@
       <file leaf-file-name="MistRequestTwo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequestTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state relative-caret-position="300">
+              <caret line="55" column="51" lean-forward="true" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -783,7 +783,7 @@
       <workItem from="1491046636390" duration="14565000" />
       <workItem from="1491394560990" duration="3400000" />
       <workItem from="1491574047919" duration="2094000" />
-      <workItem from="1491594406246" duration="2981000" />
+      <workItem from="1491594406246" duration="3596000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -1020,7 +1020,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46695000" />
+    <option name="totallyTimeSpent" value="47310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="22" width="1625" height="826" extended-state="0" />
@@ -1037,7 +1037,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25759578" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19323076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1478,8 +1478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequestTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        <state relative-caret-position="300">
+          <caret line="55" column="51" lean-forward="true" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
           <folding />
         </state>
       </provider>
