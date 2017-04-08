@@ -4,8 +4,7 @@
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="tomcat update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_1.txt" afterPath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_1.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -866,7 +865,7 @@
       <workItem from="1491046636390" duration="14565000" />
       <workItem from="1491394560990" duration="3400000" />
       <workItem from="1491574047919" duration="2094000" />
-      <workItem from="1491594406246" duration="9894000" />
+      <workItem from="1491594406246" duration="11766000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -1127,11 +1126,25 @@
       <option name="project" value="LOCAL" />
       <updated>1491651829587</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="tomcat update">
+      <created>1491655655620</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1491655655620</updated>
+    </task>
+    <task id="LOCAL-00039" summary="tomcat update">
+      <created>1491657896431</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1491657896431</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53608000" />
+    <option name="totallyTimeSpent" value="55480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="53" width="1625" height="826" extended-state="0" />
