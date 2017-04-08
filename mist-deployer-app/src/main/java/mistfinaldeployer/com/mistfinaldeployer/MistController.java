@@ -773,14 +773,14 @@ public class MistController {
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             if(i==1){
                 req2 = new HttpPost(node.getNode_one());
-                meb.addTextBody("processId",node.processId+"mist-one");
+                meb.addTextBody("processId",node.processId+",mist-one");
             }else{
                 req2 = new HttpPost(node.getNode_two());
-                meb.addTextBody("processId",node.processId+"mist-two");
+                meb.addTextBody("processId",node.processId+",mist-two");
             }
 
 
-            meb.addTextBody("callback", "http:"+node.getCall_back_ip()+"/callback");
+            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
             System.out.println("payload ------->"+node.getPayload());
             if(node.getPayload().equals("true")){
                 File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
