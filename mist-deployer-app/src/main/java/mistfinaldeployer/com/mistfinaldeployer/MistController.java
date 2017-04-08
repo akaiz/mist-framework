@@ -549,67 +549,55 @@ public class MistController {
         Node node2 = node;
         node1.setUrl(node.getNode_one());
         node2.setUrl(node.getNode_two());
-        executor.shutdown();
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Runnable worker = new MyRunnable(node1,credsProvider,1);
+        executor.execute(worker);
+        Runnable worker2 = new MyRunnable(node2,credsProvider,2);
+        executor.execute(worker2);
 
-        Set<Callable<String>> callables = new HashSet<Callable<String>>();
+        // Wait until all threads are finish
+        while (!executor.isTerminated()) {
 
-
-        callables.add(new Callable<String>() {
-            public String call() throws Exception {
-                return deploy(node1,credsProvider,1);
-            }
-        });
-        callables.add(new Callable<String>() {
-            public String call() throws Exception {
-                return deploy(node1,credsProvider,2);
-            }
-        });
-
-        List<Future<String>> futures = executorService.invokeAll(callables);
-
-        for(Future<String> future : futures){
-            System.out.println("future.get = " + future.get());
         }
+        executor.shutdown();
 
-        executorService.shutdown();
-        return "Sorry empty url supplied";
+        return "Done ";
     }
     public String deploy( Node node, CredentialsProvider credsProvider,int i) throws ClientProtocolException, IOException {
+        HttpGet req = new HttpGet(node.getUrl().replace("final", "status"));
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpResponse response = httpClient.execute(req);
+        if (response.getStatusLine().getStatusCode() == 200) {
+            String mistFilesPath = node.mist_files_path;
+            System.out.println(node.getUrl());
+            CsvFile.write(node.processId, "Process Start");
+            File war = new File(mistFilesPath + "mist-0.war");
+            File mist_file = new File(mistFilesPath + node.getMist_file());
+            HttpPost req2;
+            if (i == 1) {
+                req2 = new HttpPost(node.getNode_one());
+            } else {
+                req2 = new HttpPost(node.getNode_two());
+            }
 
-        System.out.println("-----------------start----------------------->"+i);
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("callback", "http:" + node.getCall_back_ip() + "/callback");
+            meb.addTextBody("processId", node.processId);
+            System.out.println("payload ------->" + node.getPayload());
+            if (node.getPayload().equals("true")) {
+                File mist_payload = new File(mistFilesPath + (node.getMist_file().contains("0") ? "payload-light.jpg" : "payload-heavy.jpeg"));
+                System.out.println("payload ii ------->" + mist_payload.getName());
+                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+            }
 
-        String mistFilesPath = node.mist_files_path;
-        System.out.println(node.getUrl());
-        CsvFile.write(node.processId, "Process Start");
-        File war = new File(mistFilesPath + "mist-0.war");
-        File mist_file = new File(mistFilesPath + node.getMist_file());
-        HttpPost req2;
-        if (i == 1) {
-            req2 = new HttpPost(node.getNode_one());
-        } else {
-            req2 = new HttpPost(node.getNode_two());
+            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+
+            req2.setEntity(meb.build());
+            String response2 = executeRequest(req2, credsProvider);
+            CsvFile.write(node.processId, "Process End");
+            return  "done";
         }
-
-        MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-        meb.addTextBody("callback", "http:" + node.getCall_back_ip() + "/callback");
-        meb.addTextBody("processId", node.processId);
-        System.out.println("payload ------->" + node.getPayload());
-        if (node.getPayload().equals("true")) {
-            File mist_payload = new File(mistFilesPath + (node.getMist_file().contains("0") ? "payload-light.jpg" : "payload-heavy.jpeg"));
-            System.out.println("payload ii ------->" + mist_payload.getName());
-            meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
-        }
-
-        meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-        meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-
-        req2.setEntity(meb.build());
-        String response2 = executeRequest(req2, credsProvider);
-        CsvFile.write(node.processId, "Process End");
-        System.out.println(response2);
-        System.out.println("-----------------end ----------------------->"+i);
-        return  "done";
+        return "error";
 
     }
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
@@ -760,40 +748,34 @@ public class MistController {
 
         }
         public void deploy( Node node, CredentialsProvider credsProvider) throws ClientProtocolException, IOException{
-            HttpGet req = new HttpGet(node.getUrl().replace("final","status")) ;
-            HttpClient httpClient    = HttpClientBuilder.create().build();
-            HttpResponse response = httpClient.execute(req);
-            if(response.getStatusLine().getStatusCode()==200){
-                String mistFilesPath =node.mist_files_path;
-                System.out.println(node.getUrl());
-                CsvFile.write(node.processId,"Process Start");
-                File war = new File(mistFilesPath+"mist-0.war");
-                File mist_file = new File(mistFilesPath+node.getMist_file());
-                HttpPost req2;
-                if(i==1){
-                    req2 = new HttpPost(node.getNode_one());
-                }else{
-                    req2 = new HttpPost(node.getNode_two());
-                }
-
-                MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-                meb.addTextBody("callback", "http:"+node.getCall_back_ip()+"/callback");
-                meb.addTextBody("processId",node.processId);
-                System.out.println("payload ------->"+node.getPayload());
-                if(node.getPayload().equals("true")){
-                    File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
-                    System.out.println("payload ii ------->"+mist_payload.getName());
-                    meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
-                }
-
-                meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-                meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-
-                req2.setEntity(meb.build());
-                String response2 = executeRequest(req2, credsProvider);
-                CsvFile.write(node.processId,"Process End");
+            String mistFilesPath =node.mist_files_path;
+            System.out.println(node.getUrl());
+            CsvFile.write(node.processId,"Process Start");
+            File war = new File(mistFilesPath+"mist-0.war");
+            File mist_file = new File(mistFilesPath+node.getMist_file());
+            HttpPost req2;
+            if(i==1){
+                req2 = new HttpPost(node.getNode_one());
+            }else{
+                req2 = new HttpPost(node.getNode_two());
             }
 
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("callback", "http:"+node.getCall_back_ip()+"/callback");
+            meb.addTextBody("processId",node.processId);
+            System.out.println("payload ------->"+node.getPayload());
+            if(node.getPayload().equals("true")){
+                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-light.jpg":"payload-heavy.jpeg"));
+                System.out.println("payload ii ------->"+mist_payload.getName());
+                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+            }
+
+            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+
+            req2.setEntity(meb.build());
+            String response2 = executeRequest(req2, credsProvider);
+            CsvFile.write(node.processId,"Process End");
         }
 
         @Override
