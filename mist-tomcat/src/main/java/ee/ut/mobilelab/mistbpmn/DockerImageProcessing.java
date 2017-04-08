@@ -29,8 +29,6 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
 
         super();
 
-
-
     }
 
     public void execute(DelegateExecution execution) throws Exception {
@@ -66,14 +64,6 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
         }
         CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed");
         super.stopContainers(dockerImageValue);
-
-
-
-
-
-
-
-
 
 
     }

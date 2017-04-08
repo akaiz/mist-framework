@@ -21,18 +21,18 @@ public class CallBack extends DockerCommands implements JavaDelegate {
     public CallBack() {
         super();
     }
-
     public void execute(DelegateExecution execution) throws Exception {
         String callBackUrl = (String)execution.getVariable("call_back_url");
         if(callBackUrl!=null){
             LOGGER.info("Sending response to callback "+callBackUrl);
-            //CsvFile.write(execution.getVariable("log_id").toString(),"Sending response to callback");
-             // hack for cloud
-              HttpRequest.post(callBackUrl).send(execution.getVariable("log_id").toString()).message();
-             LOGGER.info("Call back has been reached ");
-
-
-
+            CsvFile.write(execution.getVariable("log_id").toString(),"Sending response to callback");
+            HttpPost req = new HttpPost(callBackUrl);
+            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+            meb.addTextBody("processId",execution.getVariable("log_id").toString());
+            req.setEntity(meb.build());
+            HttpClient httpClient    = HttpClientBuilder.create().build();
+            HttpResponse response = httpClient.execute(req);
+            LOGGER.info("Response from Mist One "+response);
     }
 }
 

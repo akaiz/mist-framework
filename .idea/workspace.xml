@@ -4,7 +4,8 @@
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="tomcat update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,22 +42,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DockerImageProcessing.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DockerImageProcessing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="51" />
+            <state relative-caret-position="270">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallBack.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CallBack.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+            <state relative-caret-position="330">
+              <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MistRequestOne.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequestOne.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,16 +82,6 @@
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remote-payload-yes.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/remote-payload-yes.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="70" lean-forward="false" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,6 +149,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/results/remote-payload-no.csv" />
         <option value="$PROJECT_DIR$/results/remote-payload-yes.csv" />
+        <option value="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" />
         <option value="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java" />
       </list>
     </option>
@@ -157,8 +161,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
-    <option name="y" value="99" />
+    <option name="x" value="60" />
+    <option name="y" value="132" />
     <option name="width" value="1625" />
     <option name="height" value="826" />
   </component>
@@ -238,6 +242,84 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mist-tomcat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobilelab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mistbpmn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-deployer-war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-deployer-war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist-deployer-war" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -784,7 +866,7 @@
       <workItem from="1491046636390" duration="14565000" />
       <workItem from="1491394560990" duration="3400000" />
       <workItem from="1491574047919" duration="2094000" />
-      <workItem from="1491594406246" duration="7271000" />
+      <workItem from="1491594406246" duration="9099000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -1038,14 +1120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491647137934</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="tomcat update">
+      <created>1491651829587</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1491651829587</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50985000" />
+    <option name="totallyTimeSpent" value="52813000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="99" width="1625" height="826" extended-state="0" />
+    <frame x="60" y="132" width="1625" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1113,7 +1202,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mist-tomcat-app-war/.gitignore" />
     <entry file="file://$PROJECT_DIR$/info.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1482,14 +1570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CsvFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1502,8 +1582,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="51" />
+        <state relative-caret-position="270">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-deployer-war/src/main/java/ee/ut/mobilelab/mistbpmn/MistRequestOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
           <folding />
         </state>
       </provider>
