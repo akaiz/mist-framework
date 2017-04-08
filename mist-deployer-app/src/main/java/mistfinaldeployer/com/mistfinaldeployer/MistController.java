@@ -554,11 +554,22 @@ public class MistController {
         Runnable worker2 = new MyRunnable(node2,credsProvider,2);
         executor.execute(worker2);
 
-        // Wait until all threads are finish
-        while (!executor.isTerminated()) {
-
+        try {
+            System.out.println("attempt to shutdown executor");
+            executor.shutdown();
+            executor.awaitTermination(5, TimeUnit.SECONDS);
         }
-        executor.shutdown();
+        catch (InterruptedException e) {
+            System.err.println("tasks interrupted");
+        }
+        finally {
+            if (!executor.isTerminated()) {
+                System.err.println("cancel non-finished tasks");
+            }
+            executor.shutdownNow();
+            System.out.println("shutdown finished");
+        }
+
 
         return "Done ";
     }
