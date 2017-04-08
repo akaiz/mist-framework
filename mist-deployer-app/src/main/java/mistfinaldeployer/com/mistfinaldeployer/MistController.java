@@ -294,23 +294,7 @@ public class MistController {
         }else {
             ExecutorService executor = Executors.newFixedThreadPool(1);
             Runnable worker = new MyRunnable(node1,credsProvider,1);
-            executor.execute(worker);
-            try {
-                System.out.println("attempt to shutdown executor");
-                executor.shutdown();
-                executor.awaitTermination(5, TimeUnit.SECONDS);
-            }
-            catch (InterruptedException e) {
-                System.err.println("tasks interrupted");
-            }
-            finally {
-                if (!executor.isTerminated()) {
-                    System.err.println("cancel non-finished tasks");
-                }
-                executor.shutdownNow();
-                System.out.println("shutdown finished");
-            }
-
+            worker.run();
         }
 
 
