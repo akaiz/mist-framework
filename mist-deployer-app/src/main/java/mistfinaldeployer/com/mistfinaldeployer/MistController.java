@@ -632,11 +632,8 @@ public class MistController {
     }
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
-    public String callbackAllFinshed(@RequestBody String response  ) throws IOException {
-      String x = response.replace("response","");
-      x=x.replaceAll("=","");
-      x=x.replace("%2C",",");
-        CsvFile.write(x,"Call back received");
+    public String callbackAllFinshed( @RequestParam("processId") String callBack ) throws IOException {
+        CsvFile.write(callBack,"Call back received");
       return  "received";
 
     }
