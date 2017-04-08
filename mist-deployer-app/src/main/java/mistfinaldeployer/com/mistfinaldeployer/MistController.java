@@ -393,7 +393,7 @@ public class MistController {
 
                     while (line != null) {
                         if(line.contains("log_id")){
-                            line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"}";
+                            line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
                         }
                         sb.append(line);
                         sb.append("\n");
