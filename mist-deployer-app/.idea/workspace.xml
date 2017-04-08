@@ -20,10 +20,12 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="547" column="18" lean-forward="false" selection-start-line="547" selection-start-column="13" selection-end-line="547" selection-end-column="18" />
+            <state relative-caret-position="406">
+              <caret line="640" column="0" lean-forward="true" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2737#2738#0" expanded="true" />
+                <element signature="e#2769#2770#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,41 +56,11 @@
       <file leaf-file-name="Jshs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/Jshs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="273" column="55" lean-forward="true" selection-start-line="273" selection-start-column="55" selection-end-line="273" selection-end-column="55" />
+            <state relative-caret-position="135">
+              <caret line="249" column="11" lean-forward="false" selection-start-line="249" selection-start-column="11" selection-end-line="249" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deployer.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-files/deployer.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mist_file.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-files/mist_file.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -153,9 +125,10 @@
       <find>deployer</find>
       <find>deploy</find>
       <find>Node</find>
-      <find>startRequest</find>
       <find>awaitTermination</find>
       <find>start</find>
+      <find>node1</find>
+      <find>startRequest</find>
     </findStrings>
     <replaceStrings>
       <replace>NodeTwo</replace>
@@ -882,16 +855,16 @@
       <workItem from="1491043684625" duration="14867000" />
       <workItem from="1491394559752" duration="16208000" />
       <workItem from="1491574046889" duration="2757000" />
-      <workItem from="1491594404941" duration="11450000" />
+      <workItem from="1491594404941" duration="15806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248016000" />
+    <option name="totallyTimeSpent" value="252372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="173" y="100" width="1500" height="958" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -984,6 +957,8 @@
           <caret line="149" column="51" lean-forward="true" selection-start-line="149" selection-start-column="51" selection-end-line="149" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2737#2738#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1239,42 +1214,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-files/mist_file.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mist-files/deployer.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1297,16 +1240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/Jshs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="273" column="55" lean-forward="true" selection-start-line="273" selection-start-column="55" selection-end-line="273" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/concurrent/ExecutorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1315,12 +1248,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="547" column="18" lean-forward="false" selection-start-line="547" selection-start-column="13" selection-end-line="547" selection-end-column="18" />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/Jshs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="249" column="11" lean-forward="false" selection-start-line="249" selection-start-column="11" selection-end-line="249" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="640" column="0" lean-forward="true" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2737#2738#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
           </folding>
         </state>
       </provider>
