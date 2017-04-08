@@ -869,7 +869,7 @@
       <workItem from="1491394560990" duration="3400000" />
       <workItem from="1491574047919" duration="2094000" />
       <workItem from="1491594406246" duration="13080000" />
-      <workItem from="1491671610737" duration="2399000" />
+      <workItem from="1491671610737" duration="2925000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring mist-camunda-tomcat/server/apache-tomcat-8.0.24/logs/">
       <created>1484387391897</created>
@@ -1186,11 +1186,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491684846053</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="tomcat run twice">
+      <created>1491685766365</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1491685766365</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59193000" />
+    <option name="totallyTimeSpent" value="59719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="53" width="1625" height="826" extended-state="0" />

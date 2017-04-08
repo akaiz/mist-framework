@@ -295,6 +295,8 @@ public class MistController {
             ExecutorService executor = Executors.newFixedThreadPool(1);
             Runnable worker = new MyRunnable(node1,credsProvider,1);
             worker.run();
+            Thread thread = new Thread(worker);
+            thread.start();
         }
 
 
