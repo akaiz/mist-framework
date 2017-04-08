@@ -26,10 +26,10 @@ public class CallBack extends DockerCommands implements JavaDelegate {
         String callBackUrl = (String)execution.getVariable("call_back_url");
         if(callBackUrl!=null){
             LOGGER.info("Sending response to callback "+callBackUrl);
-            CsvFile.write(execution.getVariable("log_id").toString(),"Sending response to callback");
+            //CsvFile.write(execution.getVariable("log_id").toString(),"Sending response to callback");
              // hack for cloud
-             // HttpRequest.post(callBackUrl).send(execution.getVariable("log_id").toString()).message();
-            // LOGGER.info("Call back has been reached ");
+              HttpRequest.post(callBackUrl).send(execution.getVariable("log_id").toString()).message();
+             LOGGER.info("Call back has been reached ");
 
 
 
