@@ -230,7 +230,7 @@ public class MistController {
                     line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
                 }
                 if(line.contains("log_id")){
-                    line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"}";
+                    line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"},";
                 }
                 if(line.contains("run_twice")){
                     line =" \"run_twice\":{\"value\" :\""+node.getRun_twice()+"\",\"type\": \"String\"}";
@@ -268,7 +268,7 @@ public class MistController {
         Node node2 = node;
         node1.setUrl(node.getNode_one());
         node2.setUrl(node.getNode_two());
-        if(node.getRun_twice().equals("yes")){
+        if(node.getRun_twice().equals("no")){
             ExecutorService executor = Executors.newFixedThreadPool(2);
             Runnable worker = new MyRunnable(node1,credsProvider,1);
             executor.execute(worker);
