@@ -217,7 +217,7 @@ public class MistController {
 
             while (line != null) {
                 if(line.contains("call_back_url")){
-                    line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http:"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
+                    line ="\"processVariables\" : {\"call_back_url\" : {\"value\" : \"http://"+node.getCall_back_ip()+":8098/callback\",\"type\": \"String\"},";
                 }
                 if(line.contains("log_id")){
                     line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"}";
