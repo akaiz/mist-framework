@@ -6,13 +6,13 @@ import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-@ProcessApplication("Mist App")
+@ProcessApplication("Ut Mist Final App")
 public class InstantiateProcessByMessageDelegate extends ServletProcessApplication implements JavaDelegate {
     public InstantiateProcessByMessageDelegate() {
     }
 
     public void execute(DelegateExecution execution) throws Exception {
         RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
-        runtimeService.startProcessInstanceByMessage("instantiationMessageMist");
+        runtimeService.startProcessInstanceByMessage("instantiationMessageMistFinal");
     }
 }

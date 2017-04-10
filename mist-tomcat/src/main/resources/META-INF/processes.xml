@@ -4,7 +4,7 @@
         xmlns="http://www.camunda.org/schema/1.0/ProcessApplication"
 >
 
-  <process-archive name="mist-app">
+  <process-archive name="ut-mist-final-app">
     <process-engine>default</process-engine>
     <properties>
       <property name="isDeleteUponUndeploy">false</property>
