@@ -4,8 +4,7 @@
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="instantiationMessageMist update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/META-INF/processes.xml" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/resources/META-INF/processes.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -877,14 +876,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="2725000" />
-    </task>
-    <task id="LOCAL-00006" summary="Ignorine tomcat files">
-      <created>1484402027003</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1484402027003</updated>
+      <workItem from="1491806935134" duration="2930000" />
     </task>
     <task id="LOCAL-00007" summary="Ignorine tomcat files">
       <created>1484402253767</created>
@@ -1222,11 +1214,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491832317688</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="instantiationMessageMist update">
+      <created>1491834596880</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1491834596880</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65393000" />
+    <option name="totallyTimeSpent" value="65598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="95" width="1625" height="826" extended-state="0" />

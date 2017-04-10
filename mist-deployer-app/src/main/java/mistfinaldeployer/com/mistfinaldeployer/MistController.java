@@ -556,7 +556,7 @@ public class MistController {
         if(mistpath!=null){
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-            String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
+            String url = localhost+":8080/manager/text/deploy?path=/mistBpmnFinal&update=true";
             // get this war generated from the maveen install of the mist-bpmn war
             CsvFile.write(processId,"Started deployment to Camunda");
             File file = new File (mistpath) ;
@@ -645,7 +645,7 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
           //  CsvFile.write(processId,"Started un deployment to Camunda");
-        String url = localhost+":8080/manager/text/undeploy?path=/mistBpmn";
+        String url = localhost+":8080/manager/text/undeploy?path=/mistBpmnFinal";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
