@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="tomcat run twice update">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/message_start_process.bpmn" afterPath="" />
+    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="instantiationMessageMist update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/META-INF/processes.xml" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/resources/META-INF/processes.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,8 +57,8 @@
       <file leaf-file-name="CallBack.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="225">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
               <folding>
                 <element signature="e#777#778#0" expanded="true" />
                 <element signature="e#800#801#0" expanded="true" />
@@ -877,21 +877,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="1851000" />
-    </task>
-    <task id="LOCAL-00004" summary="Modified deployer storage folder">
-      <created>1484398460669</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1484398460669</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Deployer catching empty file and code refactor">
-      <created>1484401332120</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1484401332120</updated>
+      <workItem from="1491806935134" duration="2725000" />
     </task>
     <task id="LOCAL-00006" summary="Ignorine tomcat files">
       <created>1484402027003</created>
@@ -1222,11 +1208,25 @@
       <option name="project" value="LOCAL" />
       <updated>1491829460438</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="instantiationMessageMist update">
+      <created>1491832065002</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1491832065002</updated>
+    </task>
+    <task id="LOCAL-00054" summary="instantiationMessageMist update">
+      <created>1491832317688</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1491832317688</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64519000" />
+    <option name="totallyTimeSpent" value="65393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="95" width="1625" height="826" extended-state="0" />
@@ -1243,7 +1243,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25759578" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19323076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1289,7 +1289,8 @@
     <MESSAGE value="tomcat update" />
     <MESSAGE value="tomcat run twice" />
     <MESSAGE value="tomcat run twice update" />
-    <option name="LAST_COMMIT_MESSAGE" value="tomcat run twice update" />
+    <MESSAGE value="instantiationMessageMist update" />
+    <option name="LAST_COMMIT_MESSAGE" value="instantiationMessageMist update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1637,8 +1638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="225">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
             <element signature="e#777#778#0" expanded="true" />
             <element signature="e#800#801#0" expanded="true" />

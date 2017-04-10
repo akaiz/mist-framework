@@ -6,7 +6,7 @@ import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-@ProcessApplication("UT Mist Camunda App")
+@ProcessApplication("Mist App")
 public class InstantiateProcessByMessageDelegate extends ServletProcessApplication implements JavaDelegate {
     public InstantiateProcessByMessageDelegate() {
     }
