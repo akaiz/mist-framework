@@ -986,7 +986,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="14121000" />
+      <workItem from="1491806935134" duration="14914000" />
     </task>
     <task id="LOCAL-00014" summary="Localhost url change">
       <created>1491067370301</created>
@@ -1335,7 +1335,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76789000" />
+    <option name="totallyTimeSpent" value="77582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="62" width="1625" height="826" extended-state="0" />
