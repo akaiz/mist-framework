@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Vendor: camunda services GmbH
+Implementation-Title: camunda BPM - webapp - Tomcat
+Implementation-Version: 7.6.0
+Implementation-Vendor-Id: org.camunda.bpm.webapp
+Built-By: camunda
+Build-Jdk: 1.7.0_80
+Created-By: Apache Maven 3.2.5
+Archiver-Version: Plexus Archiver
+
