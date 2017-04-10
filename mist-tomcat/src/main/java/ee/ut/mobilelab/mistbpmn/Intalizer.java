@@ -23,7 +23,7 @@ public class Intalizer extends DockerCommands implements JavaDelegate {
     public void execute(DelegateExecution execution) throws Exception {
         String runTwice = (String)execution.getVariable("run_twice");
         String runCount = (String)execution.getVariable("run_count");
-        if(runTwice!=null &&runTwice.equals("yes")){
+        if(runTwice!=null && runTwice.equals("yes")){
 
             if(runCount==null){
                 execution.setVariable("run_count","0");
@@ -31,7 +31,11 @@ public class Intalizer extends DockerCommands implements JavaDelegate {
             }
             else{
                 execution.setVariable("run_twice","no");
+
             }
+            String c = (String)execution.getVariable("run_twice");
+            String Count = (String)execution.getVariable("run_count");
+            LOGGER.info("--------------run twice ->"+c+"--------->"+Count);
         }
         else{
             execution.setVariable("run_twice","no");

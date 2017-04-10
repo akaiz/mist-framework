@@ -22,7 +22,7 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
     private Expression dockerImage;
     private Expression command;
     private Expression imagePath;
-    private String localhost="http://localhost";
+    String localhost="http://138.68.176.11";
 
 
     public DockerImageProcessing() {
@@ -33,7 +33,14 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
 
     public void execute(DelegateExecution execution) throws Exception {
 
+        String runTwice = (String)execution.getVariable("run_twice");
 
+        if(runTwice!=null && runTwice.equals("yes")){
+            execution.setVariable("run_twice","yes");
+        }
+        else{
+            execution.setVariable("run_twice","no");
+        }
         String dockerImageValue = (String) dockerImage.getValue(execution);
         String commandValue = (String) command.getValue(execution);
         String imageUrlValue = (String) imagePath.getValue(execution);
