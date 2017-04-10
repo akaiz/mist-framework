@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="Mist update">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/mist_deployer_process.bpmn" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/resources/mist_deployer_process.bpmn" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +54,8 @@
       <file leaf-file-name="CallBack.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+            <state relative-caret-position="255">
+              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
               <folding>
                 <element signature="e#777#778#0" expanded="true" />
                 <element signature="e#800#801#0" expanded="true" />
@@ -989,14 +987,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="9807000" />
-    </task>
-    <task id="LOCAL-00013" summary="Docker container update and war app update">
-      <created>1486385907319</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1486385907319</updated>
+      <workItem from="1491806935134" duration="10446000" />
     </task>
     <task id="LOCAL-00014" summary="Localhost url change">
       <created>1491067370301</created>
@@ -1334,15 +1325,22 @@
       <option name="project" value="LOCAL" />
       <updated>1491852874689</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Mist update">
+      <created>1491853611712</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1491853611712</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72475000" />
+    <option name="totallyTimeSpent" value="73114000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="62" width="1625" height="826" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1355,7 +1353,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25759578" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19323076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1756,8 +1754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/CallBack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+        <state relative-caret-position="255">
+          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
           <folding>
             <element signature="e#777#778#0" expanded="true" />
             <element signature="e#800#801#0" expanded="true" />
