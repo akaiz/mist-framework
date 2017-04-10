@@ -107,7 +107,7 @@
       <bpmn:incoming>SequenceFlow_12agilo</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1fakv3r</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_1kzyjcw" name="Image Fetcher 2" camunda:class="">
+    <bpmn:serviceTask id="Task_1kzyjcw" name="Image Fetcher 2" camunda:class="ee.ut.mobilelab.mistbpmn.ImageFetcher">
       <bpmn:incoming>SequenceFlow_0mwry0v</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1as7rwc</bpmn:outgoing>
     </bpmn:serviceTask>
