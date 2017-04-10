@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="Mist update">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/mist_data/mist-0.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/mist_data/mist_file_info.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/mist_message_process.bpmn" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/message_start_process.bpmn" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/resources/message_start_process.bpmn" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -990,7 +987,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="12750000" />
+      <workItem from="1491806935134" duration="13419000" />
     </task>
     <task id="LOCAL-00014" summary="Localhost url change">
       <created>1491067370301</created>
@@ -1339,7 +1336,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75418000" />
+    <option name="totallyTimeSpent" value="76087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="62" width="1625" height="826" extended-state="0" />
