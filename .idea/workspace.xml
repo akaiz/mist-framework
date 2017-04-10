@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="tomcat run twice updatw">
+    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="tomcat run twice update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/ImageFetcher.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/ImageFetcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/message_start_process.bpmn" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/resources/message_start_process.bpmn" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -877,14 +876,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="618000" />
-    </task>
-    <task id="LOCAL-00002" summary="Dockerfile update">
-      <created>1484392121553</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1484392121553</updated>
+      <workItem from="1491806935134" duration="1247000" />
     </task>
     <task id="LOCAL-00003" summary="Dockerfile update">
       <created>1484392626772</created>
@@ -1222,11 +1214,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491774059155</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="tomcat run twice update">
+      <created>1491826715914</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1491826715915</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63286000" />
+    <option name="totallyTimeSpent" value="63915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="95" width="1625" height="826" extended-state="0" />
@@ -1288,7 +1287,8 @@
     <MESSAGE value="mist update" />
     <MESSAGE value="tomcat update" />
     <MESSAGE value="tomcat run twice" />
-    <option name="LAST_COMMIT_MESSAGE" value="tomcat run twice" />
+    <MESSAGE value="tomcat run twice update" />
+    <option name="LAST_COMMIT_MESSAGE" value="tomcat run twice update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

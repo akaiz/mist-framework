@@ -20,7 +20,6 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
     public ImageFetcher() {
 
         super();
-
     }
 
     public void execute(DelegateExecution execution) throws Exception {
