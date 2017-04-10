@@ -29,7 +29,7 @@
       <bpmn:incoming>SequenceFlow_1nsh3ry</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0vs02xb</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:startEvent id="StartEvent_03g2xth" name="instantiationMessageMistfinal">
+    <bpmn:startEvent id="StartEvent_03g2xth" name="instantiationMessageMistFinal">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="FormField_369hk13" label="deviceId" type="string" />
