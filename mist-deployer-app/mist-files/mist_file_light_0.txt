@@ -1,4 +1,4 @@
-{"messageName" : "instantiationMessageOpenHab",
+{"messageName" : "instantiationMessageMist",
 "businessKey" : "aBusinessKey",
 "processVariables" : {"call_back_url" : {"value" : "http://172.31.156.186:8098/callback","type": "String"},
  "image_already_exists":{"value" : "yes","type": "String"},
