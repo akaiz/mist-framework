@@ -1,0 +1,679 @@
+03-Jan-2017 00:04:22.266 INFO [http-nio-8080-exec-86] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 00:04:22.774 INFO [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mist-2.1]
+03-Jan-2017 00:26:01.401 INFO [http-nio-8080-exec-103] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 00:26:02.391 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 00:26:02.403 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 00:26:02.406 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 00:26:02.418 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 00:26:02.419 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 00:26:02.420 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 00:26:02.421 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 00:26:02.421 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 00:26:02.422 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 00:26:02.423 INFO [http-nio-8080-exec-103] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,022 ms
+03-Jan-2017 00:26:27.054 INFO [http-nio-8080-exec-98] null.null Here is Acess to open Hab '127'...
+03-Jan-2017 00:26:27.064 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:27.053 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 00:26:36.807 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:27.053 Mist-docker  started 
+
+03-Jan-2017 00:26:36.807 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:27.053  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 00:26:42.294 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:27.053 Camunda received results from Mist-docker 
+
+03-Jan-2017 00:26:42.294 INFO [http-nio-8080-exec-98] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute {"precipitations":0,"airpressure":1001.2,"windspeedmax":2.9,"relativehumidity":96,"visibility":0.9,"airtemperature":-3,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.8,"phenomenon":"Moderate snowfall","winddirection":168}
+
+03-Jan-2017 00:26:42.299 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:42.298 Here is result 'false
+
+03-Jan-2017 00:26:42.299 INFO [http-nio-8080-exec-98] ee.ut.mobilelab.mistbpmn.UnDesiredTask.execute 2017-01-03 00:26:42.298 Here  in the  un desired task 
+03-Jan-2017 00:26:42.301 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:42.3 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 00:26:44.329 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:42.3 Result from stopping container started ce75f336e3e5 
+
+03-Jan-2017 00:26:48.349 INFO [http-nio-8080-exec-98] null.null 2017-01-03 00:26:42.3 Result from stopping containers finishedce75f336e3e5 
+
+03-Jan-2017 00:38:08.929 INFO [http-nio-8080-exec-96] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 00:38:08.939 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:08.929 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 00:38:18.429 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:08.929 Mist-docker  started 
+
+03-Jan-2017 00:38:18.429 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:08.929  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 00:38:23.944 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:08.929 Camunda received results from Mist-docker 
+
+03-Jan-2017 00:38:23.944 INFO [http-nio-8080-exec-96] null.null {"precipitations":0,"airpressure":1001.3,"windspeedmax":2.9,"relativehumidity":96,"visibility":1.4,"airtemperature":-3,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.7,"phenomenon":"Moderate snowfall","winddirection":163}
+
+03-Jan-2017 00:38:23.949 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:23.949 Here in Desired Task.
+03-Jan-2017 00:38:23.949 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:23.949 Here is deviceId '123'...
+03-Jan-2017 00:38:23.949 INFO [http-nio-8080-exec-96] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 00:38:23.949 Here is the response  that was returned from previous task '{"precipitations":0,"airpressure":1001.3,"windspeedmax":2.9,"relativehumidity":96,"visibility":1.4,"airtemperature":-3,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.7,"phenomenon":"Moderate snowfall","winddirection":163}
+
+03-Jan-2017 00:38:23.949 INFO [http-nio-8080-exec-96] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 00:38:23.949 Here  Desired Task ended 
+03-Jan-2017 00:38:23.950 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:23.95 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 00:38:25.964 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:23.95 Result from stopping container started 2faf6511893d 
+
+03-Jan-2017 00:38:29.990 INFO [http-nio-8080-exec-96] null.null 2017-01-03 00:38:23.95 Result from stopping containers finished2faf6511893d 
+
+03-Jan-2017 01:44:49.056 INFO [http-nio-8080-exec-97] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 01:44:49.086 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:44:49.056 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 01:44:58.509 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:44:49.056 Mist-docker  started 
+
+03-Jan-2017 01:44:58.509 INFO [http-nio-8080-exec-97] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-03 01:44:49.056  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 01:45:03.958 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:44:49.056 Camunda received results from Mist-docker 
+
+03-Jan-2017 01:45:03.958 INFO [http-nio-8080-exec-97] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 
+
+03-Jan-2017 01:45:03.961 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:45:03.961 Here in Desired Task.
+03-Jan-2017 01:45:03.961 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:45:03.961 Here is deviceId '123'...
+03-Jan-2017 01:45:03.962 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:45:03.961 Here is the response  that was returned from previous task '
+
+03-Jan-2017 01:45:03.962 INFO [http-nio-8080-exec-97] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 01:45:03.961 Here  Desired Task ended 
+03-Jan-2017 01:45:03.962 INFO [http-nio-8080-exec-97] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-03 01:45:03.962 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 01:45:05.973 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:45:03.962 Result from stopping container started 3b8ea909ec2a 
+
+03-Jan-2017 01:45:09.996 INFO [http-nio-8080-exec-97] null.null 2017-01-03 01:45:03.962 Result from stopping containers finished3b8ea909ec2a 
+
+03-Jan-2017 10:10:40.031 INFO [http-nio-8080-exec-103] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:10:40.556 INFO [http-nio-8080-exec-103] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:12:19.815 INFO [http-nio-8080-exec-107] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:12:21.440 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:12:21.454 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:12:21.458 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:12:21.470 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:12:21.474 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:12:21.475 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:12:21.476 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:12:21.476 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:12:21.477 INFO [http-nio-8080-exec-107] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:12:21.480 INFO [http-nio-8080-exec-107] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,663 ms
+03-Jan-2017 10:13:42.749 INFO [http-nio-8080-exec-106] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:13:43.259 INFO [http-nio-8080-exec-106] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:14:00.270 INFO [http-nio-8080-exec-102] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:14:01.249 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:14:01.260 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:14:01.262 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:14:01.271 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:14:01.272 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:14:01.272 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:14:01.275 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:14:01.275 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:14:01.275 INFO [http-nio-8080-exec-102] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:14:01.277 INFO [http-nio-8080-exec-102] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,007 ms
+03-Jan-2017 10:14:04.366 SEVERE [http-nio-8080-exec-108] org.jboss.resteasy.logging.impl.Slf4jLogger.error Failed executing POST /message
+ org.jboss.resteasy.spi.UnsupportedMediaTypeException: Cannot consume content type
+	at org.jboss.resteasy.core.registry.Segment.match(Segment.java:117)
+	at org.jboss.resteasy.core.registry.SimpleSegment.matchSimple(SimpleSegment.java:33)
+	at org.jboss.resteasy.core.registry.RootSegment.matchChildren(RootSegment.java:327)
+	at org.jboss.resteasy.core.registry.RootSegment.matchRoot(RootSegment.java:374)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:353)
+	at org.jboss.resteasy.core.ResourceLocator.invokeOnTargetObject(ResourceLocator.java:144)
+	at org.jboss.resteasy.core.ResourceLocator.invoke(ResourceLocator.java:92)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:542)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:524)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invokePropagateNotFound(SynchronousDispatcher.java:169)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:212)
+	at org.jboss.resteasy.plugins.server.servlet.FilterDispatcher.doFilter(FilterDispatcher.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.camunda.bpm.engine.rest.filter.CacheControlFilter.doFilter(CacheControlFilter.java:41)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:617)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1527)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1484)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+03-Jan-2017 10:15:31.122 INFO [http-nio-8080-exec-113] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:15:31.632 INFO [http-nio-8080-exec-113] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:15:48.421 INFO [http-nio-8080-exec-112] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:15:49.577 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:15:49.591 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:15:49.595 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:15:49.612 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:15:49.614 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:15:49.615 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:15:49.618 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:15:49.618 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:15:49.618 INFO [http-nio-8080-exec-112] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:15:49.620 INFO [http-nio-8080-exec-112] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,199 ms
+03-Jan-2017 10:15:52.696 SEVERE [http-nio-8080-exec-114] org.jboss.resteasy.logging.impl.Slf4jLogger.error Failed executing POST /message
+ org.jboss.resteasy.spi.UnsupportedMediaTypeException: Cannot consume content type
+	at org.jboss.resteasy.core.registry.Segment.match(Segment.java:117)
+	at org.jboss.resteasy.core.registry.SimpleSegment.matchSimple(SimpleSegment.java:33)
+	at org.jboss.resteasy.core.registry.RootSegment.matchChildren(RootSegment.java:327)
+	at org.jboss.resteasy.core.registry.RootSegment.matchRoot(RootSegment.java:374)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:353)
+	at org.jboss.resteasy.core.ResourceLocator.invokeOnTargetObject(ResourceLocator.java:144)
+	at org.jboss.resteasy.core.ResourceLocator.invoke(ResourceLocator.java:92)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:542)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:524)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invokePropagateNotFound(SynchronousDispatcher.java:169)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:212)
+	at org.jboss.resteasy.plugins.server.servlet.FilterDispatcher.doFilter(FilterDispatcher.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.camunda.bpm.engine.rest.filter.CacheControlFilter.doFilter(CacheControlFilter.java:41)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:617)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1527)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1484)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+03-Jan-2017 10:26:42.538 INFO [http-nio-8080-exec-119] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:26:43.048 INFO [http-nio-8080-exec-119] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:27:36.000 INFO [http-nio-8080-exec-122] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:27:36.850 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:27:36.862 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:27:36.864 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:27:36.874 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:27:36.878 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:27:36.878 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:27:36.879 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:27:36.879 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:27:36.879 INFO [http-nio-8080-exec-122] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:27:36.881 INFO [http-nio-8080-exec-122] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 881 ms
+03-Jan-2017 10:27:39.967 SEVERE [http-nio-8080-exec-120] org.jboss.resteasy.logging.impl.Slf4jLogger.error Failed executing POST /message
+ org.jboss.resteasy.spi.UnsupportedMediaTypeException: Cannot consume content type
+	at org.jboss.resteasy.core.registry.Segment.match(Segment.java:117)
+	at org.jboss.resteasy.core.registry.SimpleSegment.matchSimple(SimpleSegment.java:33)
+	at org.jboss.resteasy.core.registry.RootSegment.matchChildren(RootSegment.java:327)
+	at org.jboss.resteasy.core.registry.RootSegment.matchRoot(RootSegment.java:374)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:353)
+	at org.jboss.resteasy.core.ResourceLocator.invokeOnTargetObject(ResourceLocator.java:144)
+	at org.jboss.resteasy.core.ResourceLocator.invoke(ResourceLocator.java:92)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:542)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:524)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invokePropagateNotFound(SynchronousDispatcher.java:169)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:212)
+	at org.jboss.resteasy.plugins.server.servlet.FilterDispatcher.doFilter(FilterDispatcher.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.camunda.bpm.engine.rest.filter.CacheControlFilter.doFilter(CacheControlFilter.java:41)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:617)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1527)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1484)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+03-Jan-2017 10:36:02.584 INFO [http-nio-8080-exec-129] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:36:03.099 INFO [http-nio-8080-exec-129] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:36:33.251 INFO [http-nio-8080-exec-128] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:36:34.192 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:36:34.206 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:36:34.209 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:36:34.220 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:36:34.221 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:36:34.221 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:36:34.222 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:36:34.222 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:36:34.223 INFO [http-nio-8080-exec-128] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:36:34.224 INFO [http-nio-8080-exec-128] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 973 ms
+03-Jan-2017 10:36:37.250 SEVERE [http-nio-8080-exec-131] org.jboss.resteasy.logging.impl.Slf4jLogger.error Failed executing POST /message
+ org.jboss.resteasy.spi.UnsupportedMediaTypeException: Cannot consume content type
+	at org.jboss.resteasy.core.registry.Segment.match(Segment.java:117)
+	at org.jboss.resteasy.core.registry.SimpleSegment.matchSimple(SimpleSegment.java:33)
+	at org.jboss.resteasy.core.registry.RootSegment.matchChildren(RootSegment.java:327)
+	at org.jboss.resteasy.core.registry.RootSegment.matchRoot(RootSegment.java:374)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:353)
+	at org.jboss.resteasy.core.ResourceLocator.invokeOnTargetObject(ResourceLocator.java:144)
+	at org.jboss.resteasy.core.ResourceLocator.invoke(ResourceLocator.java:92)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:542)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:524)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invokePropagateNotFound(SynchronousDispatcher.java:169)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:212)
+	at org.jboss.resteasy.plugins.server.servlet.FilterDispatcher.doFilter(FilterDispatcher.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.camunda.bpm.engine.rest.filter.CacheControlFilter.doFilter(CacheControlFilter.java:41)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:617)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1527)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1484)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+03-Jan-2017 10:37:03.278 INFO [http-nio-8080-exec-138] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 10:37:03.289 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:03.277 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 10:37:14.738 INFO [http-nio-8080-exec-138] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-03 10:37:03.277 Mist-docker  started 
+
+03-Jan-2017 10:37:14.738 INFO [http-nio-8080-exec-138] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-03 10:37:03.277  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 10:37:20.213 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:03.277 Camunda received results from Mist-docker 
+
+03-Jan-2017 10:37:20.213 INFO [http-nio-8080-exec-138] null.null {"precipitations":0.3,"airpressure":1001.3,"windspeedmax":3.7,"relativehumidity":94,"visibility":8,"airtemperature":-4.1,"wmocode":26038,"name":"Tallinn-Harku","windspeed":2,"phenomenon":"Light snowfall","winddirection":169}
+
+03-Jan-2017 10:37:20.215 INFO [http-nio-8080-exec-138] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 10:37:20.215 Here in Desired Task.
+03-Jan-2017 10:37:20.215 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:20.215 Here is deviceId '123'...
+03-Jan-2017 10:37:20.215 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:20.215 Here is the response  that was returned from previous task '{"precipitations":0.3,"airpressure":1001.3,"windspeedmax":3.7,"relativehumidity":94,"visibility":8,"airtemperature":-4.1,"wmocode":26038,"name":"Tallinn-Harku","windspeed":2,"phenomenon":"Light snowfall","winddirection":169}
+
+03-Jan-2017 10:37:20.215 INFO [http-nio-8080-exec-138] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 10:37:20.215 Here  Desired Task ended 
+03-Jan-2017 10:37:20.217 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:20.217 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 10:37:22.241 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:20.217 Result from stopping container started 928f9d5b262a 
+
+03-Jan-2017 10:37:26.265 INFO [http-nio-8080-exec-138] null.null 2017-01-03 10:37:20.217 Result from stopping containers finished928f9d5b262a 
+
+03-Jan-2017 10:38:48.316 INFO [http-nio-8080-exec-140] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:38:48.829 INFO [http-nio-8080-exec-140] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:39:02.199 INFO [http-nio-8080-exec-142] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:39:03.306 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:39:03.320 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:39:03.323 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:39:03.339 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:39:03.341 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:39:03.341 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:39:03.344 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:39:03.344 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:39:03.345 INFO [http-nio-8080-exec-142] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:39:03.349 INFO [http-nio-8080-exec-142] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 1,150 ms
+03-Jan-2017 10:39:06.381 SEVERE [http-nio-8080-exec-138] org.jboss.resteasy.logging.impl.Slf4jLogger.error Failed executing POST /message
+ org.jboss.resteasy.spi.UnsupportedMediaTypeException: Cannot consume content type
+	at org.jboss.resteasy.core.registry.Segment.match(Segment.java:117)
+	at org.jboss.resteasy.core.registry.SimpleSegment.matchSimple(SimpleSegment.java:33)
+	at org.jboss.resteasy.core.registry.RootSegment.matchChildren(RootSegment.java:327)
+	at org.jboss.resteasy.core.registry.RootSegment.matchRoot(RootSegment.java:374)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:353)
+	at org.jboss.resteasy.core.ResourceLocator.invokeOnTargetObject(ResourceLocator.java:144)
+	at org.jboss.resteasy.core.ResourceLocator.invoke(ResourceLocator.java:92)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getResponse(SynchronousDispatcher.java:542)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:524)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invokePropagateNotFound(SynchronousDispatcher.java:169)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:212)
+	at org.jboss.resteasy.plugins.server.servlet.FilterDispatcher.doFilter(FilterDispatcher.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.camunda.bpm.engine.rest.filter.CacheControlFilter.doFilter(CacheControlFilter.java:41)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:617)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1527)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1484)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+03-Jan-2017 10:43:27.162 INFO [http-nio-8080-exec-149] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:43:27.672 INFO [http-nio-8080-exec-149] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:43:51.342 INFO [http-nio-8080-exec-154] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:43:52.284 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:43:52.295 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:43:52.297 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:43:52.308 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:43:52.309 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:43:52.311 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:43:52.312 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:43:52.312 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:43:52.312 INFO [http-nio-8080-exec-154] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:43:52.313 INFO [http-nio-8080-exec-154] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 972 ms
+03-Jan-2017 10:46:19.536 INFO [http-nio-8080-exec-157] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08051 Process application UT Mist Camunda App undeployed
+03-Jan-2017 10:46:20.052 INFO [http-nio-8080-exec-157] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/mistBpmn]
+03-Jan-2017 10:46:38.917 INFO [http-nio-8080-exec-160] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war
+03-Jan-2017 10:46:39.800 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07015 Detected @ProcessApplication class 'ee.ut.mobilelab.mistbpmn.InstantiateProcessByMessageDelegate'
+03-Jan-2017 10:46:39.811 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08024 Found processes.xml file at file:/Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn/WEB-INF/classes/META-INF/processes.xml
+03-Jan-2017 10:46:39.813 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08023 Deployment summary for process archive 'ut-mist-camunda': 
+
+        message_start_process.bpmn
+
+03-Jan-2017 10:46:39.831 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-07021 ProcessApplication 'UT Mist Camunda App' registered for DB deployments [e1f18845-33d2-11e6-b73e-b827eb5fc0fd, bcd6b3a0-cf71-11e6-a944-acde48001122, d0623bc3-33d8-11e6-a1b0-b827eb5fc0fd, 9deea0f4-d127-11e6-838d-acde48001122, d038d192-cfba-11e6-a944-acde48001122, 5f4f4dbf-cfbd-11e6-a944-acde48001122, 27c43c73-33c3-11e6-b73e-b827eb5fc0fd, b017fc03-cf94-11e6-a944-acde48001122, 6a1214fa-33d1-11e6-b73e-b827eb5fc0fd, 9a58f2df-33d5-11e6-b73e-b827eb5fc0fd, abfa69b9-cf5a-11e6-a187-acde48001122, 5f960ba0-d126-11e6-838d-acde48001122, 5ffc14c0-33bd-11e6-b73e-b827eb5fc0fd]. Will execute process definitions 
+
+        Instantiating_Process[version: 4, id: Instantiating_Process:4:e20bee1c-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 4, id: Message_Start_Process:4:e20a195a-33d2-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 8, id: Message_Start_Process:8:bcd8d682-cf71-11e6-a944-acde48001122]
+        Instantiating_Process[version: 6, id: Instantiating_Process:6:d07cc8aa-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 6, id: Message_Start_Process:6:d07a7eb8-33d8-11e6-a1b0-b827eb5fc0fd]
+        Message_Start_Process[version: 13, id: Message_Start_Process:13:9df09cc6-d127-11e6-838d-acde48001122]
+        Message_Start_Process[version: 10, id: Message_Start_Process:10:d03af474-cfba-11e6-a944-acde48001122]
+        Message_Start_Process[version: 11, id: Message_Start_Process:11:5f50fb71-cfbd-11e6-a944-acde48001122]
+        Instantiating_Process[version: 2, id: Instantiating_Process:2:27fe383a-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 2, id: Message_Start_Process:2:27fc6378-33c3-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 9, id: Message_Start_Process:9:b01a9416-cf94-11e6-a944-acde48001122]
+        Instantiating_Process[version: 3, id: Instantiating_Process:3:6a4cd411-33d1-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 3, id: Message_Start_Process:3:6a4ab12f-33d1-11e6-b73e-b827eb5fc0fd]
+        Instantiating_Process[version: 5, id: Instantiating_Process:5:9a783ab6-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 5, id: Message_Start_Process:5:9a76db24-33d5-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 7, id: Message_Start_Process:7:abfe133b-cf5a-11e6-a187-acde48001122]
+        Message_Start_Process[version: 12, id: Message_Start_Process:12:5f982e82-d126-11e6-838d-acde48001122]
+        Instantiating_Process[version: 1, id: Instantiating_Process:1:60265917-33bd-11e6-b73e-b827eb5fc0fd]
+        Message_Start_Process[version: 1, id: Message_Start_Process:1:60240f25-33bd-11e6-b73e-b827eb5fc0fd]
+Deployment does not provide any case definitions.
+03-Jan-2017 10:46:39.832 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormatProvider[name = application/json]
+03-Jan-2017 10:46:39.832 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01010 Discovered Spin data format provider: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormatProvider[name = application/xml]
+03-Jan-2017 10:46:39.833 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.xml.dom.format.DomXmlDataFormat[name = application/xml]
+03-Jan-2017 10:46:39.833 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo SPIN-01009 Discovered Spin data format: org.camunda.spin.impl.json.jackson.format.JacksonJsonDataFormat[name = application/json]
+03-Jan-2017 10:46:39.834 INFO [http-nio-8080-exec-160] org.camunda.commons.logging.BaseLogger.logInfo ENGINE-08050 Process application UT Mist Camunda App successfully deployed
+03-Jan-2017 10:46:39.835 INFO [http-nio-8080-exec-160] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /Users/agabaisaac/iot/camunda-rasberry/server/apache-tomcat-8.0.24/webapps/mistBpmn.war has finished in 918 ms
+03-Jan-2017 10:46:42.903 INFO [http-nio-8080-exec-151] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 10:46:42.912 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:42.902 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 10:46:51.880 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:42.902 Mist-docker  started 
+
+03-Jan-2017 10:46:51.880 INFO [http-nio-8080-exec-151] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute 2017-01-03 10:46:42.902  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 10:46:57.348 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:42.902 Camunda received results from Mist-docker 
+
+03-Jan-2017 10:46:57.349 INFO [http-nio-8080-exec-151] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute {"precipitations":0.3,"airpressure":1001.3,"windspeedmax":3.7,"relativehumidity":94,"visibility":10,"airtemperature":-4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":2,"phenomenon":"Light snowfall","winddirection":180}
+
+03-Jan-2017 10:46:57.350 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:57.35 Here in Desired Task.
+03-Jan-2017 10:46:57.350 INFO [http-nio-8080-exec-151] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 10:46:57.35 Here is deviceId '123'...
+03-Jan-2017 10:46:57.350 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:57.35 Here is the response  that was returned from previous task '{"precipitations":0.3,"airpressure":1001.3,"windspeedmax":3.7,"relativehumidity":94,"visibility":10,"airtemperature":-4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":2,"phenomenon":"Light snowfall","winddirection":180}
+
+03-Jan-2017 10:46:57.350 INFO [http-nio-8080-exec-151] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 10:46:57.35 Here  Desired Task ended 
+03-Jan-2017 10:46:57.351 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:57.351 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 10:46:59.362 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:57.351 Result from stopping container started c32e06e824c6 
+
+03-Jan-2017 10:47:03.386 INFO [http-nio-8080-exec-151] null.null 2017-01-03 10:46:57.351 Result from stopping containers finishedc32e06e824c6 
+
+03-Jan-2017 10:59:03.388 INFO [http-nio-8080-exec-163] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 10:59:03.397 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:03.388 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 10:59:12.385 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:03.388 Mist-docker  started 
+
+03-Jan-2017 10:59:12.386 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:03.388  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 10:59:17.863 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:03.388 Camunda received results from Mist-docker 
+
+03-Jan-2017 10:59:17.863 INFO [http-nio-8080-exec-163] null.null {"precipitations":0.3,"airpressure":1001.2,"windspeedmax":3.7,"relativehumidity":94,"visibility":5,"airtemperature":-4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.7,"phenomenon":"Light snowfall","winddirection":180}
+
+03-Jan-2017 10:59:17.864 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:17.864 Here in Desired Task.
+03-Jan-2017 10:59:17.864 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:17.864 Here is deviceId '123'...
+03-Jan-2017 10:59:17.864 INFO [http-nio-8080-exec-163] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 10:59:17.864 Here is the response  that was returned from previous task '{"precipitations":0.3,"airpressure":1001.2,"windspeedmax":3.7,"relativehumidity":94,"visibility":5,"airtemperature":-4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.7,"phenomenon":"Light snowfall","winddirection":180}
+
+03-Jan-2017 10:59:17.864 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:17.864 Here  Desired Task ended 
+03-Jan-2017 10:59:17.865 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:17.865 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 10:59:19.886 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:17.865 Result from stopping container started f0935de15466 
+
+03-Jan-2017 10:59:23.911 INFO [http-nio-8080-exec-163] null.null 2017-01-03 10:59:17.865 Result from stopping containers finishedf0935de15466 
+
+03-Jan-2017 11:02:38.760 INFO [http-nio-8080-exec-165] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 11:02:38.770 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:38.76 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 11:02:47.133 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:38.76 Mist-docker  started 
+
+03-Jan-2017 11:02:47.133 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:38.76  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 11:02:52.579 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:38.76 Camunda received results from Mist-docker 
+
+03-Jan-2017 11:02:52.579 INFO [http-nio-8080-exec-165] ee.ut.mobilelab.mistbpmn.StartMistContainers.execute {"precipitations":0.3,"airpressure":1001.2,"windspeedmax":3.7,"relativehumidity":94,"visibility":5,"airtemperature":-4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.7,"phenomenon":"Light snowfall","winddirection":180}
+
+03-Jan-2017 11:02:52.580 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:52.58 Here in Desired Task.
+03-Jan-2017 11:02:52.580 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:52.58 Here is deviceId '123'...
+03-Jan-2017 11:02:52.580 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:52.58 Here is the response  that was returned from previous task '{"precipitations":0.3,"airpressure":1001.2,"windspeedmax":3.7,"relativehumidity":94,"visibility":5,"airtemperature":-4,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.7,"phenomenon":"Light snowfall","winddirection":180}
+
+03-Jan-2017 11:02:52.580 INFO [http-nio-8080-exec-165] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 11:02:52.58 Here  Desired Task ended 
+03-Jan-2017 11:02:52.580 INFO [http-nio-8080-exec-165] ee.ut.mobilelab.mistbpmn.FinalTask.execute 2017-01-03 11:02:52.58 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 11:02:54.601 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:52.58 Result from stopping container started 22617fa0a469 
+
+03-Jan-2017 11:02:58.641 INFO [http-nio-8080-exec-165] null.null 2017-01-03 11:02:52.58 Result from stopping containers finished22617fa0a469 
+
+03-Jan-2017 11:49:01.504 INFO [http-nio-8080-exec-167] null.null Here is Acess to open Hab '123'...
+03-Jan-2017 11:49:01.517 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:01.504 Camunda made Mist-docker Intialization 
+
+03-Jan-2017 11:49:10.381 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:01.504 Mist-docker  started 
+
+03-Jan-2017 11:49:10.381 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:01.504  Request made to Mist-docker from Camunda 
+
+03-Jan-2017 11:49:15.908 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:01.504 Camunda received results from Mist-docker 
+
+03-Jan-2017 11:49:15.908 INFO [http-nio-8080-exec-167] null.null {"precipitations":0,"airpressure":1000.9,"windspeedmax":3.5,"relativehumidity":94,"visibility":8,"airtemperature":-3.9,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.9,"phenomenon":"Light snowfall","winddirection":184}
+
+03-Jan-2017 11:49:15.911 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:15.911 Here in Desired Task.
+03-Jan-2017 11:49:15.911 INFO [http-nio-8080-exec-167] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 11:49:15.911 Here is deviceId '123'...
+03-Jan-2017 11:49:15.911 INFO [http-nio-8080-exec-167] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 11:49:15.911 Here is the response  that was returned from previous task '{"precipitations":0,"airpressure":1000.9,"windspeedmax":3.5,"relativehumidity":94,"visibility":8,"airtemperature":-3.9,"wmocode":26038,"name":"Tallinn-Harku","windspeed":1.9,"phenomenon":"Light snowfall","winddirection":184}
+
+03-Jan-2017 11:49:15.911 INFO [http-nio-8080-exec-167] ee.ut.mobilelab.mistbpmn.DesiredTask.execute 2017-01-03 11:49:15.911 Here  Desired Task ended 
+03-Jan-2017 11:49:15.912 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:15.912 Here  in the  final task  to remove and kill containers started
+03-Jan-2017 11:49:17.925 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:15.912 Result from stopping container started 21b899bf0faa 
+
+03-Jan-2017 11:49:21.952 INFO [http-nio-8080-exec-167] null.null 2017-01-03 11:49:15.912 Result from stopping containers finished21b899bf0faa 
+
