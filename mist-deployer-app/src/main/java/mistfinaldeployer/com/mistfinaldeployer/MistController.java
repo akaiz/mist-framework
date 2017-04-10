@@ -7,7 +7,6 @@ import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -19,9 +18,6 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
-
-import org.asynchttpclient.*;
-import org.asynchttpclient.request.body.multipart.FilePart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,11 +33,7 @@ import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 class Node{
     public String getUrl() {
         return url;
@@ -176,7 +168,8 @@ public class MistController {
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
-    String localhost="http://138.68.176.11";
+    // String localhost="http://138.68.176.11";
+    String localhost="http://localhost";
     @Autowired
     private HttpServletRequest request;
 
