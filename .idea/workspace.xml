@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="Mist update">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/resources/message_start_process.bpmn" afterPath="" />
+    <list default="true" id="b03185f1-2b59-4592-8d86-8e100a4d17aa" name="Default" comment="instantiationMessageMist update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/mist-deployer-app/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_0.txt" afterPath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_0.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_1.txt" afterPath="$PROJECT_DIR$/mist-deployer-app/mist-files/mist_file_heavy_1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/InstantiateProcessByMessageDelegate.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -994,7 +990,7 @@
       <workItem from="1491594406246" duration="13080000" />
       <workItem from="1491671610737" duration="5276000" />
       <workItem from="1491805193273" duration="598000" />
-      <workItem from="1491806935134" duration="18236000" />
+      <workItem from="1491806935134" duration="18314000" />
     </task>
     <task id="LOCAL-00017" summary="cloud url update">
       <created>1491077862871</created>
@@ -1343,11 +1339,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80904000" />
+    <option name="totallyTimeSpent" value="80982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3682" y="-222" width="1625" height="826" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1360,7 +1356,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25759578" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192867" sideWeight="0.4953846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19323076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1406,10 +1402,10 @@
     <MESSAGE value="tomcat update" />
     <MESSAGE value="tomcat run twice" />
     <MESSAGE value="tomcat run twice update" />
-    <MESSAGE value="instantiationMessageMist update" />
     <MESSAGE value="Mist update instantiationMessageMistFinal message" />
     <MESSAGE value="Mist update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mist update" />
+    <MESSAGE value="instantiationMessageMist update" />
+    <option name="LAST_COMMIT_MESSAGE" value="instantiationMessageMist update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
