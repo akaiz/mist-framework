@@ -13,6 +13,6 @@ public class InstantiateProcessByMessageDelegate extends ServletProcessApplicati
 
     public void execute(DelegateExecution execution) throws Exception {
         RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
-        runtimeService.startProcessInstanceByMessage("instantiationMessageOpenHab");
+        runtimeService.startProcessInstanceByMessage("instantiationMessageMist");
     }
 }
