@@ -168,8 +168,8 @@ public class MistController {
     long startTime ,endTime;
     Boolean mistStarted = false;
     String startRequest="";
-    // String localhost="http://138.68.176.11";
-    String localhost="http://localhost";
+     String localhost="http://138.68.176.11";
+   // String localhost="http://localhost";
     @Autowired
     private HttpServletRequest request;
 
