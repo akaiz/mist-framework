@@ -1,4 +1,4 @@
-{"messageName" : "instantiationMessageMist",
+{"messageName" : "instantiationMessageOpenHab",
 "businessKey" : "aBusinessKey",
 "processVariables" : {"call_back_url" : {"value" : "http://192.168.0.100:8098/callback","type": "String"},
 "remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/imagebig.jpg","type": "String"} ,
