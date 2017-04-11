@@ -20,7 +20,7 @@
       <file leaf-file-name="MistController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="1275">
               <caret line="170" column="4" lean-forward="false" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -54,45 +54,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2520">
               <caret line="249" column="11" lean-forward="false" selection-start-line="249" selection-start-column="11" selection-end-line="249" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1867#1868#0" expanded="false" />
-                <element signature="e#1893#1894#0" expanded="false" />
-                <element signature="e#1931#1932#0" expanded="false" />
-                <element signature="e#1961#1962#0" expanded="false" />
-                <element signature="e#2003#2004#0" expanded="false" />
-                <element signature="e#2041#2042#0" expanded="false" />
-                <element signature="e#2103#2104#0" expanded="false" />
-                <element signature="e#2157#2158#0" expanded="false" />
-                <element signature="e#2193#2194#0" expanded="false" />
-                <element signature="e#2225#2226#0" expanded="false" />
-                <element signature="e#2258#2259#0" expanded="false" />
-                <element signature="e#2288#2289#0" expanded="false" />
-                <element signature="e#2334#2335#0" expanded="false" />
-                <element signature="e#2372#2373#0" expanded="false" />
-                <element signature="e#2410#2411#0" expanded="false" />
-                <element signature="e#2445#2446#0" expanded="false" />
-                <element signature="e#2501#2502#0" expanded="false" />
-                <element signature="e#2549#2550#0" expanded="false" />
-                <element signature="e#2599#2600#0" expanded="false" />
-                <element signature="e#2641#2642#0" expanded="false" />
-                <element signature="e#2868#2869#0" expanded="false" />
-                <element signature="e#2893#2894#0" expanded="false" />
-                <element signature="e#2929#2930#0" expanded="false" />
-                <element signature="e#2957#2958#0" expanded="false" />
-                <element signature="e#2988#2989#0" expanded="false" />
-                <element signature="e#3015#3016#0" expanded="false" />
-                <element signature="e#3055#3056#0" expanded="false" />
-                <element signature="e#3087#3088#0" expanded="false" />
-                <element signature="e#3119#3120#0" expanded="false" />
-                <element signature="e#3147#3148#0" expanded="false" />
-                <element signature="e#3189#3190#0" expanded="false" />
-                <element signature="e#3223#3224#0" expanded="false" />
-                <element signature="e#3253#3254#0" expanded="false" />
-                <element signature="e#3279#3280#0" expanded="false" />
-                <element signature="e#3317#3318#0" expanded="false" />
-                <element signature="e#3347#3348#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -247,8 +209,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="141" />
-    <option name="y" value="22" />
+    <option name="x" value="180" />
+    <option name="y" value="36" />
     <option name="width" value="1500" />
     <option name="height" value="958" />
   </component>
@@ -267,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -457,6 +418,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -921,16 +883,17 @@
       <workItem from="1491594404941" duration="21655000" />
       <workItem from="1491671615883" duration="5081000" />
       <workItem from="1491805192237" duration="598000" />
-      <workItem from="1491806933387" duration="8225000" />
+      <workItem from="1491806933387" duration="8738000" />
+      <workItem from="1491921503380" duration="133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272125000" />
+    <option name="totallyTimeSpent" value="272771000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="141" y="22" width="1500" height="958" extended-state="0" />
-    <editor active="false" />
+    <frame x="180" y="36" width="1500" height="958" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -951,7 +914,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14848144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1143,13 +1106,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mist-files/mist_jjtemp.txt" />
     <entry file="file://$PROJECT_DIR$/mist-files/mist_temp.txt">
+      <provider editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="LargeFileEditor">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/mcxiaoke/volley/library/1.0.19/library-1.0.19.jar!/com/android/volley/toolbox/Volley.class">
@@ -1251,7 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,10 +1228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2655">
           <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14929#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1278,9 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#5067#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1288,45 +1242,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2520">
           <caret line="249" column="11" lean-forward="false" selection-start-line="249" selection-start-column="11" selection-end-line="249" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-            <element signature="e#1893#1894#0" expanded="false" />
-            <element signature="e#1931#1932#0" expanded="false" />
-            <element signature="e#1961#1962#0" expanded="false" />
-            <element signature="e#2003#2004#0" expanded="false" />
-            <element signature="e#2041#2042#0" expanded="false" />
-            <element signature="e#2103#2104#0" expanded="false" />
-            <element signature="e#2157#2158#0" expanded="false" />
-            <element signature="e#2193#2194#0" expanded="false" />
-            <element signature="e#2225#2226#0" expanded="false" />
-            <element signature="e#2258#2259#0" expanded="false" />
-            <element signature="e#2288#2289#0" expanded="false" />
-            <element signature="e#2334#2335#0" expanded="false" />
-            <element signature="e#2372#2373#0" expanded="false" />
-            <element signature="e#2410#2411#0" expanded="false" />
-            <element signature="e#2445#2446#0" expanded="false" />
-            <element signature="e#2501#2502#0" expanded="false" />
-            <element signature="e#2549#2550#0" expanded="false" />
-            <element signature="e#2599#2600#0" expanded="false" />
-            <element signature="e#2641#2642#0" expanded="false" />
-            <element signature="e#2868#2869#0" expanded="false" />
-            <element signature="e#2893#2894#0" expanded="false" />
-            <element signature="e#2929#2930#0" expanded="false" />
-            <element signature="e#2957#2958#0" expanded="false" />
-            <element signature="e#2988#2989#0" expanded="false" />
-            <element signature="e#3015#3016#0" expanded="false" />
-            <element signature="e#3055#3056#0" expanded="false" />
-            <element signature="e#3087#3088#0" expanded="false" />
-            <element signature="e#3119#3120#0" expanded="false" />
-            <element signature="e#3147#3148#0" expanded="false" />
-            <element signature="e#3189#3190#0" expanded="false" />
-            <element signature="e#3223#3224#0" expanded="false" />
-            <element signature="e#3253#3254#0" expanded="false" />
-            <element signature="e#3279#3280#0" expanded="false" />
-            <element signature="e#3317#3318#0" expanded="false" />
-            <element signature="e#3347#3348#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1372,7 +1288,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="1275">
           <caret line="170" column="4" lean-forward="false" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
