@@ -1,5 +1,5 @@
 
- {"messageName" : "instantiationMessageMist",
+ {"messageName" : "instantiationMessageOpenHab",
  "businessKey" : "aBusinessKey",
 "processVariables" : {"call_back_url" : {"value" : "http://138.68.176.11:8098/callback","type": "String"},
  "remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/sun.jpg","type": "String"} ,

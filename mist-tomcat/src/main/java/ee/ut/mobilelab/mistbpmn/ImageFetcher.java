@@ -20,6 +20,7 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
     public ImageFetcher() {
 
         super();
+
     }
 
     public void execute(DelegateExecution execution) throws Exception {
@@ -37,9 +38,6 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
            execution.setVariable("fetch","success");
         CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch complete");
           LOGGER.info("Here in the image fetcher download complete ---->"+ execution.getVariable("remote_image_url"));
-
-
-
 
     }
     private  void downloadUsingNIO(String urlStr, String file) throws IOException {

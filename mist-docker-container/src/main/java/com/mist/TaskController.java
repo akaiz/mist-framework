@@ -39,9 +39,6 @@ import java.util.zip.ZipOutputStream;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-/**
- * Created by agabaisaac on 12/28/16.
- */
 @RestController
 public class TaskController {
     private static final TerseJson.WhitespaceBehaviour COMPACT_WHITE_SPACE = TerseJson.WhitespaceBehaviour.Compact;
@@ -56,50 +53,52 @@ public class TaskController {
     public String imageProcess(@RequestParam(value = "imagePath") String imagePath) throws IOException, URISyntaxException {
 
         File file = new File(imagePath );
+        BufferedImage image = ImageIO.read(file);
 
-        ImageInputStream is = ImageIO.createImageInputStream(file);
-        Iterator iter = ImageIO.getImageReaders(is);
-
-        if (!iter.hasNext())
-        {
-            System.out.println("Cannot load the specified file "+ file);
-            System.exit(1);
+        String x = getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        getMostCommonColor(image);
+        if (x != null){
+            return x;
         }
-        ImageReader imageReader = (ImageReader)iter.next();
-        imageReader.setInput(is);
-
-        BufferedImage image = imageReader.read(0);
-
-
-
-        int height = image.getHeight();
-        int width = image.getWidth();
-
-       String colourHex =null;
-       if(width<100){
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-
-       }
-       else if(width<200){
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-
-       }
-       else if(width<300){
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-           colourHex = getMostCommonColour(iterate(height,width,image));
-                 }
+        else{
+            return  null;
+        }
 
 
 
-
-
-        return  colourHex;
     }
+
+    private String getMostCommonColor(BufferedImage image) {
+        for (int x = 0; x < image.getWidth(); x++) {
+            for (int y = 0; y < image.getHeight(); y++) {
+                final int clr = image.getRGB(x, y);
+                final int red = (clr & 0x00ff0000) >> 16;
+                final int green = (clr & 0x0000ff00) >> 8;
+                final int blue = clr & 0x000000ff;
+
+                // Color Red get cordinates
+                if (red == 255) {
+                    System.out.println(String.format("Coordinate %d %d", x, y));
+                    return String.format("Coordinate %d %d", x, y);
+                } else {
+                    System.out.println("Red Color value = " + red);
+                    System.out.println("Green Color value = " + green);
+                    System.out.println("Blue Color value = " + blue);
+                    return red+"--"+green+"--"+blue;
+                }
+            }
+        }
+        return null;
+    }
+
     public Map iterate(int height,int width,BufferedImage image){
         Map m = new HashMap();
         for(int i=0; i < width ; i++)

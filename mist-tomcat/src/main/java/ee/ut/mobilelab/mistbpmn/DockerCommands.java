@@ -13,12 +13,9 @@ public class DockerCommands {
     Logger LOGGER = Logger.getLogger("Mist tomcat app");
     Timestamp timestamp = new Timestamp(System.currentTimeMillis());
     public String stopContainers(String imageName) throws IOException, InterruptedException {
-
-
         LOGGER.info(timestamp+" remove and kill containers that are already  started");
         String command = "docker ps -a -q --filter=ancestor="+imageName;
         Process proc = Runtime.getRuntime().exec(command);
-        // Delay to enable the above command to be finished
         TimeUnit.SECONDS.sleep(2);
 
         BufferedReader reader =
@@ -47,7 +44,6 @@ public class DockerCommands {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         return proc;
 
