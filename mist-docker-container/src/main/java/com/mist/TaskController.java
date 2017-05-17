@@ -83,15 +83,10 @@ public class TaskController {
                 final int red = (clr & 0x00ff0000) >> 16;
                 final int green = (clr & 0x0000ff00) >> 8;
                 final int blue = clr & 0x000000ff;
-
-                // Color Red get cordinates
                 if (red == 255) {
                     System.out.println(String.format("Coordinate %d %d", x, y));
                     return String.format("Coordinate %d %d", x, y);
                 } else {
-                    System.out.println("Red Color value = " + red);
-                    System.out.println("Green Color value = " + green);
-                    System.out.println("Blue Color value = " + blue);
                     return red+"--"+green+"--"+blue;
                 }
             }
@@ -166,30 +161,7 @@ public class TaskController {
         ImageReader imageReader = (ImageReader)iter.next();
         imageReader.setInput(is);
 
-        BufferedImage image = imageReader.read(0);
-
-
-
-        int height = image.getHeight();
-        int width = image.getWidth();
-
-        Map m = new HashMap();
-        for(int i=0; i < width ; i++)
-        {
-            for(int j=0; j < height ; j++)
-            {
-                int rgb = image.getRGB(i, j);
-                int[] rgbArr = getRGBArr(rgb);
-                // Filter out grays....
-                if (!isGray(rgbArr)) {
-                    Integer counter = (Integer) m.get(rgb);
-                    if (counter == null)
-                        counter = 0;
-                    counter++;
-                    m.put(rgb, counter);
-                }
-            }
-        }
+        Map m = getMapFromImage(imageReader);
         String colourHex = getMostCommonColour(m);
         System.out.println(colourHex);
 
@@ -199,6 +171,8 @@ public class TaskController {
 
         return  colourHex;
     }
+
+
 
     @RequestMapping(method = GET,path = "/test")
     @ResponseBody
@@ -292,7 +266,31 @@ public class TaskController {
         fos.close();
         rbc.close();
     }
+    private Map getMapFromImage(ImageReader imageReader) {
+        BufferedImage image = imageReader.read(0);
 
+
+        int height = image.getHeight();
+        int width = image.getWidth();
+
+        Map m = new HashMap();
+        for(int i=0; i < width ; i++)
+        {
+            for(int j=0; j < height ; j++)
+            {
+                int rgb = image.getRGB(i, j);
+                int[] rgbArr = getRGBArr(rgb);
+                if (!isGray(rgbArr)) {
+                    Integer counter = (Integer) m.get(rgb);
+                    if (counter == null)
+                        counter = 0;
+                    counter++;
+                    m.put(rgb, counter);
+                }
+            }
+        }
+        return m;
+    }
 
     public static String getMostCommonColour(Map map) {
         List list = new LinkedList(map.entrySet());
@@ -304,7 +302,8 @@ public class TaskController {
         });
         Map.Entry me = (Map.Entry )list.get(list.size()-1);
         int[] rgb= getRGBArr((Integer)me.getKey());
-        return Integer.toHexString(rgb[0])+""+Integer.toHexString(rgb[1])+""+Integer.toHexString(rgb[2]);
+        return Integer.toHexString(rgb[0])+""+Integer.toHexString(rgb[1])+""+
+                Integer.toHexString(rgb[2]);
     }
 
     public static int[] getRGBArr(int pixel) {
