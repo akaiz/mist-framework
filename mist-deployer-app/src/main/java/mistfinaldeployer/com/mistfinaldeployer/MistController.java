@@ -1,5 +1,4 @@
 package mistfinaldeployer.com.mistfinaldeployer;
-import com.github.kevinsawicki.http.HttpRequest;
 import com.google.gson.Gson;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -7,7 +6,6 @@ import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CredentialsProvider;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -21,8 +19,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
-import org.asynchttpclient.*;
-import org.asynchttpclient.request.body.multipart.FilePart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,11 +34,7 @@ import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 class Node{
     public String getUrl() {
         return url;
@@ -88,13 +80,30 @@ class Node{
     String call_back_ip;
     String node_one;
     String processId;
-    String run_twice;
-    public String getRun_twice() {
-        return run_twice;
+    String platform;
+    String baseUrl;
+    String baseFolder;
+    public String getBaseUrl() {
+        return baseUrl;
     }
 
-    public void setRun_twice(String run_twice) {
-        this.run_twice = run_twice;
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+
+    public String getBaseFolder() {
+        return baseFolder;
+    }
+
+    public void setBaseFolder(String baseFolder) {
+        this.baseFolder = baseFolder;
+    }
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
 
 
@@ -234,8 +243,14 @@ public class MistController {
                 if(line.contains("log_id")){
                     line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"},";
                 }
-                if(line.contains("run_twice")){
-                    line =" \"run_twice\":{\"value\" :\""+node.getRun_twice()+"\",\"type\": \"String\"}";
+                if(line.contains("platform")){
+                    line =" \"platform\":{\"value\" :\""+node.getPlatform()+"\",\"type\": \"String\"}";
+                }
+                if(line.contains("baseUrl")){
+                    line =" \"baseUrl\":{\"value\" :\""+node.getBaseUrl()+"\",\"type\": \"String\"}";
+                }
+                if(line.contains("baseFolder")){
+                    line =" \"baseFolder\":{\"value\" :\""+node.getBaseFolder()+"\",\"type\": \"String\"}";
                 }
 
                 // Always write the line, whether you changed it or not.
@@ -270,28 +285,8 @@ public class MistController {
         Node node2 = node;
         node1.setUrl(node.getNode_one());
         node2.setUrl(node.getNode_two());
-        if(node.getRun_twice().equals("no")){
-//            ExecutorService executor = Executors.newFixedThreadPool(2);
-//            Runnable worker = new MyRunnable(node1,credsProvider,1);
-//            executor.execute(worker);
-//            Runnable worker2 = new MyRunnable(node2,credsProvider,2);
-//            executor.execute(worker2);
-//
-//            try {
-//                System.out.println("attempt to shutdown executor");
-//                executor.shutdown();
-//                executor.awaitTermination(5, TimeUnit.SECONDS);
-//            }
-//            catch (InterruptedException e) {
-//                System.err.println("tasks interrupted");
-//            }
-//            finally {
-//                if (!executor.isTerminated()) {
-//                    System.err.println("cancel non-finished tasks");
-//                }
-//                executor.shutdownNow();
-//                System.out.println("shutdown finished");
-//            }
+        if(node.getPlatform().equals("no")){
+
             Arrays.asList(new Thread(() -> {
                 try {
                     deploy(node1, credsProvider, 1);
@@ -387,12 +382,9 @@ public class MistController {
         String mistFilename = mistfile.getOriginalFilename();
 
         String filepath2 = Paths.get(directory, mistFilename).toString();
-
         stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
         stream.write(mistfile.getBytes());
         stream.close();
-
-
         BufferedReader br = new BufferedReader(new FileReader(filepath2));
         try {
             StringBuilder sb = new StringBuilder();
@@ -446,25 +438,7 @@ public class MistController {
         return directory;
     }
 
-    private  String sendRequest() throws IOException {
 
-        String postText = startRequest;
-        System.out.println("Post request sent with this data "+postText);
-
-        String       postUrl       = localhost+":8080/engine-rest/message";// put in your url
-        HttpClient httpClient    = HttpClientBuilder.create().build();
-        HttpPost post          = new HttpPost(postUrl);
-        System.out.println(postText);
-        StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
-        post.setEntity(postingString);
-        post.setHeader("Content-type", "application/json");
-
-        System.out.println("Request being processed .......................");
-        HttpResponse  response2 = httpClient.execute(post);
-
-        System.out.println(response2+" request execution finished   ");
-        return response2.toString();
-    }
 
     @RequestMapping(value = "/deploy", method = RequestMethod.POST)
     @ResponseBody
@@ -563,44 +537,14 @@ public class MistController {
 
     }
 
-    @RequestMapping(value = "/deployer",method = RequestMethod.GET)
-    public   String deployDepolyer() throws ClientProtocolException, IOException {
-        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
-        String url = localhost+":8080/manager/text/deploy?path=/deployer-0&update=true";
-
-        File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
-        HttpPut req = new HttpPut(url) ;
-        MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-        meb.addTextBody("fileDescription", "war file to deploy");
-        //"application/octect-stream"
-        meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
-        req.setEntity(meb.build()) ;
-        String response = executeRequest (req, credsProvider);
-
-        return  response;
-    }
-    @RequestMapping(value = "/undeployer",method = RequestMethod.GET)
-    public   String undeployDepolyer() throws ClientProtocolException, IOException {
-        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        String url = localhost+":8080/manager/text/undeploy?path=/deployer-0";
-        HttpGet req = new HttpGet(url) ;
-        String response = executeRequest (req, credsProvider);
-        System.out.println("Response : "+response);
-        return  response;
-    }
-
-
     // deploy file to camunda
 
     private  String deployToCamunda(String processId) throws IOException {
 
         if(mistpath!=null){
-            System.out.println("Making deployment to Camunda");
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
             String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
-            // get this war generated from the maveen install of the mist-bpmn war
             try {
                 CsvFile.write(processId,"Started deployment to Camunda");
             } catch (IOException e) {
@@ -627,12 +571,12 @@ public class MistController {
             String postText = startRequest;
             System.out.println("Post request sent with this data "+postText);
 
-            String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+            String       postUrl       = localhost+":8080/engine-rest/message";
             Gson gson          = new Gson();
             HttpClient httpClient    = HttpClientBuilder.create().build();
             HttpPost post          = new HttpPost(postUrl);
             System.out.println(postText);
-            StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+            StringEntity postingString = new StringEntity(postText,"UTF-8");
             post.setEntity(postingString);
             post.setHeader("Content-type", "application/json");
 
@@ -645,8 +589,7 @@ public class MistController {
                 System.out.println();
                 response2 = httpClient.execute(post);
             }
-            // hack for cloud
-            // CsvFile.write(processId,"Call back recieved");
+             CsvFile.write(processId,"Call back recieved-if-cloud");
             try {
                 undeploy(processId);
             } catch (IOException e) {
@@ -658,11 +601,7 @@ public class MistController {
         else {
             return "Are you sure you upload the mist war";
         }
-
-
     }
-
-
     public String deploy( Node node, CredentialsProvider credsProvider,int i) throws ClientProtocolException, IOException {
         String mistFilesPath =node.mist_files_path;
         System.out.println(node.getUrl());
@@ -678,7 +617,6 @@ public class MistController {
             req2 = new HttpPost(node.getNode_two());
             meb.addTextBody("processId",node.processId+",mist-two");
         }
-
 
         meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
         System.out.println("payload ------->"+node.getPayload());
@@ -699,12 +637,10 @@ public class MistController {
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-          //  CsvFile.write(processId,"Started un deployment to Camunda");
         String url = localhost+":8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
-       // CsvFile.write(processId,"Finished un deployment to Camunda");
         return  response;
     }
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
@@ -845,83 +781,7 @@ public class MistController {
         return ip;
     }
 
-    public static class MyRunnable implements Runnable {
-        private  Node node;
-        CredentialsProvider credsProvider;
-        int i;
 
-
-        MyRunnable(Node node,CredentialsProvider credsProvider,int i) {
-            this.node = node;
-            this.credsProvider=credsProvider;
-            this.i=i;
-
-
-        }
-        public void deploy( Node node, CredentialsProvider credsProvider) throws ClientProtocolException, IOException{
-            String mistFilesPath =node.mist_files_path;
-            System.out.println(node.getUrl());
-            CsvFile.write(node.processId,"Process Start");
-            File war = new File(mistFilesPath+"mist-0.war");
-            File mist_file = new File(mistFilesPath+node.getMist_file());
-            HttpPost req2;
-            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            if(i==1){
-                req2 = new HttpPost(node.getNode_one());
-                meb.addTextBody("processId",node.processId+",mist-one");
-            }else{
-                req2 = new HttpPost(node.getNode_two());
-                meb.addTextBody("processId",node.processId+",mist-two");
-            }
-
-
-            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
-            System.out.println("payload ------->"+node.getPayload());
-            if(node.getPayload().equals("true")){
-                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-heavy.jpeg":"payload-heavy.jpeg"));
-                System.out.println("payload ii ------->"+mist_payload.getName());
-                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
-            }
-
-            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-
-            req2.setEntity(meb.build());
-            String response2 = executeRequest(req2, credsProvider);
-
-        }
-
-        @Override
-        public void run() {
-
-            try {
-                deploy(node,credsProvider);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        public String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException, IOException {
-            CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
-            InputStream responseStream = null;
-            String res = null;
-            HttpResponse response = client.execute(requestBase) ;
-            HttpEntity responseEntity = response.getEntity() ;
-            responseStream = responseEntity.getContent() ;
-
-            BufferedReader br = new BufferedReader (new InputStreamReader (responseStream)) ;
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
-                sb.append(System.getProperty("line.separator"));
-            }
-            br.close() ;
-            res = sb.toString();
-
-            return res;
-        }
-    }
 
 }
 

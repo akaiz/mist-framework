@@ -24,8 +24,8 @@ public class CallBack extends DockerCommands implements JavaDelegate {
         if (callBackUrl != null) {
             LOGGER.info("Sending response to callback " + callBackUrl);
             CsvFile.write(execution.getVariable("log_id").toString(), "Sending response to callback");
-            String runTwice = (String)execution.getVariable("run_twice");
-            if(runTwice.equals("no")){
+            String platform = (String)execution.getVariable("platform");
+            if(platform.equals("mist")){
                 HttpResponse response = null;
                 HttpPost req = new HttpPost(callBackUrl);
                 MultipartEntityBuilder meb = MultipartEntityBuilder.create();
@@ -35,6 +35,7 @@ public class CallBack extends DockerCommands implements JavaDelegate {
                 response = httpClient.execute(req);
                 LOGGER.info("Response from Mist One "+response);
             }
+
         }
 
 

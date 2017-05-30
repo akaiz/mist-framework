@@ -36,7 +36,7 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
 
            downloadUsingNIO((String) execution.getVariable("remote_image_url"),imageUrlValue);
            execution.setVariable("fetch","success");
-        CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch complete");
+          CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch complete");
           LOGGER.info("Here in the image fetcher download complete ---->"+ execution.getVariable("remote_image_url"));
 
     }
