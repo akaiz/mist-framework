@@ -285,7 +285,7 @@ public class MistController {
         Node node2 = node;
         node1.setUrl(node.getNode_one());
         node2.setUrl(node.getNode_two());
-        if(node.getPlatform().equals("no")){
+        if(node.getPlatform().equals("mist")){
 
             Arrays.asList(new Thread(() -> {
                 try {
