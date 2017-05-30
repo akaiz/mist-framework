@@ -24,9 +24,7 @@ public class DockerCommands {
         while((line = reader.readLine()) != null) {
             LOGGER.info(timestamp+" Result from stopping container started "+line+" \n");
             TimeUnit.SECONDS.sleep(2);
-
             Runtime.getRuntime().exec("docker kill "+line);
-
             TimeUnit.SECONDS.sleep(2);
 
             Runtime.getRuntime().exec("docker rm "+line);
