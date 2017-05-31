@@ -7,14 +7,14 @@ import java.io.PrintWriter;
 import java.sql.Timestamp;
 
 public class CsvFile {
-      static String fileName = "/mist-framework/mist-deployer-app/mistlog.csv";
+      static String fileNamePath = "/mist-framework/mist-deployer-app/mistlog.csv";
 
       public CsvFile(){
 
       }
 
     public  static String write(String id,String name, String baseFolder) throws IOException {
-        fileName= baseFolder+fileName;
+        String fileName= baseFolder+fileNamePath;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         String newLine = System.getProperty("line.separator");
