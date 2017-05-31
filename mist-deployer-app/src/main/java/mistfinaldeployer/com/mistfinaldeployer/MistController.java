@@ -582,6 +582,7 @@ public class MistController {
             System.out.println("Start Deployed Camunda");
             String postText = startRequest;
             System.out.println("Post request sent with this data "+postText);
+            System.out.println("localhost-->"+localhost);
 
             String       postUrl       = localhost+":8080/engine-rest/message";
             Gson gson          = new Gson();
