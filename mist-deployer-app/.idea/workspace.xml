@@ -16,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MistController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MistController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="584" column="55" lean-forward="false" selection-start-line="584" selection-start-column="55" selection-end-line="584" selection-end-column="55" />
+            <state relative-caret-position="312">
+              <caret line="598" column="51" lean-forward="false" selection-start-line="598" selection-start-column="47" selection-end-line="598" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="mist_file_light_0.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_0.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="45" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,11 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mist_file_heavy_1.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt">
+      <file leaf-file-name="mist_file.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mist-files/mist_file.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mist_file_heavy_1.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -87,6 +97,7 @@
       <find>undeploy</find>
       <find>localhost</find>
       <find>getBaseUrl</find>
+      <find>Request being processed</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -99,9 +110,10 @@
       <list>
         <option value="$PROJECT_DIR$/mist-files/mist_file_light_0.txt" />
         <option value="$PROJECT_DIR$/mist-files/mist_file_heavy_0.txt" />
-        <option value="$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt" />
         <option value="$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/CsvFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
+        <option value="$PROJECT_DIR$/mist-files/mist_file.txt" />
+        <option value="$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt" />
       </list>
     </option>
   </component>
@@ -707,12 +719,12 @@
       <workItem from="1493382371926" duration="619000" />
       <workItem from="1493479037173" duration="36000" />
       <workItem from="1496157794989" duration="9488000" />
-      <workItem from="1496263561734" duration="3131000" />
+      <workItem from="1496263561734" duration="4320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23635000" />
+    <option name="totallyTimeSpent" value="24824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="981" extended-state="6" />
@@ -1024,18 +1036,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/Jshs.java" />
-    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_0.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/Jshs.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/CsvFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="45" />
+        <state relative-caret-position="180">
+          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_1.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="46" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="46" />
+        <state relative-caret-position="312">
+          <caret line="598" column="51" lean-forward="false" selection-start-line="598" selection-start-column="47" selection-end-line="598" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1048,27 +1061,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/Jshs.java" />
-    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt">
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="46" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_light_0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/CsvFile.java">
+    <entry file="file://$PROJECT_DIR$/mist-files/mist_file_heavy_1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="584" column="55" lean-forward="false" selection-start-line="584" selection-start-column="55" selection-end-line="584" selection-end-column="55" />
+        <state relative-caret-position="105">
+          <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
           <folding />
         </state>
       </provider>
