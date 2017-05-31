@@ -293,6 +293,7 @@ public class MistController {
             ex.printStackTrace();
 
         }
+        System.out.println("------------------"+baseFolder+"-----------------");
         CsvFile.write(node.processId, "Process Start",baseFolder);
         Node node1 = node;
         Node node2 = node;
