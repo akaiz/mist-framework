@@ -4,7 +4,7 @@ import java.io.*;
 import java.sql.Timestamp;
 
 public class CsvFile {
-      static String fileName = "/home/pi/Desktop/mist-framework/mist-deployer-app/mistlog.csv";
+      static String fileName = "/mist-framework/mist-deployer-app/mistlog.csv";
 
       public CsvFile(){
 
