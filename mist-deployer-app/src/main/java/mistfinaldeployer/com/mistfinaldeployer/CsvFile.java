@@ -12,6 +12,7 @@ public class CsvFile {
 
     public  static String write(String id,String name,String baseFolder) throws IOException {
         fileName= baseFolder+fileName;
+        System.out.println("csv filename------>"+fileName);
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         String newLine = System.getProperty("line.separator");
