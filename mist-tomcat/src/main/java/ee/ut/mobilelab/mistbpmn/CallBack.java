@@ -21,9 +21,10 @@ public class CallBack extends DockerCommands implements JavaDelegate {
     }
     public void execute(DelegateExecution execution) throws Exception {
         String callBackUrl = (String) execution.getVariable("call_back_url");
+        String baseFolder = (String) execution.getVariable("baseFolder");
         if (callBackUrl != null) {
             LOGGER.info("Sending response to callback " + callBackUrl);
-            CsvFile.write(execution.getVariable("log_id").toString(), "Sending response to callback");
+            CsvFile.write(execution.getVariable("log_id").toString(), "Sending response to callback",baseFolder);
             String platform = (String)execution.getVariable("platform");
             if(platform.equals("mist")){
                 HttpResponse response = null;

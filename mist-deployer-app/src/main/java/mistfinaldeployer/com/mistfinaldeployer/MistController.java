@@ -83,6 +83,16 @@ class Node{
     String platform;
     String baseUrl;
     String baseFolder;
+    String deployerUrl;
+    public String getDeployerUrl() {
+        return deployerUrl;
+    }
+
+    public void setDeployerUrl(String deployerUrl) {
+        this.deployerUrl = deployerUrl;
+    }
+
+
     public String getBaseUrl() {
         return baseUrl;
     }
@@ -188,6 +198,7 @@ public class MistController {
     String startRequest="";
     //String localhost="http://138.68.176.11";
     String localhost="http://localhost";
+    String baseFolder;
     @Autowired
     private HttpServletRequest request;
 
@@ -214,6 +225,8 @@ public class MistController {
     public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException, InterruptedException, ExecutionException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         String processId = randomString(5)+","+node.getMist_file();
+        baseFolder=node.getBaseFolder();
+        localhost= node.getDeployerUrl();
         node.setProcessId(processId);
         String mistFilesPath =node.mist_files_path;
         if(! new File(mistFilesPath).exists())
@@ -280,7 +293,7 @@ public class MistController {
             ex.printStackTrace();
 
         }
-        CsvFile.write(node.processId, "Process Start");
+        CsvFile.write(node.processId, "Process Start",baseFolder);
         Node node1 = node;
         Node node2 = node;
         node1.setUrl(node.getNode_one());
@@ -306,7 +319,7 @@ public class MistController {
 
             mistFilesPath =node.mist_files_path;
             System.out.println(node.getUrl());
-            CsvFile.write(node.processId,"Process Start");
+            CsvFile.write(node.processId,"Process Start",baseFolder);
             File war = new File(mistFilesPath+"mist-0.war");
             File mist_file = new File(mistFilesPath+node.getMist_file());
             HttpPost req2;
@@ -327,7 +340,7 @@ public class MistController {
 
             req2.setEntity(meb.build());
             String response2 = executeRequest(req2, credsProvider);
-            CsvFile.write(processId,"Call back received only use for cloud");
+            CsvFile.write(processId,"Call back received only use for cloud",baseFolder);
 
 
         }
@@ -346,7 +359,7 @@ public class MistController {
 
         try {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            CsvFile.write(processId,"Recieved deployment ");
+            CsvFile.write(processId,"Recieved deployment ",baseFolder);
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
 
@@ -448,7 +461,6 @@ public class MistController {
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
 
-
                 String uploadsDir = "/uploads/";
                 realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
                 if(! new File(realPathtoUploads).exists())
@@ -546,7 +558,7 @@ public class MistController {
 
             String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
             try {
-                CsvFile.write(processId,"Started deployment to Camunda");
+                CsvFile.write(processId,"Started deployment to Camunda",baseFolder);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -562,7 +574,7 @@ public class MistController {
 
             System.out.println("Response after depoly  : "+response);
             try {
-                CsvFile.write(processId,"Finished deployment to Camunda");
+                CsvFile.write(processId,"Finished deployment to Camunda",baseFolder);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -589,7 +601,7 @@ public class MistController {
                 System.out.println();
                 response2 = httpClient.execute(post);
             }
-             CsvFile.write(processId,"Call back recieved-if-cloud");
+             CsvFile.write(processId,"Call back recieved-if-cloud",baseFolder);
             try {
                 undeploy(processId);
             } catch (IOException e) {
@@ -605,7 +617,7 @@ public class MistController {
     public String deploy( Node node, CredentialsProvider credsProvider,int i) throws ClientProtocolException, IOException {
         String mistFilesPath =node.mist_files_path;
         System.out.println(node.getUrl());
-        CsvFile.write(node.processId,"Process Start");
+        CsvFile.write(node.processId,"Process Start",baseFolder);
         File war = new File(mistFilesPath+"mist-0.war");
         File mist_file = new File(mistFilesPath+node.getMist_file());
         HttpPost req2;
@@ -646,7 +658,7 @@ public class MistController {
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
     public String callbackAllFinshed( @RequestParam("processId") String callBack ) throws IOException {
-        CsvFile.write(callBack,"Call back received");
+        CsvFile.write(callBack,"Call back received",baseFolder);
       return  "received";
 
     }
@@ -657,7 +669,7 @@ public class MistController {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         String time= timestamp.getTime()+"";
 
-    CsvFile.write(callback.getId(),callback.getName());
+    CsvFile.write(callback.getId(),callback.getName(),baseFolder);
         return "recieved";
 
     }

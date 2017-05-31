@@ -10,7 +10,8 @@ public class CsvFile {
 
       }
 
-    public  static String write(String id,String name) throws IOException {
+    public  static String write(String id,String name,String baseFolder) throws IOException {
+        fileName= baseFolder+fileName;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         String newLine = System.getProperty("line.separator");

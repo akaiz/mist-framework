@@ -11,17 +11,20 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
     private Expression dockerImage;
     private Expression command;
     private Expression imagePath;
-     String baseUrl =null;
+     String baseUrl ="localhost";
      String baseFolder=null;
     public DockerImageProcessing() {
         super();
     }
     public void execute(DelegateExecution execution) throws Exception {
-
+        String baseFolder = (String) execution.getVariable("baseFolder");
         String dockerImageValue = (String) dockerImage.getValue(execution);
         String commandValue = (String) command.getValue(execution);
         String imageUrlValue = (String) imagePath.getValue(execution);
-        baseUrl = (String)execution.getVariable("baseUrl");
+        String platform = (String) execution.getVariable("platform");
+        if(!platform.equals("mist")){
+            baseUrl = (String)execution.getVariable("baseUrl");
+        }
         baseFolder=(String)execution.getVariable("baseFolder");
         File file = new File(imageUrlValue);
         String folder =  baseFolder+"/mist-framework/mist-deployer-app/mist-files/";
@@ -43,7 +46,7 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
                 "&imagePath="+baseUrl+"/mist-framework/mist-deployer-app/mist-files/pay.jpg";
         String response = HttpRequest.get(processRequest).body();
         execution.setVariable("response",response);
-        CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed");
+        CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed",baseFolder);
        super.stopContainers(dockerImageValue);
 
 
