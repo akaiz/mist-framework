@@ -317,7 +317,7 @@ public class MistController {
                     .parallelStream().forEach(x -> x.start());
 
         }else {
-
+            System.out.println("Sole ");
             mistFilesPath =node.mist_files_path;
             System.out.println(node.getUrl());
             CsvFile.write(node.processId,"Process Start",baseFolder);
@@ -327,7 +327,6 @@ public class MistController {
             req2 = new HttpPost(node.getNode_one());
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
             meb.addTextBody("processId",node.processId+",mist-one");
-
             meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
             System.out.println("payload ------->"+node.getPayload());
             if(node.getPayload().equals("true")){
