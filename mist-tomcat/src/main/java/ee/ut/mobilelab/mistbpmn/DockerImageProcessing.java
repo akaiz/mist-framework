@@ -42,10 +42,10 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
                 break;
             }
    }
-        String processRequest = baseUrl +":8090/image?task="+commandValue+
-                "&imagePath="+baseUrl+"/mist-framework/mist-deployer-app/mist-files/pay.jpg";
-        String response = HttpRequest.get(processRequest).body();
-        execution.setVariable("response",response);
+//        String processRequest = baseUrl +":8090/image?task="+commandValue+
+//                "&imagePath="+baseUrl+"/mist-framework/mist-deployer-app/mist-files/pay.jpg";
+//        String response = HttpRequest.get(processRequest).body();
+//        execution.setVariable("response",response);
         CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed",baseFolder);
        super.stopContainers(dockerImageValue);
 
