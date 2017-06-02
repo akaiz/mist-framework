@@ -31,14 +31,14 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
 
         File file = new File(imageUrlValue);
         File folder = new File(file.getParent());
-           if(!folder.exists()){
-               folder.mkdirs();
-           }
+        if(!folder.exists()){
+            folder.mkdirs();
+        }
 
-           downloadUsingNIO((String) execution.getVariable("remote_image_url"),imageUrlValue);
-           execution.setVariable("fetch","success");
-          CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch complete",baseFolder);
-          LOGGER.info("Here in the image fetcher download complete ---->"+ execution.getVariable("remote_image_url"));
+        downloadUsingNIO((String) execution.getVariable("remote_image_url"),imageUrlValue);
+        execution.setVariable("fetch","success");
+        CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch complete",baseFolder);
+        LOGGER.info("Here in the image fetcher download complete ---->"+ execution.getVariable("remote_image_url"));
 
     }
     private  void downloadUsingNIO(String urlStr, String file) throws IOException {

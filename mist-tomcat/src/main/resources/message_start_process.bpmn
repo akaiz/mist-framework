@@ -72,28 +72,36 @@
     <bpmn:inclusiveGateway id="ExclusiveGateway_1ajtxgi">
       <bpmn:incoming>SequenceFlow_0f9dqrf</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_1as7rwc</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_12agilo</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_03p5tsh</bpmn:outgoing>
     </bpmn:inclusiveGateway>
-    <bpmn:sequenceFlow id="SequenceFlow_12agilo" sourceRef="ExclusiveGateway_1ajtxgi" targetRef="Task_0gm0vbj" />
     <bpmn:endEvent id="EndEvent_1wpd119">
       <bpmn:incoming>SequenceFlow_0vk6em0</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sendTask id="Task_1dm4i6s" name="Call Back" camunda:class="ee.ut.mobilelab.mistbpmn.CallBack">
-      <bpmn:incoming>SequenceFlow_1v2smwm</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1wga56g</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0vk6em0</bpmn:outgoing>
     </bpmn:sendTask>
-    <bpmn:serviceTask id="Task_0gm0vbj" name="Docker Image Processing" camunda:class="ee.ut.mobilelab.mistbpmn.DockerImageProcessing">
-      <bpmn:incoming>SequenceFlow_12agilo</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1v2smwm</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:serviceTask id="Task_1kzyjcw" name="Image Fetcher 2" camunda:class="ee.ut.mobilelab.mistbpmn.ImageFetcher">
       <bpmn:incoming>SequenceFlow_0mwry0v</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1as7rwc</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1as7rwc" sourceRef="Task_1kzyjcw" targetRef="ExclusiveGateway_1ajtxgi" />
     <bpmn:sequenceFlow id="SequenceFlow_1ovuhuz" sourceRef="StartEvent_03g2xth" targetRef="ExclusiveGateway_0hrf2ol" />
-    <bpmn:sequenceFlow id="SequenceFlow_1v2smwm" sourceRef="Task_0gm0vbj" targetRef="Task_1dm4i6s" />
     <bpmn:sequenceFlow id="SequenceFlow_0vk6em0" sourceRef="Task_1dm4i6s" targetRef="EndEvent_1wpd119" />
+    <bpmn:serviceTask id="ServiceTask_17crjlr" name="Docker Image Processing " camunda:class="ee.ut.mobilelab.mistbpmn.DockerImageProcessing">
+      <bpmn:extensionElements>
+        <camunda:field name="dockerImage">        <camunda:string>akaiz/mist-image-processor</camunda:string>
+</camunda:field>
+        <camunda:field name="command">        <camunda:string>findDorminantColour</camunda:string>
+</camunda:field>
+        <camunda:field name="imagePath">        <camunda:string>/home/pi/mist/mist_img.jpg</camunda:string>
+</camunda:field>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_03p5tsh</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1wga56g</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_03p5tsh" sourceRef="ExclusiveGateway_1ajtxgi" targetRef="ServiceTask_17crjlr" />
+    <bpmn:sequenceFlow id="SequenceFlow_1wga56g" sourceRef="ServiceTask_17crjlr" targetRef="Task_1dm4i6s" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="Diagram-_1" name="New Diagram" documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0">
     <bpmndi:BPMNPlane bpmnElement="Message_Start_Process">
@@ -187,15 +195,6 @@
           <dc:Bounds x="917" y="152" width="0" height="0" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_12agilo_di" bpmnElement="SequenceFlow_12agilo">
-        <di:waypoint xsi:type="dc:Point" x="942" y="127" />
-        <di:waypoint xsi:type="dc:Point" x="1050" y="127" />
-        <di:waypoint xsi:type="dc:Point" x="1050" y="127" />
-        <di:waypoint xsi:type="dc:Point" x="1091" y="127" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1065" y="127" width="0" height="0" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_1wpd119_di" bpmnElement="EndEvent_1wpd119">
         <dc:Bounds x="1467" y="118" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -204,9 +203,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SendTask_1vzzl6o_di" bpmnElement="Task_1dm4i6s">
         <dc:Bounds x="1292" y="87" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_0iqbf4s_di" bpmnElement="Task_0gm0vbj">
-        <dc:Bounds x="1091" y="87" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_09me1bv_di" bpmnElement="Task_1kzyjcw">
         <dc:Bounds x="867" y="-71" width="100" height="80" />
@@ -225,15 +221,6 @@
           <dc:Bounds x="-30" y="102" width="0" height="0" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_1v2smwm_di" bpmnElement="SequenceFlow_1v2smwm">
-        <di:waypoint xsi:type="dc:Point" x="1191" y="127" />
-        <di:waypoint xsi:type="dc:Point" x="1234" y="127" />
-        <di:waypoint xsi:type="dc:Point" x="1234" y="127" />
-        <di:waypoint xsi:type="dc:Point" x="1292" y="127" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1249" y="127" width="0" height="0" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0vk6em0_di" bpmnElement="SequenceFlow_0vk6em0">
         <di:waypoint xsi:type="dc:Point" x="1392" y="127" />
         <di:waypoint xsi:type="dc:Point" x="1430" y="127" />
@@ -241,6 +228,23 @@
         <di:waypoint xsi:type="dc:Point" x="1467" y="136" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1445" y="131.5" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_17crjlr_di" bpmnElement="ServiceTask_17crjlr">
+        <dc:Bounds x="1069" y="87" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_03p5tsh_di" bpmnElement="SequenceFlow_03p5tsh">
+        <di:waypoint xsi:type="dc:Point" x="942" y="127" />
+        <di:waypoint xsi:type="dc:Point" x="1069" y="127" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1006" y="102" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1wga56g_di" bpmnElement="SequenceFlow_1wga56g">
+        <di:waypoint xsi:type="dc:Point" x="1169" y="127" />
+        <di:waypoint xsi:type="dc:Point" x="1292" y="127" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1231" y="102" width="0" height="0" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
