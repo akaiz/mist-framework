@@ -1,12 +1,13 @@
 {"messageName" : "instantiationMessageOpenHab",
-"businessKey" : "aBusinessKey",
-"processVariables" : {"call_back_url" : {"value" : "http://192.168.17.151:8098/callback","type": "String"},
-"remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/imagebig.jpeg","type": "String"} ,
-"image_already_exists":{"value" : "no","type": "String"},
- "log_id":{"value" :"ojfDS,mist_file_heavy_1.txt","type": "String"},
+ "businessKey" : "aBusinessKey",
+"processVariables" : {"call_back_url" : {"value" : "http://192.168.17.191:8098/callback","type": "String"},
+ "remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/imagebig.jpeg","type": "String"} ,
+ "image_already_exists":{"value" : "no","type": "String"},
+ "log_id":{"value" :"VWE6r,mist_file_heavy_1.txt","type": "String"},
  "platform":{"value" :"sole","type": "String"},
- "baseUrl":{"value" :"http://192.168.17.151","type": "String"},
- "baseFolder":{"value" :"/Users/agabaisaac/iot","type": "String"}
+ "baseUrl":{"value" :"http://localhost","type": "String"},
+ "baseFolder":{"value" :"/home/pi/Desktop","type": "String"},
+ "camundaHost":{"value" :"http://localhost","type": "String"}
 }
 }
 

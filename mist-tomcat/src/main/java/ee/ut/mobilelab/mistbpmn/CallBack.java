@@ -20,13 +20,13 @@ public class CallBack extends DockerCommands implements JavaDelegate {
         super();
     }
     public void execute(DelegateExecution execution) throws Exception {
-        String callBackUrl = (String) execution.getVariable("call_back_url");
         String baseFolder = (String) execution.getVariable("baseFolder");
+        String callBackUrl = (String) execution.getVariable("call_back_url");
         if (callBackUrl != null) {
             LOGGER.info("Sending response to callback " + callBackUrl);
             CsvFile.write(execution.getVariable("log_id").toString(), "Sending response to callback",baseFolder);
             String platform = (String)execution.getVariable("platform");
-            if(platform.equals("mist")){
+            if(!platform.equals("cloud")){
                 HttpResponse response = null;
                 HttpPost req = new HttpPost(callBackUrl);
                 MultipartEntityBuilder meb = MultipartEntityBuilder.create();
@@ -36,7 +36,6 @@ public class CallBack extends DockerCommands implements JavaDelegate {
                 response = httpClient.execute(req);
                 LOGGER.info("Response from Mist One "+response);
             }
-
         }
 
 

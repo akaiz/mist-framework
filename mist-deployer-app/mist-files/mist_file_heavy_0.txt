@@ -1,11 +1,12 @@
 {"messageName" : "instantiationMessageOpenHab",
 "businessKey" : "aBusinessKey",
-"processVariables" : {"call_back_url" :
- {"value" : "http://192.168.17.168:8098/callback","type": "String"},
+"processVariables" : {"call_back_url" : {"value" : "http://192.168.17.168:8098/callback","type": "String"},
  "image_already_exists":{"value" : "yes","type": "String"},
  "log_id":{"value" :"5RLP3,mist_file_heavy_0.txt","type": "String"},
- "platform":{"value" :"no","type": "String"},
- "baseUrl":{"value" :"localhost","type": "String"},
- "baseFolder":{"value" :"no","type": "String"}
+ "platform":{"value" :"sole","type": "String"},
+ "baseUrl":{"value" :"http://192.168.17.151","type": "String"},
+ "baseFolder":{"value" :"/Users/agabaisaac/iot","type": "String"},
+ "camundaHost":{"value" :"","type": "String"}
+
 }
 }

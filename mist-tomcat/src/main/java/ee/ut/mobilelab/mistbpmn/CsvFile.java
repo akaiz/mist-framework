@@ -1,9 +1,6 @@
 package ee.ut.mobilelab.mistbpmn;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.sql.Timestamp;
 
 public class CsvFile {
@@ -13,7 +10,7 @@ public class CsvFile {
 
     }
 
-    public  static String write(String id,String name, String baseFolder) throws IOException {
+    public  static String write(String id,String name,String baseFolder) throws IOException {
         String fileName= baseFolder+fileNamePath;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
@@ -41,8 +38,5 @@ public class CsvFile {
         return  "xs";
     }
 }
-
-
-
 
 
