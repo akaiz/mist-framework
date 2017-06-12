@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  mist-client:
+    image: akaiz/mist-client
+    ports:
+      - "8090:8080"
+    networks:
+      - my_network
+
+networks:
+  my_network:

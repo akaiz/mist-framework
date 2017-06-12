@@ -1,0 +1,32 @@
+sep=,
+Ku0bc,mist_file_heavy_1.txt,Process Start,,1496954745290
+Ku0bc,mist_file_heavy_1.txt,mist-one,Recieved deployment ,1496954745567
+Ku0bc,mist_file_heavy_1.txt,mist-one,Started deployment to Camunda,1496954745635
+Ku0bc,mist_file_heavy_1.txt,mist-one,Finished deployment to Camunda,1496954751420
+Ku0bc,mist_file_heavy_1.txt,mist-one,Image Fetch Started,1496954751616
+Ku0bc,mist_file_heavy_1.txt,mist-one,Image Fetch complete,1496954767170
+Ku0bc,mist_file_heavy_1.txt,mist-one,Mist-docker  started,1496954767184
+Ku0bc,mist_file_heavy_1.txt,mist-one,Mist-docker  completed,1496954805228
+Ku0bc,mist_file_heavy_1.txt,mist-one,Image Fetch Started,1496954805232
+Ku0bc,mist_file_heavy_1.txt,mist-one,Image Fetch complete,1496954815660
+Ku0bc,mist_file_heavy_1.txt,mist-one,Mist-docker  started,1496954815668
+Ku0bc,mist_file_heavy_1.txt,mist-one,Mist-docker  completed,1496954832299
+Ku0bc,mist_file_heavy_1.txt,mist-one,Sending response to callback,1496954832314
+Ku0bc,mist_file_heavy_1.txt,mist-one,Call back received,1496954832994
+Ku0bc,mist_file_heavy_1.txt,Final response,,1496954833982
+
+VWE6r,mist_file_heavy_1.txt,Process Start,,1496956804997
+VWE6r,mist_file_heavy_1.txt,mist-one,Recieved deployment ,1496956806159
+VWE6r,mist_file_heavy_1.txt,mist-one,Started deployment to Camunda,1496956806231
+VWE6r,mist_file_heavy_1.txt,mist-one,Finished deployment to Camunda,1496956812141
+VWE6r,mist_file_heavy_1.txt,mist-one,Image Fetch Started,1496956812330
+VWE6r,mist_file_heavy_1.txt,mist-one,Image Fetch complete,1496956819723
+VWE6r,mist_file_heavy_1.txt,mist-one,Mist-docker  started,1496956830770
+VWE6r,mist_file_heavy_1.txt,mist-one,Mist-docker  completed,1496956863618
+VWE6r,mist_file_heavy_1.txt,mist-one,Image Fetch Started,1496956863622
+VWE6r,mist_file_heavy_1.txt,mist-one,Image Fetch complete,1496956878336
+VWE6r,mist_file_heavy_1.txt,mist-one,Mist-docker  started,1496956878341
+VWE6r,mist_file_heavy_1.txt,mist-one,Mist-docker  completed,1496956889912
+VWE6r,mist_file_heavy_1.txt,mist-one,Sending response to callback,1496956889933
+VWE6r,mist_file_heavy_1.txt,mist-one,Call back received,1496956890565
+VWE6r,mist_file_heavy_1.txt,Final response,,1496956891609
