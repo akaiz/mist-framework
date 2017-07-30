@@ -7,14 +7,17 @@ fi
 
 logname=$1
 
-mkdir $logname
+mkdir -p $logname
 finish_logging() {
 	echo "[T] " $(date +"%T" )  "Finished all execution, sleeping 5s"
 	sleep 5
 	echo "Stopping logger.."
 	pkill -9 sar
-	echo "Converting logfile to text.."
-
+	echo "Deleting old files"
+    rm $logname/mem.csv
+    rm $logname/cpu.csv
+    rm $logname/network.csv
+    echo "Converting logfile to text.."
 	##Convert sar output to csv files
 	## sar -A -f $logname/log.file > $logname/log.txt
 	sadf -d $logname/log.file -- -r > $logname/mem.csv

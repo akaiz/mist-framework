@@ -24,21 +24,25 @@ public class ImageFetcher extends DockerCommands implements JavaDelegate {
     }
 
     public void execute(DelegateExecution execution) throws Exception {
-        String baseFolder = (String) execution.getVariable("baseFolder");
         LOGGER.info("Here in the image fetcher started");
+        String baseFolder = (String) execution.getVariable("baseFolder");
         CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch Started",baseFolder);
         String imageUrlValue = (String) imageUrl.getValue(execution);
 
         File file = new File(imageUrlValue);
         File folder = new File(file.getParent());
-        if(!folder.exists()){
-            folder.mkdirs();
-        }
+           if(!folder.exists()){
+               folder.mkdirs();
 
-        downloadUsingNIO((String) execution.getVariable("remote_image_url"),imageUrlValue);
-        execution.setVariable("fetch","success");
+           }
+
+           downloadUsingNIO((String) execution.getVariable("remote_image_url"),imageUrlValue);
+           execution.setVariable("fetch","success");
         CsvFile.write(execution.getVariable("log_id").toString(),"Image Fetch complete",baseFolder);
-        LOGGER.info("Here in the image fetcher download complete ---->"+ execution.getVariable("remote_image_url"));
+          LOGGER.info("Here in the image fetcher download complete ---->"+ execution.getVariable("remote_image_url"));
+
+
+
 
     }
     private  void downloadUsingNIO(String urlStr, String file) throws IOException {

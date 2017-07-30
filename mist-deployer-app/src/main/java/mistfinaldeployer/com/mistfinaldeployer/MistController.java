@@ -1,5 +1,10 @@
 package mistfinaldeployer.com.mistfinaldeployer;
+
 import com.google.gson.Gson;
+import com.pusher.client.Pusher;
+import com.pusher.client.connection.ConnectionEventListener;
+import com.pusher.client.connection.ConnectionStateChange;
+import okhttp3.*;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
@@ -18,23 +23,23 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
+import javax.activation.MimetypesFileTypeMap;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
-
+import java.util.concurrent.Future;
 import java.io.*;
 import java.net.*;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.*;
-
 class Node{
     public String getUrl() {
         return url;
@@ -80,18 +85,27 @@ class Node{
     String call_back_ip;
     String node_one;
     String processId;
+    String run_twice;
     String platform;
     String baseUrl;
     String baseFolder;
     String deployerUrl;
-    public String getDeployerUrl() {
-        return deployerUrl;
+    String camundaHost;
+
+    public String getCamundaHost() {
+        return camundaHost;
     }
 
-    public void setDeployerUrl(String deployerUrl) {
-        this.deployerUrl = deployerUrl;
+    public void setCamundaHost(String camundaHost) {
+        this.camundaHost = camundaHost;
+    }
+    public String getPlatform() {
+        return platform;
     }
 
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
 
     public String getBaseUrl() {
         return baseUrl;
@@ -108,12 +122,21 @@ class Node{
     public void setBaseFolder(String baseFolder) {
         this.baseFolder = baseFolder;
     }
-    public String getPlatform() {
-        return platform;
+
+    public String getDeployerUrl() {
+        return deployerUrl;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setDeployerUrl(String deployerUrl) {
+        this.deployerUrl = deployerUrl;
+    }
+
+    public String getRun_twice() {
+        return run_twice;
+    }
+
+    public void setRun_twice(String run_twice) {
+        this.run_twice = run_twice;
     }
 
 
@@ -201,7 +224,8 @@ public class MistController {
     String baseFolder;
     @Autowired
     private HttpServletRequest request;
-
+    @Resource
+    AsyncServices services;
     public MistController() throws UnknownHostException {
     }
 
@@ -214,8 +238,23 @@ public class MistController {
         return "Bpmn not started";
     }
     @RequestMapping("/alive")
-    public String alive() throws IOException {
+    public String alive() throws IOException, InterruptedException {
 
+//   x();
+        Pusher pusher = new Pusher("47cbb81f75fff2140125");
+
+        pusher.connect(new ConnectionEventListener() {
+            @Override
+            public void onConnectionStateChange(ConnectionStateChange change) {
+                System.out.println("State changed to " + change.getCurrentState() +
+                        " from " + change.getPreviousState());
+            }
+
+            @Override
+            public void onError(String message, String code, Exception e) {
+                System.out.println("There was a problem connecting!");
+            }
+        });
         return "alive";
     }
 
@@ -226,7 +265,6 @@ public class MistController {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         String processId = randomString(5)+","+node.getMist_file();
         baseFolder=node.getBaseFolder();
-        localhost= node.getDeployerUrl();
         node.setProcessId(processId);
         String mistFilesPath =node.mist_files_path;
         if(! new File(mistFilesPath).exists())
@@ -256,14 +294,18 @@ public class MistController {
                 if(line.contains("log_id")){
                     line =" \"log_id\":{\"value\" :\""+node.getProcessId()+"\",\"type\": \"String\"},";
                 }
+
                 if(line.contains("platform")){
-                    line =" \"platform\":{\"value\" :\""+node.getPlatform()+"\",\"type\": \"String\"}";
+                    line =" \"platform\":{\"value\" :\""+node.getPlatform()+"\",\"type\": \"String\"},";
                 }
                 if(line.contains("baseUrl")){
-                    line =" \"baseUrl\":{\"value\" :\""+node.getBaseUrl()+"\",\"type\": \"String\"}";
+                    line =" \"baseUrl\":{\"value\" :\""+node.getBaseUrl()+"\",\"type\": \"String\"},";
                 }
                 if(line.contains("baseFolder")){
-                    line =" \"baseFolder\":{\"value\" :\""+node.getBaseFolder()+"\",\"type\": \"String\"}";
+                    line =" \"baseFolder\":{\"value\" :\""+node.getBaseFolder()+"\",\"type\": \"String\"},";
+                }
+                if(line.contains("camundaHost")){
+                    line =" \"camundaHost\":{\"value\" :\""+node.getCamundaHost()+"\",\"type\": \"String\"}";
                 }
 
                 // Always write the line, whether you changed it or not.
@@ -293,54 +335,34 @@ public class MistController {
             ex.printStackTrace();
 
         }
-        System.out.println("------------------"+baseFolder+"-----------------");
         CsvFile.write(node.processId, "Process Start",baseFolder);
         Node node1 = node;
         Node node2 = node;
-        node1.setUrl(node.getNode_one());
-        node2.setUrl(node.getNode_two());
-        if(node.getPlatform().equals("mist")){
 
-            Arrays.asList(new Thread(() -> {
-                try {
-                    deploy(node1, credsProvider, 1);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }), new Thread(() -> {
-                try {
-                    deploy(node1, credsProvider, 2);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }))
-                    .parallelStream().forEach(x -> x.start());
+        if(node.getPlatform().equals("mist")){
+            Future<String> process1 = services.deploy(node1, credsProvider, 1,baseFolder);
+            Future<String> process2 =  services.deploy(node2, credsProvider, 2,baseFolder);
+
+            // Wait until They are all Done
+            // If all are not Done. Pause 2s for next re-check
+            System.out.println("Processing started ");
+            while (!(process1.isDone() && process2.isDone())) {
+
+                Thread.sleep(2000);
+            }
+            System.out.println("Processing ended ");
 
         }else {
-            System.out.println("Sole ");
-            mistFilesPath =node.mist_files_path;
-            System.out.println(node.getUrl());
-            CsvFile.write(node.processId,"Process Start",baseFolder);
-            File war = new File(mistFilesPath+"mist-0.war");
-            File mist_file = new File(mistFilesPath+node.getMist_file());
-            HttpPost req2;
-            req2 = new HttpPost(node.getNode_one());
-            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
-            meb.addTextBody("processId",node.processId+",mist-one");
-            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
-            System.out.println("payload ------->"+node.getPayload());
-            if(node.getPayload().equals("true")){
-                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-heavy.jpeg":"payload-heavy.jpeg"));
-                System.out.println("payload ii ------->"+mist_payload.getName());
-                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+
+            Future<String> process1 = services.deploy(node1, credsProvider, 3,baseFolder);
+            // Wait until They are all Done
+            // If all are not Done. Pause 2s for next re-check
+            System.out.println("Processing started ");
+            while (!(process1.isDone())) {
+
+                Thread.sleep(2000);
             }
-
-            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
-            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
-
-            req2.setEntity(meb.build());
-            String response2 = executeRequest(req2, credsProvider);
-            CsvFile.write(processId,"Call back received only use for cloud",baseFolder);
+            System.out.println("Processing ended ");
 
 
         }
@@ -348,20 +370,24 @@ public class MistController {
 
         return "Done ";
     }
+
+
     @RequestMapping(value = "/deploy/final",method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist")
-                                           MultipartFile mistfile,
+    public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile,
                                            @RequestParam(name = "payload", required=false) MultipartFile payload,
-                                           @RequestParam("callback") String callback,@RequestParam("processId")
-                                           String processId) throws IOException {
+                                           @RequestParam("baseFolder")  String folder,
+                                           @RequestParam("callback") String callback,@RequestParam("processId") String processId) throws IOException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        baseFolder= folder;
+        System.out.println("base folder "+baseFolder);
 
         try {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             CsvFile.write(processId,"Recieved deployment ",baseFolder);
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
+
 
                 String uploadsDir = "/uploads/";
                 realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
@@ -374,14 +400,75 @@ public class MistController {
                     delete(new File(realPathtoUploads));
                     // recreate it again
                     new File(realPathtoUploads).mkdirs();
+
                 }
-                // if payload was sent save it
-                String directory = savePayload(uploadfile, payload);
-                BufferedOutputStream stream;
-                return deployToWorkFlowManager(mistfile, processId, directory);
+                // if payload was sent
+                System.out.println("Payload ---------------- sent"+payload);
+                if(payload!=null){
+                    System.out.println("Payload ---------------- sent");
+                    String directory = "/home/pi/mist/";
+                    delete(new File(directory));
+                    // recreate it again
+                    new File(directory).mkdirs();
+                    String upload_path = Paths.get(directory, "mist_img.jpg").toString();
+                    System.out.println("Payload ---------------- upload_path"+upload_path);
+
+                    // Save the PAYLOAD file locally
+                    BufferedOutputStream stream =
+                            new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
+                    stream.write(payload.getBytes());
+                    stream.close();
+
+                }
+                String filename = uploadfile.getOriginalFilename();
+                String directory = realPathtoUploads;
+                mistpath = Paths.get(directory, filename).toString();
+
+                // Save the file locally
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(mistpath)));
+                stream.write(uploadfile.getBytes());
+                stream.close();
+
+//        Getting data from the mist file
+
+                String mistFilename = mistfile.getOriginalFilename();
+
+                String filepath2 = Paths.get(directory, mistFilename).toString();
+
+                stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
+                stream.write(mistfile.getBytes());
+                stream.close();
+
+
+
+                BufferedReader br = new BufferedReader(new FileReader(filepath2));
+                try {
+                    StringBuilder sb = new StringBuilder();
+                    String line = br.readLine();
+
+                    while (line != null) {
+                        if(line.contains("log_id")){
+                            line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
+                        }
+
+                        sb.append(line);
+                        sb.append("\n");
+                        line = br.readLine();
+
+                    }
+                    startRequest=sb.toString();
+                } finally {
+                    br.close();
+                }
+                // deploying to tomcat and  start
+
+                return new ResponseEntity<>(deployToCamunda(processId),HttpStatus.OK);
             }
 
             return new ResponseEntity<>("PLEASE PROVIDE CORRECT INPUT",HttpStatus.OK);
+
+
 
         }
         catch (Exception e) {
@@ -389,69 +476,141 @@ public class MistController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+    @RequestMapping(value = "/deploy/image",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<?> uploadImage(@RequestParam(name = "payload2", required=false) MultipartFile payload2,@RequestParam(name = "payload", required=false) MultipartFile payload,@RequestParam("baseFolder")  String folder,@RequestParam("processId") String processId) throws IOException {
 
-    private ResponseEntity<?> deployToWorkFlowManager(@RequestParam("mist") MultipartFile mistfile, @RequestParam("processId") String processId, String directory) throws IOException {
-        BufferedOutputStream stream;
-        String mistFilename = mistfile.getOriginalFilename();
+        baseFolder= folder;
+        System.out.println("Image recieved");
 
-        String filepath2 = Paths.get(directory, mistFilename).toString();
-        stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
-        stream.write(mistfile.getBytes());
-        stream.close();
-        BufferedReader br = new BufferedReader(new FileReader(filepath2));
         try {
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
+            String directory = "/home/pi/mist/";
+            if(payload!=null){
+                System.out.println("Payload ---------------- sent");
 
-            while (line != null) {
-                if(line.contains("log_id")){
-                    line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
-                }
-                sb.append(line);
-                sb.append("\n");
-                line = br.readLine();
+                delete(new File(directory));
+                // recreate it again
+                new File(directory).mkdirs();
+                String upload_path = Paths.get(directory, "mist_img2.jpg").toString();
+                System.out.println("Payload ---------------- upload_path"+upload_path);
+
+                // Save the PAYLOAD file locally
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
+                stream.write(payload.getBytes());
+                stream.close();
+                CsvFile.write(processId,"Received Image ",baseFolder);
 
             }
-            startRequest=sb.toString();
-        } finally {
-            br.close();
-        }
-        // deploying to tomcat and  start
+            if(payload2!=null){
+                System.out.println("Payload2 ---------------- sent");
+                String upload_path = Paths.get(directory, "mist_img3.jpg").toString();
+                System.out.println("Payload2 ---------------- upload_path"+upload_path);
+                // Save the PAYLOAD file locally
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
+                stream.write(payload.getBytes());
+                stream.close();
 
-        return new ResponseEntity<>(deployToCamunda(processId),HttpStatus.OK);
-    }
+            }
+            return new ResponseEntity<>("done",HttpStatus.OK);
 
-    private String savePayload(@RequestParam("war") MultipartFile uploadfile, @RequestParam(name = "payload", required = false) MultipartFile payload) throws IOException {
-        System.out.println("Payload ---------------- sent"+payload);
-        if(payload!=null){
-            System.out.println("Payload ---------------- sent");
-            String directory = "/home/pi/mist/";
-            delete(new File(directory));
-            // recreate it again
-            new File(directory).mkdirs();
-            String upload_path = Paths.get(directory, "mist_img.jpg").toString();
-            System.out.println("Payload ---------------- upload_path"+upload_path);
 
-            // Save the PAYLOAD file locally
-            BufferedOutputStream stream =
-                    new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
-            stream.write(payload.getBytes());
-            stream.close();
 
         }
-        String filename = uploadfile.getOriginalFilename();
-        String directory = realPathtoUploads;
-        mistpath = Paths.get(directory, filename).toString();
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+    public  void deployNodsThread(Node node1,Node node2,CredentialsProvider credsProvider)
+    {
 
-        // Save the file locally
-        BufferedOutputStream stream =
-                new BufferedOutputStream(new FileOutputStream(new File(mistpath)));
-        stream.write(uploadfile.getBytes());
-        stream.close();
-        return directory;
+        //create a callable for each method
+        Callable<Void> callable1 = new Callable<Void>()
+        {
+            @Override
+            public Void call() throws Exception
+            {
+                System.out.println("Node 1");
+                deploy(node1, credsProvider, 1);
+                return null;
+            }
+        };
+
+        Callable<Void> callable2 = new Callable<Void>()
+        {
+            @Override
+            public Void call() throws Exception
+            {
+                System.out.println("Node 2");
+                deploy(node2, credsProvider, 2);
+                return null;
+            }
+        };
+
+
+        //add to a list
+        List<Callable<Void>> taskList = new ArrayList<Callable<Void>>();
+        taskList.add(callable1);
+        taskList.add(callable2);
+
+
+        //create a pool executor with 3 threads
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        try
+        {
+            //start the threads
+            List<Future<Void>> futureList = executor.invokeAll(taskList);
+
+            for(Future<Void> voidFuture : futureList)
+            {
+                try
+                {
+                    //check the status of each future.  get will block until the task
+                    //completes or the time expires
+                    voidFuture.get(100000, TimeUnit.MILLISECONDS);
+                }
+                catch (ExecutionException e)
+                {
+                    System.err.println("Error executing task " + e.getMessage());
+                }
+                catch (TimeoutException e)
+                {
+                    System.err.println("Timed out executing task" + e.getMessage());
+                }
+
+            }
+
+
+        }
+        catch (InterruptedException ie)
+        {
+            //do something if you care about interruption;
+        }
+
     }
 
+    private  String sendRequest() throws IOException {
 
+        String postText = startRequest;
+        System.out.println("Post request sent with this data "+postText);
+
+        String       postUrl       = localhost+":8080/engine-rest/message";// put in your url
+        HttpClient httpClient    = HttpClientBuilder.create().build();
+        HttpPost post          = new HttpPost(postUrl);
+        System.out.println(postText);
+        StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+        post.setEntity(postingString);
+        post.setHeader("Content-type", "application/json");
+
+        System.out.println("Request being processed .......................");
+        HttpResponse  response2 = httpClient.execute(post);
+
+        System.out.println(response2+" request execution finished   ");
+        return response2.toString();
+    }
 
     @RequestMapping(value = "/deploy", method = RequestMethod.POST)
     @ResponseBody
@@ -460,6 +619,7 @@ public class MistController {
         try {
 
             if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
+
 
                 String uploadsDir = "/uploads/";
                 realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
@@ -549,19 +709,52 @@ public class MistController {
 
     }
 
+    @RequestMapping(value = "/deployer",method = RequestMethod.GET)
+    public   String deployDepolyer() throws ClientProtocolException, IOException {
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        String url = localhost+":8080/manager/text/deploy?path=/deployer-0&update=true";
+
+        File file = new File ("/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/deployer-0.war") ;
+        HttpPut req = new HttpPut(url) ;
+        MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+        meb.addTextBody("fileDescription", "war file to deploy");
+        //"application/octect-stream"
+        meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
+        req.setEntity(meb.build()) ;
+        String response = executeRequest (req, credsProvider);
+
+        return  response;
+    }
+    @RequestMapping(value = "/undeployer",method = RequestMethod.GET)
+    public   String undeployDepolyer() throws ClientProtocolException, IOException {
+        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        String url = localhost+":8080/manager/text/undeploy?path=/deployer-0";
+        HttpGet req = new HttpGet(url) ;
+        String response = executeRequest (req, credsProvider);
+        System.out.println("Response : "+response);
+        return  response;
+    }
+
+
     // deploy file to camunda
 
     private  String deployToCamunda(String processId) throws IOException {
 
         if(mistpath!=null){
+
+
+            System.out.println("Making deployment to Camunda");
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
             String url = localhost+":8080/manager/text/deploy?path=/mistBpmn&update=true";
+            // get this war generated from the maveen install of the mist-bpmn war
             try {
                 CsvFile.write(processId,"Started deployment to Camunda",baseFolder);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             File file = new File (mistpath) ;
             HttpPut req = new HttpPut(url) ;
             MultipartEntityBuilder meb = MultipartEntityBuilder.create();
@@ -570,51 +763,64 @@ public class MistController {
             meb.addBinaryBody("attachment", file, ContentType.APPLICATION_OCTET_STREAM, file.getName());
             req.setEntity(meb.build()) ;
             String response = null;
-            response = executeRequest (req, credsProvider);
-
-            System.out.println("Response after depoly  : "+response);
             try {
-                CsvFile.write(processId,"Finished deployment to Camunda",baseFolder);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            // Starting the  depoloyed machine
-            System.out.println("Start Deployed Camunda");
-            String postText = startRequest;
-            System.out.println("Post request sent with this data "+postText);
-            System.out.println("localhost-->"+localhost);
-            String       postUrl       = localhost+":8080/engine-rest/message";
-            Gson gson          = new Gson();
-            HttpClient httpClient    = HttpClientBuilder.create().build();
-            HttpPost post          = new HttpPost(postUrl);
-            System.out.println(postText);
-            StringEntity postingString = new StringEntity(postText,"UTF-8");
-            post.setEntity(postingString);
-            post.setHeader("Content-type", "application/json");
-
-            System.out.println("Request being processed .......................");
-
-            HttpResponse  response2 = null;
-            try {
-                response2 = httpClient.execute(post);
-            } catch (IOException e) {
-                System.out.println();
-                response2 = httpClient.execute(post);
+                response = executeRequest (req, credsProvider);
+            } catch (ClientProtocolException e) {
+                System.out.println(e.toString());
+                response = executeRequest (req, credsProvider);
             }
 
-             CsvFile.write(processId,"Call back recieved-if-cloud",baseFolder);
-            try {
-                undeploy(processId);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return  response2.toString();
+            return deployToCamundaPartTwo(processId, response);
 
         }
         else {
             return "Are you sure you upload the mist war";
         }
+
+
+
     }
+
+    private String deployToCamundaPartTwo(String processId, String response) throws IOException {
+        System.out.println("Response after depoly  : "+response);
+        try {
+            CsvFile.write(processId,"Finished deployment to Camunda",baseFolder);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // Starting the  depoloyed machine
+        System.out.println("Start Deployed Camunda");
+        String postText = startRequest;
+        System.out.println("Post request sent with this data "+postText);
+
+        String       postUrl       = "http://localhost:8080/engine-rest/message";// put in your url
+        Gson gson          = new Gson();
+        HttpClient httpClient    = HttpClientBuilder.create().build();
+        HttpPost post          = new HttpPost(postUrl);
+        System.out.println(postText);
+        StringEntity postingString = new StringEntity(postText,"UTF-8");//gson.tojson() converts your pojo to json
+        post.setEntity(postingString);
+        post.setHeader("Content-type", "application/json");
+
+        System.out.println("Request being processed .......................");
+
+        HttpResponse response2 = null;
+        try {
+            response2 = httpClient.execute(post);
+        } catch (IOException e) {
+            System.out.println();
+            response2 = httpClient.execute(post);
+        }
+
+        try {
+            undeploy(processId);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  response2.toString();
+    }
+
+
     public String deploy( Node node, CredentialsProvider credsProvider,int i) throws ClientProtocolException, IOException {
         String mistFilesPath =node.mist_files_path;
         System.out.println(node.getUrl());
@@ -645,21 +851,24 @@ public class MistController {
         req2.setEntity(meb.build());
         String response2 = executeRequest(req2, credsProvider);
         return  response2;
-
     }
         public  String undeploy(String processId) throws ClientProtocolException, IOException{
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+          //  CsvFile.write(processId,"Started un deployment to Camunda");
         String url = localhost+":8080/manager/text/undeploy?path=/mistBpmn";
         HttpGet req = new HttpGet(url) ;
         String response = executeRequest (req, credsProvider);
         System.out.println("Response : "+response);
+       // CsvFile.write(processId,"Finished un deployment to Camunda");
         return  response;
     }
     @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
-    public String callbackAllFinshed( @RequestParam("processId") String callBack ) throws IOException {
-        CsvFile.write(callBack,"Call back received",baseFolder);
+    public String callbackAllFinshed( @RequestParam("processId") String processId ,@RequestParam("camundaHost") String callBack ) throws IOException {
+        CsvFile.write(processId,"Call back received",baseFolder);
+        System.out.println("This is the call back"+callBack);
+       services.undeploy(callBack);
       return  "received";
 
     }
@@ -674,6 +883,83 @@ public class MistController {
         return "recieved";
 
     }
+    public void x() throws IOException {
+
+        MimetypesFileTypeMap mimeTypesMap = new MimetypesFileTypeMap();
+
+        File filename = new File("/Users/agabaisaac/iot/final/mist-temp/mist-deployer-app/mist-files/mist-0.war");
+        OkHttpClient client = new OkHttpClient();
+
+        final MediaType MEDIA_TYPE = MediaType.parse(mimeTypesMap.getContentType(filename));
+        okhttp3.RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("title", "Square Logo")
+                .addFormDataPart("attachment", filename.getName(),
+                        okhttp3.RequestBody.create(MEDIA_TYPE, filename))
+                .build();
+        String credential = Credentials.basic("tomcat", "tomcat");
+        Request request = new Request.Builder()
+                .header("Authorization", credential)
+                .url("http://192.168.17.162:8080/manager/text/deploy?path=/mistBpmn&update=true")
+                .put(requestBody)
+                .build();
+       client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try (okhttp3.ResponseBody responseBody = response.body()) {
+                    if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+                    Headers responseHeaders = response.headers();
+                    for (int i = 0, size = responseHeaders.size(); i < size; i++) {
+                        System.out.println(responseHeaders.name(i) + ": " + responseHeaders.value(i));
+                    }
+
+                    System.out.println(responseBody.string());
+                }
+            }
+        })
+         ;;
+
+
+
+       // if(mistpath!=null) {
+
+
+
+
+
+//
+//            try {
+//
+//
+//                RestAdapter restAdapter = new RestAdapter.Builder()
+//
+//                        .setRequestInterceptor(new RequestInterceptor() {
+//                            @Override
+//                            public void intercept(RequestFacade request) {
+//
+//                                String credential = Credentials.basic("tomcat", "tomcat");
+//
+//                                request.addHeader("Authorization", credential);
+//                            }
+//                        })
+//                        .setEndpoint(url)
+//                        .setClient(new Ok3Client(client))
+//                        .build();
+//                okhttp3.Response response = client.newCall(request).execute();
+//
+//                // Do something with the response.
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+   // }
+}
 
     public String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException {
         CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
@@ -794,7 +1080,83 @@ public class MistController {
         return ip;
     }
 
-
+//    public static class MyRunnable implements Runnable {
+//        private  Node node;
+//        CredentialsProvider credsProvider;
+//        int i;
+//
+//
+//        MyRunnable(Node node,CredentialsProvider credsProvider,int i) {
+//            this.node = node;
+//            this.credsProvider=credsProvider;
+//            this.i=i;
+//
+//
+//        }
+//        public void deploy( Node node, CredentialsProvider credsProvider) throws ClientProtocolException, IOException{
+//            String mistFilesPath =node.mist_files_path;
+//            System.out.println(node.getUrl());
+//            CsvFile.write(node.processId,"Process Start");
+//            File war = new File(mistFilesPath+"mist-0.war");
+//            File mist_file = new File(mistFilesPath+node.getMist_file());
+//            HttpPost req2;
+//            MultipartEntityBuilder meb = MultipartEntityBuilder.create();
+//            if(i==1){
+//                req2 = new HttpPost(node.getNode_one());
+//                meb.addTextBody("processId",node.processId+",mist-one");
+//            }else{
+//                req2 = new HttpPost(node.getNode_two());
+//                meb.addTextBody("processId",node.processId+",mist-two");
+//            }
+//
+//
+//            meb.addTextBody("callback", "http://"+node.getCall_back_ip()+"/callback");
+//            System.out.println("payload ------->"+node.getPayload());
+//            if(node.getPayload().equals("true")){
+//                File mist_payload = new File(mistFilesPath+(node.getMist_file().contains("0")?"payload-heavy.jpeg":"payload-heavy.jpeg"));
+//                System.out.println("payload ii ------->"+mist_payload.getName());
+//                meb.addBinaryBody("payload", mist_payload, ContentType.APPLICATION_OCTET_STREAM, mist_payload.getName());
+//            }
+//
+//            meb.addBinaryBody("war", war, ContentType.APPLICATION_OCTET_STREAM, war.getName());
+//            meb.addBinaryBody("mist", mist_file, ContentType.APPLICATION_OCTET_STREAM, mist_file.getName());
+//
+//            req2.setEntity(meb.build());
+//            String response2 = executeRequest(req2, credsProvider);
+//
+//        }
+//
+//        @Override
+//        public void run() {
+//
+//            try {
+//                deploy(node,credsProvider);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        public String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) throws ClientProtocolException, IOException {
+//            CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
+//            InputStream responseStream = null;
+//            String res = null;
+//            HttpResponse response = client.execute(requestBase) ;
+//            HttpEntity responseEntity = response.getEntity() ;
+//            responseStream = responseEntity.getContent() ;
+//
+//            BufferedReader br = new BufferedReader (new InputStreamReader (responseStream)) ;
+//            StringBuilder sb = new StringBuilder();
+//            String line;
+//            while ((line = br.readLine()) != null) {
+//                sb.append(line);
+//                sb.append(System.getProperty("line.separator"));
+//            }
+//            br.close() ;
+//            res = sb.toString();
+//
+//            return res;
+//        }
+//    }
 
 }
 

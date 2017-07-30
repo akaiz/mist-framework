@@ -4,15 +4,16 @@ import java.io.*;
 import java.sql.Timestamp;
 
 public class CsvFile {
-      static String fileNamePath = "/mist-framework/mist-deployer-app/mistlog.csv";
+    static String fileNamePath = "/mist-framework/mist-deployer-app/mistlog.csv";
 
-      public CsvFile(){
+    public CsvFile(){
 
-      }
+    }
 
     public  static String write(String id,String name,String baseFolder) throws IOException {
         String fileName= baseFolder+fileNamePath;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println(fileName);
 
         String newLine = System.getProperty("line.separator");
 
@@ -38,8 +39,3 @@ public class CsvFile {
         return  "xs";
     }
 }
-
-
-
-
-
