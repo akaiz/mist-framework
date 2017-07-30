@@ -1,0 +1,13 @@
+{"messageName" : "instantiationMessageOpenHab",
+ "businessKey" : "aBusinessKey",
+"processVariables" : {"call_back_url" : {"value" : "http://192.168.17.168:8098/callback","type": "String"},
+ "remote_image_url" : {"value" : "http://kodu.ut.ee/~isaac/mistimages/imagebig.jpeg","type": "String"} ,
+ "image_already_exists":{"value" : "no","type": "String"},
+ "log_id":{"value" :"ZT5BM,mist_file_heavy_1.txt","type": "String"},
+ "platform":{"value" :"cloud","type": "String"},
+ "baseUrl":{"value" :"http://localhost","type": "String"},
+ "baseFolder":{"value" :"/home/pi/Desktop","type": "String"},
+ "camundaHost":{"value" :"http://159.203.174.142","type": "String"}
+}
+}
+
