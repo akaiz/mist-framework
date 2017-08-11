@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>CSVUtils.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+CSVUtils.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">mistfinaldeployer.com.mistfinaldeployer; 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">import </span><span class="s1">java.io.IOException; 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">java.io.Writer; 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">java.util.List; 
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">public class </span><span class="s1">CSVUtils { 
+<a name="l7"><span class="ln">7    </span></a> 
+<a name="l8"><span class="ln">8    </span></a>    </span><span class="s0">private static final char </span><span class="s1">DEFAULT_SEPARATOR = </span><span class="s2">','</span><span class="s1">; 
+<a name="l9"><span class="ln">9    </span></a> 
+<a name="l10"><span class="ln">10   </span></a>    </span><span class="s0">public static void </span><span class="s1">writeLine(Writer w, List&lt;String&gt; values) </span><span class="s0">throws </span><span class="s1">IOException { 
+<a name="l11"><span class="ln">11   </span></a>        writeLine(w, values, DEFAULT_SEPARATOR, </span><span class="s2">' '</span><span class="s1">); 
+<a name="l12"><span class="ln">12   </span></a>    } 
+<a name="l13"><span class="ln">13   </span></a> 
+<a name="l14"><span class="ln">14   </span></a>    </span><span class="s0">public static void </span><span class="s1">writeLine(Writer w, List&lt;String&gt; values, </span><span class="s0">char </span><span class="s1">separators) </span><span class="s0">throws </span><span class="s1">IOException { 
+<a name="l15"><span class="ln">15   </span></a>        writeLine(w, values, separators, </span><span class="s2">' '</span><span class="s1">); 
+<a name="l16"><span class="ln">16   </span></a>    } 
+<a name="l17"><span class="ln">17   </span></a> 
+<a name="l18"><span class="ln">18   </span></a>    </span><span class="s3">//https://tools.ietf.org/html/rfc4180</span><span class="s1"> 
+<a name="l19"><span class="ln">19   </span></a>    </span><span class="s0">private static </span><span class="s1">String followCVSformat(String value) { 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a>        String result = value; 
+<a name="l22"><span class="ln">22   </span></a>        </span><span class="s0">if </span><span class="s1">(result.contains(</span><span class="s2">&quot;</span><span class="s0">\&quot;</span><span class="s2">&quot;</span><span class="s1">)) { 
+<a name="l23"><span class="ln">23   </span></a>            result = result.replace(</span><span class="s2">&quot;</span><span class="s0">\&quot;</span><span class="s2">&quot;</span><span class="s1">, </span><span class="s2">&quot;</span><span class="s0">\&quot;\&quot;</span><span class="s2">&quot;</span><span class="s1">); 
+<a name="l24"><span class="ln">24   </span></a>        } 
+<a name="l25"><span class="ln">25   </span></a>        </span><span class="s0">return </span><span class="s1">result; 
+<a name="l26"><span class="ln">26   </span></a> 
+<a name="l27"><span class="ln">27   </span></a>    } 
+<a name="l28"><span class="ln">28   </span></a> 
+<a name="l29"><span class="ln">29   </span></a>    </span><span class="s0">public static void </span><span class="s1">writeLine(Writer w, List&lt;String&gt; values, </span><span class="s0">char </span><span class="s1">separators, </span><span class="s0">char </span><span class="s1">customQuote) </span><span class="s0">throws </span><span class="s1">IOException { 
+<a name="l30"><span class="ln">30   </span></a> 
+<a name="l31"><span class="ln">31   </span></a>        </span><span class="s0">boolean </span><span class="s1">first = </span><span class="s0">true</span><span class="s1">; 
+<a name="l32"><span class="ln">32   </span></a> 
+<a name="l33"><span class="ln">33   </span></a>        </span><span class="s3">//default customQuote is empty</span><span class="s1"> 
+<a name="l34"><span class="ln">34   </span></a> 
+<a name="l35"><span class="ln">35   </span></a>        </span><span class="s0">if </span><span class="s1">(separators == </span><span class="s2">' '</span><span class="s1">) { 
+<a name="l36"><span class="ln">36   </span></a>            separators = DEFAULT_SEPARATOR; 
+<a name="l37"><span class="ln">37   </span></a>        } 
+<a name="l38"><span class="ln">38   </span></a> 
+<a name="l39"><span class="ln">39   </span></a>        StringBuilder sb = </span><span class="s0">new </span><span class="s1">StringBuilder(); 
+<a name="l40"><span class="ln">40   </span></a>        </span><span class="s0">for </span><span class="s1">(String value : values) { 
+<a name="l41"><span class="ln">41   </span></a>            </span><span class="s0">if </span><span class="s1">(!first) { 
+<a name="l42"><span class="ln">42   </span></a>                sb.append(separators); 
+<a name="l43"><span class="ln">43   </span></a>            } 
+<a name="l44"><span class="ln">44   </span></a>            </span><span class="s0">if </span><span class="s1">(customQuote == </span><span class="s2">' '</span><span class="s1">) { 
+<a name="l45"><span class="ln">45   </span></a>                sb.append(followCVSformat(value)); 
+<a name="l46"><span class="ln">46   </span></a>            } </span><span class="s0">else </span><span class="s1">{ 
+<a name="l47"><span class="ln">47   </span></a>                sb.append(customQuote).append(followCVSformat(value)).append(customQuote); 
+<a name="l48"><span class="ln">48   </span></a>            } 
+<a name="l49"><span class="ln">49   </span></a> 
+<a name="l50"><span class="ln">50   </span></a>            first = </span><span class="s0">false</span><span class="s1">; 
+<a name="l51"><span class="ln">51   </span></a>        } 
+<a name="l52"><span class="ln">52   </span></a>        sb.append(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">); 
+<a name="l53"><span class="ln">53   </span></a>        w.append(sb.toString()); 
+<a name="l54"><span class="ln">54   </span></a> 
+<a name="l55"><span class="ln">55   </span></a> 
+<a name="l56"><span class="ln">56   </span></a>    } 
+<a name="l57"><span class="ln">57   </span></a> 
+<a name="l58"><span class="ln">58   </span></a>}</span></pre>
+</body>
+</html>

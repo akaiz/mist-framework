@@ -135,9 +135,6 @@ public class AsyncServices {
 					response.body().close();
 				}
 			}
-
-
-
 			CsvFile.write(processId,"Uploading payload finished",baseFolder);
 			System.out.println("File upload image sending");
 		}

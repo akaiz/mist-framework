@@ -240,9 +240,6 @@ public class MistController {
     @RequestMapping("/alive")
     public String alive() throws IOException, InterruptedException {
 
-//   x();
-        Pusher pusher = new Pusher("47cbb81f75fff2140125");
-
         pusher.connect(new ConnectionEventListener() {
             @Override
             public void onConnectionStateChange(ConnectionStateChange change) {
@@ -261,7 +258,8 @@ public class MistController {
 
 
     @RequestMapping(value = "deploy/start", method = RequestMethod.POST)
-    public String deployToNode(@RequestBody Node node) throws ClientProtocolException, IOException, InterruptedException, ExecutionException {
+    public String deployToNode(@RequestBody Node node) throws ClientProtocolException,
+            IOException, InterruptedException, ExecutionException {
         credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
         String processId = randomString(5)+","+node.getMist_file();
         baseFolder=node.getBaseFolder();
@@ -274,6 +272,41 @@ public class MistController {
 
         String tempFile = mistFilesPath+"mis_temp.txt";
 
+        intializeMistData(node, mistFilesPath, tempFile);
+        CsvFile.write(node.processId, "Process Start",baseFolder);
+        Node node1 = node;
+        Node node2 = node;
+
+        if(node.getPlatform().equals("mist")){
+            Future<String> process1 = services.deploy(node1, credsProvider, 1,baseFolder);
+            Future<String> process2 =  services.deploy(node2, credsProvider, 2,baseFolder);
+
+            System.out.println("Processing started ");
+            while (!(process1.isDone() && process2.isDone())) {
+
+                Thread.sleep(2000);
+            }
+            System.out.println("Processing ended ");
+
+        }else {
+
+            Future<String> process1 = services.deploy(node1, credsProvider, 3,baseFolder);
+
+            System.out.println("Processing started ");
+            while (!(process1.isDone())) {
+
+                Thread.sleep(2000);
+            }
+            System.out.println("Processing ended ");
+
+
+        }
+
+
+        return "Done ";
+    }
+
+    private void intializeMistData(@RequestBody mistfinaldeployer.com.mistfinaldeployer.Node node, String mistFilesPath, String tempFile) {
         PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(tempFile)));
         BufferedWriter bw = null;
         FileWriter fw = null;
@@ -335,147 +368,121 @@ public class MistController {
             ex.printStackTrace();
 
         }
-        CsvFile.write(node.processId, "Process Start",baseFolder);
-        Node node1 = node;
-        Node node2 = node;
-
-        if(node.getPlatform().equals("mist")){
-            Future<String> process1 = services.deploy(node1, credsProvider, 1,baseFolder);
-            Future<String> process2 =  services.deploy(node2, credsProvider, 2,baseFolder);
-
-            // Wait until They are all Done
-            // If all are not Done. Pause 2s for next re-check
-            System.out.println("Processing started ");
-            while (!(process1.isDone() && process2.isDone())) {
-
-                Thread.sleep(2000);
-            }
-            System.out.println("Processing ended ");
-
-        }else {
-
-            Future<String> process1 = services.deploy(node1, credsProvider, 3,baseFolder);
-            // Wait until They are all Done
-            // If all are not Done. Pause 2s for next re-check
-            System.out.println("Processing started ");
-            while (!(process1.isDone())) {
-
-                Thread.sleep(2000);
-            }
-            System.out.println("Processing ended ");
-
-
-        }
-
-
-        return "Done ";
     }
 
+@RequestMapping(value = "/deploy/final",method = RequestMethod.POST)
+@ResponseBody
+public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,
+                                       @RequestParam("mist") MultipartFile mistfile,
+                                       @RequestParam(name = "payload", required=false) MultipartFile payload,
+                                       @RequestParam("baseFolder")  String folder,
+                                       @RequestParam("callback") String callback,
+                                       @RequestParam("processId") String processId)
+        throws IOException {
+    credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
+    baseFolder= folder;
+    try {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        CsvFile.write(processId,"Recieved deployment ",baseFolder);
 
-    @RequestMapping(value = "/deploy/final",method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<?> uploadFilenew(@RequestParam("war") MultipartFile uploadfile ,  @RequestParam("mist") MultipartFile mistfile,
-                                           @RequestParam(name = "payload", required=false) MultipartFile payload,
-                                           @RequestParam("baseFolder")  String folder,
-                                           @RequestParam("callback") String callback,@RequestParam("processId") String processId) throws IOException {
-        credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials("tomcat", "tomcat"));
-        baseFolder= folder;
-        System.out.println("base folder "+baseFolder);
+        if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
 
+            // Storing payload image
+
+            String directory = savePayload(uploadfile, payload);
+            BufferedOutputStream stream;
+
+        //        Getting data from the mist file
+
+            extractMistInstractions(mistfile, processId, directory);
+            // deploying to tomcat and  start
+
+            return new ResponseEntity<>(deployToCamunda(processId),HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>("PLEASE PROVIDE CORRECT INPUT",HttpStatus.OK);
+    }
+    catch (Exception e) {
+        System.out.println(e.getMessage());
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+}
+
+    private void extractMistInstractions(@RequestParam("mist") MultipartFile mistfile, @RequestParam("processId") String processId, String directory) {
+        BufferedOutputStream stream;
+        String mistFilename = mistfile.getOriginalFilename();
+
+        String filepath2 = Paths.get(directory, mistFilename).toString();
+
+        stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
+        stream.write(mistfile.getBytes());
+        stream.close();
+
+        BufferedReader br = new BufferedReader(new FileReader(filepath2));
         try {
-            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            CsvFile.write(processId,"Recieved deployment ",baseFolder);
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
 
-            if(!uploadfile.isEmpty() && !mistfile.isEmpty()){
-
-
-                String uploadsDir = "/uploads/";
-                realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
-                if(! new File(realPathtoUploads).exists())
-                {
-                    new File(realPathtoUploads).mkdirs();
+            while (line != null) {
+                if(line.contains("log_id")){
+                    line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
                 }
-                else{
-                    // delete folder if exists
-                    delete(new File(realPathtoUploads));
-                    // recreate it again
-                    new File(realPathtoUploads).mkdirs();
 
-                }
-                // if payload was sent
-                System.out.println("Payload ---------------- sent"+payload);
-                if(payload!=null){
-                    System.out.println("Payload ---------------- sent");
-                    String directory = "/home/pi/mist/";
-                    delete(new File(directory));
-                    // recreate it again
-                    new File(directory).mkdirs();
-                    String upload_path = Paths.get(directory, "mist_img.jpg").toString();
-                    System.out.println("Payload ---------------- upload_path"+upload_path);
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
 
-                    // Save the PAYLOAD file locally
-                    BufferedOutputStream stream =
-                            new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
-                    stream.write(payload.getBytes());
-                    stream.close();
-
-                }
-                String filename = uploadfile.getOriginalFilename();
-                String directory = realPathtoUploads;
-                mistpath = Paths.get(directory, filename).toString();
-
-                // Save the file locally
-                BufferedOutputStream stream =
-                        new BufferedOutputStream(new FileOutputStream(new File(mistpath)));
-                stream.write(uploadfile.getBytes());
-                stream.close();
-
-//        Getting data from the mist file
-
-                String mistFilename = mistfile.getOriginalFilename();
-
-                String filepath2 = Paths.get(directory, mistFilename).toString();
-
-                stream = new BufferedOutputStream(new FileOutputStream(new File(filepath2)));
-                stream.write(mistfile.getBytes());
-                stream.close();
-
-
-
-                BufferedReader br = new BufferedReader(new FileReader(filepath2));
-                try {
-                    StringBuilder sb = new StringBuilder();
-                    String line = br.readLine();
-
-                    while (line != null) {
-                        if(line.contains("log_id")){
-                            line =" \"log_id\":{\"value\" :\""+processId+"\",\"type\": \"String\"},";
-                        }
-
-                        sb.append(line);
-                        sb.append("\n");
-                        line = br.readLine();
-
-                    }
-                    startRequest=sb.toString();
-                } finally {
-                    br.close();
-                }
-                // deploying to tomcat and  start
-
-                return new ResponseEntity<>(deployToCamunda(processId),HttpStatus.OK);
             }
-
-            return new ResponseEntity<>("PLEASE PROVIDE CORRECT INPUT",HttpStatus.OK);
-
-
-
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            startRequest=sb.toString();
+        } finally {
+            br.close();
         }
     }
+
+    private String savePayload(@RequestParam("war") MultipartFile uploadfile, @RequestParam(name = "payload", required = false) MultipartFile payload) throws IOException {
+        String uploadsDir = "/uploads/";
+        realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
+        if(! new File(realPathtoUploads).exists())
+        {
+            new File(realPathtoUploads).mkdirs();
+        }
+        else{
+            // delete folder if exists
+            delete(new File(realPathtoUploads));
+            // recreate it again
+            new File(realPathtoUploads).mkdirs();
+
+        }
+        // if payload was sent
+        System.out.println("Payload ---------------- sent"+payload);
+        if(payload!=null){
+            System.out.println("Payload ---------------- sent");
+            String directory = "/home/pi/mist/";
+            delete(new File(directory));
+            // recreate it again
+            new File(directory).mkdirs();
+            String upload_path = Paths.get(directory, "mist_img.jpg").toString();
+            System.out.println("Payload ---------------- upload_path"+upload_path);
+
+            // Save the PAYLOAD file locally
+            BufferedOutputStream stream =
+                    new BufferedOutputStream(new FileOutputStream(new File(upload_path)));
+            stream.write(payload.getBytes());
+            stream.close();
+
+        }
+        String filename = uploadfile.getOriginalFilename();
+        String directory = realPathtoUploads;
+        mistpath = Paths.get(directory, filename).toString();
+
+        // Save the file locally
+        BufferedOutputStream stream =
+                new BufferedOutputStream(new FileOutputStream(new File(mistpath)));
+        stream.write(uploadfile.getBytes());
+        stream.close();
+        return directory;
+    }
+
     @RequestMapping(value = "/deploy/image",method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> uploadImage(@RequestParam(name = "payload2", required=false) MultipartFile payload2,@RequestParam(name = "payload", required=false) MultipartFile payload,@RequestParam("baseFolder")  String folder,@RequestParam("processId") String processId) throws IOException {

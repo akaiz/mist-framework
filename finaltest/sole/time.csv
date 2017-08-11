@@ -1,33 +1,27 @@
-sep=,
-xrnkQ,mist_file_heavy_1.txt,Process Start,1499973589641
-xrnkQ,mist_file_heavy_1.txt,Uploading war started,1499973589659
-xrnkQ,mist_file_heavy_1.txt,Uploading war finished,1499973597967
-xrnkQ,mist_file_heavy_1.txt,Finished deployment to Camunda,1499973597968
-xrnkQ,mist_file_heavy_1.txt,Start  Remote Process Engine ,1499973597968
-xrnkQ,mist_file_heavy_1.txt,Image Fetch Started,1499973598154
-xrnkQ,mist_file_heavy_1.txt,Image Fetch complete,1499973614425
-xrnkQ,mist_file_heavy_1.txt,Mist-docker  started,1499973614441
-xrnkQ,mist_file_heavy_1.txt,Mist-docker  completed,1499973688669
-xrnkQ,mist_file_heavy_1.txt,Image Fetch Started,1499973694683
-xrnkQ,mist_file_heavy_1.txt,Image Fetch complete,1499973703235
-xrnkQ,mist_file_heavy_1.txt,Mist-docker  started,1499973703240
-xrnkQ,mist_file_heavy_1.txt,Mist-docker  completed,1499973771031
-xrnkQ,mist_file_heavy_1.txt,Sending response to callback,1499973777052
-xrnkQ,mist_file_heavy_1.txt,Call back received,1499973777776
+NbSid,mist_file_heavy_0.txt,Process Start,1502219504059
+NbSid,mist_file_heavy_0.txt,node3,Process Start,1502219504061
+NbSid,mist_file_heavy_0.txt,Uploading war started,1502219504078
+NbSid,mist_file_heavy_0.txt,Uploading war finished,1502219510272
+NbSid,mist_file_heavy_0.txt,Finished deployment to Camunda,1502219510274
+NbSid,mist_file_heavy_0.txt,Start  Remote Process Engine ,1502219510275
+NbSid,mist_file_heavy_0.txt,Mist-docker  started,1502219510346
+NbSid,mist_file_heavy_0.txt,Mist-docker  completed,1502219555368
+NbSid,mist_file_heavy_0.txt,Mist-docker  started,1502219565096
+NbSid,mist_file_heavy_0.txt,Mist-docker  completed,1502219625756
+NbSid,mist_file_heavy_0.txt,Sending response to callback,1502219631777
+NbSid,mist_file_heavy_0.txt,Call back received,1502219632429
+
 ,,,,
 ,,,,
-QRzSs,mist_file_heavy_1.txt,Process Start,1500071196679
-QRzSs,mist_file_heavy_1.txt,Uploading war started,1500071196687
-QRzSs,mist_file_heavy_1.txt,Uploading war finished,1500071204892
-QRzSs,mist_file_heavy_1.txt,Finished deployment to Camunda,1500071204893
-QRzSs,mist_file_heavy_1.txt,Start  Remote Process Engine ,1500071204894
-QRzSs,mist_file_heavy_1.txt,Image Fetch Started,1500071204967
-QRzSs,mist_file_heavy_1.txt,Image Fetch complete,1500071216561
-QRzSs,mist_file_heavy_1.txt,Mist-docker  started,1500071216571
-QRzSs,mist_file_heavy_1.txt,Mist-docker  completed,1500071297672
-QRzSs,mist_file_heavy_1.txt,Image Fetch Started,1500071303685
-QRzSs,mist_file_heavy_1.txt,Image Fetch complete,1500071319751
-QRzSs,mist_file_heavy_1.txt,Mist-docker  started,1500071319762
-QRzSs,mist_file_heavy_1.txt,Mist-docker  completed,1500071375442
-QRzSs,mist_file_heavy_1.txt,Sending response to callback,1500071381467
-QRzSs,mist_file_heavy_1.txt,Call back received,1500071382253
+sy8sV,mist_file_heavy_0.txt,Process Start,1502219946419
+sy8sV,mist_file_heavy_0.txt,node3,Process Start,1502219946422
+sy8sV,mist_file_heavy_0.txt,Uploading war started,1502219946434
+sy8sV,mist_file_heavy_0.txt,Uploading war finished,1502219953577
+sy8sV,mist_file_heavy_0.txt,Finished deployment to Camunda,1502219953578
+sy8sV,mist_file_heavy_0.txt,Start  Remote Process Engine ,1502219953579
+sy8sV,mist_file_heavy_0.txt,Mist-docker  started,1502219953638
+sy8sV,mist_file_heavy_0.txt,Mist-docker  completed,1502220011054
+sy8sV,mist_file_heavy_0.txt,Mist-docker  started,1502220020636
+sy8sV,mist_file_heavy_0.txt,Mist-docker  completed,1502220067391
+sy8sV,mist_file_heavy_0.txt,Sending response to callback,1502220073412
+sy8sV,mist_file_heavy_0.txt,Call back received,1502220074083

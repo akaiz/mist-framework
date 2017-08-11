@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>AsyncServices.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+AsyncServices.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">mistfinaldeployer.com.mistfinaldeployer; 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">com.google.gson.Gson; 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">okhttp3.*; 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.HttpEntity; 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.HttpResponse; 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.auth.AuthScope; 
+<a name="l8"><span class="ln">8    </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.auth.UsernamePasswordCredentials; 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.client.ClientProtocolException; 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.client.CredentialsProvider; 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.client.methods.HttpGet; 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.client.methods.HttpRequestBase; 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.impl.client.BasicCredentialsProvider; 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.impl.client.CloseableHttpClient; 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.impl.client.HttpClients; 
+<a name="l16"><span class="ln">16   </span></a></span><span class="s0">import </span><span class="s1">org.slf4j.Logger; 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s0">import </span><span class="s1">org.slf4j.LoggerFactory; 
+<a name="l18"><span class="ln">18   </span></a></span><span class="s0">import </span><span class="s1">org.springframework.scheduling.annotation.Async; 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s0">import </span><span class="s1">org.springframework.scheduling.annotation.AsyncResult; 
+<a name="l20"><span class="ln">20   </span></a></span><span class="s0">import </span><span class="s1">org.springframework.stereotype.Service; 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a></span><span class="s0">import </span><span class="s1">javax.activation.MimetypesFileTypeMap; 
+<a name="l23"><span class="ln">23   </span></a></span><span class="s0">import </span><span class="s1">java.io.*; 
+<a name="l24"><span class="ln">24   </span></a></span><span class="s0">import </span><span class="s1">java.util.concurrent.Future; 
+<a name="l25"><span class="ln">25   </span></a> 
+<a name="l26"><span class="ln">26   </span></a>@Service 
+<a name="l27"><span class="ln">27   </span></a></span><span class="s0">public class </span><span class="s1">AsyncServices { 
+<a name="l28"><span class="ln">28   </span></a>     
+<a name="l29"><span class="ln">29   </span></a>    Logger log = LoggerFactory.getLogger(</span><span class="s0">this</span><span class="s1">.getClass().getName()); 
+<a name="l30"><span class="ln">30   </span></a> 
+<a name="l31"><span class="ln">31   </span></a>    @Async 
+<a name="l32"><span class="ln">32   </span></a>    </span><span class="s0">public </span><span class="s1">Future&lt;String&gt; deploy(Node node, CredentialsProvider credsProvider, </span><span class="s0">int </span><span class="s1">i , String baseFolder) </span><span class="s0">throws </span><span class="s1">ClientProtocolException, IOException { 
+<a name="l33"><span class="ln">33   </span></a>        String mistFilesPath =node.mist_files_path; 
+<a name="l34"><span class="ln">34   </span></a>        System.out.println(node.getPayload()); 
+<a name="l35"><span class="ln">35   </span></a>        CsvFile.write(node.processId+</span><span class="s2">&quot;,node&quot;</span><span class="s1">+i,</span><span class="s2">&quot;Process Start&quot;</span><span class="s1">,baseFolder); 
+<a name="l36"><span class="ln">36   </span></a>        File war = </span><span class="s0">new </span><span class="s1">File(mistFilesPath+</span><span class="s2">&quot;mist-0.war&quot;</span><span class="s1">); 
+<a name="l37"><span class="ln">37   </span></a>        File payload_file = </span><span class="s0">null</span><span class="s1">; 
+<a name="l38"><span class="ln">38   </span></a>        </span><span class="s0">if</span><span class="s1">(node.getPayload().equals(</span><span class="s2">&quot;yes&quot;</span><span class="s1">)){ 
+<a name="l39"><span class="ln">39   </span></a>            </span><span class="s0">if</span><span class="s1">(node.getPlatform().equals(</span><span class="s2">&quot;cloud&quot;</span><span class="s1">)){ 
+<a name="l40"><span class="ln">40   </span></a>                payload_file = </span><span class="s0">new </span><span class="s1">File(mistFilesPath+</span><span class="s2">&quot;payload-heavy2.jpeg&quot;</span><span class="s1">); 
+<a name="l41"><span class="ln">41   </span></a>            } 
+<a name="l42"><span class="ln">42   </span></a>            </span><span class="s0">else </span><span class="s1">{ 
+<a name="l43"><span class="ln">43   </span></a>                payload_file = </span><span class="s0">new </span><span class="s1">File(mistFilesPath+</span><span class="s2">&quot;payload-heavy.jpeg&quot;</span><span class="s1">); 
+<a name="l44"><span class="ln">44   </span></a>            } 
+<a name="l45"><span class="ln">45   </span></a>        } 
+<a name="l46"><span class="ln">46   </span></a> 
+<a name="l47"><span class="ln">47   </span></a> 
+<a name="l48"><span class="ln">48   </span></a>        File mist_file = </span><span class="s0">new </span><span class="s1">File(mistFilesPath+node.getMist_file()); 
+<a name="l49"><span class="ln">49   </span></a>        System.out.println(</span><span class="s2">&quot;node---&gt;&quot;</span><span class="s1">+node.getNode_one()); 
+<a name="l50"><span class="ln">50   </span></a>        System.out.println(</span><span class="s2">&quot;node---&gt;&quot;</span><span class="s1">+node.getNode_two()); 
+<a name="l51"><span class="ln">51   </span></a> 
+<a name="l52"><span class="ln">52   </span></a>        </span><span class="s0">if</span><span class="s1">(i==</span><span class="s3">1</span><span class="s1">){ 
+<a name="l53"><span class="ln">53   </span></a> 
+<a name="l54"><span class="ln">54   </span></a>            </span><span class="s0">return new </span><span class="s1">AsyncResult&lt;&gt;(deployToCamunda(node.processId+</span><span class="s2">&quot;,mist-one&quot;</span><span class="s1">,node.getNode_one(),mist_file,war,baseFolder,payload_file,node.getPlatform())); 
+<a name="l55"><span class="ln">55   </span></a>        } 
+<a name="l56"><span class="ln">56   </span></a>        </span><span class="s0">else if</span><span class="s1">(i==</span><span class="s3">2</span><span class="s1">){ 
+<a name="l57"><span class="ln">57   </span></a> 
+<a name="l58"><span class="ln">58   </span></a>            </span><span class="s0">return new </span><span class="s1">AsyncResult&lt;&gt;(deployToCamunda(node.processId+</span><span class="s2">&quot;,mist-two&quot;</span><span class="s1">,node.getNode_two(),mist_file,war,baseFolder,payload_file,node.getPlatform())); 
+<a name="l59"><span class="ln">59   </span></a>        } 
+<a name="l60"><span class="ln">60   </span></a>        </span><span class="s0">else</span><span class="s1">{ 
+<a name="l61"><span class="ln">61   </span></a>            </span><span class="s0">return new </span><span class="s1">AsyncResult&lt;&gt;(deployToCamunda(node.processId,node.getNode_one(),mist_file,war,baseFolder,payload_file,node.getPlatform())); 
+<a name="l62"><span class="ln">62   </span></a>        } 
+<a name="l63"><span class="ln">63   </span></a>    } 
+<a name="l64"><span class="ln">64   </span></a> 
+<a name="l65"><span class="ln">65   </span></a>    </span><span class="s0">public   </span><span class="s1">String deployToCamunda(String processId, String url , File mistFile, File war,String baseFolder,File payload,String platform) </span><span class="s0">throws </span><span class="s1">IOException { 
+<a name="l66"><span class="ln">66   </span></a> 
+<a name="l67"><span class="ln">67   </span></a>        String mist = </span><span class="s0">null</span><span class="s1">; 
+<a name="l68"><span class="ln">68   </span></a>        CredentialsProvider credsProvider = </span><span class="s0">new </span><span class="s1">BasicCredentialsProvider(); 
+<a name="l69"><span class="ln">69   </span></a>        credsProvider.setCredentials(AuthScope.ANY,</span><span class="s0">new </span><span class="s1">UsernamePasswordCredentials(</span><span class="s2">&quot;tomcat&quot;</span><span class="s1">, </span><span class="s2">&quot;tomcat&quot;</span><span class="s1">)); 
+<a name="l70"><span class="ln">70   </span></a>        BufferedReader br = </span><span class="s0">new </span><span class="s1">BufferedReader(</span><span class="s0">new </span><span class="s1">FileReader(mistFile)); 
+<a name="l71"><span class="ln">71   </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l72"><span class="ln">72   </span></a>            StringBuilder sb = </span><span class="s0">new </span><span class="s1">StringBuilder(); 
+<a name="l73"><span class="ln">73   </span></a>            String line = br.readLine(); 
+<a name="l74"><span class="ln">74   </span></a> 
+<a name="l75"><span class="ln">75   </span></a>            </span><span class="s0">while </span><span class="s1">(line != </span><span class="s0">null</span><span class="s1">) { 
+<a name="l76"><span class="ln">76   </span></a>                </span><span class="s0">if</span><span class="s1">(line.contains(</span><span class="s2">&quot;log_id&quot;</span><span class="s1">)){ 
+<a name="l77"><span class="ln">77   </span></a>                    line =</span><span class="s2">&quot; </span><span class="s0">\&quot;</span><span class="s2">log_id</span><span class="s0">\&quot;</span><span class="s2">:{</span><span class="s0">\&quot;</span><span class="s2">value</span><span class="s0">\&quot;</span><span class="s2"> :</span><span class="s0">\&quot;</span><span class="s2">&quot;</span><span class="s1">+processId+</span><span class="s2">&quot;</span><span class="s0">\&quot;</span><span class="s2">,</span><span class="s0">\&quot;</span><span class="s2">type</span><span class="s0">\&quot;</span><span class="s2">: </span><span class="s0">\&quot;</span><span class="s2">String</span><span class="s0">\&quot;</span><span class="s2">},&quot;</span><span class="s1">; 
+<a name="l78"><span class="ln">78   </span></a>                } 
+<a name="l79"><span class="ln">79   </span></a>                </span><span class="s0">if</span><span class="s1">(line.contains(</span><span class="s2">&quot;camundaHost&quot;</span><span class="s1">)){ 
+<a name="l80"><span class="ln">80   </span></a>                    line =</span><span class="s2">&quot; </span><span class="s0">\&quot;</span><span class="s2">camundaHost</span><span class="s0">\&quot;</span><span class="s2">:{</span><span class="s0">\&quot;</span><span class="s2">value</span><span class="s0">\&quot;</span><span class="s2"> :</span><span class="s0">\&quot;</span><span class="s2">&quot;</span><span class="s1">+url+</span><span class="s2">&quot;</span><span class="s0">\&quot;</span><span class="s2">,</span><span class="s0">\&quot;</span><span class="s2">type</span><span class="s0">\&quot;</span><span class="s2">: </span><span class="s0">\&quot;</span><span class="s2">String</span><span class="s0">\&quot;</span><span class="s2">}&quot;</span><span class="s1">; 
+<a name="l81"><span class="ln">81   </span></a>                } 
+<a name="l82"><span class="ln">82   </span></a> 
+<a name="l83"><span class="ln">83   </span></a> 
+<a name="l84"><span class="ln">84   </span></a>                sb.append(line); 
+<a name="l85"><span class="ln">85   </span></a>                sb.append(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">); 
+<a name="l86"><span class="ln">86   </span></a>                line = br.readLine(); 
+<a name="l87"><span class="ln">87   </span></a> 
+<a name="l88"><span class="ln">88   </span></a>            } 
+<a name="l89"><span class="ln">89   </span></a>            mist=sb.toString(); 
+<a name="l90"><span class="ln">90   </span></a>        } </span><span class="s0">finally </span><span class="s1">{ 
+<a name="l91"><span class="ln">91   </span></a>            br.close(); 
+<a name="l92"><span class="ln">92   </span></a>        } 
+<a name="l93"><span class="ln">93   </span></a>        System.out.println(</span><span class="s2">&quot;Making deployment to Camunda&quot;</span><span class="s1">); 
+<a name="l94"><span class="ln">94   </span></a>           </span><span class="s0">return </span><span class="s1">depolyCamunda(war,url,processId,baseFolder,mist,payload,platform); 
+<a name="l95"><span class="ln">95   </span></a> 
+<a name="l96"><span class="ln">96   </span></a>    } 
+<a name="l97"><span class="ln">97   </span></a>    </span><span class="s0">public </span><span class="s1">String depolyCamunda(File filename , String url,String processId,String baseFolder, String mist,File payload,String platform) </span><span class="s0">throws </span><span class="s1">IOException { 
+<a name="l98"><span class="ln">98   </span></a>        MimetypesFileTypeMap mimeTypesMap = </span><span class="s0">new </span><span class="s1">MimetypesFileTypeMap(); 
+<a name="l99"><span class="ln">99   </span></a>        </span><span class="s0">if</span><span class="s1">(payload!=</span><span class="s0">null</span><span class="s1">){ 
+<a name="l100"><span class="ln">100  </span></a>            System.out.println(</span><span class="s2">&quot;File image sending&quot;</span><span class="s1">); 
+<a name="l101"><span class="ln">101  </span></a>            CsvFile.write(processId,</span><span class="s2">&quot;Uploading payload started&quot;</span><span class="s1">,baseFolder); 
+<a name="l102"><span class="ln">102  </span></a>            OkHttpClient client = </span><span class="s0">new </span><span class="s1">OkHttpClient(); 
+<a name="l103"><span class="ln">103  </span></a>            </span><span class="s0">final </span><span class="s1">MediaType MEDIA_TYPE = MediaType.parse(mimeTypesMap.getContentType(payload)); 
+<a name="l104"><span class="ln">104  </span></a>            </span><span class="s0">if</span><span class="s1">(platform.equals(</span><span class="s2">&quot;cloud&quot;</span><span class="s1">)){ 
+<a name="l105"><span class="ln">105  </span></a>                okhttp3.RequestBody requestBody = </span><span class="s0">new </span><span class="s1">MultipartBody.Builder() 
+<a name="l106"><span class="ln">106  </span></a>                        .setType(MultipartBody.FORM) 
+<a name="l107"><span class="ln">107  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;baseFolder&quot;</span><span class="s1">, baseFolder) 
+<a name="l108"><span class="ln">108  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;processId&quot;</span><span class="s1">, processId) 
+<a name="l109"><span class="ln">109  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;payload&quot;</span><span class="s1">, payload.getName(),okhttp3.RequestBody.create(MEDIA_TYPE, payload)) 
+<a name="l110"><span class="ln">110  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;payload2&quot;</span><span class="s1">, payload.getName(),okhttp3.RequestBody.create(MEDIA_TYPE, payload)) 
+<a name="l111"><span class="ln">111  </span></a>                        .build(); 
+<a name="l112"><span class="ln">112  </span></a>                Request request = </span><span class="s0">new </span><span class="s1">Request.Builder() 
+<a name="l113"><span class="ln">113  </span></a>                        .url(url+</span><span class="s2">&quot;:8098/deploy/image&quot;</span><span class="s1">) 
+<a name="l114"><span class="ln">114  </span></a>                        .post(requestBody) 
+<a name="l115"><span class="ln">115  </span></a>                        .build(); 
+<a name="l116"><span class="ln">116  </span></a>                okhttp3.Response response = client.newCall(request).execute(); 
+<a name="l117"><span class="ln">117  </span></a>                </span><span class="s0">if </span><span class="s1">(response.isSuccessful() ) { 
+<a name="l118"><span class="ln">118  </span></a>                    response.body().close(); 
+<a name="l119"><span class="ln">119  </span></a>                } 
+<a name="l120"><span class="ln">120  </span></a>            }</span><span class="s0">else</span><span class="s1">{ 
+<a name="l121"><span class="ln">121  </span></a> 
+<a name="l122"><span class="ln">122  </span></a>                okhttp3.RequestBody requestBody = </span><span class="s0">new </span><span class="s1">MultipartBody.Builder() 
+<a name="l123"><span class="ln">123  </span></a>                        .setType(MultipartBody.FORM) 
+<a name="l124"><span class="ln">124  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;baseFolder&quot;</span><span class="s1">, baseFolder) 
+<a name="l125"><span class="ln">125  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;processId&quot;</span><span class="s1">, processId) 
+<a name="l126"><span class="ln">126  </span></a>                        .addFormDataPart(</span><span class="s2">&quot;payload&quot;</span><span class="s1">, payload.getName(), 
+<a name="l127"><span class="ln">127  </span></a>                                okhttp3.RequestBody.create(MEDIA_TYPE, filename)) 
+<a name="l128"><span class="ln">128  </span></a>                        .build(); 
+<a name="l129"><span class="ln">129  </span></a>                Request request = </span><span class="s0">new </span><span class="s1">Request.Builder() 
+<a name="l130"><span class="ln">130  </span></a>                        .url(url+</span><span class="s2">&quot;:8098/deploy/image&quot;</span><span class="s1">) 
+<a name="l131"><span class="ln">131  </span></a>                        .post(requestBody) 
+<a name="l132"><span class="ln">132  </span></a>                        .build(); 
+<a name="l133"><span class="ln">133  </span></a>                okhttp3.Response response = client.newCall(request).execute(); 
+<a name="l134"><span class="ln">134  </span></a>                </span><span class="s0">if </span><span class="s1">(response.isSuccessful() ) { 
+<a name="l135"><span class="ln">135  </span></a>                    response.body().close(); 
+<a name="l136"><span class="ln">136  </span></a>                } 
+<a name="l137"><span class="ln">137  </span></a>            } 
+<a name="l138"><span class="ln">138  </span></a>            CsvFile.write(processId,</span><span class="s2">&quot;Uploading payload finished&quot;</span><span class="s1">,baseFolder); 
+<a name="l139"><span class="ln">139  </span></a>            System.out.println(</span><span class="s2">&quot;File upload image sending&quot;</span><span class="s1">); 
+<a name="l140"><span class="ln">140  </span></a>        } 
+<a name="l141"><span class="ln">141  </span></a> 
+<a name="l142"><span class="ln">142  </span></a>        CsvFile.write(processId,</span><span class="s2">&quot;Uploading war started&quot;</span><span class="s1">,baseFolder); 
+<a name="l143"><span class="ln">143  </span></a>        OkHttpClient client = </span><span class="s0">new </span><span class="s1">OkHttpClient(); 
+<a name="l144"><span class="ln">144  </span></a> 
+<a name="l145"><span class="ln">145  </span></a>        </span><span class="s0">final </span><span class="s1">MediaType MEDIA_TYPE = MediaType.parse(mimeTypesMap.getContentType(filename)); 
+<a name="l146"><span class="ln">146  </span></a>        okhttp3.RequestBody requestBody = </span><span class="s0">new </span><span class="s1">MultipartBody.Builder() 
+<a name="l147"><span class="ln">147  </span></a>                .setType(MultipartBody.FORM) 
+<a name="l148"><span class="ln">148  </span></a>                .addFormDataPart(</span><span class="s2">&quot;attachment&quot;</span><span class="s1">, filename.getName(), 
+<a name="l149"><span class="ln">149  </span></a>                        okhttp3.RequestBody.create(MEDIA_TYPE, filename)) 
+<a name="l150"><span class="ln">150  </span></a>                .build(); 
+<a name="l151"><span class="ln">151  </span></a>        String credential = Credentials.basic(</span><span class="s2">&quot;tomcat&quot;</span><span class="s1">, </span><span class="s2">&quot;tomcat&quot;</span><span class="s1">); 
+<a name="l152"><span class="ln">152  </span></a>        Request request = </span><span class="s0">new </span><span class="s1">Request.Builder() 
+<a name="l153"><span class="ln">153  </span></a>                .header(</span><span class="s2">&quot;Authorization&quot;</span><span class="s1">, credential) 
+<a name="l154"><span class="ln">154  </span></a>                .url(url+</span><span class="s2">&quot;:8080/manager/text/deploy?path=/mistBpmn&amp;update=true&quot;</span><span class="s1">) 
+<a name="l155"><span class="ln">155  </span></a>                .put(requestBody) 
+<a name="l156"><span class="ln">156  </span></a>                .build(); 
+<a name="l157"><span class="ln">157  </span></a> 
+<a name="l158"><span class="ln">158  </span></a>        okhttp3.Response response = client.newCall(request).execute(); 
+<a name="l159"><span class="ln">159  </span></a>        CsvFile.write(processId,</span><span class="s2">&quot;Uploading war finished&quot;</span><span class="s1">,baseFolder); 
+<a name="l160"><span class="ln">160  </span></a>        System.out.println(</span><span class="s2">&quot;Deploy finished&quot;</span><span class="s1">); 
+<a name="l161"><span class="ln">161  </span></a>            response.body().close(); 
+<a name="l162"><span class="ln">162  </span></a>            CsvFile.write(processId, </span><span class="s2">&quot;Finished deployment to Camunda&quot;</span><span class="s1">, baseFolder); 
+<a name="l163"><span class="ln">163  </span></a>            CsvFile.write(processId, </span><span class="s2">&quot;Start  Remote Process Engine &quot;</span><span class="s1">, baseFolder); 
+<a name="l164"><span class="ln">164  </span></a>            System.out.println(</span><span class="s2">&quot;Request being processed .......................&quot;</span><span class="s1">); 
+<a name="l165"><span class="ln">165  </span></a> 
+<a name="l166"><span class="ln">166  </span></a>            MediaType JSON 
+<a name="l167"><span class="ln">167  </span></a>                    = MediaType.parse(</span><span class="s2">&quot;application/json; charset=utf-8&quot;</span><span class="s1">); 
+<a name="l168"><span class="ln">168  </span></a>            RequestBody requestBody2 = RequestBody.create(JSON, mist); 
+<a name="l169"><span class="ln">169  </span></a> 
+<a name="l170"><span class="ln">170  </span></a>            OkHttpClient client2 = </span><span class="s0">new </span><span class="s1">OkHttpClient(); 
+<a name="l171"><span class="ln">171  </span></a> 
+<a name="l172"><span class="ln">172  </span></a>            Request request2 = </span><span class="s0">new </span><span class="s1">Request.Builder() 
+<a name="l173"><span class="ln">173  </span></a>                    .header(</span><span class="s2">&quot;Authorization&quot;</span><span class="s1">, credential) 
+<a name="l174"><span class="ln">174  </span></a>                    .url(url + </span><span class="s2">&quot;:8080/engine-rest/message&quot;</span><span class="s1">) 
+<a name="l175"><span class="ln">175  </span></a>                    .post(requestBody2) 
+<a name="l176"><span class="ln">176  </span></a>                    .build(); 
+<a name="l177"><span class="ln">177  </span></a>            okhttp3.Response response2 = client2.newCall(request2).execute(); 
+<a name="l178"><span class="ln">178  </span></a>            response2.body().close(); 
+<a name="l179"><span class="ln">179  </span></a>            System.out.println(</span><span class="s2">&quot;Request process end&quot;</span><span class="s1">); 
+<a name="l180"><span class="ln">180  </span></a>            </span><span class="s0">return </span><span class="s2">&quot;done&quot;</span><span class="s1">; 
+<a name="l181"><span class="ln">181  </span></a> 
+<a name="l182"><span class="ln">182  </span></a>    } 
+<a name="l183"><span class="ln">183  </span></a>    </span><span class="s0">public </span><span class="s1">String executeRequest(HttpRequestBase requestBase, CredentialsProvider credsProvider) </span><span class="s0">throws </span><span class="s1">ClientProtocolException { 
+<a name="l184"><span class="ln">184  </span></a>        CloseableHttpClient client = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build(); 
+<a name="l185"><span class="ln">185  </span></a>        InputStream responseStream = </span><span class="s0">null</span><span class="s1">; 
+<a name="l186"><span class="ln">186  </span></a>        String res = </span><span class="s0">null</span><span class="s1">; 
+<a name="l187"><span class="ln">187  </span></a>        HttpResponse response = </span><span class="s0">null</span><span class="s1">; 
+<a name="l188"><span class="ln">188  </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l189"><span class="ln">189  </span></a>            response = client.execute(requestBase); 
+<a name="l190"><span class="ln">190  </span></a>        } </span><span class="s0">catch </span><span class="s1">(IOException e) { 
+<a name="l191"><span class="ln">191  </span></a>            System.out.println(</span><span class="s2">&quot;Retry sending request&quot;</span><span class="s1">); 
+<a name="l192"><span class="ln">192  </span></a>            executeRequest(requestBase,credsProvider); 
+<a name="l193"><span class="ln">193  </span></a>        } 
+<a name="l194"><span class="ln">194  </span></a>        HttpEntity responseEntity = response.getEntity() ; 
+<a name="l195"><span class="ln">195  </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l196"><span class="ln">196  </span></a>            responseStream = responseEntity.getContent() ; 
+<a name="l197"><span class="ln">197  </span></a>        } </span><span class="s0">catch </span><span class="s1">(IOException e) { 
+<a name="l198"><span class="ln">198  </span></a>            e.printStackTrace(); 
+<a name="l199"><span class="ln">199  </span></a>        } 
+<a name="l200"><span class="ln">200  </span></a> 
+<a name="l201"><span class="ln">201  </span></a>        BufferedReader br = </span><span class="s0">new </span><span class="s1">BufferedReader (</span><span class="s0">new </span><span class="s1">InputStreamReader (responseStream)) ; 
+<a name="l202"><span class="ln">202  </span></a>        StringBuilder sb = </span><span class="s0">new </span><span class="s1">StringBuilder(); 
+<a name="l203"><span class="ln">203  </span></a>        String line; 
+<a name="l204"><span class="ln">204  </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l205"><span class="ln">205  </span></a>            </span><span class="s0">while </span><span class="s1">((line = br.readLine()) != </span><span class="s0">null</span><span class="s1">) { 
+<a name="l206"><span class="ln">206  </span></a>                sb.append(line); 
+<a name="l207"><span class="ln">207  </span></a>                sb.append(System.getProperty(</span><span class="s2">&quot;line.separator&quot;</span><span class="s1">)); 
+<a name="l208"><span class="ln">208  </span></a>            } 
+<a name="l209"><span class="ln">209  </span></a>        } </span><span class="s0">catch </span><span class="s1">(IOException e) { 
+<a name="l210"><span class="ln">210  </span></a>            e.printStackTrace(); 
+<a name="l211"><span class="ln">211  </span></a>        } 
+<a name="l212"><span class="ln">212  </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l213"><span class="ln">213  </span></a>            br.close() ; 
+<a name="l214"><span class="ln">214  </span></a>        } </span><span class="s0">catch </span><span class="s1">(IOException e) { 
+<a name="l215"><span class="ln">215  </span></a>            e.printStackTrace(); 
+<a name="l216"><span class="ln">216  </span></a>        } 
+<a name="l217"><span class="ln">217  </span></a>        res = sb.toString(); 
+<a name="l218"><span class="ln">218  </span></a> 
+<a name="l219"><span class="ln">219  </span></a>        </span><span class="s0">return </span><span class="s1">res; 
+<a name="l220"><span class="ln">220  </span></a>    } 
+<a name="l221"><span class="ln">221  </span></a>   @Async 
+<a name="l222"><span class="ln">222  </span></a>    </span><span class="s0">public  void </span><span class="s1">undeploy(String localhost) </span><span class="s0">throws </span><span class="s1">ClientProtocolException, IOException{ 
+<a name="l223"><span class="ln">223  </span></a>       CredentialsProvider credsProvider = </span><span class="s0">new </span><span class="s1">BasicCredentialsProvider(); 
+<a name="l224"><span class="ln">224  </span></a>        credsProvider.setCredentials(AuthScope.ANY,</span><span class="s0">new </span><span class="s1">UsernamePasswordCredentials(</span><span class="s2">&quot;tomcat&quot;</span><span class="s1">, </span><span class="s2">&quot;tomcat&quot;</span><span class="s1">)); 
+<a name="l225"><span class="ln">225  </span></a>        String url = localhost+</span><span class="s2">&quot;:8080/manager/text/undeploy?path=/mistBpmn&quot;</span><span class="s1">; 
+<a name="l226"><span class="ln">226  </span></a>        HttpGet req = </span><span class="s0">new </span><span class="s1">HttpGet(url) ; 
+<a name="l227"><span class="ln">227  </span></a>        String response = executeRequest (req, credsProvider); 
+<a name="l228"><span class="ln">228  </span></a> 
+<a name="l229"><span class="ln">229  </span></a>    } 
+<a name="l230"><span class="ln">230  </span></a>    } 
+<a name="l231"><span class="ln">231  </span></a> 
+<a name="l232"><span class="ln">232  </span></a> 
+<a name="l233"><span class="ln">233  </span></a></span></pre>
+</body>
+</html>

@@ -23,23 +23,14 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
         String dockerImageValue = (String) dockerImage.getValue(execution);
         String commandValue = (String) command.getValue(execution);
         String imageUrlValue = (String) imagePath.getValue(execution);
-        //super.stopContainers(dockerImageValue);
-        LOGGER.info("File path path"+imageUrlValue);
         File file = new File(imageUrlValue);
         String folder = baseFolder+"/mist-framework/mist-deployer-app/mist-files/";
         String command = "docker run -p 8090:8080 -v "+folder+":/mist"+" "+dockerImageValue;
         LOGGER.info("Final docker command"+command);
         String line = " ";
         // starting container
-     CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  started",baseFolder);
+        CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  started",baseFolder);
         String platform = (String)execution.getVariable("platform");
-        if(!platform.equals("cloud")){
-
-        }
-        else{
-
-        }
-
         BufferedReader reader =
                 new BufferedReader(new InputStreamReader(super.startContainer(command).getInputStream()));
 
@@ -50,20 +41,11 @@ public class DockerImageProcessing extends DockerCommands implements JavaDelegat
                 String processRequest =localhost+":8090/image?task="+commandValue+"&imagePath=/mist/pay.jpg";
                 LOGGER.info(processRequest+" \n");
                 String response = HttpRequest.get(processRequest).body();
-                LOGGER.info("response ======>"+response);
                 execution.setVariable("response",response);
 
                 break;
             }
    }
-
-//        String processRequest =localhost+":8090/image?task="+commandValue+"&imagePath=/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/pay.jpg";
-//        LOGGER.info(processRequest+" new  \n");
-//        String response = HttpRequest.get(processRequest).body();
-//        LOGGER.info("response ======>"+response);
-//        execution.setVariable("response",response);
-       // curl -i -H "Accept: application/json" -H "Content-Type: application/json"  http://localhost:8090/image?task=findDorminantColour&imagePath=/home/pi/Desktop/mist-framework/mist-deployer-app/mist-files/pay.jpg;
-
         CsvFile.write(execution.getVariable("log_id").toString(),"Mist-docker  completed",baseFolder);
        super.stopContainers(dockerImageValue);
 
