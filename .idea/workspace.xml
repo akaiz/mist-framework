@@ -2,81 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3350201e-f4d1-4f97-9fe7-cbb8caa7161f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-0/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-0/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-0/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-1/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-1/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-1/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-cloud-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-0/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-0/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-0/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-1/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-1/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-1/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/no-payload-sender-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/payload-cloud-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/payload-cloud-2/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/payload-sender-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/cloud/payload-sender-2/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-0/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-0/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-0/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-1/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-1/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-1/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-0-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-0/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-0/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-0/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-1/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-1/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-1/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-1-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-0/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-0/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-0/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-1/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-1/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-1/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/no-payload-node-sender-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-0-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-0-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-1-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-1-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-0/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-0/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-0/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-0/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-1/cpu.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-1/log.file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-1/mem.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/fetch-1/network.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finaltest/sole/time.csv" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/Workground.xlsx" afterPath="$PROJECT_DIR$/finaltest/Workground.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-0-0/cpu.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-0-0/cpu.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-0-0/mem.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-0-0/mem.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-0-1/cpu.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-0-1/cpu.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-0-1/mem.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-0-1/mem.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-1-0/cpu.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-1-0/cpu.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-1-0/mem.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-1-0/mem.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-1-1/cpu.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-1-1/cpu.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-1-1/mem.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-1-1/mem.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-0/cpu.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-0/cpu.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-0/mem.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-0/mem.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-1/cpu.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-1/cpu.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-1/mem.csv" afterPath="$PROJECT_DIR$/finaltest/mist/payload-node-sender-1/mem.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/AsyncServices.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/AsyncServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" afterPath="$PROJECT_DIR$/mist-deployer-app/src/main/java/mistfinaldeployer/com/mistfinaldeployer/MistController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" afterPath="$PROJECT_DIR$/mist-tomcat/src/main/java/ee/ut/mobilelab/mistbpmn/DockerImageProcessing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,7 +67,7 @@
       <file leaf-file-name="MistController.java.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exportToHTML/MistController.java.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-300">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -833,12 +760,12 @@
       <option name="presentableId" value="Default" />
       <updated>1502220167929</updated>
       <workItem from="1502220169403" duration="11579000" />
-      <workItem from="1502387771284" duration="5864000" />
+      <workItem from="1502387771284" duration="6699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17443000" />
+    <option name="totallyTimeSpent" value="18278000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,7 +778,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="23" width="1614" height="982" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -864,7 +791,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24039653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1202,7 +1129,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/exportToHTML/MistController.java.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-300">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
